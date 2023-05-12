@@ -1,0 +1,27 @@
+2022-06-17 12:43:25 Crear venta nueva tienda: 5
+2022-06-17 12:43:25 Inicia Creación de Transaccion para insertar venta
+2022-06-17 12:43:28 descarga pdf idventa: 197716
+2022-06-17 13:14:21 Crear venta nueva tienda: 5
+2022-06-17 13:14:21 Inicia Creación de Transaccion para insertar venta
+2022-06-17 13:14:24 descarga pdf idventa: 197717
+2022-06-17 13:56:12 Crear venta nueva tienda: 5
+2022-06-17 13:57:50 Inicia Creación de Transaccion para insertar venta
+2022-06-17 14:01:46 descarga pdf idventa: 197718
+2022-06-17 15:50:58 Crear venta nueva tienda: 5
+2022-06-17 15:51:13 Inicia Creación de Transaccion para insertar venta
+2022-06-17 15:56:19 Error en metodo CheckOrder: System.IndexOutOfRangeException: No hay ninguna fila en la posición 0.   en System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)   en System.Data.DataRowCollection.get_Item(Int32 index)   en WebPOS.Utilities.Threads.CheckOrder(AddSale Infoventa, String IDPRINTVENTA) en C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\Utilities\Threads.cs:línea 267
+2022-06-17 15:56:39 descarga pdf idventa: 197720
+2022-06-17 16:30:37 Crear venta nueva tienda: 5
+2022-06-17 16:31:44 Inicia Creación de Transaccion para insertar venta
+2022-06-17 16:36:23 descarga pdf idventa: 197721
+2022-06-17 17:05:10 Crear venta nueva tienda: 5
+2022-06-17 17:05:32 Inicia Creación de Transaccion para insertar venta
+2022-06-17 17:06:13 descarga pdf idventa: 197722
+2022-06-17 17:44:13 Crear venta nueva tienda: 5
+2022-06-17 17:44:22 Inicia Creación de Transaccion para insertar venta
+2022-06-17 17:45:50 descarga pdf idventa: 197723
+2022-06-17 17:47:20 Crear venta nueva tienda: 5
+2022-06-17 17:47:24 Inicia Creación de Transaccion para insertar venta
+2022-06-17 18:10:13 Error en metodo CheckOrder: System.IndexOutOfRangeException: No hay ninguna fila en la posición 0.   en System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)   en System.Data.DataRowCollection.get_Item(Int32 index)   en WebPOS.Utilities.Threads.CheckOrder(AddSale Infoventa, String IDPRINTVENTA) en C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\Utilities\Threads.cs:línea 267
+2022-06-17 18:10:13 descarga pdf idventa: 197724
+2022-06-17 18:10:25 Error al descargar pdf idventa: 197724ERROR: Referencia a objeto no establecida como instancia de un objeto.

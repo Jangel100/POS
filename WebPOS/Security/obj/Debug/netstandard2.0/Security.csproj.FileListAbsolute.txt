@@ -1,0 +1,378 @@
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\Arturo\source\repos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\admin\Downloads\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\POS_ligero\Version10022021\arturo\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Projects\ProyectsGitHub\Mergue\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Users\admin\Documents\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\admin\Documents\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\admin\Documents\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\admin\Documents\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\admin\Documents\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\admin\Documents\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\admin\Documents\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\admin\Documents\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\admin\Documents\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\admin\Documents\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\admin\Documents\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\admin\Documents\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\admin\Documents\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\admin\Documents\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\ultimaversionpos\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\admin\Downloads\ultimaversionpos 17022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\04032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Projects\Dormimundo2021IpPublica-2\Web\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\projectsvs\WEBPOSPUBLICO\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\projectsvs\WEBPOSPUBLICO\Security\bin\Debug\netstandard2.0\Security.dll
+C:\projectsvs\WEBPOSPUBLICO\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\projectsvs\WEBPOSPUBLICO\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\projectsvs\WEBPOSPUBLICO\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\projectsvs\WEBPOSPUBLICO\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\projectsvs\WEBPOSPUBLICO\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\projectsvs\WEBPOSPUBLICO\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\projectsvs\WEBPOSPUBLICO\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\projectsvs\WEBPOSPUBLICO\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\projectsvs\WEBPOSPUBLICO\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\projectsvs\WEBPOSPUBLICO\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\projectsvs\WEBPOSPUBLICO\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\projectsvs\WEBPOSPUBLICO\Security\obj\Debug\netstandard2.0\Security.dll
+C:\projectsvs\WEBPOSPUBLICO\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Projects\Dormimundo2021IpPublica-8\web\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\projectsvs\POSLIGERO\WEB\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\projectsvs\POSLIGERO\WEB\Security\bin\Debug\netstandard2.0\Security.dll
+C:\projectsvs\POSLIGERO\WEB\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\projectsvs\POSLIGERO\WEB\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\projectsvs\POSLIGERO\WEB\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\projectsvs\POSLIGERO\WEB\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\projectsvs\POSLIGERO\WEB\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\projectsvs\POSLIGERO\WEB\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\projectsvs\POSLIGERO\WEB\Security\obj\Debug\netstandard2.0\Security.csproj.AssemblyReference.cache
+C:\projectsvs\POSLIGERO\WEB\Security\obj\Debug\netstandard2.0\Security.GeneratedMSBuildEditorConfig.editorconfig
+C:\projectsvs\POSLIGERO\WEB\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\projectsvs\POSLIGERO\WEB\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\projectsvs\POSLIGERO\WEB\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\projectsvs\POSLIGERO\WEB\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\projectsvs\POSLIGERO\WEB\Security\obj\Debug\netstandard2.0\Security.dll
+C:\projectsvs\POSLIGERO\WEB\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Projects\Dormimundo2021IpPublica-9\Web\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\projectsvs\ProyectoPOS\WebPOS\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\projectsvs\ProyectoPOS\WebPOS\Security\bin\Debug\netstandard2.0\Security.dll
+C:\projectsvs\ProyectoPOS\WebPOS\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\projectsvs\ProyectoPOS\WebPOS\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\projectsvs\ProyectoPOS\WebPOS\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\projectsvs\ProyectoPOS\WebPOS\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\projectsvs\ProyectoPOS\WebPOS\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\projectsvs\ProyectoPOS\WebPOS\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\projectsvs\ProyectoPOS\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.AssemblyReference.cache
+C:\projectsvs\ProyectoPOS\WebPOS\Security\obj\Debug\netstandard2.0\Security.GeneratedMSBuildEditorConfig.editorconfig
+C:\projectsvs\ProyectoPOS\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\projectsvs\ProyectoPOS\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\projectsvs\ProyectoPOS\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\projectsvs\ProyectoPOS\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\projectsvs\ProyectoPOS\WebPOS\Security\obj\Debug\netstandard2.0\Security.dll
+C:\projectsvs\ProyectoPOS\WebPOS\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\obj\Debug\netstandard2.0\Security.csprojAssemblyReference.cache
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\projectsvs\POSPUBLICO\WebPOS\Security\bin\Debug\netstandard2.0\Security.dll
+C:\projectsvs\POSPUBLICO\WebPOS\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\projectsvs\POSPUBLICO\WebPOS\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\projectsvs\POSPUBLICO\WebPOS\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\projectsvs\POSPUBLICO\WebPOS\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\projectsvs\POSPUBLICO\WebPOS\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.AssemblyReference.cache
+C:\projectsvs\POSPUBLICO\WebPOS\Security\obj\Debug\netstandard2.0\Security.GeneratedMSBuildEditorConfig.editorconfig
+C:\projectsvs\POSPUBLICO\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\projectsvs\POSPUBLICO\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\projectsvs\POSPUBLICO\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\projectsvs\POSPUBLICO\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\projectsvs\POSPUBLICO\WebPOS\Security\obj\Debug\netstandard2.0\Security.dll
+C:\projectsvs\POSPUBLICO\WebPOS\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Proyectos Productivo\WebPOS\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Proyectos Productivo\WebPOS\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Proyectos Productivo\WebPOS\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Proyectos Productivo\WebPOS\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Proyectos Productivo\WebPOS\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Proyectos Productivo\WebPOS\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Proyectos Productivo\WebPOS\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Proyectos Productivo\WebPOS\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Proyectos Productivo\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.AssemblyReference.cache
+C:\Proyectos Productivo\WebPOS\Security\obj\Debug\netstandard2.0\Security.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos Productivo\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Proyectos Productivo\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Proyectos Productivo\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Proyectos Productivo\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Proyectos Productivo\WebPOS\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Proyectos Productivo\WebPOS\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.AssemblyReference.cache
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\Security.deps.json
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\Security.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\Security.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\Entities.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\System.Security.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\bin\Debug\netstandard2.0\Entities.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.AssemblyReference.cache
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfoInputs.cache
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.AssemblyInfo.cs
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CoreCompileInputs.cache
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.csproj.CopyComplete
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Security\obj\Debug\netstandard2.0\Security.pdb

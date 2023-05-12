@@ -1,0 +1,3 @@
+2023-01-11 11:31:49 Crear venta nueva tienda: 5
+2023-01-11 11:31:49 Inicia Creación de Transaccion para insertar venta
+2023-01-11 11:31:51 descarga pdf idventa: 203847

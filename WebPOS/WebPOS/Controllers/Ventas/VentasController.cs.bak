@@ -1,0 +1,393 @@
+﻿using BL.Configuracion;
+using BL.Interface;
+using Entities;
+using Entities.viewsModels;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Web;
+using System.Web.Mvc;
+using WebPOS.Security;
+using Entities.Models.Ventas;
+using WebPOS.Utilities;
+using System.Data;
+using System.Configuration;
+namespace WebPOS.Controllers.Ventas
+{
+    [CustomAuthorize(Roles = "AG,US")]
+    public class VentasController : Controller
+    {
+        private string connstringWEB;
+        private string connstringSAP;
+        readonly IVentasBL _VentasBL;
+        // GET: Ventas
+        public VentasController(IVentasBL ventasBL)
+        {
+            _VentasBL = ventasBL;
+        }
+        public VentasController()
+        {
+            _VentasBL = new VentasBL();
+        }
+        public ActionResult Index()
+        {
+            ArticulosBaseView ArticulosBaseView;
+            try
+            {
+                ViewBag.Idstore = Session["IDSTORE"].ToString();
+                ViewBag.Idusuario =  Session["AdminUserID"].ToString();
+                ViewBag.WhsID = Session["WHSID"].ToString();
+                ArticulosBaseView = Crearventa();
+                return View("CrearVenta", ArticulosBaseView);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult capturarpago([Bind(Include = "Id,FormaPago,MontoPagado,NoCuenta,TipoTarjeta,MSISub")] Pago pago)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        //db.Ventas.Add(pago);
+        //        //db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    return View("Crearventa", pago);
+        //}
+        public ArticulosBaseView Crearventa()
+        {
+            string JsonResult = string.Empty;
+            ArticulosBaseView ArticulosBaseView;
+            List<ListArticuloView> ListArt;
+            List<ListLineaView> ListLinea = new List<ListLineaView>();
+            List<ListMedidaView> ListMedida = new List<ListMedidaView>();
+            List<ListModeloView> ListModelo;
+            List<ListListOfPriceView> ListPrice;
+            ListRadioButton listB = new ListRadioButton();
+            listB.CheckLine = true;
+            try
+            {
+                ListArt = _VentasBL.GetArticulos();
+                ListModelo = _VentasBL.GetModelos("Linea");
+                ListPrice = _VentasBL.GetPrice(Session["IDSTORE"].ToString(), Session["SAPDB"] == null ? "0" : Session["SAPDB"].ToString());
+                ArticulosBaseView = new ArticulosBaseView()
+                {
+                    ListArticulos = ListArt,
+                    ListLinea = ListLinea,
+                    ListMedida = ListMedida,
+                    ListModelo = ListModelo,
+                    ListOfPrice = ListPrice,
+                    CantidadBodega = 0,
+                    CantidadTienda = 0,
+                    CantidadBodegaDisp = 0,
+                    CantidadTiendaDisp = 0,
+                    DescriptionJuego = "",
+
+
+                    //Descuento = 0,
+                    //IVA = _VentasBL.GetIva(Session["IDSTORE"].ToString()),
+                    ListRadioButton = listB
+                    //PrecioUnitario = 0,
+                    //Total = 0,
+                };
+                return ArticulosBaseView;
+            }
+            catch (Exception ex) { return null; }
+        }
+        public JsonResult GetSelectedMedida(string code)
+        {
+            string JsonResult = string.Empty;
+            try
+            {
+                JsonResult = JsonConvert.SerializeObject(_VentasBL.GetMedida(code));
+                return Json(JsonResult);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public JsonResult GetSelectedModels(string modelo,string medida)
+        {
+            string jsonparams = string.Empty;
+            var Jsonquery = new
+            {
+                modelo = modelo,
+                medida = medida
+            };
+            jsonparams = JsonConvert.SerializeObject(Jsonquery);
+            string JsonResult = string.Empty;
+            try
+            {
+                var result = _VentasBL.GetModelsSelected(jsonparams);
+                if (result != null) { JsonResult = JsonConvert.SerializeObject(result); }
+                return Json(JsonResult);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        [HttpPost]
+        public JsonResult GetSelectedLinea(string code)
+        {
+            //var json1 = JsonConvert.DeserializeObject<ListRadioButton>(JsonRes);
+            string JsonResult = string.Empty;
+            try
+            {
+                var result = _VentasBL.GetListLinea(code);
+                if (result != null) { JsonResult = JsonConvert.SerializeObject(result); }
+                return Json(JsonResult);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public JsonResult GetExistencias(string Parametrs)
+        {
+            var jsondata = new
+            {
+                IdStore = Session["IDSTORE"].ToString(),
+                ItemCode = Parametrs
+            };
+            string json_data = JsonConvert.SerializeObject(jsondata);
+            string JsonResult = string.Empty;
+            try
+            {
+                var result = _VentasBL.GetExistencias(json_data);
+                if (result != null) { JsonResult = JsonConvert.SerializeObject(result); }
+                return Json(JsonResult);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public JsonResult GetSelectChanchePrice(string JsonChangePrice)
+        {
+            //string ItemCode, string IdList, string descuento,string cantidad, string Origen 
+            var RJsonChangePrice = JsonConvert.DeserializeObject<RequestChangePrice>(JsonChangePrice);
+            string JsonResult = string.Empty;
+            string json_UnitPrice = string.Empty;
+            var Icon = RJsonChangePrice.IdList.Length > 2 ? "" : RJsonChangePrice.IdList;
+            var JsonUnitPrice = new
+            {
+                ItemCode = RJsonChangePrice.ItemCode,
+                IdList = RJsonChangePrice.IdList,
+                Ion = Icon
+            };
+            json_UnitPrice = JsonConvert.SerializeObject(JsonUnitPrice);
+            try
+            {
+                var Price = _VentasBL.GetUnitPrice(json_UnitPrice);
+                var Iva = _VentasBL.GetIva(Session["IDSTORE"].ToString());
+
+                var ResultChangeView = _VentasBL.GetChangePrice(Iva, Price, RJsonChangePrice.descuento, Convert.ToInt32(RJsonChangePrice.cantidad));
+                JsonResult = JsonConvert.SerializeObject(ResultChangeView);
+                return Json(JsonResult);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public JsonResult GetSelectOnchangeModelo(string tipo)
+        {
+            string JsonResult = string.Empty;
+            try
+            {
+                var result = _VentasBL.GetModelos(tipo);
+                JsonResult = JsonConvert.SerializeObject(result);
+                return Json(JsonResult);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public JsonResult BtnCapturar(string ParCaptured)
+        {
+            // var obj = JsonConvert.DeserializeObject<ArticulosBaseView>(ParCaptured);
+
+            TableView CapturedItems = new TableView();
+            string JsonResult = string.Empty;
+            try
+            {
+                //var result = _VentasBL.get
+
+                JsonResult = JsonConvert.SerializeObject(CapturedItems);
+                return Json(JsonResult);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public JsonResult AddSale(string Paymentscap)
+        {
+            var json1sale = JsonConvert.DeserializeObject<AddSale>(Paymentscap);
+            string url = string.Empty;
+            string JsonResult = string.Empty;
+            try
+            {
+                url = "api/AddSale";
+                HttpResponseMessage response = _VentasBL.ReadAsStringAsyncAPI(url, json1sale);
+                response.EnsureSuccessStatusCode();
+                var result = response.Content.ReadAsAsync<AddSale>().Result;
+
+                if (result.saleresponse)
+                {
+                    JsonResult = JsonConvert.SerializeObject(result);
+                    return Json(JsonResult);
+                }
+
+                return Json(null);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(null);
+        }
+
+        public JsonResult SearchModel(string Prefix, string tipo)
+        {
+            //// autocomplete
+            string JsonResult = string.Empty;
+            string squery = "";
+            DBMaster oDB = new DBMaster();
+            DataTable dt = new DataTable();
+            var idstore = Session["IDSTORE"].ToString();
+            connstringSAP = ConfigurationManager.ConnectionStrings["DBConnSAP"].ConnectionString;
+            try
+            {
+                if (tipo.Equals("Linea")) {
+                    squery = "select distinct ItemCode as code, ItemName as name from OITM where QryGroup7='Y' and (QryGroup43='N' or QryGroup42='Y') and ItemName LIKE '%" + Prefix + "%'";
+                }
+                else if(tipo.Equals("Descontinuados"))
+                {
+                    squery = "select distinct ItemCode as code, ItemName as name from OITM where QryGroup7='N' and ItemName LIKE '%" + Prefix + "%'";
+                }
+                
+                dt = oDB.EjecutaQry_Tabla(squery, CommandType.Text, "Modelos", connstringSAP);
+                if (dt != null)
+                {
+                    var Modelos = (from DataRow rows in dt.Rows
+                                    select new ModelosLista
+                                    {
+                                        code = (string)rows["code"].ToString(),
+                                        name = (string)rows["name"].ToString()
+                                    }).ToList();
+                    //return Json(Modelos);
+                    return new JsonResult { Data = Modelos, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(null);
+        }
+        [HttpPost]
+        public ActionResult UpdateSale(SaleView Sale)
+        {
+            string url = string.Empty;
+            string JsonResult = string.Empty;
+            string parameterJson = string.Empty;
+
+            try
+            {
+                url = "api2/UpdateSale";
+                HttpResponseMessage response = _VentasBL.ReadAsStringAsyncAPI(url, Sale);
+                response.EnsureSuccessStatusCode();
+                var result = response.Content.ReadAsAsync<int>().Result;
+
+                if (result == 1)
+                {
+                    JsonResult = JsonConvert.SerializeObject(result);
+                    return Json(result, JsonRequestBehavior.AllowGet);
+                }
+
+                return Json(null);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return null;
+        }
+        [HttpPost]
+        public ActionResult GetSearchVenta(SaleSearchView Sale)
+        {
+            string url = string.Empty;
+            string JsonResult = string.Empty;
+            string parameterJson = string.Empty;
+
+            try
+            {
+                Sale.IdStore = Convert.ToInt32(Session["IDSTORE"]);
+
+                url = "api2/GetSearchVenta";
+                HttpResponseMessage response = _VentasBL.ReadAsStringAsyncAPI(url, Sale);
+                response.EnsureSuccessStatusCode();
+                var result = response.Content.ReadAsAsync<List<SaleSearchView>>().Result;
+
+                if (result !=null)
+                {
+                    JsonResult = JsonConvert.SerializeObject(result);
+                    return Json(result, JsonRequestBehavior.AllowGet);
+                }
+
+                return Json(null);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return null;
+        }
+        [HttpPost]
+        public ActionResult GetSearchDetalleVenta(SaleSearchView Sale)
+        {
+            string url = string.Empty;
+            string JsonResult = string.Empty;
+            string parameterJson = string.Empty;
+
+            try
+            {
+                Sale.IdStore = Convert.ToInt32(Session["IDSTORE"]);
+
+                url = "api2/GetSearchDetalleVenta";
+                HttpResponseMessage response = _VentasBL.ReadAsStringAsyncAPI(url, Sale);
+                response.EnsureSuccessStatusCode();
+                var result = response.Content.ReadAsAsync<SalesSearchVenta>().Result;
+
+                if (result != null)
+                {
+                    JsonResult = JsonConvert.SerializeObject(result);
+                    return Json(result, JsonRequestBehavior.AllowGet);
+                }
+
+                return Json(null);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return null;
+        }
+    }
+}

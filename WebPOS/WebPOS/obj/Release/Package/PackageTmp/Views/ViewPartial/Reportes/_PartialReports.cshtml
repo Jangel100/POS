@@ -1,0 +1,529 @@
+﻿@using System.Data;
+@using System.Collections;
+@model Entities.viewsModels.ReportsView
+
+@{
+    ViewBag.Title = "_PartialReports";
+}
+
+@if (Model.TypeReports == "factPagos")
+{
+    <div class="form-group  p-2">
+        <label class="col-form-label col-md-1">Tienda:</label>
+        <div class="col-md-2">
+            <select id="cmbTiendaConsult" class="form-control" onchange="Reports.getVendedores()" name="cmbPeriodoConsult">
+                <option>Todos</option>
+                @foreach (var item in Model.TiendaJson)
+                {
+                    <option value="@item.AdminUserID">@item.Franquicia</option>
+                }
+            </select>
+        </div>
+
+        <label class="col-form-label col-md-1">Vendedor:</label>
+        <div class="col-md-2">
+            <select id="cmbVendedorConsult" class="form-control">
+                <option>Todos</option>
+            </select>
+        </div>
+
+        <label class="col-form-label col-md-1">Fecha Inicio:</label>
+        <input type="date" class="form-control col-md-2" name="Fecha Inicio" id="txFechaIReportsFactPagos">
+
+        <label class="col-form-label col-md-1">Fecha Fin:</label>
+        <input type="date" class="form-control col-md-2" name="Fecha Fin" id="txFechaFReportsFactPagos">
+    </div>
+
+    <div class="row text-center">
+        <div class="col">
+            @*<input type="button" class="btn btn-light" id="btnReportsFactPagosFiltro" value="Buscar" />*@
+            <button class="btn btn-info" id="btnReportsFactPagosFiltro">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                Buscar
+            </button>
+        </div>
+    </div>
+}
+else
+{
+    if (Model.TypeReports == "pushMoney")
+    {
+        <form class="form-group">
+            <div class="row">
+                <label class="col-md-1 col-form-label text-center">
+                    Tipo Reporte
+                </label>
+                <select id="cmbTipoReporte" class="form-control col-md-2 form-control-sm mb-2" name="cmbTipoReporte">
+                    <option>Seleccione un Reporte</option>
+                    <option value="0">Gral. Franquicia</option>
+                    <option value="1">Franquicia</option>
+                </select>
+                <label class="col-md-1 col-form-label text-center">
+                    Franquicia
+                </label>
+                <select id="cmbPushMoneyFranquicia" class="form-control col-md-2 form-control-sm mb-2" name="cmbFranquicia">
+                    <option>Filtrar por Franquicia</option>
+                </select>
+                <label class="col-md-1 col-form-label text-center">
+                    Vendedor
+                </label>
+                <select id="cmbPushMoneyVendedor" class="form-control col-md-2 form-control-sm mb-2" name="cmbVendedor">
+                    <option>Filtrar por Vendedor</option>
+                </select>
+            </div>
+            <div class="row">
+                <label class="col-md-1 col-form-label text-center">
+                    Fecha Inicio
+                </label>
+                <input type="date" class="form-control col-md-2 form-control-sm mb-2" id="txFechaIKardex">
+                <label class="col-md-1 col-form-label text-center">
+                    Fecha Fin
+                </label>
+                <input type="date" class="form-control col-md-2 form-control-sm mb-2" id="txFechaFKardex">
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    @*<input type="button" class="btn btn-primary" id="btnReportsPushMoneyFiltro" value="Buscar" />*@
+                    <button class="btn btn-info" id="btnReportsPushMoneyFiltro">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        Buscar
+                    </button>
+                </div>
+            </div>
+        </form>
+    }
+    else
+    {
+        if (Model.TypeReports == "Kardex")
+        {
+            <form class="form-group">
+                <!--<div class="row">
+                    <label class="col-md-1 col-form-label text-center">
+                        Tienda
+                    </label>-->
+                @*<select id="cmbTiendaConsult" class="form-control col-md-2 form-control-sm mb-2" name="cmbPeriodoConsult">
+                        <option>Todos</option>
+                        @foreach (var item in Model.reportsFilterKardex.lsTiendas)
+                        {
+                            <option value="@item.AdminUserID">@item.Franquicia</option>
+                        }
+                    </select>*@
+                <!--<select id="cmbTiendaConsultKardex" class="form-control col-md-2 form-control-sm mb-2" name="cmbTiendaConsultKardex">
+                    <option>Todos</option>
+
+                </select>-->
+                @*<label class="col-md-1 col-form-label text-center">
+                        Articulo
+                    </label>*@
+                @*<select id="cmbArticuloKardex" class="form-control col-md-2 form-control-sm mb-2" name="cmbArticuloKardex">
+                        <option>Todos</option>
+                        @foreach (var item in Model.reportsFilterKardex.lsArticulo)
+                        {
+                            <option value="@item.Code">@item.Name</option>
+                        }
+                    </select>*@
+                <!--</div>-->
+                <div class="row">
+
+                    <label class="col-md-1 col-form-label text-center">
+                        Tienda
+                    </label>
+                    <select id="cmbTiendaConsultKardex" class="form-control col-md-2 form-control-sm mb-2" name="cmbTiendaConsultKardex">
+                        <option>Todos</option>
+                        @foreach (var item in Model.reportsFilterKardex.lsTiendas)
+                        {
+                            <option value="@item.WhsID">@item.Franquicia</option>
+                        }
+                    </select>
+                    <label class="col-md-1 col-form-label text-center">
+                        Fecha Inicio
+                    </label>
+                    <input type="date" class="form-control col-md-2 form-control-sm mb-2" id="txFechaIKardex">
+                    <label class="col-md-1 col-form-label text-center">
+                        Fecha Fin
+                    </label>
+                    <input type="date" class="form-control col-md-2 form-control-sm mb-2" id="txFechaFKardex">
+                    <div class="col-md-1 ml-2">
+                        @*<input type="button" class="btn btn-primary" id="btnReportsKardexFiltro" value="Buscar" />*@
+                        <button class="btn btn-info" id="btnReportsKardexFiltro">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        }
+        else
+        {
+            if (Model.TypeReports != "VentasxArticulo")
+            {
+                <div class="form-group row p-2 text-center">
+                    <label class="col-form-label col-md-1">Tienda:</label>
+                    <div class="col-md-2">
+                        <select id="cmbTiendaConsult" class="form-control" onchange="Reports.getVendedores()" name="cmbPeriodoConsult">
+                            <option>Todos</option>
+                            @foreach (var item in Model.TiendaJson)
+                            {
+                                <option value="@item.AdminUserID">@item.Franquicia</option>
+                            }
+                        </select>
+                    </div>
+
+
+                    @if (Model.TypeReports == "VTxTienda" ||
+                            Model.TypeReports == "VTxVendedor" ||
+                            Model.TypeReports == "Transferencias" ||
+                            Model.TypeReports == "Compras")
+                    {
+                        if (Model.TypeReports == "VTxVendedor")
+                        {
+                            <label class="col-form-label col-md-1">Fecha Inicio:</label>
+                            <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Inicio" id="txFechaInicioReportsVTxVendedor">
+
+                            <label class="col-form-label col-md-1">Fecha Fin:</label>
+                            <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Fin" id="txFechaFinReportsVTxVendedor">
+                            <div class="col-md-1 ml-2">
+                                @*<input type="button" class="btn btn-light" id="btnReportsVTxVendedorFiltro" value="Buscar" />*@
+                                <button class="btn btn-info ml-2" id="btnReportsVTxVendedorFiltro">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        }
+                        if (Model.TypeReports == "VTxTienda")
+                        {
+                            <label class="col-form-label col-md-1">Fecha Inicio:</label>
+                            <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Inicio" id="txFechaInicioReportsVTxTienda">
+
+                            <label class="col-form-label col-md-1">Fecha Fin:</label>
+                            <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Fin" id="txFechaFinReportsVTxTienda">
+                            @*<input type="button" class="btn btn-light" id="btnReportsVTxTiendaFiltro" value="Buscar" />*@
+                            <button class="btn btn-info ml-2" id="btnReportsVTxTiendaFiltro">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                Buscar
+                            </button>
+
+                        }
+                        if (Model.TypeReports == "Transferencias")
+                        {
+                            <div class="col-md-1">
+                                @*<input type="button" class="btn btn-light" id="btnReportsTransferenciasFiltro" value="Buscar" />*@
+                                <button class="btn btn-info" id="btnReportsTransferenciasFiltro">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        }
+
+                        if (Model.TypeReports == "Compras")
+                        {
+                            <label class="col-form-label col-md-1">Fecha Inicio:</label>
+                            <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Inicio" id="txFechaInicioReportsCompras">
+
+                            <label class="col-form-label col-md-1">Fecha Fin:</label>
+                            <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Fin" id="txFechaFinReportsCompras">
+                            <div class="col-md-1 ml-2">
+                                @*<input type="button" class="btn btn-light" id="btnReportsComprasFiltro" value="Buscar" />*@
+                                <button class="btn btn-info" id="btnReportsComprasFiltro">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <label class="col-form-label col-md-1">Vendedor:</label>
+                        <div class="col-md-2">
+                            <select id="cmbVendedorConsult" class="form-control">
+                                <option>Todos</option>
+                            </select>
+                        </div>
+                    }
+                    @if (Model.TypeReports == "Ventas")
+                    {
+                        <label class="col-form-label col-md-1">Estatus Venta:</label>
+                        <div class="col-md-2 mr-4">
+                            <select id="cmbEstatusConsult" class="form-control">
+                                <option value="-1">Todos</option>
+                                <option value="1">Activa</option>
+                                <option value="2">Cancelada</option>
+                            </select>
+                        </div>
+                    }
+                    @if (Model.TypeReports == "Ventas")
+                    {
+
+
+
+                        <div class="row ml-1 mt-1" style="width:100%">
+                            <label class="col-form-label col-md-1">Fecha Inicio:</label>
+                            <input type="date" class="form-control col-md-2" name="Fecha Inicio" id="txFechaInicioReportsV">
+                            <label class="col-form-label col-md-1">Fecha Fin:</label>
+                            <input type="date" class="form-control col-md-2" name="Fecha Fin" id="txFechaFinReportsV">
+                        </div>
+
+                    }
+                    @if (Model.TypeReports == "ClienteAvisa")
+                    {
+                        <label class="col-form-label">Estatus Venta:</label>
+                        <div class="col-md-2">
+                            <select id="cmbEstatusConsultAvisa" class="form-control">
+                                <option value="-1">Todos</option>
+                                <option value="1">Activa</option>
+                                <option value="2">Cancelada</option>
+                            </select>
+                        </div>
+                        <div class="row text-center mt-2 ml-1" style="width:100%">
+                            <label class="col-form-label col-md-1">Fechaa Inicio:</label>
+                            <input type="date" class="form-control col-md-2" name="Fecha Inicio" id="txFechaInicioReportsAvisa">
+
+                            <label class="col-form-label col-md-1">Fechaa Fin:</label>
+                            <input type="date" class="form-control col-md-2" name="Fecha Fin" id="txFechaFinReportsAvisa">
+                            @*<input type="button" class="btn btn-light" id="btnReportsClienteAvisaFiltro" value="Buscar" />*@
+                            <button class="btn btn-info ml-3" id="btnReportsClienteAvisaFiltro">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                Buscar
+                            </button>
+                        </div>
+                    }
+                    @if (Model.TypeReports == "Ventas")
+                    {
+                        @*<input type="button" class="btn btn-primary mr-3" id="verVendedoresBtn" value="Ver todos los vendedores" />*@
+                        @*<input type="button" class="btn btn-success" id="btnReportsFiltro" value=" Buscar" />*@
+                        <div class="col text-center mt-1">
+                            <button class="btn btn-info" id="btnReportsFiltro">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                Buscar
+                            </button>
+                        </div>
+                    }
+                    @if (Model.TypeReports == "Facturacion")
+                    {
+
+
+                        @*<div class="row mt-2 ml-1" style="width:100%">*@
+                        <label class="col-form-label col-md-1">Fecha Inicio:</label>
+                        <input type="date" class="form-control col-md-2" name="Fecha Inicio" id="txFechaIReportsFact">
+                        <label class="col-form-label col-md-1">Fecha Fin:</label>
+                        <input type="date" class="form-control col-md-2" name="Fecha Fin" id="txFechaFReportsFact">
+                        <div class="row text-center mt-2" style="width:100%">
+                            <div class="col">
+                                @*<input type="button" class="btn btn-light" id="btnReportsFactFiltro" value="Buscar" />*@
+                                <button class="btn btn-info" id="btnReportsFactFiltro">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
+                        @*</div>*@
+                    }
+                    @if (Model.TypeReports == "TotalVenta")
+                    {
+                        <label class="col-form-label">Estatus Facturación:</label>
+                        <div class="col-md-2">
+                            <select id="cmbEstatusConsultTVenta" class="form-control">
+                                <option value="-1">Todos</option>
+                                <option value="1">Facturadas</option>
+                                <option value="2">Por Facturar</option>
+                            </select>
+                        </div>
+
+                        <div class="row mt-2 ml-1" style="width:100%">
+                            <label class="col-form-label col-md-1">Fecha Inicio:</label>
+                            <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Inicio" id="txFechaInicioReportsTVenta">
+
+                            <label class="col-form-label col-md-1">Fecha Fin:</label>
+                            <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Fin" id="txFechaFinReportsTVenta">
+                            <div class="col-md-1">
+                                @*<input type="button" class="btn btn-light" id="btnReportsTVentaFiltro" value="Buscar" />*@
+                                <button class="btn btn-info" id="btnReportsTVentaFiltro">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
+                    }
+                    @if (Model.TypeReports == "Ingresos")
+                    {
+                        <label class="col-form-label">
+                            Forma de Pago:
+                        </label>
+                        <div class="col-md-2">
+                            <select id="cmbTipoPagoConsult" class="form-control">
+                                <option value="Todas">Todas</option>
+                                <option value="Efectivo">Efectivo</option>
+                                <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                                <option value="Tarjeta de Débito">Tarjeta de Débito</option>
+                                <option value="American Express">American Express</option>
+                                <option value="Deposito / Cheque">Deposito/Cheque</option>
+                                <option value="Nota de crédito">Nota de crédito</option>
+                                <option value="Transferencia Electrónica">Transferencia Electrónica</option>
+                                <option value="Otros">Otros</option>
+                            </select>
+                        </div>
+                        <div class="row mt-2 ml-1" style="width:100%">
+                            <label class="col-form-label col-md-1">Fecha Inicio:</label>
+                            <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Inicio" id="txFechaInicioReportsIngresos">
+
+                            <label class="col-form-label col-md-1">Fecha Fin:</label>
+                            <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Fin" id="txFechaFinReportsIngresos">
+                            <div class="col-md-1 text-center">
+                                @*<input type="button" class="btn btn-light" id="btnReportsIngresosFiltro" value="Buscar" />*@
+                                <button class="btn btn-info" id="btnReportsIngresosFiltro">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
+                    }
+
+                    @if (Model.TypeReports == "Nomina")
+                    {
+
+                        <label class="col-form-label col-md-1">Fecha Inicio:</label>
+                        <input type="date" class="form-control col-md-2" name="Fecha Inicio" id="txFechaIReportsNomina">
+
+                        <label class="col-form-label col-md-1">Fecha Fin:</label>
+                        <input type="date" class="form-control col-md-2" name="Fecha Fin" id="txFechaFReportsNomina">
+                        <div class="row text-center mt-2" style="width:100%">
+                            <div class="col">
+                                @*<input type="button" class="btn btn-primary" id="btnReportsNomina" value="Buscar" />*@
+                                <button class="btn btn-info" id="btnReportsNomina">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            }
+            else
+            {
+                <form class="form-group">
+                    <div class="row">
+                        <label class="col-md-1 col-form-label text-center">
+                            Tienda
+                        </label>
+                        <select id="cmbTiendaConsult" class="form-control col-md-2 form-control-sm mb-2" onchange="Reports.getVendedores()" name="cmbPeriodoConsult">
+                            <option>Todos</option>
+                            @foreach (var item in Model.TiendaJson)
+                            {
+                                <option value="@item.AdminUserID">@item.Franquicia</option>
+                            }
+                        </select>
+                        <label class="col-md-1 col-form-label text-center">
+                            Fecha Inicio
+                        </label>
+                        <input type="date" class="form-control col-md-2 form-control-sm mb-2" id="txFechaIVentaArt">
+                        <label class="col-md-1 col-form-label text-center">
+                            Linea
+                        </label>
+                        <select id="cmbLineaVentaArt" class="form-control col-md-2 form-control-sm mb-2" name="cmbLineaVentaArt">
+                            <option>Todos</option>
+                            @foreach (var item in Model.TiendaJson)
+                            {
+                                <option value="@item.AdminUserID">@item.Franquicia</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-1 col-form-label text-center">
+                            Vendedor
+                        </label>
+                        <select id="cmbVendedorConsult" class="form-control col-md-2 form-control-sm mb-2" name="cmbVendedorConsult">
+                            <option>Todos</option>
+                        </select>
+                        <label class="col-md-1 col-form-label text-center">
+                            Fecha Fin
+                        </label>
+                        <input type="date" class="form-control col-md-2 form-control-sm mb-2" id="txFechaFVentaArt">
+                        <label class="col-md-1 col-form-label text-center">
+                            Medida
+                        </label>
+                        <select id="cmbMedidaVentaArt" class="form-control col-md-2 form-control-sm mb-2" name="cmbMedidaVentaArt">
+                            <option>Todos</option>
+                            @foreach (var item in Model.TiendaJson)
+                            {
+                                <option value="@item.AdminUserID">@item.Franquicia</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-1 col-form-label text-center">
+                            Estatus Venta
+                        </label>
+                        <select id="cmbTiendaConsult" class="form-control col-md-2 form-control-sm mb-2" name="cmbEstatusConsult">
+                            <option>Todos</option>
+                            <option value="1">Activada</option>
+                            <option value="1">Cancelada</option>
+                        </select>
+                        <label class="col-md-1 col-form-label text-center">
+                            Articulo
+                        </label>
+                        <select id="cmbArticuloVentaArt" class="form-control col-md-2 form-control-sm mb-2" name="cmbArticuloVentaArt">
+                            <option>Todos</option>
+                            @foreach (var item in Model.TiendaJson)
+                            {
+                                <option value="@item.AdminUserID">@item.Franquicia</option>
+                            }
+                        </select>
+                        <label class="col-md-1 col-form-label text-center">
+                            Modelo
+                        </label>
+                        <select id="cmbModeloVentaArt" class="form-control col-md-2 form-control-sm mb-2" name="cmbModeloVentaArt">
+                            <option>Todos</option>
+                            @foreach (var item in Model.TiendaJson)
+                            {
+                                <option value="@item.AdminUserID">@item.Franquicia</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">
+                            @*<input type="button" class="btn btn-primary" id="btnReportsTiendaArticuloFiltro" value="Buscar" />*@
+                            <button class="btn btn-info" id="btnReportsTiendaArticuloFiltro">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            }
+
+        }
+    }
+}
+
+
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(() => {
+        $.ajax({
+            type: "POST",
+            url: "/Reportes/getVendedores",
+            //data: "{'vendedor':" + JSON.stringify(Tienda) + "}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: (result) => {
+                //console.log("result");
+                //console.log(result);
+
+                let option = "";
+                $('#cmbVendedorConsult').empty();
+                $('#cmbVendedorConsult').append("<option value='-1'>Todos</option>");
+                for (let item in result) {
+                    $('#cmbVendedorConsult').append("<option value='" + result[item].AdminUserID + "'>" + result[item].Nombre + "</option>");
+                }
+                //toastr.success('Lista de vendedores cargada','Lista Vendedores');
+            },
+            error: (xhr) => {
+                console.log(xhr.responseText);
+                //toastr.error('Ha Ocurrido un Error al obtener el Vendedor','Error');
+            }
+        });
+    });
+
+
+</script>

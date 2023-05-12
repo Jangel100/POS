@@ -1,0 +1,14 @@
+2022-06-29 15:32:34 Crear venta nueva tienda: 5
+2022-06-29 15:37:04 Inicia Creación de Transaccion para insertar venta
+2022-06-29 15:38:14 Error al insertar venta: 
+2022-06-29 15:39:34 Error en metodo AddSale: System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.   en WebPOS.Controllers.Ventas.VentasController.AddSale(String Paymentscap)
+2022-06-29 15:40:57 Crear venta nueva tienda: 5
+2022-06-29 15:40:58 Inicia Creación de Transaccion para insertar venta
+2022-06-29 15:40:58 Error al insertar venta: 
+2022-06-29 15:42:46 Error en metodo AddSale: System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.   en WebPOS.Controllers.Ventas.VentasController.AddSale(String Paymentscap)
+2022-06-29 16:16:29 Crear venta nueva tienda: 5
+2022-06-29 16:19:59 Inicia Creación de Transaccion para insertar venta
+2022-06-29 16:29:03 descarga pdf idventa: 198707
+2022-06-29 17:19:27 Crear venta nueva tienda: 5
+2022-06-29 17:19:28 Inicia Creación de Transaccion para insertar venta
+2022-06-29 17:19:36 descarga pdf idventa: 198709

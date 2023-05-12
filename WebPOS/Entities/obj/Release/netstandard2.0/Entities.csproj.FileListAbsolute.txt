@@ -1,0 +1,173 @@
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\DormimundoPOS_22022021\ultimaversionpos 22022021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\12032021\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\16032021 omar\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\16032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csprojAssemblyReference.cache
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\Users\desarrollo\Documents\julio\17032021 version_final\WebPOSMerge\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csprojAssemblyReference.cache
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\Proyectos\trunk\17032021 version_final\WebPOS\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\projectsvs\WEBPOSPUBLICO\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\projectsvs\WEBPOSPUBLICO\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\projectsvs\WEBPOSPUBLICO\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\projectsvs\WEBPOSPUBLICO\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\projectsvs\WEBPOSPUBLICO\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\projectsvs\WEBPOSPUBLICO\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\projectsvs\WEBPOSPUBLICO\Entities\obj\Release\netstandard2.0\Entities.csprojAssemblyReference.cache
+C:\projectsvs\WEBPOSPUBLICO\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\projectsvs\WEBPOSPUBLICO\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\projectsvs\WEBPOSPUBLICO\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\projectsvs\WEBPOSPUBLICO\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\projectsvs\WEBPOSPUBLICO\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\projectsvs\WEBPOSPUBLICO\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\obj\Release\netstandard2.0\Entities.csprojAssemblyReference.cache
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\Projects\Dormimundo2021IpPublica-7\Web\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\projectsvs\POSLIGERO\WEB\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\projectsvs\POSLIGERO\WEB\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\projectsvs\POSLIGERO\WEB\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\projectsvs\POSLIGERO\WEB\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\projectsvs\POSLIGERO\WEB\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\projectsvs\POSLIGERO\WEB\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\projectsvs\POSLIGERO\WEB\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\projectsvs\POSLIGERO\WEB\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\projectsvs\POSLIGERO\WEB\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\projectsvs\POSLIGERO\WEB\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\projectsvs\POSLIGERO\WEB\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\projectsvs\POSLIGERO\WEB\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\projectsvs\POSLIGERO\WEB\Entities\obj\Release\netstandard2.0\Entities.csproj.AssemblyReference.cache
+C:\projectsvs\POSLIGERO\WEB\Entities\obj\Release\netstandard2.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csproj.AssemblyReference.cache
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\obj\Release\netstandard2.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\projectsvs\POSPUBLICO\WebPOS\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\obj\Release\netstandard2.0\Entities.csprojAssemblyReference.cache
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csproj.AssemblyReference.cache
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\Entities.deps.json
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\Entities.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\Entities.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\bin\Release\netstandard2.0\System.Security.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csproj.AssemblyReference.cache
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.csproj.CopyComplete
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\Entities\obj\Release\netstandard2.0\Entities.pdb

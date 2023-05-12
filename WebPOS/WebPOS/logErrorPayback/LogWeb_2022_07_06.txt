@@ -1,0 +1,24 @@
+2022-07-06 16:06:35 Crear venta nueva tienda: 5
+2022-07-06 16:06:40 Inicia Creación de Transaccion para insertar venta
+2022-07-06 16:06:57 descarga pdf idventa: 198726
+2022-07-06 16:10:39 Crear venta nueva tienda: 5
+2022-07-06 16:10:45 Inicia Creación de Transaccion para insertar venta
+2022-07-06 16:10:54 descarga pdf idventa: 198727
+2022-07-06 16:15:44 Crear venta nueva tienda: 5
+2022-07-06 16:15:46 Inicia Creación de Transaccion para insertar venta
+2022-07-06 16:15:52 descarga pdf idventa: 198728
+2022-07-06 16:20:37 Crear venta nueva tienda: 5
+2022-07-06 16:20:37 Inicia Creación de Transaccion para insertar venta
+2022-07-06 16:20:41 descarga pdf idventa: 198729
+2022-07-06 16:26:50 Crear venta nueva tienda: 5
+2022-07-06 16:26:58 Inicia Creación de Transaccion para insertar venta
+2022-07-06 16:27:10 descarga pdf idventa: 198730
+2022-07-06 17:09:16 Crear venta nueva tienda: 5
+2022-07-06 17:09:16 Inicia Creación de Transaccion para insertar venta
+2022-07-06 17:09:21 descarga pdf idventa: 198731
+2022-07-06 17:21:34 Crear venta nueva tienda: 5
+2022-07-06 17:21:34 Inicia Creación de Transaccion para insertar venta
+2022-07-06 17:21:37 descarga pdf idventa: 198732
+2022-07-06 17:25:14 Crear venta nueva tienda: 5
+2022-07-06 17:25:14 Inicia Creación de Transaccion para insertar venta
+2022-07-06 17:25:17 descarga pdf idventa: 198733

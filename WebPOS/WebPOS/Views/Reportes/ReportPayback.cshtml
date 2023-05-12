@@ -1,0 +1,166 @@
+﻿@model Entities.viewsModels.ReportsView
+<style>
+    th, td {
+        white-space: nowrap;
+    }
+
+    td {
+        font-size: 11px;
+    }
+</style>
+<div class="card">
+    <div class="card-footer">
+        <h4 class="font-weight-bold text-center">
+            <i class="fa fa-file-excel-o btn-success"></i>
+            Reporte Payback
+        </h4>
+    </div>
+    <div class="card-body">
+        <h2 class="font-weight-bold">Conciliación </h2>
+    </div>
+    <div class="card-header text-center">
+        <div class="row">
+            <div class="col-md-3">
+                <label id="idip" class="font-weight-bold">Seleccione el archivo a conciliar:</label>
+            </div>
+            <div class="col-md-5">
+                <input id="fileUpload" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" name="fileUpload" type="file" class="form-control-file form-control" onchange="Validate()" style="background-color:bisque;color:purple;" />
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-info " onclick="OnclickBtnExcel()">
+                    <i class="fa fa-cloud-upload aria-hidden=" true""></i>
+                    Conciliar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-footer" style="text-align-last:center">
+        <div class="row">
+            <div class="col-md-3">
+                <label class="col-form-label-sm font-weight-bold">Tiendtta:</label>
+                <select id="cmbTiendaConsult" class="form-control form-control-sm" onchange="Reports.getVendedores()" name="cmbPeriodoConsult">
+                    <option>Todos</option>
+                    @foreach (var item in Model.TiendaJson)
+                    {
+                        <option value="@item.AdminUserID">@item.Franquicia</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="col-form-label-sm font-weight-bold">Vendedor:</label>
+                <select id="cmbVendedorConsult" class="form-control form-control-sm">
+                    <option>Todos</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="col-form-label-sm font-weight-bold">Fecha Inicio: </label>
+                <input type="date" class="form-control form-control-sm" name="Fecha Inicio" id="idDatein">
+            </div>
+            <div class="col-md-3">
+                <label class="col-form-label-sm font-weight-bold">Fecha Fin: </label>
+                <input type="date" class="form-control form-control-sm" name="Fecha Fin" id="idDateFin">
+            </div>
+        </div>
+        <br />
+        <div class="class=" form-group row no-gutters">
+            <div class="col-md-12 text-center">
+                <button id="btnReportFilterPayback" type="button" class="btn btn-info">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    Buscar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tblReportsPayback" class="table table-responsive display nowrap dataTable table-info dtr-inline text-center">
+                    <thead>
+
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+<div id="loading-screen" style="display:none">
+    <img src="~/images/spinning-circles.svg" />
+</div>
+@section scripts{
+    @*<link href="~/Content/fileinput.min.css" rel="stylesheet" />
+    <link href="~/Content/StylesPOS.css" type="text/css" rel="stylesheet" />
+    <script src="~/Scripts/fileinput.min.js"></script>
+    <script src="~/Scripts/zh.js" type="text/javascript"></script>
+    <script src="~/Scripts/DataTables/responsive.bootstrap4.min.js"></script>
+    <script src="~/Scripts/DataTables/responsive.bootstrap4.js"></script>*@
+    <script>
+        $(document).ready(function () {
+            var screen = $('#loading-screen');
+            configureLoadingScreen(screen);
+        });
+        function OnclickBtnExcel() {
+    var Succes = "";
+    var SelectFile = ($("#fileUpload"))[0].files[0];
+    var dataString = new FormData();
+    dataString.append("FileUpload", SelectFile);
+    $.ajax({
+        type: "POST",
+        url: '@Url.Action("ReceipExcel", "Reportes")',
+        data: dataString,
+        contentType: false,
+        processData: false,
+        success: function (lsLinea) {
+            $('#fileUpload').val('');
+            $("#fileUpload").css('background-color', 'bisque');
+            $("#fileUpload").css('color', 'purple');
+            if (lsLinea != null) {
+                var result = JSON.parse(lsLinea);
+                if (result.Succes) {
+                    Succes = '<label class="col-form-label-sm font-weight-bold">Total : ' + result.Total + ' </label><br/><label class="col-form-label-sm font-weight-bold">Recibos conciliados: ' + result.Conciliados + ' </label><br/><label class="col-form-label-sm font-weight-bold">Recibos no conciliados: ' + result.Erroneos+' </label><br/>';
+                } else {
+                    Succes = "";
+                }
+                Swal.fire({
+                    title: result.Message,
+                    html: Succes,
+                    confirmButtonText: 'Aceptar',
+                    closeOnEsc: false,
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                })
+            } else {
+
+            }
+        },
+        error: function (xhr) {
+            //debugger;
+            $('#fileUpload').val(''); 
+            $("#fileUpload").css('background-color', 'bisque');
+            $("#fileUpload").css('color', 'purple');
+            console.log(xhr.responseText);
+            alert("Error al procesar la solicitud");
+        }
+    });
+}
+        //$("#idfileUpload").fileinput({
+        //    uploadUrl: "",
+        //    uploadAsync: false,
+        //    minFileCount: 1,
+        //    maxFileCount: 20,
+        //    //showUpload: true,
+        //    idioma: 'zh',
+        //    showRemove: true,
+        //    allowedFileExtensions: ['jpg', 'png', 'bmp', 'jpeg', 'txt', 'pdf', 'doc', 'docx', 'xls', 'rar', 'zip'], // Restringir nombre de sufijo de archivo
+        //});
+
+    </script>
+}
+
+
+

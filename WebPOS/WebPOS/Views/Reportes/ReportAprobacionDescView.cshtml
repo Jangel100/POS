@@ -1,0 +1,69 @@
+﻿@model Entities.viewsModels.ReportsView
+<style>
+    th, td {
+        white-space: nowrap;
+    }
+
+    td {
+        font-size: 11px;
+    }
+</style>
+<div class="card">
+    <div class="card-footer">
+        <h2>Reporte de Aprobación de descuentos</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3">
+                <label class="col-form-label-sm font-weight-bold">Tienda:</label>
+                <select id="cmbTiendaConsult" class="form-control form-control-sm" onchange="Reports.getVendedores()" name="cmbPeriodoConsult">
+                    <option>Todos</option>
+                    @foreach (var item in Model.TiendaJson)
+                    {
+                        <option value="@item.AdminUserID">@item.Franquicia</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="col-form-label-sm font-weight-bold">Vendedor:</label>
+                <select id="cmbVendedorConsult" class="form-control form-control-sm">
+                    <option>Todos</option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <label class="col-form-label-sm font-weight-bold">Fecha Inicio: </label>
+                <input type="date" class="form-control form-control-sm" name="Fecha Inicio" id="idFechaInD">
+            </div>
+
+            <div class="col-md-3">
+                <label class="col-form-label-sm font-weight-bold">Fecha Fin: </label>
+                <input type="date" class="form-control form-control-sm" name="Fecha Fin" id="idFechaFinD">
+            </div>
+        </div>
+        <br />
+        <div class="class=" form-group row no-gutters">
+            <div class="col-md-12 text-center">
+                <button id="btnReportFilterDesc" type="button" class="btn btn-info">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    Buscar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-12">
+                <table id="tblReportDesc" class="table table-responsive display nowrap dataTable table-info dtr-inline text-center">
+                    <thead>
+
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

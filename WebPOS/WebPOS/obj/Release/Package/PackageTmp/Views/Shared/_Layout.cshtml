@@ -1,0 +1,443 @@
+﻿@using WebPOS.Security
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> @ViewBag.Title - Dormimundo</title>
+    <link rel="shortcut icon" href="~/images/sp.ico">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- CSS only -->
+    @*<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="~/Content/StylesPOS.css" rel="stylesheet" />*@
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Scripts/style.css" rel="stylesheet" />*@
+
+    <style>
+        .row.no-gutters {
+            margin-right: 0;
+            margin-left: 0;
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .card-cont.card {
+            max-width: 350px !important;
+            padding: 40px 40px !important;
+        }
+
+        .form-group {
+            margin-bottom: 0.0rem !important;
+        }
+
+        .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
+        .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7,
+        .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+            padding-right: 1px !important;
+            padding-left: 1px !important;
+        }
+
+        .tableFixHead {
+            overflow: auto;
+            /*            height: 200px;*/
+        }
+
+            .tableFixHead th {
+                position: sticky;
+                top: 0;
+            }
+
+        /* Just common table stuff. */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px 16px;
+        }
+
+        th {
+            background: #ABDDE5;
+            height: 20px;
+            vertical-align: middle;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="loader" class="loading" style="display:none"></div>
+
+
+    <div class="nav navbar">
+        <div class="container-xl d-flex align-items-md-center">
+            @*<label class=""></label>*@
+            <label></label>
+            <label class="font-weight-bold">TIENDA :<label id="TiendaSesion"></label></label>
+            <label></label>
+            @*<i class="fa fa-user-circle fa-info">
+                    <label class="font-weight-bold" id="UsuarioSesion"></label>
+                </i>*@
+        </div>
+    </div>
+    <nav class="navbar  navbar-expand-md flex-wrap flex-md-nowrap sticky-top top navbar bg-dark navbar-dark text-center" style="font-size:small">
+        @*<div class="container-fluid">*@
+        <a href='@Url.Action("Index", "Home")'>
+            <img style="height:30px; width:130px;" class="navbar-brand" src='@Url.Content("~/images/logo_2x.png")' />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+            <ul class="navbar-nav flex-row flex-wrap pt-0 py-md-0 " style="font-size:small">
+                @*@Html.ActionLink("Entrega", "EntregaPedido", "EntregaPedido", new { area = "" }, new { @class = "navbar-brand" })*@
+                @if (ViewBag.title != "EntregaPedido")
+                {
+                    foreach (var admin in ViewBag.Ve_Abo_Con)
+                    {
+                        if (admin.OptionName == "Ventas")
+                        {
+                            <li class="nav-item nav-link col-6 col-md-auto">
+                                @Html.ActionLink("Ventas", "Index", "Ventas", null, new { @class = "navbar-brand p-2 active" })
+                            </li>
+
+                        }
+                        if (admin.OptionName == "Abonos")
+                        {
+                            <li class="nav-item nav-link col-6 col-md-auto">
+                                @Html.ActionLink("Abonos", "Index", "Abonos", null, new { @class = "navbar-brand p-2 active" })
+                            </li>
+
+                        }
+                        if (admin.OptionName == "Facturación y Comprobantes")
+                        {
+                            <li class="nav-item nav-link col-6 col-md-auto">
+                                @Html.ActionLink("Consultas", "Index", "VentasConsultas", null, new { @class = "navbar-brand p-2 active", role = "button" })
+                            </li>
+
+                        }
+                    }
+                    if (ViewBag.TypeRole == "AG")
+                    {
+                        @*menu de franquicias para manager*@
+
+                        <li class="nav-item dropdown col-6 col-md-auto">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="navbar-brand">Ventas Franquicias</div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right flex-row flex-wrap ms-md-auto" aria-labelledby="navbarDropdown">
+                                @foreach (var adminFrMa in ViewBag.Ve_Abo_Con_Franquicias)
+                                {
+                                    if (adminFrMa.OptionName == "Ventas")
+                                    {
+                                        @Html.ActionLink("Ventas", "Index", "VentasFranquicias", null, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (adminFrMa.OptionName == "Abonos")
+                                    {
+                                        @Html.ActionLink("Abonos", "Index", "AbonosFranquicias", null, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (adminFrMa.OptionName == "Re-Impresion de Comprobantes")
+                                    {
+                                        @Html.ActionLink("Consultas", "Index", "VentasConsultasFranquicias", null, new { @class = "dropdown-item p-2" })
+                                    }
+                                }
+                            </ul>
+                        </li>
+
+                    }
+                    else
+                    {
+                        foreach (var adminFr in ViewBag.Ve_Abo_Con_Franquicias)
+                        {
+                            if (adminFr.OptionName == "Ventas")
+                            {
+                                @Html.ActionLink("Ventas", "Index", "VentasFranquicias", null, new { @class = "navbar-brand p-2" })
+                            }
+                            if (adminFr.OptionName == "Abonos")
+                            {
+                                @Html.ActionLink("Abonos", "Index", "AbonosFranquicias", null, new { @class = "navbar-brand p-2" })
+                            }
+                            if (adminFr.OptionName == "Re-Impresion de Comprobantes")
+                            {
+                                @Html.ActionLink("Consultas", "Index", "VentasConsultas", null, new { @class = "navbar-brand p-2" })
+                            }
+                        }
+                    }
+                    if (Enumerable.Any(ViewBag.Compras))
+                    {
+
+                        <li class="nav-item dropdown col-6 col-md-auto">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="navbar-brand">Compras</div>
+                            </a>
+                            <ul class="dropdown-menu flex-row flex-wrap ms-md-auto" aria-labelledby="navbarDropdown">
+                                @foreach (var co in ViewBag.Compras)
+                                {
+                                    if (co.OptionName == "Compras")
+                                    {
+                                        @Html.ActionLink("Compras", "Index", "Compras", null, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (co.OptionName == "Reimpresion Compras")
+                                    {
+                                        @Html.ActionLink("Reimpresion Compras", "ReimpresionCompras", "Compras", null, new { @class = "dropdown-item p-2" })
+                                    }
+                                }
+                            </ul>
+                        </li>
+
+                    }
+                    if (Enumerable.Any(ViewBag.Reportes))
+                    {
+                        <li class="nav-item dropdown col-6 col-md-auto">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="navbar-brand">Reportes</div>
+                            </a>
+                            <ul class="dropdown-menu flex-row flex-wrap ms-md-auto" aria-labelledby="navbarDropdown">
+                                @foreach (var Re in ViewBag.Reportes)
+                                {
+                                    if (Re.OptionName == "Ventas" && !Re.add)
+                                    {
+                                        Re.add = true;
+                                        @Html.ActionLink("Ventas", "VentasReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "Facturacion" && !Re.add)
+                                    {
+                                        Re.add = true;
+                                        @Html.ActionLink("Facturación", "FacturacionReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "Cliente Avisa" && !Re.add)
+                                    {
+                                        Re.add = true;
+                                        @Html.ActionLink("Cliente Avisa", "ClienteAvisaReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "Total de Ventas" && !Re.add)
+                                    {
+                                        Re.add = true;
+                                        @Html.ActionLink("Total Ventas", "TotalVentasReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "Ventas x Articulo" && !Re.add)
+                                    {
+                                        Re.add = true;
+                                        @Html.ActionLink("Ventas x Artículo", "VentasxArticuloReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "Ingresos" && !Re.add)
+                                    {
+                                        Re.add = true;
+                                        @Html.ActionLink("Ingresos", "IngresosReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "V.T. por Tienda" && !Re.add)
+                                    {
+                                        @Html.ActionLink("V.T. por Tienda", "VTxTiendaReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "V.T. por Vendedor" && !Re.add)
+                                    {
+                                        Re.add = true;
+                                        @Html.ActionLink("V.T. por Vendedor", "VTxVendedorReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "Compras" && !Re.add)
+                                    {
+                                        Re.add = true;
+                                        @Html.ActionLink("Compras", "ComprasReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "Kardex" && !Re.add)
+                                    {
+                                        Re.add = true;
+                                        @Html.ActionLink("Kardex", "KardexReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "Push Money" && !Re.add)
+                                    {
+                                        Re.add = true;
+                                        @Html.ActionLink("Push Money", "PushMoneyReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "Facturación Pagos" && !Re.add)
+                                    {
+                                        Re.add = true;
+                                        @Html.ActionLink("Facturación Pagos", "FactPagosReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Re.OptionName == "Nómina" && !Re.add)
+                                    {
+                                        @Html.ActionLink("Nómina", "NominaReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })//agregar al menu
+                                    }
+                                    if (Re.OptionName == "Transferencias" && !Re.add)
+                                    {
+                                        @Html.ActionLink("Transferencias", "TransferenciaReports", "Reportes", new { }, new { @class = "dropdown-item p-2" })//agregar al menu
+                                    }
+                                    if (Re.OptionName == "Reporte Payback" && !Re.add)
+                                    {
+                                        @Html.ActionLink("Payback", "GetFiltersPayback", "Reportes", new { }, new { @class = "dropdown-item p-2" })//agregar al menu
+                                    }
+                                    if (Re.OptionName == "Descuentos" && !Re.add)
+                                    {
+                                        @Html.ActionLink("Descuentos", "GetFiltersDesc", "Reportes", new { }, new { @class = "dropdown-item p-2" })//agregar al menu
+                                    }
+                                }
+                            </ul>
+                        </li>
+
+                    }
+                    if (Enumerable.Any(ViewBag.Modificaciones))
+                    {
+
+                        <li class="nav-item dropdown col-6 col-md-auto">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="navbar-brand">Modificaciones</div>
+                            </a>
+                            <ul class="dropdown-menu flex-row flex-wrap ms-md-auto" aria-labelledby="navbarDropdown">
+                                @foreach (var Mod in ViewBag.Modificaciones)
+                                {
+                                    if (Mod.OptionName == "Actualizar Fecha Entrega")
+                                    {
+                                        @Html.ActionLink("Actualizar Fecha Entrega", "Updatedatein", "Ventas", new { }, new { @class = "dropdown-item p-2" })
+                                    }
+                                }
+                            </ul>
+                        </li>
+
+                    }
+                    if (Enumerable.Any(ViewBag.Configuracion))
+                    {
+                        <li class="nav-item dropdown col-6 col-md-auto">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="navbar-brand">Configuración</div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right flex-row flex-wrap ms-md-auto" aria-labelledby="navbarDropdown">
+                                @foreach (var Config in ViewBag.Configuracion)
+                                {
+                                    if (Config.OptionName == "Usuarios")
+                                    {
+                                        @Html.ActionLink("Usuarios", "Index", "Usuarios", new { area = "" }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Config.OptionName == "Tiendas General")
+                                    {
+                                        @Html.ActionLink("Tiendas General", "Index", "TiendaGeneral", new { area = "" }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Config.OptionName == "Mensaje Inicio")
+                                    {
+                                        @Html.ActionLink("Mensaje de Inicio", "Mensaje", "TiendaGeneral", new { area = "" }, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Config.OptionName == "Roles")
+                                    {
+                                        @Html.ActionLink("Roles", "AdminRole", "AdminRole", null, new { @class = "dropdown-item p-2" })
+                                    }
+                                    if (Config.OptionName == "Autorizaciòn de descuento")
+                                    {
+                                        @Html.ActionLink("Aprobaciones descuento", "AprobDesc", "TiendaGeneral", new { area = "" }, new { @class = "dropdown-item p-2" })
+                                    }
+                                }
+                            </ul>
+                        </li>
+
+                    }
+                    if (Enumerable.Any(ViewBag.Garantias))
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="navbar-brand">Garantías</div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-rightright" aria-labelledby="navbarDropdown">
+                                @foreach (var Gara in ViewBag.Garantias)
+                                {
+                                    if (Gara.OptionName == "Estatus de Garantías")
+                                    {
+                                        @Html.ActionLink("Estatus de Garantías", "Index", "Garantias", new { area = "" }, new { @class = "dropdown-item" })
+                                    }
+                                    if (Gara.OptionName == "Garantías - Ventas")
+                                    {
+                                        @Html.ActionLink("Garantías Ventas", "ApruebaGarantia", "Garantias", new { area = "" }, new { @class = "dropdown-item" })
+                                    }
+                                    if (Gara.OptionName == "Solicitud de Garantías")
+                                    {
+                                        @Html.ActionLink("Solicitud de Garantías", "SolicitudGarantia", "Garantias", new { area = "" }, new { @class = "dropdown-item" })
+                                    }
+
+                                }
+                            </ul>
+                        </li>
+
+                    }
+                }
+
+                <li class="nav-item dropdown pull-right" style="font-size:medium">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                        <i class="fa fa-user-circle fa-lg">
+                            Usuario :
+                            <label id="UsuarioSesion">
+
+                            </label>
+                        </i>
+                    </a>
+                    <ul class="dropdown-menu flex-row flex-wrap ms-md-auto" aria-labelledby="navbarDropdown">
+                        @Html.ActionLink("Cerrar Sesión", "Logout", "Login", new { area = "" }, new { @class = "dropdown-item p-2" })
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        @*</div>*@
+    </nav>
+
+
+
+    @*</div>*@
+    <!--</div>-->
+
+
+    <div>
+
+        @RenderBody();
+        <br />
+        <br />
+
+
+        <div class="footer">
+            <p> &copy;2020 Franquicias Dormimundo S.A. de C.V.Versión 2.0</p>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
+@section Scripts{
+    
+
+
+    <script src="~/Scripts/jquery-3.5.0.js"></script>
+    <script src="~/Scripts/jquery-3.5.0.min.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="form-validation.js"></script>
+
+
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.rowReorder.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.responsive.min.js"></script>
+    <script src="~/Scripts/DataTables/responsive.bootstrap4.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.fixedColumns.min.js"></script>
+    <script src="~/Scripts/DataTables/responsive.bootstrap4.js"></script>
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+@Scripts.Render("~/bundles/DataTablesJs")
+
+@Scripts.Render("~/bundles/scripts")
+@Scripts.Render("~/bundles/toast")
+@Scripts.Render("~/bundles/JqueryUI")
+@RenderSection("scripts", required: false)
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>

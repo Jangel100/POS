@@ -1,0 +1,475 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@*<div class="container-fluid row">
+        <div class="col-md-4"></div>
+    <button id="updatedatein" type="button" onclick="SearchPedido()" class="btn btn-info col-md-4">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        Actualizar Fecha de Entrega
+    </button>
+        <div class="col-md-4"></div>
+    </div>*@
+@section scripts{
+    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/fixedHeader.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/fixedHeader.bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/responsive.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.rowReorder.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.responsive.min.js"></script>
+    <script src="~/Scripts/DataTables/responsive.bootstrap4.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.fixedColumns.min.js"></script>
+    <script src="~/Scripts/DataTables/responsive.bootstrap4.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        //var GET_TOKEN = sessionStorage.getItem('user-Token').toString();
+
+        Home = {
+            //showEnviosDelDia: function () {
+            //    $('a.toggle-vis').on('click', function (e) {
+            //        e.preventDefault();
+
+            //        var column = table.column($(this).attr('data-column'));
+
+            //        column.visible(!column.visible());
+            //    });
+            //},
+            imprimirPedido: function (Pedido) {
+                let Store = sessionStorage.getItem('storeId').toString();
+                let venta = Pedido.toString();
+                let parametros = venta.concat(',', Store.replace(/['"]+/g, ''));
+                let URLactual = window.location;
+                let Url = URLactual.toString().split('/');
+
+                let rutaReports = 'http://' + Url[2] + '/Home/Download_EntregaPedido_PDF?IdStore=' + parametros;
+                window.location.href = rutaReports.replace("''", "");
+            },
+            modalHome: function () {
+                Home.loadCmbTienda();
+                Home.loadCmbFranquicia();
+
+                $("#FranquiciaModal").modal({ backdrop: 'static', keyboard: false });
+            },
+            loadCmbTienda: function () {
+                if ($("#ActiveUS").val().toString() == '2') {
+                    $("#FranquiciaModal").on('shown.bs.modal', function () {
+
+                        Home.LoadUsuarioSesion();
+                        Home.GetTiendas();
+                    });
+                }
+            },
+            GetTiendas: function () {
+                $.ajax({
+                    type: "POST",
+                    url: '/Tienda/GetTiendas',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+
+                        if (result != null) {
+                            var jsonData = JSON.parse(result);
+
+                            Home.TiendaListSuccess(jsonData);
+                        }
+                        else {
+                            alert('El usuario no tiene ninguna tienda Activa Asignada, preciona el boton de regreso a la pagina anterior en su navegador.');
+                        }
+
+                        return false;
+                    },
+                    error: function (xhr) {
+                        //debugger;
+                        console.log(xhr.responseText);
+                        alert("Error has occurred..");
+                    }
+                });
+            },
+            loadCmbFranquicia: function () {
+                if ($("#ActiveUS").val().toString() == '1') {
+                    $("#FranquiciaModal").on('shown.bs.modal', function () {
+                        Home.LoadUsuarioSesion();
+                        Home.GetFranquicia();
+                    });
+                }
+            },
+            GetFranquicia: function () {
+                $.ajax({
+                    type: "POST",
+                    url: '/Tienda/GetFranquicia',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+
+                        if (result != null) {
+                            var jsonData = JSON.parse(result);
+
+                            Home.FranquiciasListSuccess(jsonData);
+                        }
+                        else {
+                            alert('El usuario no tiene ninguna Franquicia Activa Asignada, preciona el boton de regreso a la pagina anterior en su navegador.');
+                        }
+
+                        return false;
+                    },
+                    error: function (xhr) {
+                        //debugger;
+                        console.log(xhr.responseText);
+                        alert("Error has occurred..");
+                    }
+                });
+            },
+            FranquiciasListSuccess: function (Franquicias) {
+                $('#cmbFranquicia').empty();
+
+                $('#cmbFranquicia').append(new Option("Seleccione una Franquicia", 0))
+                $.each(Franquicias, function (id, item) {
+                    Home.FranquiciaAddRow(item.CardCode, item.CardName);
+                });
+            },
+            FranquiciaAddRow: function (key, value) {
+                var added = document.createElement('option');
+                var select1 = $('#cmbFranquicia');
+                added.value = key;
+                added.innerHTML = value;
+                select1.append(added);
+            },
+            GetFranquiciaTienda: function () {
+                Home.OnChangeCmbFran();
+            },
+            OnChangeCmbFran: function () {
+                $("#cmbFranquicia").change(function () {
+                    var valuecmb = JSON.stringify(this.value.toString());
+                    $.ajax({
+                        type: "POST",
+                        url: '/Tienda/GetFranquiciaTiendas',
+                        data: "{ 'frCardCode': " + valuecmb + "}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+
+                            if (result != null) {
+                                var jsonData = JSON.parse(result);
+
+                                Home.TiendaFranListSuccess(jsonData);
+                            }
+                            else {
+                                alert('El usuario no tiene ninguna tienda Activa Asignada, preciona el boton de regreso a la pagina anterior en su navegador.');
+                            }
+
+                            return false;
+                        },
+                        error: function (xhr) {
+                            //debugger;
+                            console.log(xhr.responseText);
+                            alert("Error has occurred..");
+                        }
+                    });
+                });
+            },
+            OnChangeCmbTiendaFran: function () {
+                $("#cmbTienda").change(function () {
+                    let valuecmbTienda = this.value.toString();
+                    let TextcmbTienda = this.Text;
+                    let GetToken = '';
+
+                    let Accestoken = {
+                        "id": valuecmbTienda,
+                        "webtoken": GetToken
+                    }
+
+                    sessionStorage.setItem('storeId', valuecmbTienda);
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/Tienda/GetSelectedTienda',
+                        data: "{ 'Accestoken': " + JSON.stringify(Accestoken) + "}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            var idStore = '';
+                            if (result != null) {
+                                if (result != null) {
+                                    var lsPedidos = JSON.parse(result);
+
+                                    var lsPedidoDiaView = lsPedidos.lsPedidoDiaView;
+                                    var textoMarquesina = lsPedidos.TextoMarquesina;
+                                    var Usuario = lsPedidos.Usuario;
+
+                                    if (textoMarquesina != null) {
+                                        Home.LoadTextoMarquesina(textoMarquesina);
+                                    }
+                                    if (Usuario != null) {
+                                        Home.LoadUsuarioSesion(Usuario);
+                                    }
+                                    if (TextcmbTienda != null) {
+                                        Home.LoadTiendaSesion(TextcmbTienda);
+                                    }
+
+
+
+                                    var Tienda = $("#cmbTienda option:selected").text();
+
+                                    Home.ShowMessageBienvenida(Tienda);
+                                    Home.hiddenModalTienda(valuecmbTienda);
+
+                                    if (result != null) {
+                                        Home.EnvioDiaListSuccess(valuecmbTienda);
+                                    }
+                                }
+                            }
+                            return false;
+                        },
+                        error: function (xhr) {
+                            //debugger;
+                            console.log(xhr.responseText);
+                            alert("Error has occurred..");
+                        }
+                    });
+
+                });
+            },
+            TiendaFranListSuccess: function (tiendas) {
+                $('#cmbTienda').empty();
+
+                $('#cmbTienda').append(new Option("Seleccione una Tienda", 0))
+                $.each(tiendas, function (id, item) {
+                    Home.TiendaFranAddRow(item.AdminStoreID, item.StoreName);
+                });
+            },
+            TiendaFranAddRow: function (key, value) {
+                var added = document.createElement('option');
+                var select1 = $('#cmbTienda');
+                added.value = key;
+                added.innerHTML = value;
+                select1.append(added);
+            },
+            LoadUsuarioSesion: function () {
+                $.ajax({
+                    type: "POST",
+                    url: '/Login/GetUsuarioSesion',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+
+                        if (result != null) {
+                            var usuarioSesion = "<p class='text-center'>" + result.Usuario.toString() + "</p>";
+
+                            $("#UsuarioSesion").append(usuarioSesion);
+                            sessionStorage.setItem('Usuario', usuarioSesion);
+                        }
+                        return false;
+                    },
+                    error: function (xhr) {
+                        //debugger;
+                        console.log(xhr.responseText);
+                        alert("Error has occurred..");
+                    }
+                });
+            },
+            TiendaListSuccess: function (tiendas) {
+                $('#cmbFranTienda').empty();
+
+                $('#cmbFranTienda').append(new Option("Seleccione una Tienda", 0))
+                $.each(tiendas, function (id, item) {
+                    Home.TiendaAddRow(item.AdminStoreID, item.StoreName);
+                });
+            },
+            TiendaAddRow: function (key, value) {
+                var added = document.createElement('option');
+                var select1 = $('#cmbFranTienda');
+                added.value = key;
+                added.innerHTML = value;
+                select1.append(added);
+            },
+            OnChangeCmbTienda: function () {
+                $("#cmbFranTienda").change(function () {
+                    let valuecmbTienda = this.value.toString();
+                    let TextcmbTienda = this.Text;
+
+                    let Accestoken = {
+                        "id": valuecmbTienda,
+                        "webtoken": ""
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/Tienda/GetSelectedTienda',
+                        data: "{ 'Accestoken': " + JSON.stringify(Accestoken) + "}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            var idStore = '';
+                            if (result != null) {
+                                sessionStorage.setItem('storeId', valuecmbTienda);
+
+                                $('input[name=txtIdStore]').val(valuecmbTienda);
+                                if (result != null) {
+                                    var lsPedidos = JSON.parse(result);
+
+                                    var lsPedidoDiaView = lsPedidos.lsPedidoDiaView;
+                                    var textoMarquesina = lsPedidos.TextoMarquesina;
+                                    var Usuario = lsPedidos.Usuario;
+
+                                    sessionStorage.setItem('usuario', lsPedidos.Franquicia);
+
+                                    if (textoMarquesina != null) {
+                                        Home.LoadTextoMarquesina(textoMarquesina);
+                                    }
+                                    if (Usuario != null) {
+                                        Home.LoadUsuarioSesion(Usuario);
+                                    }
+                                    if (TextcmbTienda != null) {
+                                        Home.LoadTiendaSesion(TextcmbTienda);
+                                    }
+
+
+
+                                    var Tienda = $("#cmbFranTienda option:selected").text();
+
+                                    Home.ShowMessageBienvenida(Tienda);
+                                    Home.hiddenModalTienda(valuecmbTienda);
+
+                                    if (result != null) {
+                                        Home.EnvioDiaListSuccess(valuecmbTienda);
+                                    }
+                                }
+                            }
+                            return false;
+                        },
+                        error: function (xhr) {
+                            //debugger;
+                            console.log(xhr.responseText);
+                            alert("Error has occurred..");
+                        }
+                    });
+
+                });
+            },
+            LoadTextoMarquesina: function (textoMarquesina) {
+                $("#textoMarquesina").html(textoMarquesina);
+            },
+            EnvioDiaListSuccess: function (id) {
+                var jsonIdStore = JSON.parse(id);
+
+                var spanish = {
+                    "processing": "Procesando...",
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "zeroRecords": "No se encontraron resultados",
+                    "emptyTable": "Ningún dato disponible en esta tabla",
+                    "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "search": "Buscar:",
+                    "infoThousands": ",",
+                    "loadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    " oAria ": {
+                        " sSortAscending ": ": Activar para ordenar la columna de manera ascendente ",
+                        " sSortDescending ": ": Activar para ordenar la columna de manera descendente "
+                    }
+                }
+
+                let table = $('#tbEnviosDelDia').dataTable({
+                    language: spanish,
+                    ajax:
+                    {
+                        type: "POST",
+                        url: '/Tienda/GetEnvioDia',
+                        dataType: "json"
+
+                    },
+                    'columns': [
+                        { "data": "IdVenta", "autoWidth": true },
+                        { "data": "IdStore", "autoWidth": true },
+                        { "data": "Pedido", "autoWidth": true },
+                        { "data": "Vendedor", "autoWidth": true },
+                        { "data": "Fecha_Creacion", "autoWidth": true },
+                        { "data": "tienda", "autoWidth": true },
+                        { "data": "Estatus", "autoWidth": true },
+                        { "data": "Fecha_entrega", "autoWidth": true },
+                        { 'data': "IdVenta", title: 'Imprimir', wrap: true, "render": function (item) { return '<div class="btn-group"> <button type="button" id="btnFacturaPdf" onclick="Home.imprimirPedido(' + item + ')" value="0" class="btn btn-success" aria-label="Left Align" data-toggle="modal" data-target="#myModal">  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Imprimir Pedido</button></div>' } },
+                    ],
+                    "columnDefs": [
+                        { "searchable": true, "orderable": true, targets: "_all" },
+                        { "className": "text-center custom-middle-align", targets: "_all" },
+                        {
+                            "targets": [0],
+                            "visible": false
+                        },
+                        {
+                            "targets": [1],
+                            "visible": false
+                        }
+                    ],
+                    "processing": false,
+                    "pageLength": 5,
+                    "lengthChange": false,
+                    "responsive": true,
+                    "rowReorder": {
+                        "selector": 'td:nth-child(2)'
+                    },
+                    "fixedHeader": {
+                        "header": true
+                    },
+                    "dom": '<"dt-buttons"Bf><"clear">lirtp',
+                });
+
+                new $.fn.dataTable.FixedHeader(table);
+
+            },
+            ShowMessageBienvenida: function (Tienda) {
+                $("#BienvidoInicial").hide();
+
+                $("#TiendaSesion").find('p').remove();
+                $("#UsuarioSesion").find('p').first().remove();
+
+                if ($("#TiendaSesion").children.length == 2) {
+                    $("#TiendaSesion").html(Tienda);
+                }
+                else {
+                    $("#TiendaSesion").find('p').remove();
+                    $("#UsuarioSesion").find('p').first().remove();
+                }
+                $("#Bienvenido").html("Bienvenidos al Punto de Venta Dormimundo");
+
+                sessionStorage.setItem('Tienda', Tienda);
+            },
+            hiddenModalTienda: function () {
+                $("#FranquiciaModal").modal("hide");
+            },
+            getModSolGarantias: () => {
+                $('#SolGarantiasId').click(() => {
+                    window.open("http://10.0.128.108/GarantiasFDO/Garantias.aspx");
+                });
+            }
+        };
+
+        $(document).ready(function () {
+            Home.modalHome();
+            Home.OnChangeCmbTienda();
+            Home.GetFranquiciaTienda();
+            Home.OnChangeCmbTiendaFran();
+            Home.getModSolGarantias();
+            //Home.imprimirPedido();
+        }
+        );
+    </script>
+}
+
+
+@Html.Partial("../ViewPartial/Home/_PartialEnviosDelDia")
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/DataTables")
+@Scripts.Render("~/bundles/scripts")
+
+@Html.Partial("../ViewPartial/Home/_PartialHome")

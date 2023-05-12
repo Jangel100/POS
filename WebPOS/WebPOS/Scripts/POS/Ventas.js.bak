@@ -1,0 +1,2087 @@
+﻿Ventas = {
+    modalBuscacliente: function () {
+        $("#buscacliente").click(function () {
+            $("#BuscaclienteModal").modal({ backdrop: 'static', keyboard: false });
+
+        });
+    }
+};
+
+var arayJson = '';
+var oTblReport = $("#tblConsultaClientesEnc");
+VentaUsuario = {
+    GetUsuario: function () {
+        $("#btnBuscarCliente").click(function () {
+        alert("Alerrtaaa");
+            var txtNombre = $("#txtNombre").val();
+            var txtRFC = $("#txtRFC").val();
+
+            if (txtNombre == '' && txtRFC == '') {
+                alert('Introduce el Nombre o el RFC para realizar la búsqueda');
+            }
+            else {
+                var ClienteInputView = {
+                    'Nombre': txtNombre.toString(),
+                    'RFC': txtRFC.toString()
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: '/VentasUsuario/GetCliente',
+                    data: "{'clienteInputView':" + JSON.stringify(ClienteInputView) + "}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+
+                        var dataset = result
+
+                        var columnDefs = [];
+                        //loop for populating column defs
+                        for (let k in dataset[0]) {
+                            if (columnDefs.indexOf(k) === -1) {
+                                columnDefs.push({ title: dataset[0][k] });
+                            }
+                        }
+                        //loop for populating data
+                        var data = [];
+                        for (let j of dataset) {
+                            var arr = [];
+                            for (let k in j) {
+                                if (columnDefs.indexOf(k) === -1) {
+                                    arr.push(j[k]);
+                                }
+                            }
+                            data.push(arr);
+                        }
+
+                        var spanish = {
+                            "processing": "Procesando...",
+                            "lengthMenu": "Mostrar _MENU_ registros",
+                            "zeroRecords": "No se encontraron resultados",
+                            "emptyTable": "Ningún dato disponible en esta tabla",
+                            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                            "search": "Buscar:",
+                            "infoThousands": ",",
+                            "loadingRecords": "Cargando...",
+                            "oPaginate": {
+                                "sFirst": "Primero",
+                                "sLast": "Último",
+                                "sNext": "Siguiente",
+                                "sPrevious": "Anterior"
+                            },
+                            " oAria ": {
+                                " sSortAscending ": ": Activar para ordenar la columna de manera ascendente ",
+                                " sSortDescending ": ": Activar para ordenar la columna de manera descendente "
+                            }
+                        }
+
+                        var table = $("#tblConsultaClientesEnc").dataTable({
+                            destroy: true,
+                            language: spanish,
+                            searching: false,
+                            scrollX: true,
+                            scrollCollapse: true,
+                            fixedColumns: true,
+                            select: true,
+                            data: data,
+                            columns: [
+                                { title: "Id" },
+                                { title: "Nombre" },
+                                { title: "RFC" },
+                                { title: "Calle/Numero" },
+                                { title: "Colonia" },
+                                { title: "Telefono" }
+                            ],
+                            "columnDefs": [
+                                { "searchable": false, "orderable": true, targets: "_all" },
+                                { "className": "text-center custom-middle-align", targets: "_all" }
+
+                            ],
+                            "processing": true,
+                            "pageLength": 10,
+                            "lengthChange": false,
+                            "responsive": true,
+                            "rowReorder": {
+                                "selector": 'td:nth-child(2)'
+                            },
+                            "fixedHeader": {
+                                "header": true
+                            },
+                            "dom": 'Bfrtip'
+                        });
+
+                        $('#tblConsultaClientesEnc tbody').on('click', 'tr', function () {
+                            var data = table.api().row(this).data();
+
+                            VentaUsuario.showClientes(data[0], data[2]);
+                        });
+                    },
+                    error: function (xhr) {
+                        console.log(xhr.responseText);
+                        alert("Error has ocurred..");
+                    }
+                });
+            }
+        });
+    },
+    OnlClickRowConsultaClientes: function (table) {
+
+        table.on('select', function (e, dt, type, indexes) {
+            if (type === 'row') {
+                var data = table.api().rows(indexes).data().pluck('id');
+
+                alert(data);
+            }
+        });
+    },
+    showClientes: function (idcliente, RFC) {
+        var ClienteInputView = {
+            'Id': idcliente.toString(),
+            'RFC': RFC
+        };
+
+        $.ajax({
+            type: "POST",
+            url: '/VentasUsuario/GetClienteFacturacion',
+            data: "{'clienteInputView':" + JSON.stringify(ClienteInputView) + "}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+
+                var ls = result;
+
+                $('#collapseTwo').removeClass("show");
+                $('#collapseOne').addClass("show");
+
+                VentaUsuario.loadDatosPedidos(ls.Clientes);
+                //$("#txtCP").focus();
+                VentaUsuario.SearchCPFocus(ls.Clientes.actCod_COMUNAColonia,"");
+                //var x = setInterval(, ''),"3000");
+
+                //clearInterval(x);
+               // $("#txtCP").blur();
+                if (ls.ClientesFacturacion != null) {
+                    VentaUsuario.loadDatosClienteFacturacion(ls.ClientesFacturacion);
+                    VentaUsuario.SearchCPFocus(ls.ClientesFacturacion.actCod_COMUNAcolonia,"Fact");
+
+                    //var z = setInterval(VentaUsuario.focustxtCPFact(),"2000"); 
+
+                    //var y = setInterval(VentaUsuario.SearchCPFocus(ls.ClientesFacturacion.actCod_COMUNAcolonia, "Fact"), "3000");
+                   // clearInterval(y);
+                   // clearInterval(z);
+                   // $("#txtCPFact").blur();
+                }
+            },
+            error: function (xhr) {
+                console.log(xhr.responseText);
+                alert("Error has ocurred..");
+            }
+        }).done(function () {
+            $("#txtCP").blur();
+            $("#txtCPFact").blur();
+        });
+    },
+    focustxtCPFact: function () {
+        $("#txtCPFact").focus();
+    },
+    loadDatosPedidos: function (Clientes) {
+        $('input[name=txtIdCliente]').val(Clientes.Id);
+        $("#txtName").val(Clientes.actNOMBRE);
+        $("#txtAPaterno").val(Clientes.actAPEPATERNO);
+        $("#txtAMaterno").val(Clientes.actAPEMATERNO);
+        $("#txtRFCN").val(Clientes.RFC);
+        $("#txtCalle").val(Clientes.actCALLE);
+        $("#txtNumeroInt").val(Clientes.actNUMINT);
+        $("#txtColonia").val(Clientes.Colonia);
+        $("#txtNumeroExt").val(Clientes.actNUMEXT);
+        $("#txtDelegacion").val(Clientes.DelMun);
+        $("#txtCP").val(Clientes.CP);
+        $("#txtCorreo").val(Clientes.Correo);
+
+        $("#txtTelCasa").val(Clientes.TelCasa);
+        $("#txtTelOfc").val(Clientes.TelOfc);
+        $("#txtNoCelular").val(Clientes.NoCelular);
+
+        $("#txtEstados").val(Clientes.actCod_REGIONestado);
+
+        var momentDate = moment(Clientes.actFCHNACIMIENTO).format("YYYY-MM-DD");
+        $("#txFechaNacimiento").val(momentDate);
+    },
+    loadDatosClienteFacturacion: function (clientesF) {
+        $("#txtCalleFact").val(clientesF.actCALLE);
+        $("#txtNumeroIntFact").val(clientesF.actNUMINT);
+        $("#txtColoniaFact").val(clientesF.Colonia);
+        $("#txtNumeroExtFact").val(clientesF.actNUMEXT);
+        $("#txtDelegacionFact").val(clientesF.DelMun);
+        $("#txtCPFact").val(clientesF.CP);
+
+        if (clientesF.actCod_REGIONestado != null)
+            $("#txtEstadosFact").val(clientesF.Estado);
+
+    },
+    DeleteClientesEncontrados: function () {
+        $("#btnEliminarEncontrados").click(function () {
+
+            $(".DTFC_Cloned tbody").empty();
+            $("#tblConsultaClientesEnc").dataTable().empty();
+        });
+    },
+    SelectedDatosIguales: function () {
+        $("#chkCheckDatosIguales").change(function () {
+            if ($(this).prop('checked')) {
+                var txtcalle = $("#txtCalle").val();
+                var txtNumeroInt = $("#txtNumeroInt").val();
+                var txtColonia = $("#cmbColonia").val();
+                var txtNumeroExt = $("#txtNumeroExt").val();
+                var txtDelegacion = $("#txtMunicipios").val();
+                var txtCP = $("#txtCP").val();
+                var cmbEstados = $("#txtEstados").val();
+
+                $("#txtCalleFact").val(txtcalle);
+                $("#txtNumeroIntFact").val(txtNumeroInt);
+                $("#txtNumeroExtFact").val(txtNumeroExt);
+                $("#txtMunicipiosFact").val(txtDelegacion);
+                $("#txtCPFact").val(txtCP);
+                VentaUsuario.SearchCPLoad(txtColonia, 'Fact');
+            }
+        });
+    },
+    CapturarCliente: function () {
+        $("#btnCapturarCliente").click(function () {
+
+            var validar = true;
+
+            validar = VentaUsuario.Validateform();
+
+            if (validar == true) {
+                var txtName = $("#txtName").val();
+                var txtAPaterno = $("#txtAPaterno").val();
+                var txtAMaterno = $("#txtAMaterno").val();
+                var txtRFCN = $("#txtRFCN").val();
+                var txtCorreo = $("#txtCorreo").val();
+                var txFechaNacimiento = $("#txFechaNacimiento").val();
+                var txtcalle = $("#txtCalle").val();
+                var txtNumeroInt = $("#txtNumeroInt").val();
+                var txtColonia = $("#cmbColonia option:selected").text();
+                var actCod_COMUNAcolonia = $("#cmbColonia").val();
+                var txtNumeroExt = $("#txtNumeroExt").val();
+                var txtDelegacion = $("#txtMunicipios").val();
+                var txtCP = $("#txtCP").val();
+                var cmbEstados = $("#txtEstados").val();
+
+                var txtcalleFact = $("#txtCalleFact").val();
+                var txtNumeroExtFact = $("#txtNumeroExtFact").val();
+                var txtNumeroIntFact = $("#txtNumeroIntFact").val();
+                var txtColoniaFact = $("#cmbColoniaFact option:selected").text();
+                var actCod_COMUNAcoloniaFact = $("#cmbColoniaFact").val();
+                var txtDelegacionFact = $("#txtMunicipiosFact").val();
+                var txtCPFact = $("#txtCPFact").val();
+                var cmbEstadosFact = $("#txtEstadosFact").val();
+
+                var txtTelCasa = $("#txtTelCasa").val();
+                var txtTelOfc = $("#txtTelOfc").val();
+                var txtNoCelular = $("#txtNoCelular").val();
+
+                var cliente = {
+                    "Nombre": txtName.toString() + " " + txtAPaterno.toString() + " " + txtAMaterno.toString(),
+                    "RFC": txtRFCN.toString(),
+                    "CalleNumero": txtcalle.toString(),
+                    "actNOMBRE": txtName.toString(),
+                    "actAPEPATERNO": txtAPaterno.toString(),
+                    "actAPEMATERNO": txtAMaterno.toString(),
+                    "actNUMEXT": txtNumeroExt.toString(),
+                    "actNUMINT": txtNumeroInt.toString(),
+                    "Colonia": txtColonia.toString(),
+                    "actCod_COMUNAColonia": actCod_COMUNAcolonia.toString(),
+                    "CP": txtCP.toString(),
+                    "Correo": txtCorreo.toString(),
+                    "actCod_REGIONestado": cmbEstados.toString(),
+                    "DelMun": txtDelegacion.toString(),
+                    "TipoCliente": "C",
+
+                    "actFCHNACIMIENTOTemp": txFechaNacimiento.toString(),
+                    "CalleNumeroFact": txtcalleFact.toString(),
+                    "actNUMEXTFact": txtNumeroExtFact.toString(),
+                    "actNUMINTFact": txtNumeroIntFact.toString(),
+                    "ColoniaFact": txtColoniaFact.toString(),
+                    "CPFact": txtCPFact.toString(),
+                    "actCod_REGIONestadoFact": cmbEstadosFact.toString(),
+                    "actCod_COMUNAcoloniaFact": actCod_COMUNAcoloniaFact.toString(),
+                    "DelMunFact": txtDelegacionFact.toString(),
+                    "TelCasa": txtTelCasa.toString(),
+                    "TelOfc": txtTelOfc.toString(),
+                    "NoCelular": txtNoCelular.toString()
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: '/VentasUsuario/GetInsertInfoCliente',
+                    data: "{'clientes':" + JSON.stringify(cliente) + "}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result == '-1') {
+                            alert('No se realizo el registro del cliente favor de color otro RFC diferente');
+                        }
+                        else {
+                            if (result == '3') {
+                                alert('No se realizo el registro del cliente');
+                            }
+                            else {
+                                alert('Se Registro el Cliente Nuevo ' + result);
+                            }
+                        }
+
+                        if (result === '5') {
+                            alert('Verifique que todos los datos esten llenos');
+                        }
+
+                    },
+                    error: function (xhr) {
+                        console.log(xhr.responseText);
+                        alert("Error has ocurred..");
+                    }
+                });
+            }
+        });
+    },
+    Validateform: function () {
+        $('#txtName').attr("required", "required");
+        $("#txtAPaterno").attr("required", "required");
+        $("#txtAMaterno").attr("required", "required");
+        $("#txtRFCN").attr("required", "required");
+        $("#txtCorreo").attr("required", "required");
+        $("#txFechaNacimiento").attr("required", "required");
+        $("#txtCalle").attr("required", "required");
+        $("#txtNumeroInt").attr("required", "required");
+        $("#txtNumeroInt").attr("maxlength", "6");
+        $("#cmbColonia").attr("required", "required");
+        $("#txtNumeroExt").attr("required", "required");
+        $("#txtNumeroExt").attr("maxlength", "6");
+        $("#txtMunicipios").attr("required", "required");
+        $("#txtMunicipios").attr("maxlength", "100");
+        $("#txtCP").attr("required", "required");
+        $("#txtCP").attr("maxlength", "20");
+
+        $("#txtTelCasa").attr("required", "required");
+        $("#txtTelCasa").attr("maxlength", "20");
+        $("#txtTelOfc").attr("required", "required");
+        $("#txtTelOfc").attr("maxlength", "20");
+        $("#txtNoCelular").attr("required", "required");
+        $("#txtNoCelular").attr("maxlength", "12");
+        $("#txtCalleFact").attr("required", "required");
+        $("#txtCalleFact").attr("maxlength", "100");
+        $("#txtNumeroExtFact").attr("required", "required");
+        $("#txtNumeroExtFact").attr("maxlength", "6");
+        $("#txtNumeroIntFact").attr("required", "required");
+        $("#txtNumeroIntFact").attr("maxlength", "6");
+        $("#txtColoniaFact").attr("required", "required");
+        $("#txtColoniaFact").attr("maxlength", "100");
+        $("#txtMunicipiosFact").attr("required", "required");
+        $("#txtCPFact").attr("required", "required");
+        $("#txtEstadosFact").attr("required", "required");
+
+        $('#frmClientes').attr('novalidate');
+        var form = $("#frmClientes")
+
+        var validar = true;
+
+        if (form[0].checkValidity() === false) {
+            event.preventDefault()
+            event.stopPropagation()
+
+            alert('Faltan Campos por registrar');
+
+            validar = false;
+        }
+        if ($("#cmbColonia").val() == -1 && validar == true) {
+            alert('Falta por seleccionar una colonia');
+            validar = false;
+        }
+
+        if ($("#cmbColoniaFact").val() == -1 && validar == true) {
+            alert('Falta por seleccionar una colonia para la Facturacion');
+            validar = false;
+        }
+
+        var expresion = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+        var email = $("#txtCorreo").val();
+        if (!expresion.test(email)) {
+
+            alert("Introduzca un email correcto");
+            validar = false;
+        }
+
+        if (form[0].checkValidity() === true && validar == true) {
+            return validar;
+        }
+    },
+    EventClick: function () {
+
+        var form = document.forms["frmClientesAdd"];
+
+        for (var i = 0; i <= form.length - 1; i++) {
+            if (form[i].value.length > 1) {
+                $("#" + form[i].id + "").css({
+                    'border': '1px solid #ced4da'
+                });
+            }
+        }
+    },
+    CapturarClienteN: function () {
+        $("#btnCapturarN").click(function () {
+            var validar = true;
+            $('#frmClientesAdd').attr('novalidate');
+
+            var form = document.forms["frmClientesAdd"];
+
+            for (var i = 0; i <= form.length - 1; i++) {
+                if (i != 17) {
+                    if (form[i].id != "rfcaltainp") {
+                        if (form[i].value == "" || form[i].value == null) {
+                            // $("#" + form[i].id + "").css({
+                            //   'border': '1px solid red'
+                            // });
+
+                            validar = false;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (checkrfc.checked == true) {
+                if (form[0].checkValidity() === false) {
+                    event.preventDefault()
+                    event.stopPropagation();
+
+                    validar = false;
+                }
+                else {
+                    validar = true;
+                }
+                if ($("#rfcaltainp").val() == "") {
+                    event.preventDefault()
+                    event.stopPropagation();
+
+                    validar = false;
+                } else {
+                    validar = true;
+                }
+
+                if ($('#tipopersona').val() == '') {
+                    validar = false;
+                }
+            }
+
+            if (validar === false) {
+                alert("Faltan valores por llenar");
+                return false;
+            }
+
+            var expresion = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+            var email = form[15].value;
+            if (!expresion.test(email)) {
+
+                alert("Introduzca un email correcto");
+                return false;
+            }
+
+
+            if ($("#cmbColoniaAdd").val() == -1 && validar == true) {
+                alert('Falta por seleccionar una colonia');
+                return false;
+            }
+
+
+            var txtName = $("#txtNameAdd").val();
+            var txtAPaterno = $("#txtAPaternoAdd").val();
+            var txtAMaterno = $("#txtAMaternoAdd").val();
+            var txtRFCN = $("#rfcaltainp").val();
+            var txtCorreo = $("#txtCorreoAdd").val();
+            var txFechaNacimiento = $("#txFechaNacimientoAdd").val();
+            var txtcalle = $("#txtCalleAdd").val();
+            var txtNumeroInt = $("#txtNumeroIntAdd").val();
+            var txtColonia = $("#cmbColoniaAdd option:selected").text();
+            var actCod_COMUNAcolonia = $("#cmbColoniaAdd").val();
+            var txtNumeroExt = $("#txtNumeroExtAdd").val();
+            var txtDelegacion = $("#txtMunicipiosAdd").val();
+            var txtCP = $("#txtCPAdd").val();
+            var cmbEstados = $("#txtEstadosAdd").val();
+
+            var txtcalleFact = $("#txtCalleAdd").val();
+            var txtNumeroExtFact = $("#txtNumeroExtAdd").val();
+            var txtNumeroIntFact = $("#txtNumeroIntAdd").val();
+            var txtColoniaFact = $("#cmbColoniaAdd option:selected").text();
+            var actCod_COMUNAcoloniaFact = $("#cmbColoniaAdd").val();
+            var txtDelegacionFact = $("#txtMunicipiosAdd").val();
+            var txtCPFact = $("#txtCPAdd").val();
+            var cmbEstadosFact = $("#txtEstadosAdd").val();
+
+            var txtTelCasa = $("#txtTelCasaAdd").val();
+            var txtTelOfc = $("#txtTelOficinaAdd").val();
+            var txtNoCelular = $("#txtNumCelAdd").val();
+
+            var cliente = {
+                "Nombre": txtName.toString() + " " + txtAPaterno.toString() + " " + txtAMaterno.toString(),
+                "RFC": txtRFCN.toString(),
+                "CalleNumero": txtcalle.toString(),
+                "actNOMBRE": txtName.toString(),
+                "actAPEPATERNO": txtAPaterno.toString(),
+                "actAPEMATERNO": txtAMaterno.toString(),
+                "actNUMEXT": txtNumeroExt.toString(),
+                "actNUMINT": txtNumeroInt.toString(),
+                "Colonia": txtColonia.toString(),
+                "actCod_COMUNAColonia": actCod_COMUNAcolonia.toString(),
+                "CP": txtCP.toString(),
+                "Correo": txtCorreo.toString(),
+                "actCod_REGIONestado": cmbEstados.toString(),
+                "DelMun": txtDelegacion.toString(),
+                "TipoCliente": "C",
+
+                "actFCHNACIMIENTOTemp": txFechaNacimiento.toString(),
+                "CalleNumeroFact": txtcalleFact.toString(),
+                "actNUMEXTFact": txtNumeroExtFact.toString(),
+                "actNUMINTFact": txtNumeroIntFact.toString(),
+                "ColoniaFact": txtColoniaFact.toString(),
+                "CPFact": txtCPFact.toString(),
+                "actCod_REGIONestadoFact": cmbEstadosFact.toString(),
+                "actCod_COMUNAcoloniaFact": actCod_COMUNAcoloniaFact.toString(),
+                "DelMunFact": txtDelegacionFact.toString(),
+                "TelCasa": txtTelCasa.toString(),
+                "TelOfc": txtTelOfc.toString(),
+                "NoCelular": txtNoCelular.toString()
+            };
+
+            $.ajax({
+                type: "POST",
+                url: '/VentasUsuario/GetInsertInfoClienteNew',
+                data: "{'clientes':" + JSON.stringify(cliente) + "}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+
+                    if (result === '-2') {
+                        alert('Ocurrio un error al registrar el cliente');
+                    }
+
+                    if (result === '5') {
+                        alert('Verifique que todos los datos esten llenos');
+                    }
+
+
+                    if (result === '-1') {
+                        alert('No se realizo el registro, no se puede ingresar un RFC repetido');
+                    }
+                    else {
+                        alert('Se registro el cliente ' + result);
+
+                    }
+
+                    var x = document.getElementById("contenidobusqueda");
+                    var y = document.getElementById("altacliente");
+                    if (x.style.display === "none") {
+                        y.style.display = "none";
+                        x.style.display = "block";
+
+                    } else {
+
+                    }
+
+                    $("#BuscaclienteModal").modal('hide');
+                },
+                error: function (xhr) {
+                    console.log(xhr.responseText);
+                    alert("Error has ocurred..");
+                }
+            });
+        });
+    },
+    ActualizarClienteN: function () {
+        $("#btnActualizar").click(function () {
+            var validate = VentaUsuario.Validateform();
+            if (validate == true) {
+                var txtIdCliente = $("input[name=txtIdCliente]").val();
+                var txtName = $("#txtName").val();
+                var txtAPaterno = $("#txtAPaterno").val();
+                var txtAMaterno = $("#txtAMaterno").val();
+                var txtRFCN = $("#txtRFCN").val();
+                var txtCorreo = $("#txtCorreo").val();
+                var txFechaNacimiento = $("#txFechaNacimiento").val();
+                var txtcalle = $("#txtCalle").val();
+                var txtNumeroInt = $("#txtNumeroInt").val();
+                var txtColonia = $("#cmbColonia option:selected").text();
+                var actCod_COMUNAcolonia = $("#cmbColonia").val();
+                var txtNumeroExt = $("#txtNumeroExt").val();
+                var txtDelegacion = $("#txtMunicipios").val();
+                var txtCP = $("#txtCP").val();
+                var cmbEstados = $("#txtEstados").val();
+                var txtcalleFact = $("#txtCalleFact").val();
+                var txtNumeroExtFact = $("#txtNumeroExtFact").val();
+                var txtNumeroIntFact = $("#txtNumeroIntFact").val();
+                var txtColoniaFact = $("#cmbColoniaFact option:selected").text();
+                var actCod_COMUNAcoloniaFact = $("#cmbColoniaFact").val();
+                var txtDelegacionFact = $("#txtMunicipiosFact").val();
+                var txtCPFact = $("#txtCPFact").val();
+                var cmbEstadosFact = $("#txtEstadosFact").val();
+
+                var txtTelCasa = $("#txtTelCasa").val();
+                var txtTelOfc = $("#txtTelOfc").val();
+                var txtNoCelular = $("#txtNoCelular").val();
+
+                var cliente = {
+                    "Id": txtIdCliente.toString(),
+                    "Nombre": txtName.toString() + " " + txtAPaterno.toString() + " " + txtAMaterno.toString(),
+                    "RFC": txtRFCN.toString(),
+                    "CalleNumero": txtcalle.toString(),
+                    "actNOMBRE": txtName.toString(),
+                    "actAPEPATERNO": txtAPaterno.toString(),
+                    "actAPEMATERNO": txtAMaterno.toString(),
+                    "actNUMEXT": txtNumeroExt.toString(),
+                    "actNUMINT": txtNumeroInt.toString(),
+                    "Colonia": txtColonia.toString(),
+                    "CP": txtCP.toString(),
+                    "Correo": txtCorreo.toString(),
+                    "actCod_REGIONestado": cmbEstados.toString(),
+                    "DelMun": txtDelegacion.toString(),
+                    "TipoCliente": "C",
+                    "TelCasa": txtTelCasa.toString(),
+                    "TelOfc": txtTelOfc.toString(),
+                    "NoCelular": txtNoCelular.toString(),
+
+                    "actFCHNACIMIENTOTemp": txFechaNacimiento.toString(),
+                    "CalleNumeroFact": txtcalleFact.toString(),
+                    "actNUMEXTFact": txtNumeroExtFact.toString(),
+                    "actNUMINTFact": txtNumeroIntFact.toString(),
+                    "ColoniaFact": txtColoniaFact.toString(),
+                    "CPFact": txtCPFact.toString(),
+                    "actCod_REGIONestadoFact": cmbEstadosFact.toString(),
+                    "DelMunFact": txtDelegacionFact.toString(),
+                    "actCod_REGIONestadoFact": cmbEstadosFact.toString(),
+                    "actCod_COMUNAcolonia": actCod_COMUNAcolonia.toString(),
+                    "actCod_COMUNAcoloniaFact": actCod_COMUNAcoloniaFact.toString(),
+                };
+                $.ajax({
+                    type: "POST",
+                    url: '/VentasUsuario/GetUpdateInfoCliente',
+                    data: "{'clientes':" + JSON.stringify(cliente) + "}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+
+                        if (result === "3") {
+                            alert('Se realizo la actualizacion del cliente');
+
+                            $("#BuscaclienteModal").modal('hide');
+                        }
+                        else {
+                            alert('No Se actualizo el cliente ');
+                        }
+                    },
+                    error: function (xhr) {
+                        console.log(xhr.responseText);
+                        alert("Error has ocurred..");
+                    }
+                });
+            }
+        });
+    },
+    SeleccionarCliente: function () {
+        $("#btnSeleccionar").click(function () {
+            var txtIdCliente = $('input[name=txtIdCliente]').val();
+            var txtName = $('#txtName').val();
+            var txtRFCN = $('#txtRFCN').val();
+            var txtCalle = $('#txtCalle').val();
+
+            $('input[name=txtIdClienteIndex]').val(txtIdCliente);
+            $('#nameV').val(txtName);
+            $('#rfcV').val(txtRFCN);
+            $('#direccionV').val(txtCalle);
+
+            $("#BuscaclienteModal").modal('hide');
+        });
+    },
+    ClearBtnclienteAdd: function () {
+        $('#btnClearclienteAdd').click(function () {
+            VentaUsuario.CleanAddCliente();
+        });
+    },
+    CloseModalCliente: function () {
+        $("#BuscaclienteModal").on("hidden.bs.modal", function () {
+            VentaUsuario.ClearCliente();
+            $(".DTFC_Cloned tbody").empty();
+            $("#tblConsultaClientesEnc").dataTable().empty();
+        });
+    },
+    CleanAddCliente: function () {
+        $("#frmClientesAdd")[0].reset();
+        $("#checkrfc").prop('checked', false);
+        $("#tipopersona").val(-1);
+        $("#tipopersona").attr("disabled", "disabled");
+    },
+    CloseModalClienteNew: function () {
+        $("#BuscaclienteModal").on("hidden.bs.modal", function () {
+            $('#txtRFC').val('');
+            $('#txtNombre').val('');
+            VentaUsuario.CleanAddCliente();
+            VentaUsuario.ClearCliente();
+        });
+    },
+    ClearCliente: function () {
+        $("#frmClientes")[0].reset();
+        $("#cmbColonia").val(-1);
+        $("#cmbColoniaFact").val(-1);
+    },
+    ClearDatosCliente: function () {
+        $('#btnClearDatosClientes').click(function () {
+            VentaUsuario.ClearCliente();
+        });
+    },
+    ClonarVenta: function () {
+        $('#btnClonarVenta').click(function () {
+            $('#modalClonVenta').modal('show');
+        });
+    },
+    SearchVentaC: function () {
+        $('#btnbusquedaFolioClon').click(function () {
+            var Sale = {
+                'Folio': $('#ClFolio').val(),
+                'Fecha': $('#ClFecha').val()
+            }
+
+            if ($('#ClFolio').val() == '' && $('#ClFecha').val() == '') {
+                alert('Ingrese Folio/Fecha para realizar la busqueda');
+
+                return false;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: '/Ventas/GetSearchVenta',
+                data: "{'Sale':" + JSON.stringify(Sale) + "}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+
+                    var dataset = result
+
+                    if (dataset != null) {
+                        var columnDefs = [];
+                        //loop for populating column defs
+                        for (let k in dataset[0]) {
+                            if (columnDefs.indexOf(k) === -1) {
+                                columnDefs.push({ title: dataset[0][k] });
+                            }
+                        }
+                        //loop for populating data
+                        var data = [];
+                        for (let j of dataset) {
+                            var arr = [];
+                            for (let k in j) {
+                                if (columnDefs.indexOf(k) === -1) {
+                                    arr.push(j[k]);
+                                }
+                            }
+                            data.push(arr);
+                        }
+
+                        var spanish = {
+                            "processing": "Procesando...",
+                            "lengthMenu": "Mostrar _MENU_ registros",
+                            "zeroRecords": "No se encontraron resultados",
+                            "emptyTable": "Ningún dato disponible en esta tabla",
+                            "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                            "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                            "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                            "search": "Buscar:",
+                            "infoThousands": ",",
+                            "loadingRecords": "Cargando...",
+                            "oPaginate": {
+                                "sFirst": "Primero",
+                                "sLast": "Último",
+                                "sNext": "Siguiente",
+                                "sPrevious": "Anterior"
+                            },
+                            " oAria ": {
+                                " sSortAscending ": ": Activar para ordenar la columna de manera ascendente ",
+                                " sSortDescending ": ": Activar para ordenar la columna de manera descendente "
+                            }
+                        }
+
+                        table = $("#tblFoliosEncontradosC").dataTable({
+                            destroy: true,
+                            language: spanish,
+                            fixedColumns: true,
+                            select: true,
+                            data: data,
+                            "processing": true,
+                            "pageLength": 10,
+                            "lengthChange": false,
+                            "responsive": true,
+                            "rowReorder": {
+                                "selector": 'td:nth-child(2)'
+                            },
+                            "fixedHeader": {
+                                "header": true
+                            },
+                            "dom": 'Bfrtip'
+                        });
+
+                        $('#tblFoliosEncontradosC tbody').on('click', 'tr', function () {
+                            var IdVenta = table.api().row(this).data()[0];
+
+                            var Sale = {
+                                'ID': IdVenta
+                            }
+
+                            $.ajax({
+                                type: "POST",
+                                url: '/Ventas/GetSearchDetalleVenta',
+                                data: "{'Sale':" + JSON.stringify(Sale) + "}",
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success: function (result) {
+
+                                    var data = result;
+                                    var j = 0;
+                                    for (var i = 0; i <= data.lsDetailsVenta.length - 1; i++) {
+                                        j += 1;
+                                        var table = $("#tbBody");
+                                        table.append("<tr id='row" + i + "'>" +
+                                            "<td>" + data.lsDetailsVenta[i].Modelo + "</td>" +
+                                            "<td hidden='" + "hidden" + "'>" + i + "</td>" + "" +
+                                            "<td>" + data.lsDetailsVenta[i].Juego + "</td>" +
+                                            "<td>" + data.lsDetailsVenta[i].Cantidad + "</td>" +
+                                            "<td>" + data.lsDetailsVenta[i].Tienda + "</td>" +
+                                            "<td>" + data.lsDetailsVenta[i].Bodega + "</td>" +
+                                            "<td>" + data.lsDetailsVenta[i].Lista + "</td>" +
+                                            "<td>$" + data.lsDetailsVenta[i].Unitario + "</td>" +
+                                            "<td>$" + data.lsDetailsVenta[i].Descuento + "</td>" +
+                                            "<td>$" + data.lsDetailsVenta[i].Subtotal + "</td>" +
+                                            "<td>$" + data.lsDetailsVenta[i].IVA + "</td>" +
+                                            "<td class='cTotal'>$" + data.lsDetailsVenta[i].Total + "</td>" +
+                                            "<td>" + data.lsDetailsVenta[i].Itemcode + "</td>" +
+                                            "<td><button type='button' name='remove' id='" + i + "' class='btn btn-danger btn-sm btn_remove1'>" +
+                                            "<i class='fa fa-trash' aria-hidden='true'></i> Eliminar</button></td>" +
+                                            "</tr>");
+                                    }
+
+                                    CalculaTotal();
+                                },
+                                error: function (xhr) {
+                                    console.log(xhr.responseText);
+                                    alert("Error has ocurred..");
+                                }
+                            });
+
+                        });
+                    }
+                    else {
+                        $(".DTFC_Cloned tbody").empty();
+                        $("#tblFoliosEncontradosC").dataTable().empty();
+                    }
+                },
+                error: function (xhr) {
+                    console.log(xhr.responseText);
+                    alert("Error has ocurred..");
+                }
+            });
+        });
+    },
+    SearchCP: function () {
+        $('#txtCP').on('input', function (e) {
+            VentaUsuario.SearchCPLoad(null, '');
+        });
+    },
+    SearchCPFact: function () {
+        $('#txtCPFact').on('input', function (e) {
+            VentaUsuario.SearchCPLoad(null, 'Fact');
+        });
+    },
+    SearchCPAdd: function () {
+        $('#txtCPAdd').on('input', function (e) {
+            VentaUsuario.SearchCPLoad(null, 'Add');
+        });
+    },
+    SearchCPLoad: function (c_colonia, Tipo) {
+        if ($("#txtCP" + Tipo + "").val().length == 5) {
+            var CPSepomex = {
+                'd_codigo': $('#txtCP' + Tipo + '').val()
+            }
+            $.ajax({
+                url: "/VentasUsuario/GetInfoCP",
+                type: "POST",
+                data: "{'CPSepomex':" + JSON.stringify(CPSepomex) + "}",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    if (data.length > 0) {
+                        $('#txtEstados' + Tipo + '').val(data[0].d_estado);
+                        $('#txtMunicipios' + Tipo + '').val(data[0].d_mnpio);
+                        $('#txtCiudad' + Tipo + '').val(data[0].d_ciudad);
+                        $('#cmbColonia' + Tipo + '').html('');
+                        $('#cmbColonia' + Tipo + '').append("<option value='-1'>Seleccione Colonia</option>");
+
+                        for (var i = 0; i <= data.length - 1; i++) {
+
+                            if (c_colonia == data[i].c_colonia && c_colonia != null) {
+                                $('#cmbColonia' + Tipo + '').append("<option value=" + data[i].c_colonia + " selected >" + data[i].d_asenta + "</option>");
+                            }
+                            else {
+                                $('#cmbColonia' + Tipo + '').append("<option value=" + data[i].c_colonia + ">" + data[i].d_asenta + "</option>");
+                            }
+                        }
+                    }
+                    else {
+                        alert('El código postal no existe');
+                        $('#txtEstados' + Tipo + '').val('');
+                        $('#txtMunicipios' + Tipo + '').val('');
+                        $('#txtCiudad' + Tipo + '').val('');
+                        $('#cmbColonia' + Tipo + '').html('');
+                    }
+                }
+            });
+        }
+    },
+    SearchCPFocus: function (Colonia, Tipo) {
+        if ($('#txtEstados' + Tipo + '').val('') != "")
+        {
+            $("#txtCP" + Tipo + "").on("keydown", function () {
+                    VentaUsuario.SearchCPLoad(Colonia, Tipo);
+            });
+
+            VentaUsuario.SearchCPLoad(Colonia, Tipo);
+        }
+    }
+}
+$(document).ready(function () {
+
+    VentaUsuario.GetUsuario();
+    VentaUsuario.DeleteClientesEncontrados();
+    VentaUsuario.SelectedDatosIguales();
+    VentaUsuario.CapturarCliente();
+    VentaUsuario.SeleccionarCliente();
+    VentaUsuario.ActualizarClienteN();
+    VentaUsuario.CloseModalCliente();
+    VentaUsuario.CloseModalClienteNew();
+    VentaUsuario.CapturarClienteN();
+    VentaUsuario.ClearDatosCliente();
+    VentaUsuario.ClonarVenta();
+    VentaUsuario.SearchVentaC();
+    VentaUsuario.SearchCP();
+    VentaUsuario.SearchCPFact();
+    VentaUsuario.SearchCPAdd();
+    VentaUsuario.ClearBtnclienteAdd();
+
+    Ventas.modalBuscacliente();
+});
+
+function LlenarDdl() {
+    var listaArticulos = modeloArticulosBaseView.ListArticulos;
+    $("#articulos").html("")
+}
+
+function AddCliente() {
+    var x = document.getElementById("altacliente");
+    var y = document.getElementById("contenidobusqueda");
+    if (x.style.display === "none") {
+        y.style.display = "none";
+        x.style.display = "block";
+
+    } else {
+
+    }
+}
+
+function ClosemodCli() {
+    var x = document.getElementById("contenidobusqueda");
+    var y = document.getElementById("altacliente");
+    if (x.style.display === "none") {
+        y.style.display = "none";
+        x.style.display = "block";
+
+    } else {
+
+    }
+}
+
+function showlblrfc() {
+    lblrfc = document.getElementById("rfcalta");
+    inprfc = document.getElementById("rfcaltainp");
+    check = document.getElementById("checkrfc");
+    if (check.checked) {
+        lblrfc.style.display = 'block';
+        inprfc.style.display = 'block';
+        $('#tipopersona').removeAttr('disabled');
+    }
+    else {
+        lblrfc.style.display = 'none';
+        inprfc.style.display = 'none';
+        $('#tipopersona').prop("disabled", true);
+    }
+}
+function FormaPagoC() {
+    var opt = document.querySelector('#formapago option:checked');
+    var lbtarjeta = document.getElementById("lbtarjeta");
+    var seltarjeta = document.getElementById("seltarjeta");
+    var lbmsi = document.getElementById("lbmsi");
+    var selmsi = document.getElementById("selmsi");
+    var lbtermi = document.getElementById("lbtermi");
+    var selterminatarjeta = document.getElementById("selterminatarjeta");
+    var lbmontoPB1 = document.getElementById("montoPB");
+    var lbmontoPBtext = document.getElementById("lbmontoPB");
+    var formapago = opt.value;
+    switch (formapago) {
+        case "Terminal PROSA":
+        case "American Express":
+        case "Terminal Bancomer":
+        case "Terminal Santander":
+        case "Terminal Banamex":
+            lbtarjeta.style.display = "block";
+            seltarjeta.style.display = "block";
+            lbmsi.style.display = "block";
+            selmsi.style.display = "block";
+            lbmsi.style.display = "block";
+            lbtermi.style.display = "block";
+            selterminatarjeta.style.display = "block";
+            break;
+        case "Efectivo":
+        case "Deposito / Cheque":
+        case "Transferencia Electronica":
+            lbtarjeta.style.display = "none";
+            seltarjeta.style.display = "none";
+            lbmsi.style.display = "none";
+            selmsi.style.display = "none";
+            lbmsi.style.display = "none";
+            lbtermi.style.display = "none";
+            selterminatarjeta.style.display = "none";
+            //seltarjeta.value = "";
+            document.getElementById("seltarjeta").value = "";
+            lbmontoPB1.style.display = "none";
+            lbmontoPBtext.style.display = "none";
+            cleanGetPoints();
+            break;
+        case "Monedero Payback":
+            lbtarjeta.style.display = "none";
+            seltarjeta.style.display = "none";
+            lbmsi.style.display = "none";
+            selmsi.style.display = "none";
+            lbmsi.style.display = "none";
+            lbtermi.style.display = "none";
+            selterminatarjeta.style.display = "none";
+            //seltarjeta.value = "";
+            document.getElementById("seltarjeta").value = "";
+            lbmontoPB1.style.display = "block";
+            lbmontoPBtext.style.display = "block";
+            cleanGetPoints();
+            $("#GetPaymentModal").modal({ backdrop: 'static', keyboard: false });
+            //$("#GetPaymentModal").modal("show");
+            //var id = document.getElementById("GetPaymentModal");
+            break;
+        default:
+
+    }
+}
+
+///////////Pago Comienza
+function CapPago() {
+    event.preventDefault();
+    var table = $("#tblCPagosEnc");
+    var opcionpago = document.querySelector('#formapago option:checked');
+    if (opcionpago.value == "Efectivo" || opcionpago.value == "Deposito / Cheque" || opcionpago.value == "Transferencia Electronica" || opcionpago.value == "Monedero Payback") {
+        var formapago = document.getElementById("formapago").value;
+        var montop = document.getElementById("montop").value;
+        var Cuenta = "";
+        var tipotarjeta = "";
+        var Msi = ""
+        document.getElementById("formapago").value = "Efectivo";
+        document.getElementById("montop").value = "";
+        document.getElementById("formapago").focus();
+    } else {
+
+        var formapago = document.getElementById("formapago").value;
+        var montop = document.getElementById("montop").value;
+        var Cuenta = document.getElementById("selterminatarjeta").value;
+        var tipotarjeta = document.getElementById("seltarjeta").value;
+        var Msi = document.getElementById("selmsi").value;
+        if (Msi == "") { Msi = "0" } else { }
+        var tipotar = (tipotarjeta == "") ? false : true;
+        var digitoscuenta = (Cuenta.length != 4) ? false : true;
+        if (tipotar == false) {
+            toastr.options.timeOut = 4000;
+            toastr.warning('Debe seleccionar un tipo de tarjeta');
+            return;
+        }
+        if (digitoscuenta == false) {
+            toastr.options.timeOut = 4000;
+            toastr.warning('Debe teclear los ultimos 4 digitos de la tarjeta/cuenta');
+            return;
+        }
+        cleanpago(opcionpago.value);
+    }
+
+    if (montop == "") {
+        toastr.options.timeOut = 4000;
+        toastr.warning('Por favor agrega el monto');
+        return;
+    }
+    var i = 1
+    var i = $('#tblCPagosEnc tr').length;
+    //if (nofila == 1) { i =1  } else { i = nofila }
+    table.append('<tr id="rowp' + i + '"> <td>' + formapago + "" + "</td> <td>" + montop + "</td> <td>" + Cuenta + "</td> <td>" + tipotarjeta + "</td> <td> " + Msi + '</td> <td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-sm btn_remopago"><i class="fa fa-trash" aria-hidden="true"></i>Eliminar</button></td> </tr>');
+    calculasaldos();
+}
+function cleanpago(tipo) {
+    document.getElementById("formapago").value = tipo;
+    document.getElementById("montop").value = "";
+    document.getElementById("selterminatarjeta").value = "";
+    document.getElementById("selmsi").value = "";
+    document.getElementById("seltarjeta").value = "";
+    document.getElementById("seltarjeta").value = "Seleccione tipo de tarjeta...";
+    document.getElementById("formapago").focus();
+}
+$(document).ready(function () {
+    $(document).on('click', '.btn_remopago', function () {
+        var button_id = $(this).attr("id");
+        //cuando da click obtenemos el id del boton
+        $('#rowp' + button_id + '').remove(); //borra la fila
+        //limpia el para que vuelva a contar las filas de la tabla
+        $("#adicionados").text("");
+        var nFilas = $("#tblCPagosEnc tr").length;
+        $("#adicionados").append(nFilas - 1);
+        $("#montop").removeClass("text-danger");
+        calculasaldos();
+
+    });
+});
+
+function calculasaldos() {
+    var saldop = 0;
+    var totalventa = 0;
+    var pagado = 0;
+    var cambio = 0;
+    $('#tblCPagosEnc tr').each(function () {
+
+        var totalacomulado = $(this).find("td").eq(1).html();
+        if (totalacomulado == "" || totalacomulado == undefined) {
+
+        } else {
+            pagado += Number($(this).find("td").eq(1).html().replace("$", "").replace(",", ""));
+            idp = Number($(this).find("td").eq(0).html());
+        }
+    });
+
+    totalventa = Number($("#tventa").val().replace("$", "").replace(",", "")); //totaldeventa
+    if (pagado > totalventa) {
+        cambio = pagado - totalventa;
+    }
+
+    saldop = totalventa - pagado;                                               //pagado y saldo pendiente
+    $("#sventa").val("$" + saldop);
+    $("#pventa").val("$" + Number(pagado));
+    $("#montop").val(saldop);
+    $("#cventa").val("$" + cambio);
+    if (cambio == 0) {
+        $("#montop").addClass("text-success");
+    }
+    else {
+        $("#montop").addClass("text-danger");
+    }
+}
+///////////Pago termina
+
+$("#ctbienda").change(function () {
+    //(string ItemCode, string IdList, string descuento, string cantidad
+    var idCheckJgo = document.getElementById('juego');
+    var ValuecTextboxTienda = $("#ctbienda").val();
+    var ValueExistenciaTienda = $("#ctienda1").val();
+    var ddlLinea = $("#ddlPrice option:selected").val();
+    var ddlArticulo = $("#ddlModelo option:selected").val();
+    if (ddlArticulo == "" || ddlArticulo == "0") {
+        ddlArticulo = $("#modelocode").val();
+    }
+    var Texboxdescuento = $("#tbDescuento").val();
+    if (ValidaMontos(ValuecTextboxTienda, ValueExistenciaTienda)) {
+        if (ValuecTextboxTienda <= ValueExistenciaTienda) {
+            var obj = { ItemCode: ddlArticulo, IdList: ddlLinea, descuento: Texboxdescuento, cantidad: ValuecTextboxTienda, Origen: "Tienda", Juego: idCheckJgo.checked };
+            var Json = JSON.stringify(obj);
+            ChangePrice(Json);
+        } else {
+            MessageError("El monto no puede ser mayor a la cantidad en existencia");
+            CleanPrice(false,false);
+        }
+    }
+    else {
+
+    }
+
+});
+
+
+$("#ctbodega").change(function () {
+    var idCheckJgo = document.getElementById('juego');
+    var ValueTextboxBodega = $("#ctbodega").val();
+    var ValueExistenciaBodega1 = $("#cbodega1").val();
+    var ddlLinea = $("#ddlPrice option:selected").val();
+    var ddlArticulo = $("#ddlModelo option:selected").val();
+    if (ddlArticulo == "" || ddlArticulo == "0") {
+        ddlArticulo = $("#modelocode").val();
+    }
+    var Texboxdescuento = $("#tbDescuento").val();
+    //if (ValidaMontos(ValueTextboxBodega, ValueExistenciaBodega1)) {
+    var obj = { ItemCode: ddlArticulo, IdList: ddlLinea, descuento: Texboxdescuento, cantidad: ValueTextboxBodega, Origen: "Bodega", Juego: idCheckJgo.checked };
+    var Json = JSON.stringify(obj);
+    ChangePrice(Json);
+    //}
+});
+
+function ChangePrice(JsonChangePrice) {
+    $.ajax({
+        type: "POST",
+        url: '/Ventas/GetSelectChanchePrice',
+        data: "{ 'JsonChangePrice': '" + JsonChangePrice + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            var idStore = '';
+            if (result != null) {
+
+                var lsLinea = JSON.parse(result);
+                $("#cbIva").val(lsLinea.IVA);
+                $("#tbpunitario").val(lsLinea.PrecioUnitario);
+                $("#tbDescuento").val(lsLinea.Descuento);
+                $("#tbTotal").val(lsLinea.Total);
+                $("#tbSubtotal").val(lsLinea.Subtotal);
+                $("#tbDescuentoPorc").val(lsLinea.DescuentoPrec);
+            }
+            else { MessageError("No Existen datos"); }
+            return false;
+        },
+        error: function (xhr) {
+            //debugger;
+            console.log(xhr.responseText);
+            alert("Error has occurred..");
+        }
+    });
+}
+
+function ValidaMontos(montoText, montoStock) {
+    if (montoText == 0) {
+        CleanPrice(false,false);
+        MessageError("El valor debe ser mayor a 0");
+        return false;
+    } else if (montoStock == 0) {
+        CleanPrice(false,false);
+        MessageError("Stock insuficiente");
+        return false;
+    } else {
+        return true;
+    }
+}
+function CleanPrice(CleanStock,CleanModel) {
+    event.preventDefault();
+    var modelo = document.getElementById("modelos");
+    var selectmodel = document.getElementById("ddlModelo");
+    //document.getElementById("ddlModelo").value = "";
+    modelo.style.display = "block";
+    selectmodel.style.display = "none";
+    if (CleanStock == true && CleanModel == true) { OnchangeddlModelo("Linea"); }
+    //OnchangeddlModelo("Linea");
+    if (CleanStock) {
+        $("#ctienda1").val(0);
+        $("#cbodega1").val(0);
+    }
+    $("#cbIva").val("");
+    $("#tbpunitario").val("");
+    $("#tbTotal").val("");
+    $("#ctbienda").val(0);
+    $("#ctbodega").val(0);
+    $("#modelos").val("");
+    $("#cbDescriptioJuego").val("");
+    $("#tbDescuento").val("");
+
+    var Articulo = GetJsonArtculo();
+    $("#ddlArticulo")
+        .empty()
+        .append($("<option></option>")
+            .val("0")
+            .html(":.Seleccione.:"));
+    $.each(Articulo, function (key, value) {
+        var option = $(document.createElement('option'));
+        option.html(value.name);
+        option.val(value.code);
+        $("#ddlArticulo")
+            .append(option);
+    });
+    $("#ddlLinea")
+        .empty()
+        .append($("<option></option>")
+            .val("0")
+            .html(":.Seleccione.:"));
+    $("#ddlMedida")
+        .empty()
+        .append($("<option></option>")
+            .val("0")
+            .html(":.Seleccione.:"));
+
+    PriceLoad(); //recarga lista de precios al valor Default
+
+    var idCheckJgo = document.getElementById('juego');
+    //var idCheckDesc = document.getElementById('idCheckDesc');
+    var idCheckLine = document.getElementById('idCheckLine');
+    idCheckJgo.checked = false;
+    //idCheckDesc.checked = false;
+    idCheckLine.checked = true;
+
+}
+function CheckLine() {
+
+    var idCheckDesc = document.getElementById('idCheckDesc');
+    var idCheckLine = document.getElementById('idCheckLine');
+    if (idCheckLine.checked) {
+        OnchangeddlModelo("Linea");
+        CleanPrice(true,false);
+        idCheckDesc.checked = false;
+        idCheckLine.checked = true;
+        $("#articuloen").val("Linea");
+    } else {
+        idCheckLine.checked = true;
+    }
+
+}
+function CheckDesc() {
+    var idCheckLine = document.getElementById('idCheckLine');
+    var idCheckDesc = document.getElementById('idCheckDesc');
+    if (idCheckDesc.checked) {
+        OnchangeddlModelo("Descontinuados");
+        CleanPrice(true,false);
+        idCheckLine.checked = false;
+        idCheckDesc.checked = true;
+        $("#articuloen").val("Descontinuados");
+    } else {
+        idCheckDesc.checked = true;
+    }
+
+
+}
+function OnchangeddlModelo(tipo) {
+    $.ajax({
+        type: "POST",
+        url: '/Ventas/GetSelectOnchangeModelo',
+        data: "{ 'tipo': '" + tipo + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            var idStore = '';
+            if (result != null) {
+
+                var lsLinea = JSON.parse(result);
+                $("#ddlModelo")
+                    .empty()
+                    .append($("<option></option>")
+                        .val("0")
+                        .html(":.Seleccione.:"));
+                $.each(lsLinea, function (key, value) {
+                    var option = $(document.createElement('option'));
+                    option.html(value.name);
+                    option.val(value.code);
+                    $("#ddlModelo")
+                        .append(option);
+                });
+            }
+            else { alert("No existe datos"); }
+        },
+        error: function (xhr) {
+            //debugger;
+            console.log(xhr.responseText);
+            alert("Error has occurred..");
+        }
+    });
+}
+
+function Capturar() {
+    //$("#btnCapturar").on("click", function (event) {
+    event.preventDefault();
+    var table = $("#tbBody");
+
+    var id = 0;
+    var saldo = 0;
+    var totalventa = 0;
+    var descuento = 0;
+    var tbtotal = Number($("#tbTotal").val().replace("$", "").replace(",", ""));
+    var ddlLinea = $("#ddlPrice option:selected").text();
+    if (ddlLinea == undefined || ddlLinea == ":.Seleccione.:") {
+        MessageError("Debe seleccionar una forma de pago");
+    }
+    else if (tbtotal > 0 || tbtotal != "") {
+        $('#tbBodyIn tr').each(function () {
+
+
+            var total = $(this).find("td").eq(11).html();
+            if (total == "" || total == undefined) {
+
+            } else {
+                totalventa += Number($(this).find("td").eq(11).html().replace("$", "").replace(",", ""));
+                descuento += Number($(this).find("td").eq(8).html().replace("$", "").replace(",", ""));
+                saldo += Number($(this).find("td").eq(11).html().replace("$", "").replace(",", ""));
+                id = Number($(this).find("td").eq(1).html());
+            }
+
+        });
+        //if (totalventa == 0) {
+        //    //$("#tventa").val(totalventa);
+        //    $("#sventa").val($("#tbTotal").val());
+        //    $("#montop").val($("#tbTotal").val().replace("$", "").replace(",", ""));
+        //    // $("#dventa").val($("#tbDescuentoPorc").val());
+        //} else {
+        //    var prueba = Number($("#tbTotal").val().replace("$", "").replace(",", ""));
+        //    var prueba1 = $("#tbTotal").val().replace("$", "");
+        //    //$("#tventa").val(totalventa + Number($("#tbTotal").val().replace("$", "").replace(",", "")));
+        //    $("#sventa").val(saldo + Number($("#tbTotal").val().replace("$", "").replace(",", "")));
+        //    $("#montop").val(saldo + Number($("#tbTotal").val().replace("$", "").replace(",", "")));
+        //    //$("#dventa").val(round(descuento + Number($("#tbDescuentoPorc").val().replace("$", "").replace(",", ""))));
+        //}
+        var itemcode = document.querySelector('#ddlModelo option:checked');
+        if (itemcode.value == "" || itemcode.value == "0") {
+            itemcode.value = $("#modelocode").val();
+        }
+        var descripcionitem = $("#ddlModelo option:selected").text();
+        if (descripcionitem == "" || descripcionitem == "Seleccione Modelo" || descripcionitem == ":.Seleccione.:") {
+            descripcionitem = $("#modelos").val();
+        }
+
+        var idCheckJgo = document.getElementById('juego');
+        // if (idCheckJgo.checked) {
+        var ValuecTextboxTienda = $("#ctbienda").val();
+        var ValueTextboxBodega = $("#ctbodega").val();
+        //var ValueExistenciaBodega1 = $("#cbodega1").val();        
+        var ddlArticulo = $("#ddlModelo option:selected").val();
+        if (ddlArticulo == "" || ddlArticulo == "0") {
+            ddlArticulo = $("#modelocode").val();
+        }
+        var ddlModelo = $("#ddlModelo option:selected").text();
+        if (ddlModelo == "" || ddlModelo == "Seleccione Modelo" || ddlModelo == ":.Seleccione.:") {
+            ddlModelo = $("#modelos").val();
+        }
+        var Texboxdescuento = $("#tbDescuento").val();
+        var origen = GetOrigen(ValuecTextboxTienda, ValueTextboxBodega);
+        var idCheckJgo = document.getElementById('juego');
+        if (origen == "Favor de insertar un monto válido") {
+            MessageError(origen);
+        } else {
+            var obj = { ItemCode: ddlArticulo, IdList: ddlLinea, descuento: Texboxdescuento, cantidad: origen == "Tienda" ? ValuecTextboxTienda : ValueTextboxBodega, Origen: origen, Juego: idCheckJgo.checked };
+            var Json = JSON.stringify(obj);
+            //ChangePrice(Json);
+        }
+        $.ajax({
+            type: "POST",
+            url: '/Ventas/GetSelectedJgo',
+            data: "{ 'JsonPrice': '" + Json + "','Name': '" + ddlModelo + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                var idStore = '';
+                if (result != null) {
+
+                    var lsLinea = JSON.parse(result);
+                    var i = id + 1;
+                    //var table = $('#myTable');
+                    var row, cell;
+                    lsLinea.forEach(function (element) {
+                        //row = $('<tr />');
+                        //table.append(row);
+                        if (element.Modelo == "" || element.Modelo == "Seleccione Modelo" || element.Modelo == ":.Seleccione.:") {
+                            element.Modelo = $("#modelos").val();
+                        }
+                        if (!idCheckJgo.checked) { element.Lista = $("#ddlPrice option:selected").text(); }
+
+                        table.append('<tr width="1000"  id="row' + i + '"><td width="1000">' + element.Modelo + "</td><td hidden='" + "hidden" + "'>" + i + "</td><td>" + element.Juego + "</td><td>" + element.Cantidad + "</td><td>" + element.CTienda + "</td><td>" + element.CBodega + "</td><td>" + element.Lista + "</td><td>" + element.PrecioUnitario + "</td><td>" + element.Descuento + "</td><td>" + element.Subtotal + "</td><td>" + element.IVA + "</td><td>" + element.Total + "</td><td>" + itemcode.value + '</td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-sm btn_remove1"><i class="fa fa-trash" aria-hidden="true"></i>Eliminar</button></td></tr>');
+                        //row.append(`<td>${element.pais}</td>`);
+                        //row.append(`<td>${element.sede}</td>`);
+                        descuento += Number(element.Descuento.replace("$", "").replace(",", ""));//suma descuento por Item
+                        totalventa += Number(element.Total.replace("$", "").replace(",", "")); //Suma total de la venta
+                        saldo += Number(element.Total.replace("$", "").replace(",", "")); //Suma Saldo Venta
+
+                        var Desc = round((descuento + Number($("#tbDescuentoPorc").val().replace("$", "").replace(",", ""))), 2);
+                        $("#dventa").val(Desc);
+                        $("#tventa").val(round(totalventa, 2));
+                        $("#sventa").val(round(saldo, 2));
+                        $("#montop").val(round(saldo, 2));
+                        i++;
+                    });
+
+                    CleanPrice(true,true);
+                }
+                else { alert("Existen datos"); }
+                return false;
+            },
+            error: function (xhr) {
+                //debugger;
+                console.log(xhr.responseText);
+                alert("Error has occurred..");
+            }
+        });
+        // });
+        //}
+        //else {
+        //    var i = id + 1;
+        //    table.append('<tr width="1000"  id="row' + i + '"><td width="1000">' + descripcionitem + "</td><td hidden='" + "hidden" + "'>" + i + "</td><td>" + "" + "</td><td>" + GetCantidad() + "</td><td>" + $("#ctbienda").val() + "</td><td>" + $("#ctbodega").val() + "</td><td>" + $("#ddlPrice option:selected").text() + "</td><td>" + $("#tbpunitario").val() + "</td><td>" + $("#tbDescuentoPorc").val() + "</td><td>" + $("#tbSubtotal").val() + "</td><td>" + $("#cbIva").val() + "</td><td>" + $("#tbTotal").val() + "</td><td>" + itemcode.value + '</td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-sm btn_remove1"><i class="fa fa-trash" aria-hidden="true"></i>Eliminar</button></td></tr>');
+        //    i++;
+        //    $("#montop").addClass("text-success");
+        //    CleanPrice(true);
+        //}
+    }
+}
+
+
+function GetCantidad() {
+    var cantidad = "";
+
+    if ($("#ctbienda").val() > 0) {
+        cantidad = $("#ctbienda").val();
+    } else { cantidad = $("#ctbodega").val(); }
+    return cantidad;
+
+}
+$(document).on('click', '.btn_remove1', function () {
+    var button_id = $(this).attr("id");
+    //cuando da click obtenemos el id del boton
+    $('#row' + button_id + '').remove(); //borra la fila
+    //limpia el para que vuelva a contar las filas de la tabla
+    //$("#adicionados").text("");
+    var nFilas = $("#tbBody tr").length;
+    $("#adicionados").append(nFilas - 1);
+    ActualizaMontos();
+});
+
+function ActualizaMontos() {
+    var id = 0;
+    var saldo = 0;
+    var totalventa = 0;
+    var descuento = 0;
+    $('#tbBodyIn tr').each(function () {
+
+
+        var total = $(this).find("td").eq(11).html();
+        if (total == "" || total == undefined) {
+
+        } else {
+            totalventa += Number($(this).find("td").eq(11).html().replace("$", "").replace(",", ""));
+            descuento += Number($(this).find("td").eq(8).html().replace("$", "").replace(",", ""));
+            saldo += Number($(this).find("td").eq(11).html().replace("$", "").replace(",", ""));
+            id = Number($(this).find("td").eq(1).html());
+        }
+
+    });
+
+    $("#tventa").val(totalventa);
+    $("#sventa").val(saldo);
+    $("#dventa").val(descuento);
+
+}
+function Loadpreviewer() {
+    event.preventDefault();
+    var txtName = $('#nameV').val();
+    var txtRFCN = $('#rfcV').val();
+    var txtCalle = $('#direccionV').val();
+    var txtid = $('#txtIdCliente').val();
+    var medio = document.querySelector('#comomed option:checked');
+    var fechaentrega = $('#fechat').val();
+    if (txtName == "") { MessageError("Debe seleccionar un cliente para continuar"); return; }
+    if (txtid == "72") { MessageError("Debe seleccionar un cliente Válido para continuar"); return; }
+    if (medio.value == "") { MessageError("Debe seleccionar el medio por el cuál el cliente de enteró de Nosotros"); return; }
+    if (fechaentrega == "") { MessageError("Debe seleccionar la fecha estimada de entrega"); return; }
+
+    var currentdata = LoadCapturedItems();
+    var currentpayments = LoadPaymentMethods();
+    if (currentdata <= 1) { MessageError("No se pude crear un pedido sin articulos"); return; }
+    if (currentpayments <= 1) { MessageError("No se pude crear un pedido sin pagos"); return; }
+    $("#idNombreC").val(txtName);
+    $("#idRFCC").val(txtRFCN);
+    $("#idDireccionEC").val(txtCalle);
+    $("#ConfirmarventaModal").modal({ backdrop: 'static', keyboard: false });
+}
+function LoadCapturedItems() {
+    $("#idTableBodyPreview tbody").empty();
+    var countrows = $('#tbBody tr').length;
+    $('#tbBodyIn tr').each(function () {
+
+        var modelo = $(this).find("td").eq(0).html();
+        var juego = $(this).find("td").eq(2).html();
+        var cantidad = $(this).find("td").eq(3).html();
+        var Ctienda = $(this).find("td").eq(4).html();
+        var Cbodega = $(this).find("td").eq(5).html();
+        var total = $(this).find("td").eq(11).html();
+        if (total == "" || total == undefined) {
+
+        } else {
+            var table = $("#idTableBodyPreview");
+            table.append("<tr><td>" + modelo + "</td><td>" + juego + "</td><td>" + cantidad + "</td><td>" + Ctienda + "</td><td>" + Cbodega + "</td><td>" + total + "</td></tr>");
+        }
+    });
+    return countrows;
+}
+function LoadPaymentMethods() {
+    var MontoTotal = 0;
+    $("#idPreviewMethodPayment tbody").empty();
+    var countrowspay = $('#tbBodyPago tr').length;
+    $('#tbBodyPago tr').each(function () {
+
+        var Formapago = $(this).find("td").eq(0).html();
+        var Monto = $(this).find("td").eq(1).html();
+        var cuenta = $(this).find("td").eq(2).html();
+        var TipoTarjeta = $(this).find("td").eq(3).html();
+        if (Formapago == "" || Formapago == undefined) {
+
+        } else {
+            MontoTotal += Number(Monto);
+            var table = $("#idPreviewMethodPayment");
+            table.append("<tr><td>" + Formapago + "</td><td>" + Monto + "</td><td>" + cuenta + "</td><td>" + TipoTarjeta + "</td></tr>");
+        }
+    });
+    ValidateAmountPaid(MontoTotal);
+    return countrowspay;
+}
+function ValidateAmountPaid(MontoT) {
+    var totalventa = Number($("#tventa").val().replace("$", "").replace(",", "")); //totaldeventa
+    if (MontoT >= totalventa) {
+        $("#idObservaciones").val("Este pedido fue ya pagado en su totalidad");
+    }
+    if (MontoT < totalventa) {
+        $("#idObservaciones").val("Este pedido corresponde a un pedido con anticipos , en caso de no ser así favor de revisar su proceso");
+    }
+
+}
+function MessageError(message) {
+    toastr.options.timeOut = 4000;
+    toastr.warning(message);
+    return;
+}
+$("#paymetsid").on("submit", function (e) {
+    e.preventDefault();
+
+    var TableData = new Array();
+    var TableArticulos = new Array();
+    // first row will be empty - so remove
+    //alert(TableData);
+    var countrow = $('#tblCPagosEnc tr').length;
+    $('#tblCPagosEnc tr').each(function (row, tr) {
+        TableData[row] = {
+            "Id": countrow
+            , "Formapago": $(tr).find('td:eq(0)').text()
+            , "Monto": $(tr).find('td:eq(1)').text()
+            , "Cuenta": $(tr).find('td:eq(2)').text()
+            , "Tipotarjeta": $(tr).find('td:eq(3)').text()
+            , "MSISub": $(tr).find('td:eq(4)').text()
+            , "Afiliacion": ""
+        }
+    });
+    TableData.shift();// End
+    var Fila = $('#tbBody tr').length;
+    $('#tbBody tr').each(function (row, tr) {
+        TableArticulos[row] = {
+            "Id": Fila
+            , "Modelo": $(tr).find('td:eq(0)').text()
+            , "Juego": $(tr).find('td:eq(2)').text()
+            , "Cantidad": $(tr).find('td:eq(3)').text()
+            , "CantidadTienda": $(tr).find('td:eq(4)').text()
+            , "CantidadBodega": $(tr).find('td:eq(5)').text()
+            , "Lista": $(tr).find('td:eq(6)').text()
+            , "PrecioUnitario": $(tr).find('td:eq(7)').text()
+            , "Descuento": $(tr).find('td:eq(8)').text()
+            , "subTotal": $(tr).find('td:eq(9)').text()
+            , "IVA": $(tr).find('td:eq(10)').text()
+            , "Total": $(tr).find('td:eq(11)').text()
+            , "Linea": $(tr).find('td:eq(12)').text()
+        }
+    });
+    TableArticulos.shift();
+    Swal.fire({
+        title: 'Confirmacion',
+        text: "Grabar Bandera para no ir a SAP",
+        icon: 'success',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Ok'
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            var Data;
+            var IdVenta;
+            var typeofsale = document.querySelector('#tipodeventa option:checked');
+            var comments = document.getElementById("comentarios").value;
+            var fechaentrega = $('#fechat').val();
+            var medio = document.querySelector('#comomed option:checked');
+            var idstore = $('#idstore').val();
+            var idcliente = $('#txtIdClienteIndex').val();
+            var idusuario = $('#Idusuario').val();
+            var WhsID = $('#WhsID').val();
+            //llena Json final
+            var Json1 = {
+                "idstore": idstore,
+                "Tipodeventa": typeofsale.value,
+                "Comentarios": comments,
+                "Fechaentrega": fechaentrega,
+                "Medios": medio.value,
+                "Idcliente": idcliente,
+                "Idusuario": idusuario,
+                "WhsID": WhsID,
+                "ArrayArticulos": TableArticulos,
+                "ArrayPagos": TableData,
+                "TipoOperacion": "PV"
+            }
+            Data = JSON.stringify(Json1);
+
+            $.ajax({
+                type: "POST",
+                url: '/Ventas/AddSale',
+                data: "{ 'Paymentscap': '" + Data + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    var result = JSON.parse(msg);
+
+                    IdVenta = parseInt(result.Idventa);
+
+                    if (result.MessageErrorPayback == "" || result.MessageErrorPayback == null) {
+                        window.location.href = "/VentasRPTS/Download_VentaDormimundo_PDF?IDVENTA=" + IdVenta;
+                        setTimeout(Confirmacion(IdVenta), 10000);
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error al procesar Venta',
+                            text: result.MessageErrorPayback,
+                            //footer: '<a href>Why do I have this issue?</a>'
+                        })
+                    }
+                },
+                error: function (xhr) {
+                    console.log(xhr.responseText);
+                    alert("Error has occurred..");
+                }
+            });
+        }
+    });
+    function Confirmacion(IdVenta) {
+
+        Swal.fire({
+            title: 'Validar los datos de PDF Generados(Espere a que se descarge el pdf)',
+            text: "Todos los datos son correctos",
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Ok'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                var Sale = {
+                    'idVenta': parseInt(IdVenta),
+                    'TipoOperacion': 'EV'
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: '/Ventas/UpdateSale',
+                    data: "{'Sale':" + JSON.stringify(Sale) + "}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+
+                        if (result == 1) {
+                            $("#ConfirmarventaModal").modal('hide');
+                            Swal.fire(
+                                '¡Operacion realizada!',
+                                'La venta ha sido realizada',
+                                'success'
+                            )
+
+                            window.location.href = "/Ventas";
+                        }
+                    },
+                    error: function (xhr) {
+                        console.log(xhr.responseText);
+                        alert("Error has ocurred..");
+                    }
+                });
+            }
+        });
+    };
+});
+
+function CalculaVentaArticulo() {
+    var saldo = 0;
+    var totalventa = 0;
+    var descuento = 0;
+    var Total = 0;
+    $('#tbBodyIn tr').each(function () {
+        var total = $(this).find("td").eq(11).html();
+        if (total == "" || total == undefined) {
+
+        } else {
+            totalventa += Number($(this).find("td").eq(11).html().replace("$", "").replace(",", ""));
+            descuento += Number($(this).find("td").eq(8).html().replace("$", "").replace(",", ""));
+            saldo += Number($(this).find("td").eq(11).html().replace("$", "").replace(",", ""));
+            id = Number($(this).find("td").eq(1).html());
+        }
+
+    });
+    if (totalventa == 0) {
+        $("#tventa").val(tbTotal);
+        $("#sventa").val(tbTotal);
+        $("#dventa").val(tbDescuentoPorc);
+    } else {
+        var prueba = Number($("#tbTotal").val().replace("$", "").replace(",", ""));
+        var prueba1 = $("#tbTotal").val().replace("$", "");
+        $("#tventa").val(totalventa + Number($("#tbTotal").val().replace("$", "").replace(",", "")));
+        $("#sventa").val(saldo + Number($("#tbTotal").val().replace("$", "").replace(",", "")));
+        $("#dventa").val(descuento + Number($("#tbDescuentoPorc").val().replace("$", "").replace(",", "")));
+    }
+}
+
+function CalculaTotal() {
+
+
+    var dato = 0;
+    var dato2 = 0;
+
+    $('#tbBody tbody tr').each(function () {
+        dato += Number($(this).find('td:nth-child(12)').html().replace("$", ""));
+        dato2 += Number($(this).find('td:nth-child(9)').html().replace("$", ""));
+    });
+
+    $("#tventa").val(dato);
+    $("#sventa").val(dato);
+    $("#dventa").val(dato2);
+}
+
+$(document).ready(function () {
+    $("#modelos").click(function (event) {
+
+
+        $('#modelos').attr("autocomplete", true);
+        var articuloen = $('#articuloen').val();
+        if (articuloen == "") { articuloen = 'Linea' }
+        $('#modelos').autocomplete({
+            maxShowItems: 5,
+            source: function (request, response) {
+                $.ajax({
+                    url: "/Ventas/SearchModel",
+                    type: "POST",
+                    dataType: "json",
+                    data: { Prefix: request.term, tipo: articuloen },
+                    success: function (data) {
+
+                        response($.map(data, function (item) {
+
+                            return { id: item.code, label: item.name, value: item.name };
+                        }));
+
+                    }
+                })
+            },
+            select: function (event, ui) {
+                $("#modelocode").val(ui.item.id);
+                var ddlModelo = ui.item.id;
+                $.ajax({
+                    type: "POST",
+                    url: '/Ventas/GetExistencias',
+                    data: "{ 'Parametrs': '" + ddlModelo + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        var idStore = '';
+                        if (result != null) {
+
+                            var lsLinea = JSON.parse(result);
+                            var date = JSON.parse(lsLinea);
+                            $("#ctienda1").val(date.ExistenciaTienda);
+                            $("#cbodega1").val(date.ExistenciaBodega);
+                        }
+                        else { alert("Existen datos"); }
+                        return false;
+                    },
+                    error: function (xhr) {
+                        //debugger;
+                        console.log(xhr.responseText);
+                        alert("Error has occurred..");
+                    }
+                });
+                //return false;
+            }
+        });
+    });
+});
+
+function OnchangeModelo() {
+    event.preventDefault();
+    $("#ddlModelo").change(function () {
+        var ddlModelo = $("#ddlModelo option:selected").val();
+        $.ajax({
+            type: "POST",
+            url: '/Ventas/GetExistencias',
+            data: "{ 'Parametrs': '" + ddlModelo + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                var idStore = '';
+                if (result != null) {
+
+                    var lsLinea = JSON.parse(result);
+                    var date = JSON.parse(lsLinea);
+                    $("#ctienda1").val(date.ExistenciaTienda);
+                    $("#cbodega1").val(date.ExistenciaBodega);
+                }
+                else { alert("Existen datos"); }
+                return false;
+            },
+            error: function (xhr) {
+                //debugger;
+                console.log(xhr.responseText);
+                alert("Error has occurred..");
+            }
+        });
+    });
+
+}
+function OnchangeListPrice() {
+    /// $("#ddlPrice").change(function () {
+    //var ddlModelo = $("#ddlPrice option:selected").val();
+    var idCheckJgo = document.getElementById('juego');
+    var ValuecTextboxTienda = $("#ctbienda").val();
+    var ValueTextboxBodega = $("#ctbodega").val();
+    var ValueExistenciaBodega1 = $("#cbodega1").val();
+    var ddlLinea = $("#ddlPrice option:selected").val();
+    var ddlModelo = $("#ddlModelo option:selected").val();
+    if (ddlModelo == "" || ddlModelo == 0 || ddlModelo == "0") {
+        ddlModelo = $("#modelocode").val();
+    }
+    var Texboxdescuento = $("#tbDescuento").val();
+    var origen = GetOrigen(ValuecTextboxTienda, ValueTextboxBodega);
+    if (origen == "Favor de insertar un monto válido") {
+        MessageError(origen);
+    } else {
+        var obj = { ItemCode: ddlModelo, IdList: ddlLinea, descuento: Texboxdescuento, cantidad: origen == "Tienda" ? ValuecTextboxTienda : ValueTextboxBodega, Origen: origen, Juego: idCheckJgo.checked };
+        var Json = JSON.stringify(obj);
+        ChangePrice(Json);
+    }
+
+    //$.ajax({
+    //    type: "POST",
+    //    url: '/Ventas/GetExistencias',
+    //    data: "{ 'Parametrs': '" + ddlModelo + "'}",
+    //    contentType: "application/json; charset=utf-8",
+    //    dataType: "json",
+    //    success: function (result) {
+    //        var idStore = '';
+    //        if (result != null) {
+
+    //            var lsLinea = JSON.parse(result);
+    //            var date = JSON.parse(lsLinea);
+    //            $("#ctienda1").val(date.ExistenciaTienda);
+    //            $("#cbodega1").val(date.ExistenciaBodega);
+    //        }
+    //        else { alert("Existen datos"); }
+    //        return false;
+    //    },
+    //    error: function (xhr) {
+    //        //debugger;
+    //        console.log(xhr.responseText);
+    //        alert("Error has occurred..");
+    //    }
+    //});
+    // });
+}
+function CheckJuego() {
+    var idCheckJgo = document.getElementById('juego');
+    var ddlModelo = $("#ddlModelo option:selected").val();
+    if (ddlModelo == "" || ddlModelo == 0 || ddlModelo == "0") {
+        ddlModelo = $("#modelocode").val();
+    }
+    if (idCheckJgo.checked) {
+        $.ajax({
+            type: "POST",
+            url: '/Ventas/GetSelectJuego',
+            data: "{ 'modelo': '" + ddlModelo + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                var idStore = '';
+                if (result != null) {
+
+                    var lsLinea = JSON.parse(result);
+                    var lsPrice = lsLinea.ListPrice;
+                    $("#cbDescriptioJuego").val(lsLinea.itemName);
+                    if (lsPrice != null) {
+                        $("#ddlPrice")
+                            .empty()
+                            .append($("<option></option>")
+                                .val("0")
+                                .html(":.Seleccione.:"));
+                        $.each(lsPrice, function (key, value) {
+                            var option = $(document.createElement('option'));
+                            option.html(value.ListName);
+                            option.val(value.ListID);
+                            $("#ddlPrice")
+                                .append(option);
+                        });
+                    }
+                    //var date = JSON.parse(lsLinea);
+                    //$("#ctienda1").val(date.ExistenciaTienda);
+                    //$("#cbodega1").val(date.ExistenciaBodega);
+                }
+                else { alert("Existen datos"); }
+                return false;
+            },
+            error: function (xhr) {
+                //debugger;
+                console.log(xhr.responseText);
+                alert("Error has occurred..");
+            }
+        });
+    } else {
+        PriceLoad();
+        $("#cbDescriptioJuego").val("");
+    }
+}
+function GetOrigen(montoT, montoB) {
+    if ((montoT == 0 && montoB == 0) || (montoT != 0 && montoB != 0)) {
+        return "Favor de insertar un monto válido";
+    } else if (montoT > 0) {
+        return "Tienda";
+    } else if (montoB > 0) {
+        return "Bodega";
+    }
+}
+
+function PriceLoad() {
+    var Price = GetJsonPrice();
+    $("#ddlPrice")
+        .empty();
+    $.each(Price, function (key, value) {
+        var option = $(document.createElement('option'));
+        option.html(value.ListName);
+        option.val(value.ListID);
+        $("#ddlPrice")
+            .append(option);
+    });
+}
+
+function round(num, decimales = 2) {
+    var signo = (num >= 0 ? 1 : -1);
+    num = num * signo;
+    if (decimales === 0) //con 0 decimales
+        return signo * Math.round(num);
+    // round(x * 10 ^ decimales)
+    num = num.toString().split('e');
+    num = Math.round(+(num[0] + 'e' + (num[1] ? (+num[1] + decimales) : decimales)));
+    // x * 10 ^ (-decimales)
+    num = num.toString().split('e');
+    return signo * (num[0] + 'e' + (num[1] ? (+num[1] - decimales) : -decimales));
+}
+
+
+
+

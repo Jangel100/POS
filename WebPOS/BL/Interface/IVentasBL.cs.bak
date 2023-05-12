@@ -1,0 +1,28 @@
+﻿using Entities;
+using Entities.viewsModels;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Net.Http;
+using System.Text;
+
+namespace BL.Interface
+{
+    public interface IVentasBL
+    {
+        HttpResponseMessage GetResponseAPI(string url);
+        HttpResponseMessage ReadAsStringAsyncAPI(string url, object obj);
+        List<ListArticuloView> GetArticulos();
+        List<ListModeloView> GetModelos(string Tipo);
+        List<ListLineaView> GetListLinea(string code);
+        List<ListMedidaView> GetMedida(string code);
+        string GetExistencias(string Parametrs);
+        int GetIva(string Idstore);
+        List<ListListOfPriceView> GetPrice(string store, string SAPDB);
+        double GetUnitPrice(string JsonUnitPrice);
+        ChangePriceView GetChangePrice(double Iva, double Price, string descuento, int cantidad);
+        DataTable GetQueryDBconn(string Query);
+        DataTable GetQueryDBconnSap(string idstore, string Modelo);
+        List<ListModeloView> GetModelsSelected(string JsonParams);
+    }
+}

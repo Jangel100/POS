@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+
+    th, td {
+        white-space: inherit;
+    }
+</style>
+
+@model Entities.viewsModels.ClentesAbonosFranquicias
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+            <span class="float-center">
+                <strong>Abonos</strong>
+            </span>
+        </div>
+        <div class="card-body ">
+
+            <form class="form-control-range">
+                <div class="form-group row no-gutters">
+                    <label for="modelo" class="col-form-label col-md-1" style="text-align:center;">Cliente</label>
+                    <input class="form-control col-md-4" list="datalistOptincli" id="datalistcliente" type="search" placeholder="Seleccione Cliente" onfocus="this.value=''" onchange="this.blur();">
+                    <datalist id="datalistOptincli">
+                        @foreach (var item in Model.ListClientes)
+                        {
+                            <option data-code="@item.ID" value="@item.Nombre"></option>
+
+                        }
+                    </datalist>
+
+                    <label for="periodo" class="col-md-1  col-form-label text-center">Periodo</label>
+                    @Html.DropDownListFor(model => Model.ListPeriodos, new SelectList(Model.ListPeriodos, "Periodo", "Periodo"), "Seleccione Periodo", new { id = "ddlPeriodoF", @class = "form-control col-md-1 form-control-sm mb-3", @style = "text-align:center;" })
+                    <label for="dia" class="col-md-1  col-form-label text-center">Dia</label>
+                    @Html.DropDownListFor(model => Model.ListDia, new SelectList(Model.ListDia, "Dia", "Dia"), "Seleccione Dia", new { id = "ddlDiaF", @class = "form-control col-md-1 form-control-sm mb-3", @style = "text-align:center;" })
+
+                    <label for="folio" class="col-md-1 col-form-label text-center">Folio</label>
+                    @Html.DropDownListFor(model => Model.ListFolio, new SelectList(Model.ListFolio, "Folio", "FolioPref"), "Seleccione Folio", new { id = "ddlFolioF", @class = "form-control col-md-1 form-control-sm mb-3", @style = "text-align:center;" })
+
+                    <div class="col-md-1 text-center">
+                        <button id="limpiarabono" type="button" class="btn btn-info btn-sm" onclick="Clearabonos()">
+                            <i class="fa fa-eraser" aria-hidden="true"></i>
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group row no-gutters">
+                    <label for="folipedido" class="col-md-1 col-form-label text-center">Pedido</label>
+                    <input type="text" class="form-control col-md-2  form-control-sm mb-3" id="folipedido" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                   
+
+                    <div class="col-md-1 text-center">
+                        <button id="buscar" type="button" onclick="SearchPedidoF()" class="btn btn-info btn-sm">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            Buscar
+                        </button>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <label id="montopaybacklb" for="montoPB" class="h2" style="text-align:center;display:none;">Monto Payback</label>
+                    <input class="form-control col-md-1 form-control" type="text" placeholder="0" id="montoPB" readonly="readonly" style="display:none;">
+                    <input id="sventa" class="form-control col-sm-3 form-control-sm mb-3" name="sventa" style="display: none;" />
+                    @Html.TextBox("Name", (object)ViewBag.Idstore, new { id = "idstore", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+                    @Html.TextBox("Name", (object)ViewBag.WhsID, new { id = "WhsID", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+                </div>
+                <table class="table table-hover table table-sm table-bordered" id="tblAbono">
+                    <thead class="table-info">
+                        <tr>
+                            <th scope="col">Id </th>
+                            <th scope="col">Venta</th>
+                            <th scope="col">Fecha Venta</th>
+                            <th scope="col">Vendedor</th>
+                            <th scope="col">Pagado</th>
+                            <th scope="col">Por Pagar</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Forma de Pago</th>
+                            <th scope="col">Tipo Tarjeta</th>
+                            <th scope="col">Terminación Tarjeta</th>
+                            <th scope="col">Monto</th>
+                            <th scope="col">Fecha de Pago</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </form>
+            @*}*@
+        </div>
+        <div class="card-footer">
+            <div class="class=" form-group row no-gutters">
+                <div class="col-md-12 text-center">
+                    <button id="addpago" type="button" onclick="AddAbonoF()" class="btn btn-success">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        Realizar Abono
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("../ViewPartial/Ventas/_PartialPayBack")
+</div>

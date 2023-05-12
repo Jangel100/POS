@@ -1,0 +1,243 @@
+﻿
+@using System.Data
+@using System.Collections.Generic
+@model Entities.viewsModels.ClientesView
+
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="card">
+            <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                <span class="float-center">
+                    <strong>Cliente</strong>
+                </span>
+                <span class="float-right font-small-2">
+                    <a href="https://portalsat.plataforma.sat.gob.mx/ConsultaRFC/captcha.faces" target="_blank" rel="noopener" class="btn btn-success btn-sm">
+                        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                        Validar RFC
+                    </a>
+                </span>
+            </div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { name = "frmClientes", id = "frmClientes" }))
+            {
+                <div class="card-body">
+                    <form class="form-control-range">
+                        <input type="hidden" id="txtIdCliente" name="txtIdCliente" />
+                        <div class="form-group row no-gutters">
+                            <div id="txtSelectedClientes"></div>
+                            <label for="nameb" class="col-md-2 col-form-label text-center">Nombre</label>
+                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="nameb">*@
+                            @Html.EditorFor(model => model.Clientes.Nombre, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Nombre", @id = "txtName" } })
+                            @*div class="invalid-feedback">Se requier el Nombre.</div>*@
+                            <label for="apaterno" class="col-md-2 col-form-label text-center">A. Paterno</label>
+                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="apaterno">*@
+                            @Html.EditorFor(model => model.Clientes.actAPEMATERNO, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "A. Paterno", @id = "txtAPaterno" } })
+                            @*<div class="invalid-feedback">Se requiere el Apellido Paterno.</div>*@
+                        </div>
+                        <div class="form-group row no-gutters">
+                            <label for="amaterno" class="col-md-2 col-form-label text-center">A. Materno</label>
+                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="amaterno">*@
+                            @Html.EditorFor(model => model.Clientes.actAPEMATERNO, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "A. Materno", @id = "txtAMaterno" } })
+                            @*<div class="invalid-feedback">Se requiere el Apellido Materno.</div>*@
+                            <label for="rfcb" class="col-md-2 col-form-label text-center">RFC</label>
+                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="rfcb">*@
+                            @Html.EditorFor(model => model.Clientes.RFC, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "RFC", @id = "txtRFCN" } })
+                            @*<div class="invalid-feedback">Se requiere el RFC.</div>*@
+                        </div>
+                        <div class="form-group row no-gutters">
+                            <label for="amaterno" class=" col-form-label text-center">El domicilio de Facturacion es el Mismo</label>
+                            <input type="checkbox" id="chkCheckDatosIguales" />
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" style="padding: 0.10rem 0.25rem !important;" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Dirección De Entrega Del Pedido
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="form-group row no-gutters">
+                                            <label for="calle" class="col-md-2 col-form-label text-center">Calle</label>
+                                            @*<input type="text" class="form-control col-md-10 form-control-sm mb-3" id="calle">*@
+                                            @Html.EditorFor(model => model.Clientes.CalleNumero, new { htmlAttributes = new { @class = "form-control col-md-10 form-control-sm mb-3", @placeholder = "Calle", @id = "txtCalle" } })
+                                            @*<div class="invalid-feedback">Se requiere la Calle.</div>*@
+                                        </div>
+                                        <div class="form-group row no-gutters">
+                                            <label for="noint" class="col-md-2 col-form-label text-center">Numero Int.</label>
+                                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="noint">*@
+                                            @Html.EditorFor(model => model.Clientes.actNUMINT, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Numero Int", @id = "txtNumeroInt" } })
+                                            @*<div class="invalid-feedback">Se requiere el Numero Interior.</div>*@
+                                            <label for="noext" class="col-md-2 col-form-label text-center">Numero Ext.</label>
+                                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="noext">*@
+                                            @Html.EditorFor(model => model.Clientes.actNUMEXT, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Numero Ext", @id = "txtNumeroExt" } })
+                                            @*<div class="invalid-feedback">Se requiere el Numero Exterior.</div>*@
+                                        </div>
+                                        <div class="form-group row no-gutters">
+                                            <label for="colonia" class="col-md-2 col-form-label text-center">Colonia</label>
+                                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="colonia">*@
+                                            @Html.EditorFor(model => model.Clientes.Colonia, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Colonia", @id = "txtColonia" } })
+                                            @*<div class="invalid-feedback">Se requiere la Colonia.</div>*@
+                                            <label for="delegacion" class="col-md-2 col-form-label text-center">Delegacion/Mun.</label>
+                                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="delegacion">*@
+                                            @Html.EditorFor(model => model.Clientes.DelMun, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Delegacion/Mun", @id = "txtDelegacion" } })
+                                            @*<div class="invalid-feedback">Se requiere Delegacion/Mun.</div>*@
+                                        </div>
+                                        <div class="form-group row no-gutters">
+                                            <label for="estado" class="col-md-2 col-form-label text-center">Estado</label>
+                                            <select class="form-control col-md-4 form-control-sm mb-3" id="cbmEstado">
+                                                @foreach (var Item in Model.Estados)
+                                                {
+                                                    <option value="@Item.EntidadId">@Item.EntidadDesc</option>
+                                                }
+                                            </select>
+                                            <label for="cp" class="col-md-2 col-form-label text-center">Codigo P.</label>
+                                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="cp">*@
+                                            @Html.EditorFor(model => model.Clientes.CP, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "CP", @id = "txtCP" } })
+                                            @*<div class="invalid-feedback">Se requiere el Codigo Postal.</div>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo" style="padding: 0.10rem 0.25rem !important;">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Direccion De Facturacón
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="form-group row no-gutters">
+                                            <label for="calle" class="col-md-2 col-form-label text-center">Calle</label>
+                                            @*<input type="text" class="form-control col-md-10 form-control-sm mb-3" id="calle">*@
+                                            @Html.EditorFor(model => model.ClientesFacturacion.CalleNumero, new { htmlAttributes = new { @class = "form-control col-md-10 form-control-sm mb-3", @placeholder = "Calle", @id = "txtCalleFact" } })
+                                            @*<div class="invalid-feedback">Se requiere la Calle de Facturación</div>*@
+                                        </div>
+                                        <div class="form-group row no-gutters">
+                                            <label for="noint" class="col-md-2 col-form-label text-center">Numero Int.</label>
+                                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="noint">*@
+                                            @Html.EditorFor(model => model.ClientesFacturacion.actNUMINT, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Numero Int", @id = "txtNumeroIntFact" } })
+                                            @*<div class="invalid-feedback">Se requiere el número Interior de Facturación</div>*@
+                                            <label for="noext" class="col-md-2 col-form-label text-center">Numero Ext.</label>
+                                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="noext">*@
+                                            @Html.EditorFor(model => model.ClientesFacturacion.actNUMEXT, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Numero Ext", @id = "txtNumeroExtFact" } })
+                                            @*<div class="invalid-feedback">Se requiere el número Exterior de Facturación</div>*@
+                                        </div>
+                                        <div class="form-group row no-gutters">
+                                            <label for="colonia" class="col-md-2 col-form-label text-center">Colonia</label>
+                                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="colonia">*@
+                                            @Html.EditorFor(model => model.ClientesFacturacion.Colonia, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Colonia", @id = "txtColoniaFact" } })
+                                            @*<div class="invalid-feedback">Se requiere la Colonia de Facturación</div>*@
+                                            <label for="delegacion" class="col-md-2 col-form-label text-center">Delegacion/Mun.</label>
+                                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="delegacion">*@
+                                            @Html.EditorFor(model => model.ClientesFacturacion.DelMun, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Delegacion/Mun", @id = "txtDelegacionFact" } })
+                                            <div class="invalid-feedback">Se requiere Delegacion/Mun de Facturación</div>
+                                        </div>
+                                        <div class="form-group row no-gutters">
+                                            <label for="estado" class="col-md-2 col-form-label text-center">Estado</label>
+                                            <select class="form-control col-md-4 form-control-sm mb-3" id="cmbEstadosFact">
+                                                @foreach (var Item in Model.Estados)
+                                                {
+                                                    <option value="@Item.EntidadId">@Item.EntidadDesc</option>
+                                                }
+                                            </select>
+                                            <label for="cp" class="col-md-2 col-form-label text-center">Codigo P.</label>
+                                            @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="cp">*@
+                                            @Html.EditorFor(model => model.ClientesFacturacion.CP, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "CP", @id = "txtCPFact" } })
+                                            @*<div class="invalid-feedback">Se requiere Código Postal Facturación</div>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row no-gutters">
+                            <label for="txtTelCasa" class="col-md-2 col-form-label text-center">Tel. Casa</label>
+                            @*<input type="email" class="form-control col-md-4 form-control-sm mb-3" id="telofi">*@
+                            @Html.EditorFor(model => model.Clientes.TelCasa, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "TelCasa", @id = "txtTelCasa" } })
+                            @*<div class="invalid-feedback">Se requiere Télefono de Casa</div>*@
+                            <label for="txtTelOfc" class="col-md-2 col-form-label text-center">Tel. Casa</label>
+                            @*<input type="email" class="form-control col-md-4 form-control-sm mb-3" id="telofi">*@
+                            @Html.EditorFor(model => model.Clientes.TelOfc, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Tel. Ofc", @id = "txtTelOfc" } })
+                            @*<div class="invalid-feedback">Se requiere Télefono de Oficina</div>*@
+                        </div>
+                        <div class="form-group row no-gutters">
+                            <label for="txtNoCelular" class="col-md-2 col-form-label text-center">No. Celular</label>
+                            @*<input type="email" class="form-control col-md-4 form-control-sm mb-3" id="telofi">*@
+                            @Html.EditorFor(model => model.Clientes.NoCelular, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "No. Celular", @id = "txtNoCelular" } })
+                            @*<div class="invalid-feedback">Se requiere Télefono Celular</div>*@
+                            <label for="txtCorreo" class="col-md-2 col-form-label text-center">Correo</label>
+                            @*<input type="email" class="form-control col-md-4 form-control-sm mb-3" id="telofi">*@
+                            @Html.EditorFor(model => model.Clientes.Correo, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Correo", @id = "txtCorreo" } })
+                            <div class="invalid-feedback">Se requiere el Correo Eléctronico</div>
+                        </div>
+                        <div class="form-group row no-gutters">
+                            <label for="fechanacimiento" class="col-md-2 col-form-label text-center">F. Nacimiento</label>
+                            <input type="date" class="form-control col-md-4 form-control-sm mb-3" id="txFechaNacimiento">
+                            @*<div class="invalid-feedback">Se requiere la Fecha de Nacimiento</div>*@
+                            @*Html.TextBoxFor(model => model.Clientes.actFCHNACIMIENTO, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control datepicker form-control col-md-4 form-control-sm mb-3", @id = "txFechaNacimiento" })*@
+                            @*<div class="invalid-feedback">Se requiere la Fecha de Nacimiento</div>*@
+                        </div>
+                        <div class="form-group row no-gutters">
+                            <input type="button" id="btnCapturarCliente" class="btn btn-info col-md-2" value="Capturar">
+                            <input type="button" id="btnClearDatosClientes" class="btn btn-info col-md-2" value="Limpiar">
+                            <input type="button" id="btnActualizar" class="btn btn-info col-md-4" value="Actualizar">
+                            <input type="button" id="btnSeleccionar" class="btn btn-info col-md-4" value="Seleccionar">
+                        </div>
+                    </form>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="card">
+            <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                <span class="float-center">
+                    <strong>Clientes encontrados</strong>
+                </span>
+                <span class="float-right font-small-2">
+                    <a href="#" class="btn btn-danger btn-sm" id="btnEliminarEncontrados">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        Eliminar
+                    </a>
+                </span>
+
+            </div>
+            <div class="card-body">
+                <table id="tblConsultaClientesEnc" class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">RFC</th>
+                            <th scope="col">Calle/Numero</th>
+                            <th scope="col">Colonia</th>
+                            <th scope="col">Telefono</th>
+                        </tr>
+                    </thead>
+
+                    <!--<tbody>-->
+                    @*<tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        </tr>*@
+                    <!--</tbody>-->
+
+                </table>
+                <br />
+                <br />
+                <br />
+            </div>
+            <div class="card-footer" style="padding: 0.0rem 1.25rem !important;">
+
+            </div>
+        </div>
+
+    </div>
+</div>

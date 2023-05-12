@@ -1,0 +1,84 @@
+﻿@model Entities.viewsModels.ListaApDesc
+
+
+<div class="card">
+    <div class="card-header">
+        <h2 class="text-center">Aprobacion de descuentos</h2>
+    </div>
+    <div class="card-body center">
+        <div class="row">
+            <table id="tblApbDesc" class="table table-responsive text-center table-hover table  table-sm ">
+                <thead>
+                    <tr>
+                        <th scope="col" hidden>ID</th>
+                        <th scope="col">Vendedor</th>
+                        <th scope="col">Articulo</th>
+                        <th scope="col">Descuento(%)</th>
+                        <th scope="col">Tienda</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Precio Lista</th>
+                        <th scope="col">Precio SMU</th>
+                        <th scope="col">Margen</th>
+                        <th scope="col">Observaciones</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.ListaDescuento != null)
+                    {
+                        foreach (var item in Model.ListaDescuento)
+                        {
+                    <tr>
+                        <td hidden>
+                            @item.ID
+                        <td>
+                            @item.Vendedor.ToUpper()
+                        </td>
+                        <td>
+                            @item.itemName
+                        </td>
+                        <td>
+                            @item.Descuento
+                        </td>
+                        <td>
+                            @item.Tienda
+                        </td>
+                        <td>
+                            @item.Fecha
+                        </td>
+                        <td>
+                            $@item.PrecioFDO
+                        </td>
+                        <td>
+                            $@item.PrecioSMU
+                        </td>
+                        <td>
+                          @(@item.Margen * 100)%
+                        </td>
+                        <td>
+                            @item.Observaciones
+                        </td>
+                        <td>
+                            <button type="submit" onclick="Aceptar_Onclick(@item.ID,'1')" class="btn btn-success">
+                                <i aria-hidden="true"></i>
+                                Aceptar
+                            </button>
+                            <button type="submit" onclick="Btn_Autorizado(@item.ID,'2','')" class="btn btn-danger">
+                                <i aria-hidden="true"></i>
+                                Rechazar
+                            </button>
+                            @*<input type="button" class="btn-success fa-succes" name="Aceptar" value="Aceptar" />
+            <input type="button" class="btn-danger fa-circle fa" name="Rechazar" value="Rechazar" />*@
+                        </td>
+                    </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <br />
+        <br />
+    </div>
+</div>

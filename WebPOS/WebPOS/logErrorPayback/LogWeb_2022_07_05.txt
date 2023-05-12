@@ -1,0 +1,6 @@
+2022-07-05 13:28:10 Crear venta nueva tienda: 5
+2022-07-05 13:28:14 Inicia Creación de Transaccion para insertar venta
+2022-07-05 13:28:28 descarga pdf idventa: 198724
+2022-07-05 16:44:49 Crear venta nueva tienda: 5
+2022-07-05 16:44:50 Inicia Creación de Transaccion para insertar venta
+2022-07-05 16:44:57 descarga pdf idventa: 198725

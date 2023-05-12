@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "ActualizaFechaEntrega";
+}
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+            <span class="float-center">
+                <strong>Actualizar Fecha de Entrega</strong>
+            </span>
+        </div>
+        <div class="card-body ">
+            <div class="form-group row no-gutters">
+                <div class="col-md-4"></div>
+                <label for="folipos" class="col-md-2 col-form-label text-center">Numero de Pedido</label>
+                <input type="text" class="form-control col-md-1 " id="folipos" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                <div class="col-md-1 text-center">
+                    <button id="buscar" type="button" onclick="SearchFolio()" class="btn btn-info">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        Buscar
+                    </button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <hr />
+            <div class="form-group row no-gutters">
+                <label for="idventa" class="col-md-1 col-form-label text-center">ID Venta</label>
+                <input type="text" class="form-control col-md-1 " id="idventa" disabled>
+                <label for="datecr" class="col-md-2 col-form-label text-center">Fecha de creación</label>
+                <input type="text" class="form-control col-md-1 " id="datecr" disabled>
+                <label for="folio" class="col-md-1 col-form-label text-center">Folio POS</label>
+                <input type="text" class="form-control col-md-1 " id="folio" disabled>
+                <label for="idusuario" class="col-md-1 col-form-label text-center">ID Usuario</label>
+                <input type="text" class="form-control col-md-1 " id="idusuario" disabled>
+                <label for="datein" class="col-md-2 col-form-label text-center">Fecha de entrega</label>
+                <input type="text" class="form-control col-md-1 " id="datein" disabled>
+
+            </div>
+            <hr />
+            <div class="form-group row no-gutters">
+                <div class="col-md-4"></div>
+                <label for="newdatein" class="col-md-2 col-form-label text-center"><strong>Nueva fecha de entrega</strong></label>
+                <input type="date" class="form-control col-md-2 " id="newdatein">
+                <div class="col-md-2 text-center">
+                    <button id="addpago" type="button" onclick="Updatenewdate()" class="btn btn-success">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                        Guardar cambios
+                    </button>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            @Html.TextBox("Name", (object)ViewBag.Idstore, new { id = "idstore", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+            @Html.TextBox("Name", (object)ViewBag.WhsID, new { id = "WhsID", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+        </div>
+        <div class="card-footer">
+            <div class="class=" form-group row no-gutters">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/chose/chosen.jquery.js"></script>
+    <script src="~/Scripts/chose/chosen.jquery.min.js"></script>
+    <script src="~/Scripts/chose/"></script>
+    <script src="~/Scripts/chose/chosen.proto.min.js"></script>
+    <script>
+
+        function SearchFolio() {
+            let folio = $("#folipos").val();
+            let idstore = $("#idstore").val();
+            if (folio == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ops',
+                    text: 'Debes de Ingresar un Número de Pedido'
+                })
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: '/Ventas/BuscaFolio',
+                data: "{ 'folio': '" + folio + "', 'tienda': '" + idstore + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    
+                        var Lin = JSON.parse(result);
+                        var idve = Lin.Idventa;
+                    if (idve != null) {
+                        $("#idventa").val(Lin.Idventa);
+                        $("#datecr").val(Lin.fechaventa);
+                        $("#folio").val(Lin.FolioPOS);
+                        $("#idusuario").val(Lin.Idusuario);
+                        $("#datein").val(Lin.Fechaentrega);
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Ops',
+                            text: 'No se Encontro Ningun Pedido con Este Número de Folio'
+                        })
+                        return;
+                    }
+                },
+                error: function (xhr) {
+                    //debugger;
+                    console.log(xhr.responseText);
+                    alert("Error has occurred..");
+                }
+            });
+        }
+        function Updatenewdate() {
+            let idventa = $("#idventa").val();
+            let fechaentrega = $('#newdatein').val();
+            if (fechaentrega == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ops',
+                    text: 'Debe seleccionar la fecha estimada de entrega'
+                })
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: '/Ventas/UpdateFechaE',
+                data: "{ 'idventa': '" + idventa + "', 'fechaentrega': '" + fechaentrega + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    if (result != "null") {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Actualización',
+                            text: 'Cambios Guardados Correctamente'
+                        }).then((result) => {
+                         
+
+                            if (result.isConfirmed) {
+                              
+                                location.reload();
+                            }
+                        });
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Ops',
+                            text: 'Ocurrio un error vuelve a intentarlo'
+                        })
+                        return;
+                    }
+                },
+                error: function (xhr) {
+                    //debugger;
+                    console.log(xhr.responseText);
+                    alert("Error has occurred..");
+                }
+            });
+        }
+    </script>
+
+}

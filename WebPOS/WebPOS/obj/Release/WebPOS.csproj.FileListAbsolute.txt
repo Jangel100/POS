@@ -1,0 +1,1444 @@
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\WebPOS.dll.config
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\WebPOS.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\WebPOS.pdb
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\csc.exe
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\csc.exe.config
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\csc.rsp
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\csi.exe
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\csi.exe.config
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\csi.rsp
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.AppContext.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Collections.Immutable.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Console.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Globalization.Calendars.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.IO.Compression.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.IO.FileSystem.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Net.Http.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Net.Sockets.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.ValueTuple.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Xml.XPath.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\vbc.exe
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\vbc.exe.config
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\vbc.rsp
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\VBCSCompiler.exe
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\roslyn\VBCSCompiler.exe.config
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Antlr3.Runtime.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\BCrypt.Net.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\BL.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportSource.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.Shared.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\DAL.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Entities.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.Options.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.Primitives.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Net.Http.Headers.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Web.Infrastructure.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Newtonsoft.Json.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\PagedList.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\PagedList.Mvc.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\RfcFacil.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\SimpleInjector.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Buffers.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.ComponentModel.Annotations.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Memory.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Net.Http.Formatting.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Numerics.Vectors.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Text.Encodings.Web.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Threading.Tasks.Extensions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.Helpers.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.Mvc.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.Optimization.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.Razor.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.WebPages.Deployment.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.WebPages.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.WebPages.Razor.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Unity.Abstractions.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Unity.Container.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Unity.Mvc5.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\WebGrease.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Security.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\stdole.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\BL.pdb
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\DAL.pdb
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Entities.pdb
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\BCrypt.Net.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.Options.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Extensions.Primitives.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Microsoft.Net.Http.Headers.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\PagedList.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\PagedList.Mvc.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\SimpleInjector.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Buffers.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Memory.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Net.Http.Formatting.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Numerics.Vectors.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Text.Encodings.Web.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Threading.Tasks.Extensions.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.Helpers.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.Mvc.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.Razor.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.WebPages.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.WebPages.Deployment.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.WebPages.Razor.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\System.Web.Optimization.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Newtonsoft.Json.xml
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Unity.Abstractions.pdb
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Unity.Container.pdb
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Antlr3.Runtime.pdb
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\Security.pdb
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\es\System.Web.Helpers.resources.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\es\System.Web.Mvc.resources.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\es\System.Web.Razor.resources.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\es\System.Web.WebPages.resources.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\es\System.Web.Optimization.resources.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\obj\Release\WebPOS.csprojAssemblyReference.cache
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\obj\Release\WebPOS.csproj.CoreCompileInputs.cache
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\obj\Release\WebPOS.csproj.CopyComplete
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\obj\Release\WebPOS.dll
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\obj\Release\WebPOS.pdb
+C:\Proyectos\Version ultima 22062021\17032021 version_final\WebPOS\WebPOS\bin\MessagingToolkit.QRCode.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\WebPOS.dll.config
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\WebPOS.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\WebPOS.pdb
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\csc.exe
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\csc.exe.config
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\csc.rsp
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\csi.exe
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\csi.exe.config
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\csi.rsp
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.Managed.Core.targets
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.AppContext.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Collections.Immutable.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Console.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Globalization.Calendars.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.IO.Compression.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.IO.FileSystem.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Net.Http.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Net.Sockets.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Reflection.Metadata.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.ValueTuple.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Xml.XPath.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\vbc.exe
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\vbc.exe.config
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\vbc.rsp
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\VBCSCompiler.exe
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\roslyn\VBCSCompiler.exe.config
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Antlr3.Runtime.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\BCrypt.Net.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\BL.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportSource.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.Shared.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\DAL.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Entities.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\MessagingToolkit.QRCode.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Authorization.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Http.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Routing.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.DependencyModel.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.ObjectPool.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.Options.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.Primitives.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Net.Http.Headers.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Web.Infrastructure.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Newtonsoft.Json.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\PagedList.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\PagedList.Mvc.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\RfcFacil.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\SimpleInjector.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Buffers.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.ComponentModel.Annotations.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Diagnostics.DiagnosticSource.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Memory.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Net.Http.Formatting.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Numerics.Vectors.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Text.Encodings.Web.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Threading.Tasks.Extensions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.Helpers.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.Mvc.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.Optimization.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.Razor.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.WebPages.Deployment.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.WebPages.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.WebPages.Razor.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Unity.Abstractions.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Unity.Container.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Unity.Mvc5.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\WebGrease.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Security.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\stdole.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\BL.pdb
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\DAL.pdb
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Entities.pdb
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\BCrypt.Net.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Authorization.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Http.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Routing.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.ObjectPool.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.Options.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Extensions.Primitives.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Microsoft.Net.Http.Headers.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\PagedList.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\PagedList.Mvc.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\SimpleInjector.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Buffers.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Diagnostics.DiagnosticSource.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Memory.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Net.Http.Formatting.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Numerics.Vectors.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Text.Encodings.Web.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Threading.Tasks.Extensions.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.Helpers.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.Mvc.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.Razor.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.WebPages.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.WebPages.Deployment.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.WebPages.Razor.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\System.Web.Optimization.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Newtonsoft.Json.xml
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Unity.Abstractions.pdb
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Unity.Container.pdb
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Antlr3.Runtime.pdb
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\Security.pdb
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\es\System.Web.Helpers.resources.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\es\System.Web.Mvc.resources.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\es\System.Web.Razor.resources.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\es\System.Web.WebPages.resources.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\bin\es\System.Web.Optimization.resources.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\obj\Release\WebPOS.csprojAssemblyReference.cache
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\obj\Release\WebPOS.csproj.CoreCompileInputs.cache
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\obj\Release\WebPOS.csproj.CopyComplete
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\obj\Release\WebPOS.dll
+C:\projectsvs\WEBPOSPUBLICO\WebPOS\obj\Release\WebPOS.pdb
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\WebPOS.dll.config
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\WebPOS.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\WebPOS.pdb
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\csc.exe
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\csc.exe.config
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\csc.rsp
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\csi.exe
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\csi.exe.config
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\csi.rsp
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.Managed.Core.targets
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.AppContext.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Collections.Immutable.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Console.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Globalization.Calendars.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.IO.Compression.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.IO.FileSystem.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Net.Http.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Net.Sockets.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Reflection.Metadata.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.ValueTuple.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Xml.XPath.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\vbc.exe
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\vbc.exe.config
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\vbc.rsp
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\VBCSCompiler.exe
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\roslyn\VBCSCompiler.exe.config
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Antlr3.Runtime.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\BCrypt.Net.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\BL.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\DAL.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Entities.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\MessagingToolkit.QRCode.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Authorization.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Http.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Routing.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.DependencyModel.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.ObjectPool.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.Options.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.Primitives.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Net.Http.Headers.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Web.Infrastructure.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Newtonsoft.Json.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\PagedList.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\PagedList.Mvc.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\RfcFacil.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\SimpleInjector.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Buffers.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.ComponentModel.Annotations.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Diagnostics.DiagnosticSource.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Memory.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Net.Http.Formatting.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Numerics.Vectors.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Text.Encodings.Web.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Threading.Tasks.Extensions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.Helpers.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.Mvc.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.Optimization.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.Razor.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.WebPages.Deployment.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.WebPages.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.WebPages.Razor.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Unity.Abstractions.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Unity.Container.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Unity.Mvc5.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\WebGrease.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Security.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\BL.pdb
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\DAL.pdb
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Entities.pdb
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\BCrypt.Net.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Authorization.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Http.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Routing.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.ObjectPool.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.Options.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Extensions.Primitives.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Microsoft.Net.Http.Headers.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\PagedList.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\PagedList.Mvc.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\SimpleInjector.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Buffers.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Diagnostics.DiagnosticSource.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Memory.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Net.Http.Formatting.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Numerics.Vectors.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Text.Encodings.Web.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Threading.Tasks.Extensions.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.Helpers.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.Mvc.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.Razor.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.WebPages.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.WebPages.Deployment.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.WebPages.Razor.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\System.Web.Optimization.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Newtonsoft.Json.xml
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Unity.Abstractions.pdb
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Unity.Container.pdb
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Antlr3.Runtime.pdb
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\Security.pdb
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\es\System.Web.Helpers.resources.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\es\System.Web.Mvc.resources.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\es\System.Web.Razor.resources.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\es\System.Web.WebPages.resources.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\bin\es\System.Web.Optimization.resources.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\obj\Release\WebPOS.csproj.CoreCompileInputs.cache
+C:\projectsvs\POSLIGERO\WEB\WebPOS\obj\Release\WebPOS.csproj.CopyComplete
+C:\projectsvs\POSLIGERO\WEB\WebPOS\obj\Release\WebPOS.dll
+C:\projectsvs\POSLIGERO\WEB\WebPOS\obj\Release\WebPOS.pdb
+C:\projectsvs\POSLIGERO\WEB\WebPOS\obj\Release\WebPOS.csproj.AssemblyReference.cache
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\WebPOS.dll.config
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\WebPOS.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\WebPOS.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\csc.exe
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\csc.exe.config
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\csc.rsp
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\csi.exe
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\csi.exe.config
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\csi.rsp
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.Managed.Core.targets
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.AppContext.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Collections.Immutable.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Console.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Globalization.Calendars.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.IO.Compression.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.IO.FileSystem.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Net.Http.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Net.Sockets.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Reflection.Metadata.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.ValueTuple.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Xml.XPath.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\vbc.exe
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\vbc.exe.config
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\vbc.rsp
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\VBCSCompiler.exe
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\roslyn\VBCSCompiler.exe.config
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Antlr3.Runtime.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\BCrypt.Net.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\BL.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportSource.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.Shared.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\DAL.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Entities.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\MessagingToolkit.QRCode.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyModel.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.ObjectPool.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.Options.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.Primitives.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Net.Http.Headers.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Web.Infrastructure.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Newtonsoft.Json.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\PagedList.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\PagedList.Mvc.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\RfcFacil.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\SimpleInjector.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Buffers.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.ComponentModel.Annotations.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Diagnostics.DiagnosticSource.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Memory.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Net.Http.Formatting.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Numerics.Vectors.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Text.Encodings.Web.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Threading.Tasks.Extensions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.Helpers.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.Mvc.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.Optimization.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.Razor.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.WebPages.Deployment.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.WebPages.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.WebPages.Razor.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Unity.Abstractions.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Unity.Container.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Unity.Mvc5.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\WebGrease.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Security.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\stdole.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\BL.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\DAL.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Entities.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\BCrypt.Net.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.ObjectPool.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.Options.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Extensions.Primitives.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Microsoft.Net.Http.Headers.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\PagedList.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\PagedList.Mvc.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\SimpleInjector.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Buffers.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Diagnostics.DiagnosticSource.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Memory.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Net.Http.Formatting.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Numerics.Vectors.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Text.Encodings.Web.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Threading.Tasks.Extensions.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.Helpers.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.Mvc.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.Razor.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.WebPages.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.WebPages.Deployment.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.WebPages.Razor.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\System.Web.Optimization.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Newtonsoft.Json.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Unity.Abstractions.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Unity.Container.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Antlr3.Runtime.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\Security.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\es\System.Web.Helpers.resources.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\es\System.Web.Mvc.resources.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\es\System.Web.Razor.resources.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\es\System.Web.WebPages.resources.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\es\System.Web.Optimization.resources.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\obj\Release\WebPOS.csproj.AssemblyReference.cache
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\obj\Release\WebPOS.csproj.CoreCompileInputs.cache
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\obj\Release\WebPOS.csproj.CopyComplete
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\obj\Release\WebPOS.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\obj\Release\WebPOS.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\WebPOS.dll.config
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\WebPOS.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\WebPOS.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\csc.exe
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\csc.exe.config
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\csc.rsp
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\csi.exe
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\csi.exe.config
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\csi.rsp
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.AppContext.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Collections.Immutable.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Console.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Globalization.Calendars.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.IO.Compression.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.IO.FileSystem.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Net.Http.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Net.Sockets.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.ValueTuple.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Xml.XPath.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\vbc.exe
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\vbc.exe.config
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\vbc.rsp
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\VBCSCompiler.exe
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\roslyn\VBCSCompiler.exe.config
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Antlr3.Runtime.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\BCrypt.Net.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\BL.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\BouncyCastle.Crypto.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportSource.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.Shared.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\DAL.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Entities.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\ICSharpCode.SharpZipLib.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\MessagingToolkit.QRCode.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Http.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Routing.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.Options.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.Primitives.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Net.Http.Headers.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Newtonsoft.Json.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\NPOI.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\NPOI.OOXML.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\NPOI.OpenXml4Net.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\NPOI.OpenXmlFormats.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\PagedList.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\PagedList.Mvc.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\RfcFacil.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\SimpleInjector.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Buffers.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.ComponentModel.Annotations.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Memory.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Net.Http.Formatting.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Numerics.Vectors.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Text.Encodings.Web.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Threading.Tasks.Extensions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.Helpers.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.Mvc.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.Optimization.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.Razor.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.WebPages.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.WebPages.Razor.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Unity.Abstractions.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Unity.Container.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Unity.Mvc5.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\WebGrease.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Security.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\stdole.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\BL.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\DAL.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Entities.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\BCrypt.Net.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\BouncyCastle.Crypto.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\ICSharpCode.SharpZipLib.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\ICSharpCode.SharpZipLib.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Http.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Routing.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.Options.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Extensions.Primitives.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Microsoft.Net.Http.Headers.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\NPOI.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\NPOI.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\NPOI.OOXML.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\NPOI.OOXML.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\NPOI.OpenXml4Net.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\NPOI.OpenXmlFormats.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\PagedList.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\PagedList.Mvc.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\SimpleInjector.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Buffers.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Memory.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Net.Http.Formatting.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Numerics.Vectors.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Text.Encodings.Web.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Threading.Tasks.Extensions.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.Helpers.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.Mvc.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.Razor.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.WebPages.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.WebPages.Razor.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\System.Web.Optimization.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Newtonsoft.Json.xml
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Unity.Abstractions.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Unity.Container.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Antlr3.Runtime.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\Security.pdb
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\es\System.Web.Helpers.resources.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\es\System.Web.Mvc.resources.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\es\System.Web.Razor.resources.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\es\System.Web.WebPages.resources.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\bin\es\System.Web.Optimization.resources.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\obj\Release\WebPOS.csprojAssemblyReference.cache
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\obj\Release\WebPOS.csproj.CoreCompileInputs.cache
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\obj\Release\WebPOS.csproj.CopyComplete
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\obj\Release\WebPOS.dll
+C:\Projects\Dormimundo2021IpPublica-9\Project2\WebPOS\obj\Release\WebPOS.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\BouncyCastle.Crypto.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\ICSharpCode.SharpZipLib.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\NPOI.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\NPOI.OOXML.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\NPOI.OpenXml4Net.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\NPOI.OpenXmlFormats.dll
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\BouncyCastle.Crypto.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\ICSharpCode.SharpZipLib.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\ICSharpCode.SharpZipLib.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\NPOI.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\NPOI.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\NPOI.OOXML.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\NPOI.OOXML.xml
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\NPOI.OpenXml4Net.pdb
+C:\projectsvs\POSPUBLICO\WebPOS\WebPOS\bin\NPOI.OpenXmlFormats.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\WebPOS.dll.config
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\WebPOS.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\WebPOS.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csc.exe
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csc.exe.config
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csc.rsp
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csi.exe
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csi.exe.config
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csi.rsp
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.AppContext.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Collections.Immutable.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Console.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Globalization.Calendars.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.IO.Compression.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.IO.FileSystem.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Net.Http.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Net.Sockets.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.ValueTuple.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Xml.XPath.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\vbc.exe
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\vbc.exe.config
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\vbc.rsp
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\VBCSCompiler.exe
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\VBCSCompiler.exe.config
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Antlr3.Runtime.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BCrypt.Net.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BL.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BouncyCastle.Crypto.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportSource.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.Shared.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\DAL.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Entities.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\ICSharpCode.SharpZipLib.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\MessagingToolkit.QRCode.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Options.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Primitives.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Net.Http.Headers.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Web.Infrastructure.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Newtonsoft.Json.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OOXML.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OpenXml4Net.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OpenXmlFormats.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\PagedList.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\PagedList.Mvc.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\RfcFacil.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\SimpleInjector.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Buffers.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.ComponentModel.Annotations.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Memory.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Net.Http.Formatting.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Numerics.Vectors.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Text.Encodings.Web.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Threading.Tasks.Extensions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Helpers.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Mvc.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Optimization.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Razor.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.Deployment.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.Razor.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Unity.Abstractions.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Unity.Container.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Unity.Mvc5.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\WebGrease.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Security.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\stdole.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BL.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\DAL.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Entities.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BCrypt.Net.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BouncyCastle.Crypto.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\ICSharpCode.SharpZipLib.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\ICSharpCode.SharpZipLib.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Options.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Primitives.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Net.Http.Headers.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OOXML.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OOXML.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OpenXml4Net.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OpenXmlFormats.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\PagedList.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\PagedList.Mvc.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\SimpleInjector.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Buffers.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Memory.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Net.Http.Formatting.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Numerics.Vectors.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Text.Encodings.Web.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Threading.Tasks.Extensions.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Helpers.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Mvc.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Razor.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.Deployment.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.Razor.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Optimization.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Newtonsoft.Json.xml
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Unity.Abstractions.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Unity.Container.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Antlr3.Runtime.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Security.pdb
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.Helpers.resources.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.Mvc.resources.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.Razor.resources.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.WebPages.resources.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.Optimization.resources.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\obj\Release\WebPOS.csproj.AssemblyReference.cache
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\obj\Release\WebPOS.csproj.CoreCompileInputs.cache
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\obj\Release\WebPOS.csproj.CopyComplete
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\obj\Release\WebPOS.dll
+C:\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\obj\Release\WebPOS.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\WebPOS.dll.config
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\WebPOS.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\WebPOS.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csc.exe
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csc.exe.config
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csc.rsp
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csi.exe
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csi.exe.config
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\csi.rsp
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.AppContext.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Collections.Immutable.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Console.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Globalization.Calendars.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.IO.Compression.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.IO.FileSystem.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Net.Http.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Net.Sockets.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.ValueTuple.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Xml.XPath.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\vbc.exe
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\vbc.exe.config
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\vbc.rsp
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\VBCSCompiler.exe
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\roslyn\VBCSCompiler.exe.config
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Antlr3.Runtime.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BCrypt.Net.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BL.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BouncyCastle.Crypto.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportSource.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.Shared.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\DAL.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Entities.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\ICSharpCode.SharpZipLib.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\MessagingToolkit.QRCode.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Options.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Primitives.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Net.Http.Headers.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Web.Infrastructure.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Newtonsoft.Json.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OOXML.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OpenXml4Net.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OpenXmlFormats.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\PagedList.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\PagedList.Mvc.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\RfcFacil.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\SimpleInjector.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Buffers.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.ComponentModel.Annotations.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Memory.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Net.Http.Formatting.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Numerics.Vectors.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Text.Encodings.Web.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Threading.Tasks.Extensions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Helpers.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Mvc.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Optimization.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Razor.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.Deployment.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.Razor.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Unity.Abstractions.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Unity.Container.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Unity.Mvc5.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\WebGrease.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Security.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\stdole.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BL.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\DAL.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Entities.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BCrypt.Net.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\BouncyCastle.Crypto.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\ICSharpCode.SharpZipLib.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\ICSharpCode.SharpZipLib.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Options.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Extensions.Primitives.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Microsoft.Net.Http.Headers.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OOXML.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OOXML.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OpenXml4Net.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\NPOI.OpenXmlFormats.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\PagedList.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\PagedList.Mvc.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\SimpleInjector.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Buffers.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Memory.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Net.Http.Formatting.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Numerics.Vectors.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Text.Encodings.Web.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Threading.Tasks.Extensions.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Helpers.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Mvc.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Razor.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.Deployment.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.WebPages.Razor.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\System.Web.Optimization.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Newtonsoft.Json.xml
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Unity.Abstractions.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Unity.Container.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Antlr3.Runtime.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\Security.pdb
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.Helpers.resources.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.Mvc.resources.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.Razor.resources.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.WebPages.resources.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\bin\es\System.Web.Optimization.resources.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\obj\Release\WebPOS.csproj.AssemblyReference.cache
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\obj\Release\WebPOS.csproj.CoreCompileInputs.cache
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\obj\Release\WebPOS.csproj.CopyComplete
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\obj\Release\WebPOS.dll
+C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\obj\Release\WebPOS.pdb

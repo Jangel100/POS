@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    th, td {
+        white-space: nowrap;
+    }
+
+    td {
+        font-size: 11px;
+    }
+/*    thead {
+        font-size: 12px;
+    }*/
+</style>
+<div class="container-fluid" style="padding: 0.25rem 0.25rem !important;">
+    <div class="card">
+        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+            <span class="float-center">
+                <strong>Lista de solicitud de garantías</strong>
+            </span>
+        </div>
+        <div class="card-body ">
+                        <table id="tblReportDesc" class="table table-responsive table-sm display nowrap dataTable table-info dtr-inline text-center">
+                            <thead>
+
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <br />
+        </div>
+        <div class="card-footer">
+            <div class=" form-group row no-gutters">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/chose/chosen.jquery.js"></script>
+    <script src="~/Scripts/chose/chosen.jquery.min.js"></script>
+    <script src="~/Scripts/chose/"></script>
+    <script src="~/Scripts/chose/chosen.proto.min.js"></script>
+    <script>
+       
+        $(document).ready(function () {
+            try {
+                $("#loader").show();
+                $.ajax({
+                    type: "POST",
+                    url: "/Garantias/LoadDatas",
+                    data: "{'' : ''}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: (result) => {
+                        var dataset = result;
+                        var result1 = JSON.parse(result);
+                        if (dataset != null) {
+
+                            var spanish = {
+                                "processing": "Procesando...",
+                                "lengthMenu": "Mostrar _MENU_  registros",
+                                "zeroRecords": "No se encontraron resultados",
+                                "emptyTable": "Ningún dato disponible en esta tabla",
+                                "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                "search": "Buscar Garantia:",
+                                "infoThousands": ",",
+                                "loadingRecords": "Cargando...",
+                                "oPaginate": {
+                                    "sFirst": "Primero",
+                                    "sLast": "Último",
+                                    "sNext": "Siguiente",
+                                    "sPrevious": "Anterior"
+                                },
+                                " oAria ": {
+                                    " sSortDescending ": ": Activar para ordenar la columna de manera descendente ",
+                                    " sSortAscending ": ": Activar para ordenar la columna de manera ascendente "
+                                }
+                            }
+
+                            table = $("#tblReportDesc").dataTable({
+                                destroy: true,
+                                columnDefs: [
+                                    {
+                                        targets: [1,4,5], visible: true, searchable: false, orderable: true,
+                                        render: function (value) {
+                                            if (value === null) return "";
+                                            var strdate = value.split('T');
+                                            let onlydate = strdate[0];
+                                            return onlydate;
+                                        }
+                                    }
+                                ],
+                                language: spanish,
+                                //searching: false,
+                                //scrollX: true,
+                                iDisplayLength: 12,
+                            
+                                //scrollCollapse: true,
+                                //select: false,
+                                data: result1,
+                                columns: [
+                                    { title: "Solicitud", data: "id_garantia" },
+                                    { title: "Fecha Solicitud", data: "Fecha" },
+                                    { title: "Franquicia", data: "Franquicia" },
+                                    { title: "Tienda", data: "Tienda" },
+                                    { title: "Fecha Venta", data: "FechaVenta" },
+                                    { title: "Fecha Garantía", data: "FechaGaranti" },
+                                    { title: "Cliente", data: "Cliente" },
+                                    { title: "Quien Solicitó", data: "QuienSol" },
+                                    { title: "Modelo", data: "ItemName" },
+                                    { title: "Auditor", data: "Auditor" },
+                                    { title: "Estatus", data: "Estatus" },
+                                ],
+                                "responsive": true,
+                                "rowReorder": {
+                                    "selector": 'td:nth-child(2)'
+                                },
+                                "processing": true,
+                                "order": [[0, "desc"]],
+                                //"pageLength": 40,
+                                dom: 'Bfrtip',
+                                buttons: [
+                                    
+                                ]
+                            });
+                        }
+                        else {
+                            $(".DTFC_Cloned tbody").empty();
+                            $("#tblReportDesc").dataTable().empty();
+                        }
+                        //Tiempo para cerrar el modal loading
+                        setTimeout(function () { $("#loader").hide(); },
+                            1000);
+                        //Se agrega icono al boton excel
+                        $('.buttons-excel').prepend('<i class="fa fa-file-excel-o center text-center" aria-hidden="true"></i>');
+                    },
+                    error: (xhr) => {
+                        console.log(xhr.responseText);
+                        alert("Ha ocurrido un error al generar la consulta del reporte");
+                        $("#loader").hide();
+                    }
+                });
+            } catch (ex) {
+                alert(ex);
+                $("#loader").hide();
+            }
+
+        });
+   
+    </script>
+
+}
+
+

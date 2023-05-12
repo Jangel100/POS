@@ -1,0 +1,10 @@
+﻿namespace Entities.viewsModels
+{
+    public class SaleSearchView
+    {
+        public int ID { get; set; }
+        public string Folio { get; set; }
+        public int IdStore { get; set; }
+        public string Fecha { get; set; }
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "xi8IInRxRKrMZARnptOtkm32smaXJ7RBSR+WcidNUtg644tDa2IX7hS/onZQgn5Lc+UyS7t+UICBLqNG4dBPdg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Proyectos\\WebPOS\\Conections\\Conections.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\jquery\\1.12.4\\jquery.1.12.4.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\jquery.ui\\1.12.1.1\\jquery.ui.1.12.1.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\jquery.ui.combined\\1.12.1\\jquery.ui.combined.1.12.1.nupkg.sha512"
+  ],
+  "logs": []
+}

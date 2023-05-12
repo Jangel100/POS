@@ -1,0 +1,95 @@
+﻿
+@using System.Data;
+@using System.Collections;
+@model Entities.viewsModels.ReportsView
+
+@{
+    ViewBag.Title = "_PartialReports";
+}
+    <form class="form-group">
+        <div class="row">
+            <label class="col-md-1 col-form-label text-center">
+                Tienda
+            </label>
+            <select id="cmbTiendaConsult" class="form-control col-md-2 form-control-sm mb-2" onchange="Reports.getVendedores()" name="cmbPeriodoConsult">
+                <option>Todos</option>
+                @foreach (var item in Model.reportsVentasxArticulo.lsTienda)
+                {
+                    <option value="@item.AdminUserID">@item.Franquicia</option>
+                }
+            </select>
+            <label class="col-md-1 col-form-label text-center">
+                Fecha Inicio
+            </label>
+            <input type="date" class="form-control col-md-2 form-control-sm mb-2" id="txFechaIVentaArt">
+            <label class="col-md-1 col-form-label text-center">
+                Linea
+            </label>
+            <select id="cmbLineaVentaArt" class="form-control col-md-2 form-control-sm mb-2" name="cmbLineaVentaArt">
+                <option>Todos</option>
+                @foreach (var item in Model.reportsVentasxArticulo.lsLinea)
+                {
+                    <option value="@item.Code">@item.Name</option>
+                }
+            </select>
+            <label class="col-md-1 col-form-label text-center">
+                Vendedor
+            </label>
+            <select id="cmbVendedorConsult" class="form-control col-md-2 form-control-sm mb-2" name="cmbVendedorConsult">
+                <option>Todos</option>
+            </select>
+        </div>
+        <div class="row">
+            <label class="col-md-1 col-form-label text-center">
+                Fecha Fin
+            </label>
+            <input type="date" class="form-control col-md-2 form-control-sm mb-2" id="txFechaFVentaArt">
+            <label class="col-md-1 col-form-label text-center">
+                Medida
+            </label>
+            <select id="cmbMedidaVentaArt" class="form-control col-md-2 form-control-sm mb-2" name="cmbMedidaVentaArt">
+                <option>Todos</option>
+                @foreach (var item in Model.reportsVentasxArticulo.lsMedida)
+                {
+                    <option value="@item.Code">@item.Name</option>
+                }
+            </select>
+            <label class="col-md-1 col-form-label text-center">
+                Estatus Venta
+            </label>
+            <select id="cmbEstatusConsultVAr" class="form-control col-md-2 form-control-sm mb-2" name="cmbEstatusConsultVAr">
+                <option value="-1">Todos</option>
+                <option value="1">Activada</option>
+                <option value="2">Cancelada</option>
+            </select>
+            <label class="col-md-1 col-form-label text-center">
+                Articulo
+            </label>
+            <select id="cmbArticuloVentaArt" class="form-control col-md-2 form-control-sm mb-2" name="cmbArticuloVentaArt">
+                <option>Todos</option>
+                @foreach (var item in Model.reportsVentasxArticulo.lsArticulo)
+                {
+                    <option value="@item.Code">@item.Name</option>
+                }
+            </select>
+        </div>
+        <div class="row">
+            <label class="col-md-1 col-form-label text-center">
+                Modelo
+            </label>
+            <select id="cmbModeloVentaArt" class="form-control col-md-2 form-control-sm mb-2" name="cmbModeloVentaArt">
+                <option>Todos</option>
+                @foreach (var item in Model.reportsVentasxArticulo.lsModelo)
+                {
+                    <option value="@item.Code">@item.Name</option>
+                }
+            </select>
+                @*<input type="button" class="btn btn-primary" id="btnReportsTiendaArticuloFiltro" value="Buscar" />*@
+        <div class="col-md-3 text-center">
+            <button class="btn btn-sm btn-info ml-1" id="btnReportsTiendaArticuloFiltro">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                Buscar
+            </button>
+        </div>               
+        </div>
+    </form>

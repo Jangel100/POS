@@ -1,0 +1,227 @@
+﻿<article>
+    <div class="text-center col-lg-12">
+        <h1 id="BienvidoInicial">Bienvenidos al Punto de Venta Dormimundo</h1>
+    </div>
+</article>
+<section class="text-center">
+    <h2 id="textoMarquesina"></h2>
+    <h2 id="Tienda"></h2>
+    <h1 id="Bienvenido"></h1>
+    <input type="hidden" name="txtIdStore" id="txtIdStore" />
+</section>
+
+@*<iframe width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=07b04fd7-656a-4700-9d93-111e1f751ddd&autoAuth=true&ctid=5dc078fd-ea94-4d84-8577-1d8ccfd5d3fc&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXBhYXMtMS1zY3VzLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" frameborder="0" allowFullScreen="true"></iframe>*@
+
+<table id="tbEnviosDelDia" class="table table-striped display nowrap">
+    <thead>
+        <tr>
+            <th>IdPedido</th>
+            <th>IdStore</th>
+            <th>PEDIDO</th>
+            <th>VENDEDOR</th>
+            <th>FECHA DE CREACION</th>
+            <th>TIENDA</th>
+            <th>ESTATUS</th>
+            <th>FECHA ENTREGA</th>
+            <th style="text-align:center;width:100px;">
+                Imprimir <button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </button>
+            </th>
+        </tr>
+    </thead>
+</table>
+
+
+@Scripts.Render("~/bundles/JqueryUI")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/DataTables")
+@Scripts.Render("~/bundles/scripts")
+
+
+
+
+@*<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/jquery-3.5.1.js"></script>
+    <script src="~/Scripts/POS/jquery-paginate.min.js"></script>
+    <script src="~/Scripts/POS/jquery-paginate.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/POS/Home.js"></script>
+    <script>
+        Home = {
+            showEnviosDelDia: function () {
+                $('a.toggle-vis').on('click', function (e) {
+                    e.preventDefault();
+
+                    var column = table.column($(this).attr('data-column'));
+
+                    column.visible(!column.visible());
+                });
+            },
+            imprimirPedido: function () {
+                var table = $('#tbEnviosDelDia').DataTable({
+                    "scrollY": "200px",
+                    "paging": true,
+                    "searching": false,
+                    "ordering": false,
+                    "info": false,
+                    "lengthChange": false,
+                    dom: "Bfrtip",
+                    buttons: 'pdf'
+
+                });
+
+                $("#tbEnviosDelDia tbody").on('click', 'button', function () {
+                    var data = table.row($(this).parents('tr')).data();
+                    alert(data[0]);
+                });
+            },
+            modalHome: function () {
+                $("#FranquiciaModal").modal({ backdrop: 'static', keyboard: false });
+            },
+            loadCmbTienda: function () {
+                if ($('#FranquiciaModal').hasClass('in')) {
+                    $.ajax({
+                        type: "POST",
+                        url: '/Tienda/GetTiendas',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+
+                            if (result != null) {
+                                var jsonData = JSON.parse(result);
+
+                                Home.TiendaListSuccess(jsonData);
+                            }
+                            else {
+                                alert('El usuario no tiene ninguna tienda Activa Asignada, preciona el boton de regreso a la pagina anterior en su navegador.');
+                            }
+
+                            return false;
+                        },
+                        error: function (xhr) {
+                            //debugger;
+                            console.log(xhr.responseText);
+                            alert("Error has occurred..");
+                        }
+                    });
+                }
+            },
+            TiendaListSuccess: function (tiendas) {
+                $.each(tiendas, function (id, item) {
+                    Home.TiendaAddRow(item.AdminStoreID, item.StoreName);
+                });
+            },
+            TiendaAddRow: function (key, value) {
+                var added = document.createElement('option');
+                var select1 = $('#cmbFranTienda');
+                added.value = key;
+                added.innerHTML = value;
+                select1.append(added);
+            },
+            OnChangeCmbTienda: function () {
+                $("#cmbFranTienda").change(function () {
+                    var valueTienda = JSON.stringify(this.value.toString());
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/Tienda/GetSelectedTienda',
+                        data: "{ 'id': " + valueTienda + " }",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            var idStore = '';
+                            if (result != null) {
+
+                                if (result != null) {
+                                    var lsPedidos = JSON.parse(result);
+
+                                    var lsPedidoDiaView = lsPedidos.lsPedidoDiaView;
+                                    var textoMarquesina = lsPedidos.TextoMarquesina;
+
+                                    if (textoMarquesina != null) {
+                                        Home.LoadTextoMarquesina(textoMarquesina);
+                                    }
+
+                                    Home.ShowMessageBienvenida();
+                                    Home.hiddenModalTienda();
+
+                                    if (lsPedidoDiaView != null) {
+                                        Home.EnvioDiaListSuccess(lsPedidoDiaView);
+                                    }
+                                }
+                            }
+                            return false;
+                        },
+                        error: function (xhr) {
+                            //debugger;
+                            console.log(xhr.responseText);
+                            alert("Error has occurred..");
+                        }
+                    });
+
+                });
+            },
+            LoadTextoMarquesina: function (textoMarquesina) {
+                $("#textoMarquesina").html(textoMarquesina);
+            },
+            EnvioDiaListSuccess: function (lsPedidoDiaView) {
+                $('#tbEnviosDelDia tbody').empty();
+
+                for (var i = 0; i < lsPedidoDiaView.length; i++) {
+                    var rows = "<tr>" +
+                        "<td>" + lsPedidoDiaView[i].Pedido + "</td>" +
+                        "<td>" + lsPedidoDiaView[i].Vendedor + "</td>" +
+                        "<td>" + lsPedidoDiaView[i].Fecha_Creacion + "</td>" +
+                        "<td>" + lsPedidoDiaView[i].Tienda + "</td>" +
+                        "<td>" + lsPedidoDiaView[i].Estatus + "</td>" +
+                        "<td>" + lsPedidoDiaView[i].Fecha_Entrega + "</td>" +
+                        "</tr>";
+                    $('#tbEnviosDelDia tbody').append(rows);
+                }
+
+                $('#tbEnviosDelDia').paginate({
+                    limit: 10, // 10 elements per page
+                    initialPage: 1, // Start on second page
+                    previous: true, // Show previous button
+                    previousText: 'Previous page', // Change previous button text
+                    next: true, // Show previous button
+                    nextText: 'Next page', // Change next button text
+                    first: true, // Show first button
+                    firstText: 'First', // Change first button text
+                    last: true, // Show last button
+                    lastText: 'Last', // Change last button text
+                    optional: false, // Always show the navigation menu
+                    onCreate: function (obj) { console.log('Pagination done!'); },
+                    onSelect: function (obj, i) { console.log('Page ' + i + ' selected!'); },
+                    childrenSelector: 'tbody > tr.ugly',
+                    navigationWrapper: $('div#myNavWrapper'), // Append the navigation menu to the `#myNavWrapper` div
+                    navigationClass: 'my-page-navigation', // New css class added to the navigation menu
+                    pageToText: function (i) { return (i + 1).toString(16); } // Page numbers will be shown on hexadecimal notation
+                });
+            },
+            ShowMessageBienvenida: function () {
+                var Tienda = $("#cmbFranTienda option:selected").text();
+
+                $("#BienvidoInicial").hide();
+                $("#Tienda").html(Tienda);
+                $("#Bienvenido").html("Bienvenidos al Punto de Venta Dormimundo");
+            },
+            hiddenModalTienda: function () {
+                $("#FranquiciaModal").modal("hide");
+            }
+        };
+
+        $(document).ready(function () {
+            Home.modalHome();
+            Home.imprimirPedido();
+            Home.showEnviosDelDia();
+            Home.loadCmbTienda();
+            Home.OnChangeCmbTienda();
+        }
+        );
+    </script>*@
+

@@ -1,0 +1,297 @@
+﻿
+@{
+    ViewBag.Title = "Compras";
+}
+@model Entities.viewsModels.ArticulosBaseView
+<div class="container-fluid" id="bodyCompra">
+    <div class="row match-height">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                    <span class="float-center">
+                        <strong> <i class="fa fa-cart-plus" aria-hidden="true"></i> Ingrese los datos de cada modelo</strong>
+                    </span>
+                </div>
+                <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                    <span class="float-center">
+                        <strong>Artículos</strong> &nbsp
+                    </span>
+                    <span class="float-right font-small-6">
+                        Articulo en: &nbsp
+
+                        <div class="form-check form-check-inline">
+                            @Html.CheckBoxFor(model => Model.ListRadioButton.CheckLine, new { id = "idCheckLine", @class = "form-check-input", onchange = "CheckLineCom()" })
+                            <label class="form-check-label" for="inlineRadio1">Linea</label>
+
+                        </div>
+                        <div class="form-check form-check-inline">
+
+                            @Html.CheckBoxFor(model => Model.ListRadioButton.CheckDesc, new { id = "idCheckDesc", @class = "form-check-input", onchange = "CheckDescCom()" })
+                            <label class="form-check-label" for="inlineRadio2">Descontinuados</label>
+                        </div>
+                        <input id="articuloen" class="form-control col-sm-5 form-control-sm mb-3" name="articuloen" style="display: none;" />
+                    </span>
+                </div>
+                <div class="card-body ">
+                    <div class="form-group row">
+                        <label for="ddlArticulo" class="col-form-label col-md-3 font-weight-bold">Artículo</label>
+                        @Html.DropDownListFor(model => Model.ListArticulos, new SelectList(Model.ListArticulos, "code", "name"), "Seleccione artículo", new { id = "ddlArticulo", @class = "form-control col-sm-9 form-control-sm mb-3", @style = "text-align:center;" })
+                    </div>
+                    <div class="form-group row">
+                        <label for="ddlLinea" class="col-form-label col-md-3 font-weight-bold">Linea</label>
+                        @Html.DropDownListFor(model => Model.ListLinea, new SelectList(Model.ListLinea, "idLine", "NameLine"), "Seleccione Linea", new { id = "ddlLinea", @class = "form-control col-sm-9 form-control-sm mb-3", @style = "text-align:center;" })
+                    </div>
+                    <div class="form-group row">
+                        <label for="ddlMedida" class="col-form-label col-md-3 font-weight-bold">Medida</label>
+                        @Html.DropDownListFor(model => Model.ListMedida, new SelectList(Model.ListMedida, "code", "name"), "Seleccione Medida", new { id = "ddlMedida", @class = "form-control col-sm-9 form-control-sm mb-3", @style = "text-align:center;" })
+                    </div>
+                    <div class="form-group row">
+                        @Html.TextBox("Name", (object)ViewBag.Idstore, new { id = "idstore", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+                        @Html.TextBox("Name", (object)ViewBag.Idusuario, new { id = "Idusuario", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+                        @Html.TextBox("Name", (object)ViewBag.WhsID, new { id = "WhsID", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+                        @Html.TextBox("Name", (object)ViewBag.DEFAULTLIST, new { id = "DEFAULTLIST", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+                        @Html.Label((string)ViewBag.labelsel, new { id = "m", @class = "col-form-label col-md-4 font-weight-bold" })
+                        <input id="modelocode" class="form-control col-sm-3 form-control-sm mb-3" name="modelocode" style="display: none;" />
+                        @Html.TextBox("Name", (object)ViewBag.labelsel, new { id = "ccortamodelo", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+                        <input class="form-control col-sm-8 form-control-sm mb-3" list="datalistOptions" id="datalistmodeloscom" type="search" placeholder="Selecciona Modelo" onfocus="this.value=''" onchange="this.blur();">
+                        @if (ViewBag.labelsel == "Clave corta")
+                        {
+                            <datalist id="datalistOptions">
+                                @foreach (var item in Model.ListModelo)
+                                {
+                                    <option data-code="@item.code" data-name="@item.name" value="@item.clavecorta"></option>
+                                }
+                            </datalist>
+                        }
+                        else
+                        {
+                            <datalist id="datalistOptions">
+                                @foreach (var item in Model.ListModelo)
+                                {
+                                    <option data-code="@item.code" value="@item.name"></option>
+                                }
+                            </datalist>
+                        }
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="item" class="col-sm-3 col-form-label font-weight-bold">Item</label>
+                        <input type="text" class="form-control col-sm-9 form-control-sm mb-3" id="item" disabled>
+                    </div>
+                    <div class="form-group row">
+                        <label for="code" class="col-sm-3 col-form-label font-weight-bold">Code</label>
+                        <input type="text" class="form-control col-sm-9 form-control-sm mb-3" id="code" disabled>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cantidad" class="col-sm-3 col-form-label font-weight-bold">Cantidad</label>
+                        <input type="text" class="form-control col-sm-9 form-control-sm mb-3" id="cantidad"  onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" value="1" disabled>
+                    </div>
+                    <div class="form-group row">
+                        <label for="comentarios" class="col-md-3 col-form-label font-weight-bold">Comentarios</label>
+                        <textarea class="form-control col-md-9 form-control-sm mb-3" id="comentarios" rows="2" disabled></textarea>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group row">
+                        <div class="col-md-2"></div>
+                        <button type="button" onclick="AddArticles()" class="btn btn-info btn-sm col-md-5" id="addarticle" disabled>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            Agregar
+                        </button>
+
+                        <button type="submit" onclick="Clear()" class="btn btn-danger btn-sm col-md-5">
+                            <i class="fa fa-eraser" aria-hidden="true"></i>
+                            Limpiar Campos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                    <span class="float-center">
+                        <strong><i class="fa fa-truck" aria-hidden="true"></i> Modelos para la compra</strong>
+                    </span>
+                    <span class="float-center font-small-2">
+                        <button type="button"  class="btn btn-success btn-sm" id="AddPurchase">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            Crear Compra
+                        </button>
+                        &nbsp &nbsp &nbsp
+                        <button type="submit" class="btn btn-danger btn-sm erasetable">
+                            <i class="fa fa-eraser" aria-hidden="true"></i>
+                            Limpiar Todo
+                        </button>
+                    </span>
+
+                </div>
+                <div class="card-body"
+
+                <div id="tbBodyIn" class="card-body table table-hover table-responsive table-responsive-sm" height="50%" style="padding: 0.25rem 0.25rem !important;">
+                    <table id="tbBodyCom" class="table table-hover table table-sm" height="50%">
+                        <thead class="table-info">
+                            <tr>
+                                <th scope="col">ItemCode</th>
+                                <th hidden="hidden" scope="col">#</th>
+                                <th scope="col">Modelo</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Comentarios</th>
+                                <th scope="col">Opcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+          </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts{
+    <script src="~/Scripts/chose/chosen.jquery.js"></script>
+    <script src="~/Scripts/chose/chosen.jquery.min.js"></script>
+    <script src="~/Scripts/chose/"></script>
+    <script src="~/Scripts/chose/chosen.proto.min.js"></script>
+    <script>
+        $("#ddlArticulo").change(function () {
+            var Tienda1 = $("#ddlArticulo option:selected").val();
+            if (Tienda1 == "" || Tienda1=="0") {
+                Clear();
+            }
+            else {
+                $.ajax({
+                    type: "POST",
+                    url: '/Ventas/GetSelectedLinea',
+                    data: "{ 'code': '" + Tienda1 + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        var idStore = '';
+                        if (result != null) {
+
+                            var lsLinea = JSON.parse(result);
+                            $("#ddlLinea")
+                                .empty()
+                                .append($("<option></option>")
+                                    .val("0")
+                                    .html(":.Seleccione.:"));
+                            $.each(lsLinea, function (key, value) {
+                                var option = $(document.createElement('option'));
+                                option.html(value.name);
+                                option.val(value.code);
+                                $("#ddlLinea")
+                                    .append(option);
+                            });
+
+
+                        }
+                        return false;
+                    },
+                    error: function (xhr) {
+                        //debugger;
+                        console.log(xhr.responseText);
+                        alert("Error has occurred..");
+                    }
+                });
+        }
+                });
+        $("#ddlLinea").change(function () {
+            var ddlArticulo = $("#ddlArticulo option:selected").val();
+            var ddlLinea = $("#ddlLinea option:selected").val();
+            var obj = { code: ddlArticulo, name: ddlLinea };
+            var Json = JSON.stringify(obj);
+            //var Json = JSON.stringify([new String("code" + ':'+ ddlArticulo), new String("code" + ':' + ddlLinea)]);
+            $.ajax({
+                type: "POST",
+                url: '/Ventas/GetSelectedMedida',
+                data: "{ 'code': '" + Json + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var idStore = '';
+                    if (result != null) {
+
+                        var lsLinea = JSON.parse(result);
+                        $("#ddlMedida")
+                            .empty()
+                            .append($("<option></option>")
+                                .val("0")
+                                .html(":.Seleccione.:"));
+                        $.each(lsLinea, function (key, value) {
+                            var option = $(document.createElement('option'));
+                            option.html(value.name);
+                            option.val(value.code);
+                            $("#ddlMedida")
+                                .append(option);
+                        });
+
+
+                    }
+                    else { alert("No existen Modelos para esta Medida"); }
+                    return false;
+                },
+                error: function (xhr) {
+                    //debugger;
+                    console.log(xhr.responseText);
+                    alert("Error has occurred..");
+                }
+            });
+        });
+        $("#ddlMedida").change(function () {
+            var ddlArticulo = $("#ddlArticulo option:selected").val();
+            var ddlMedida = $("#ddlMedida option:selected").val();
+            var ddlLinea = $("#ddlLinea option:selected").val();
+            $.ajax({
+                type: "POST",
+                url: '/Ventas/GetSelectedModels',
+                data: "{'articulo': '" + ddlArticulo +"', 'modelo': '" + ddlLinea + "', 'medida': '" + ddlMedida + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    if (result != null) {
+                        var lsLinea = JSON.parse(result);
+                        $("#datalistOptions")
+                            .empty();
+                        var ccortamodelo = $('#ccortamodelo').val();
+                        if (ccortamodelo == "Modelo") {
+                            addToDataList(lsLinea);
+                        }
+                        else
+                        {
+                            addToDataListCcorta(lsLinea);
+                        }
+                       
+                    }
+                    else { alert("No existe datos"); }
+                },
+                error: function (xhr) {
+                    //debugger;
+                    console.log(xhr.responseText);
+                    alert("Error has occurred..");
+                }
+            });
+        });
+        //Obtener datos de datalist
+        // create and populate datalist
+        function addToDataList(data) {
+            data.forEach(elem => {
+                option = document.createElement("option");
+                option.value = elem.name;
+                option.setAttribute("data-code", elem.code);
+                datalistOptions.append(option);
+            });
+        }
+        function GetJsonArtculos() {
+            var Articulo = @Html.Raw(Json.Encode(Model.ListArticulos));
+            return Articulo;
+        }
+
+    </script>
+
+}
+
+

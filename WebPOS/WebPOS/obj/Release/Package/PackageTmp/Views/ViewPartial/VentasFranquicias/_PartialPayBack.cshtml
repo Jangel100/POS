@@ -1,0 +1,55 @@
+﻿@section Scripts{
+    <script src="~/Scripts/validator.min.js"></script>
+}
+
+<form role="form" data-toggle="validator">
+    <div class="modal fade" id="GetPaymentModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="text-align:center" id="titleModalLabel"> Monedero Payback </h5>
+                    @*<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span> Consulta de saldo de monedero Payback
+            </button>*@
+                </div>
+                @*<form>*@
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <span class="input-group-addon">@*<i class="fa-unlock"></i>*@ <label for="idMonedero" class="col-form-label">Ingresa numero de monedero:</label></span>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="password" class="form-control" maxlength="20" data-error="You must have a name." id="idMonedero" required>
+                            </div>
+                        </div>
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <span id="textsecret" class="input-group-addon"> @*<i class="fa-unlock"></i>*@ <label for="idSecret" class="col-form-label">Ingresa NIP:</label></span>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="password" class="form-control" maxlength="20"  data-error="You must have a name." id="idSecret" required>
+                            </div>
+                        </div>
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnConsultapb" onclick="GetPoints()" class="btn btn-primary">Aceptar</button>
+                    <button type="button" id="btnCerrarPbk" onclick="Onclick_btnCerrarPbk()" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+                @*</form>*@
+                @{ Html.RenderAction("Actions", "Payback"); }
+            </div>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,199 @@
+﻿
+@{
+    ViewBag.Title = "AdminRole";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div style="position:center" class="col-md-4">
+            <h5>Usuarios</h5>
+            <input class="btn-info" type="button" id="btnAddRole" value="Agregar Rol" />
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <table id="tblRoles" class="table display  nowrap dataTable table-info dtr-inline text-center">
+                    <thead>
+                    <thead>
+
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+@section scripts{
+    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/fixedHeader.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/fixedHeader.bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/responsive.dataTables.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.rowReorder.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.responsive.min.js"></script>
+    <script src="~/Scripts/DataTables/responsive.bootstrap4.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.fixedColumns.min.js"></script>
+    <script src="~/Scripts/DataTables/responsive.bootstrap4.js"></script>
+    <script>
+
+        Roles = {
+            MesageAlert1: function (icon, message, ShowButton) {
+                Swal.fire({
+                    icon: icon,
+                    title: message,
+                    showConfirmButton: true,
+                    confirmButtonText: 'Sí',
+                })
+            },
+            Delete: function (AdminRoleID) {
+                //window.location.href = "/AdminRole/Delete?AdminRoleID=" + AdminRoleID + "";
+                try {
+                    $.ajax({
+                        type: "POST",
+                        url: "/AdminRole/Delete",
+                        data: "{'AdminRoleID' : '" + AdminRoleID + "'}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: (result) => {
+                            var result1 = JSON.parse(result);
+                            if (result1.Success) {
+                                Roles.MesageAlert1("success", "¡El Rol se elimino correctamente!", false);
+                                window.location.href = "/AdminRole/AdminRole";
+                            } else {
+                                if (result1.Message == "") { Roles.MesageAlert1("error", "Error a actualizar los datos", false); }
+                                else { Roles.MesageAlert1("error", result1.Message, false); }
+                            }
+
+                        },
+                        error: (xhr) => {
+                            console.log(xhr.responseText);
+                            alert("Error al realizar la peticion, por favor intente mas tarde");
+                        }
+                    });
+                } catch (ex) {
+                    alert(ex);
+                }
+            },
+            Add: function () {
+                $("#btnAddRole").on("click", function () {
+                    window.location.href = "/AdminRole/Add";
+                });
+            },
+            Modify: function (AdminRoleID, RoleName) {
+                window.location.href = "/AdminRole/Modify?AdminRoleID=" + AdminRoleID + "&RoleName=" + RoleName + "";
+
+            },
+            GetInfoRoles: function () {
+                try {
+
+                    $("#modalLoading").modal("show");
+
+                    $('#tblRoles > thead').empty(); //Se elimina al iniciar
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/AdminRole/GetInfoRoles",
+                        data: "{'ObjCom' : " + JSON.stringify(Reports) + "}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: (result) => {
+                            var dataset = result;
+                            var result1 = JSON.parse(result);
+                            if (dataset != null) {
+
+                                var spanish = {
+                                    "processing": "Procesando...",
+                                    "lengthMenu": "Mostrar _MENU_  registros",
+                                    "zeroRecords": "No se encontraron resultados",
+                                    "emptyTable": "Ningún dato disponible en esta tabla",
+                                    "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                    "search": "Buscar por Rol:",
+                                    "infoThousands": ",",
+                                    "loadingRecords": "Cargando...",
+                                    "oPaginate": {
+                                        "sFirst": "Primero",
+                                        "sLast": "Último",
+                                        "sNext": "Siguiente",
+                                        "sPrevious": "Anterior"
+                                    },
+                                    " oAria ": {
+                                        " sSortAscending ": ": Activar para ordenar la columna de manera ascendente ",
+                                        " sSortDescending ": ": Activar para ordenar la columna de manera descendente "
+                                    }
+                                }
+
+                                $("#tblRoles").dataTable({
+                                    //destroy: true,
+                                    language: spanish,
+                                    //searching: false,
+                                    //scrollX: true,
+                                    iDisplayLength: 15,
+                                    //scrollCollapse: true,
+                                    //select: false,
+                                    data: result1,
+                                    columns: [
+                                        //{ title: "ID", data: "AdminRoleID" },
+                                        { title: "Rol", data: "RoleName" },
+                                        { title: "Estado", data: "Status" },
+                                        { title: "Acción", data: "Btn_Front", className: "text-left" },
+                                    ],
+                                    "responsive": true,
+                                    "rowReorder": {
+                                        "selector": 'td:nth-child(2)'
+                                    },
+                                    "processing": true,
+                                    //"pageLength": 40,
+                                });
+                            }
+                            else {
+                                $(".DTFC_Cloned tbody").empty();
+                                $("#tblRoles").dataTable().empty();
+                            }
+                            //Tiempo para cerrar el modal loading
+                            setTimeout(function () { $("#modalLoading").modal("hide"); },
+                                5000);
+                            //Se agrega icono al boton excel
+                            $('.buttons-excel').prepend('<i class="fa fa-file-excel-o" aria-hidden="true"></i>');
+                        },
+                        error: (xhr) => {
+                            console.log(xhr.responseText);
+                            alert("Ha ocurrido un error al generar la consulta del reporte");
+                            $("#modalLoading").modal("hide");
+                        }
+                    });
+                } catch (ex) {
+                    alert(ex);
+                    $("#modalLoading").modal("hide");
+                }
+
+            },
+        };
+
+        $(document).ready(function () {
+            Roles.GetInfoRoles();
+            Roles.Add();
+        });
+    </script>
+}
+
+@*@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/DataTables")
+@Scripts.Render("~/bundles/scripts")*@

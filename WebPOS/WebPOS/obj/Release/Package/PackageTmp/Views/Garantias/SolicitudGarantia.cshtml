@@ -1,0 +1,232 @@
+﻿
+@{
+    ViewBag.Title = "SolicitudGarantia";
+}
+
+<div class="container-fluid">
+    <div class="card">
+
+        <div class="card-header">
+            Despues de comenzar revisa esta información, te ayudará a realizar correctamente la solicitud de tu garantía:
+           
+
+                <a href="https://drive.google.com/open?id=1-Io4CLfeXtOtKJEgBqxWchJgu93I-ZjF" class="badge badge-primary">- Formato garantías</a>
+                <a href="https://drive.google.com/open?id=1e4O22MdojFtWg1vSdU2KCl91pZrIqRGF" class="badge badge-primary">- Como Llenar el Formulario</a>
+                <a href="https://drive.google.com/open?id=12NIs0q0ShcqUviCL4AUHpac1EnO5-LKd" class="badge badge-primary">- Como Comprimir Archivos en ZIP</a>
+                <a href="https://drive.google.com/open?id=1d5ak38VYPC71CnTuxuxIcMaZNX8lOYRu" class="badge badge-primary">- Cobertura de Garantías</a>
+
+           
+        </div>
+        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+            <span class="float-center">
+                <strong> REGISTRO DE GARANTIAS FRANQUICIAS DORMIMUNDO:  </strong>Ingresa los siguientes datos para comenzar el proceso de aprovación de garantias
+            </span>
+        </div>
+
+        <div class="card-body ">
+            @*<div class="form-group row no-gutters">
+            <div class="col-md-12">Ingresa los siguientes datos para comenzar el proceso de aprovación de garantias.</div>
+
+        </div>
+        <hr />*@
+            <div class="form-group row no-gutters">
+                <label for="Franquicia" class="col-md-1 col-form-label text-center font-weight-bold">Franquicia</label>
+                <select class="form-control form-control-sm font-weight-bold text-center col-md-3" id="Franquicia" onchange="OnchangeListPriceLoad()" style="text-align-last: center;">
+                    <option value="seleccionet">Seleccione Franquicia </option>
+                    <option value="">Normal</option>
+                    <option value="Dormicredit">Dormicredit</option>
+                </select>
+                <label for="Tienda" class="col-md-1 col-form-label text-center font-weight-bold">Tienda</label>
+                <input type="text" class="form-control col-md-3 " id="Tienda">
+                <label for="Ciudad" class="col-md-1 col-form-label text-center font-weight-bold">Ciudad</label>
+                <input type="text" class="form-control col-md-3 " id="Ciudad">
+
+            </div>
+            <hr />
+            <div class="form-group row no-gutters">
+                <div class="col-md-1"></div>
+                <label for="fechaventa" class="col-md-2 col-form-label text-center font-weight-bold">Fecha de venta</label>
+                <input class="form-control col-md-2 form-control-sm" type="date" placeholder="" id="fechaventa">
+                <label for="fechagarantia" class="col-md-3 col-form-label text-center font-weight-bold">Fecha vencimiento Garantia</label>
+                <input class="form-control col-md-2 form-control-sm" type="date" placeholder="" id="fechagarantia">
+                <div class="col-md-2"></div>
+            </div>
+            <hr />
+            <div class="form-group row no-gutters">
+                <label for="checkDefecto" class="col-form-label text-center font-weight-bold col-md-4">Selecciona un defecto que presente el artículo</label>
+                <div class="form-check form-check-inline font-weight-bold">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Hundimiento</label>
+                </div>
+                <div class="form-check form-check-inline font-weight-bold">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Resortes</label>
+                </div>
+                <div class="form-check form-check-inline font-weight-bold">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Tela</label>
+                </div>
+                <div class="form-check form-check-inline font-weight-bold">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox4">Otros</label>
+                </div>
+                <input type="text" class="form-control col-md-3" id="Otro" placeholder="Especifica Otros">
+            </div>
+            <hr />
+            <div class="form-group row no-gutters">
+                <label for="Modelo" class="col-md-1 col-form-label text-center font-weight-bold">Modelo</label>
+                <select class="form-control form-control-sm font-weight-bold text-center col-md-3" id="Modelo" onchange="OnchangeListPriceLoad()" style="text-align-last: center;">
+                    <option value="seleccionet">Seleccione Modelo </option>
+                    <option value="">Normal</option>
+                    <option value="Dormicredit">Dormicredit</option>
+                </select>
+                <label for="nombrecl" class="col-md-2 col-form-label text-center font-weight-bold">Nombre del Cliente</label>
+                <input type="text" class="form-control col-md-2 " id="nombrecl">
+
+                <label for="direccioncl" class="col-md-2 col-form-label text-center font-weight-bold">Dirección del Cliente</label>
+                <input type="text" class="form-control col-md-2 " id="direccioncl">
+            </div>
+            <hr />
+            <div class="form-group row no-gutters">
+                <label for="solicita" class="col-md-2 col-form-label text-center font-weight-bold">Quien Solicita Devolución</label>
+                <input type="text" class="form-control col-md-3 " id="solicita">
+
+                <label for="email" class="col-md-1 col-form-label text-center font-weight-bold">e-mail</label>
+                <input type="text" class="form-control col-md-3 " id="email">
+
+                <label for="foliopos" class="col-md-1 col-form-label text-center font-weight-bold">Pedido POS</label>
+                <input type="text" class="form-control col-md-2 " id="foliopos">
+            </div>
+            <hr />
+            <div class="form-group row no-gutters">
+                <label for="autoriza" class="col-md-2 col-form-label text-center font-weight-bold">Quien Autoriza</label>
+                <input type="text" class="form-control col-md-3 " id="autoriza">
+
+                <label for="archivo" class="col-md-2 col-form-label text-center font-weight-bold">Archivo</label>
+                <input type="file" class="form-control col-md-5 " id="archivo">
+
+               
+            </div>
+            <hr />
+            <div class="form-group row no-gutters">
+                <label for="Comentariosgar" class="col-md-2 col-form-label text-center font-weight-bold">Comentarios</label>
+                <textarea class="form-control col-md-8 form-control-sm p-3" id="Comentariosgar" rows="2" placeholder="Comentarios"></textarea>
+                <button type="button" onclick="ConfirmaGarantia()" class="btn btn-success col-md-2 block-page block-sidebar" id="ConfirmaGarantia">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    Enviar Garantía
+                </button>
+            </div>
+
+            @Html.TextBox("Name", (object)ViewBag.Idstore, new { id = "idstore", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+            @Html.TextBox("Name", (object)ViewBag.WhsID, new { id = "WhsID", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+        </div>
+        <div class="card-footer">
+            <div class="class=" form-group row no-gutters">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/chose/chosen.jquery.js"></script>
+    <script src="~/Scripts/chose/chosen.jquery.min.js"></script>
+    <script src="~/Scripts/chose/"></script>
+    <script src="~/Scripts/chose/chosen.proto.min.js"></script>
+    <script>
+
+        function SearchFolio() {
+            let folio = $("#folipos").val();
+            let idstore = $("#idstore").val();
+            if (folio == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ops',
+                    text: 'Debes de Ingresar un Número de Pedido'
+                })
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: '/Ventas/BuscaFolio',
+                data: "{ 'folio': '" + folio + "', 'tienda': '" + idstore + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+
+                    var Lin = JSON.parse(result);
+                    var idve = Lin.Idventa;
+                    if (idve != null) {
+                        $("#idventa").val(Lin.Idventa);
+                        $("#datecr").val(Lin.fechaventa);
+                        $("#folio").val(Lin.FolioPOS);
+                        $("#idusuario").val(Lin.Idusuario);
+                        $("#datein").val(Lin.Fechaentrega);
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Ops',
+                            text: 'No se Encontro Ningun Pedido con Este Número de Folio'
+                        })
+                        return;
+                    }
+                },
+                error: function (xhr) {
+                    //debugger;
+                    console.log(xhr.responseText);
+                    alert("Error has occurred..");
+                }
+            });
+        }
+        function Updatenewdate() {
+            let idventa = $("#idventa").val();
+            let fechaentrega = $('#newdatein').val();
+            if (fechaentrega == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ops',
+                    text: 'Debe seleccionar la fecha estimada de entrega'
+                })
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: '/Ventas/UpdateFechaE',
+                data: "{ 'idventa': '" + idventa + "', 'fechaentrega': '" + fechaentrega + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    if (result != "null") {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Actualización',
+                            text: 'Cambios Guardados Correctamente'
+                        }).then((result) => {
+
+
+                            if (result.isConfirmed) {
+
+                                location.reload();
+                            }
+                        });
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Ops',
+                            text: 'Ocurrio un error vuelve a intentarlo'
+                        })
+                        return;
+                    }
+                },
+                error: function (xhr) {
+                    //debugger;
+                    console.log(xhr.responseText);
+                    alert("Error has occurred..");
+                }
+            });
+        }
+    </script>
+
+}

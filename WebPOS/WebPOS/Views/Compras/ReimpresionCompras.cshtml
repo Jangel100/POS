@@ -1,0 +1,66 @@
+﻿
+@using System.Data;
+@using System.Collections;@{
+    ViewBag.Title = "ReimpresionCompras";
+}
+@model Entities.viewsModels.TiendasReimpresionComprasView
+<style>
+    th, td {
+        white-space: nowrap;
+    }
+
+    td {
+        font-size: 11px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+            <span class="float-center">
+                <strong>
+                    Reporte de entradas por Compra
+                </strong>
+            </span>
+        </div>
+        <div class="card-body" style="text-align-last:center">
+            <div class="row">
+                <label class="col-md-1 col-form-label-sm">Tienda:</label>
+                <select id="OpTiendaCompras" class="form-control col-md-2 form-control-sm" onchange="" name="cmbPeriodoConsult">
+                    <option>Todos</option>
+                    @foreach (var item in Model.TiendaReimpresionJson)
+                    {
+                        <option value="@item.AdminUserID">@item.Franquicia</option>
+                    }
+                </select>
+
+                <label class="col-md-1 col-form-label-sm">Fecha Inicio:</label>
+                <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Inicio" id="FechaInReimCompras">
+                <label class="col-md-1 col-form-label-sm">Fecha Fin:</label>
+                <input type="date" class="form-control col-md-2 form-control-sm" name="Fecha Fin" id="FechaFinnReimCompras">
+                <input type="button" class="btn btn-info col-md-1 form-control-sm" onclick="BtnReporReimCompras()" id="btnReimpCompras" value="Buscar" />
+            </div>
+        </div>
+        <div class="card-body">
+            <table id="tblReimpresionCompras" class="table table-sm">
+                <thead>
+                <thead>
+
+                </thead>
+                <tbody></tbody>
+            </table>
+            <br />
+            <br />
+            <br />
+        </div>
+        @*<div class="card-footer" style="padding: 0.0rem 1.25rem !important;">
+
+            </div>*@
+    </div>
+</div>
+
+<!-- Modal -->
+@*@Html.Partial("../ViewPartial/Reportes/_PartialLoadingModal")*@
+
+
+
+

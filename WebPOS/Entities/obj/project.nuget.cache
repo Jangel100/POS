@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "hx2CG9PmTUxc4nTo+gkdFJe3FAKpj8yMpyaIGc+bzsR/DdPqvPM5Jz9T62A3U4igwKeu8RTzecThLzdYE4rhNg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Proyectos\\WebPOS\\Entities\\Entities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\jquery\\1.12.4\\jquery.1.12.4.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\jquery.ui\\1.12.1.1\\jquery.ui.1.12.1.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\jquery.ui.combined\\1.12.1\\jquery.ui.combined.1.12.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

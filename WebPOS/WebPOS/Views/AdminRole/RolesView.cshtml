@@ -1,0 +1,219 @@
+﻿@using System.Data
+@using System.Collections.Generic
+@using System.Linq
+@model Entities.viewsModels.MenuOptionInfoRol
+@{
+    ViewBag.Title = "RolesView";
+}
+
+<h6 class="text-center font-weight-bold">@Model.Action</h6>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-control border-1">Nombre de Rol:</label>
+                    </div>
+                    <div class="col-md-5">
+                        <input class="form-control text-center font-weight-bold" value="@Model.RoleName" type="text" id="tbNameRol">
+                    </div>
+                </div>
+                @if (Model.Action.Equals("Agregar Rol"))
+                {
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-control border-1">Tipo de Rol:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <select class="form-control text-center font-weight-bold" style="text-align-last:center" id="cmbNameRol">
+                                <option value="@Model.AdminRoleClas.TypeRole" selected>@Model.AdminRoleClas.NombreAbreviatura</option>
+                            </select>
+                            @*<input class="form-control text-center font-weight-bold" type="text"  value="@Model.AdminRoleClas.NombreAbreviatura" id="tbNameRol">*@
+                        </div>
+                    </div>
+                }
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-control">Franquicia:</label>
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-control text-center font-weight-bold" style="text-align-last:center" id="cmbListFranquiciasUser">
+                            @foreach (var item in Model.ListFranquiciasUser)
+                            {
+                                if (item.CardCode.Equals(Model.FRCARDCODE) && Model.AdminRoleID > 0)
+                                {
+                                    <option value="@item.CardCode" selected>@item.CardName</option>
+                                }
+                                <option value="@item.CardCode">@item.CardName</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-control">Estado:</label>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control text-center font-weight-bold" style="text-align-last:center" id="cmbStatusActive">
+
+                            @if (Model.StatusText.StatusActive)
+                            {
+                                <option value="A" selected>Activo</option>
+                                <option value="I">Inactivo</option>
+                            }
+                            @if (Model.StatusText.StatusInactive)
+                            {
+                                <option value="A">Activo</option>
+                                <option value="I" selected>Inactivo</option>
+                            }
+                            @if (!Model.StatusText.StatusInactive && !Model.StatusText.StatusActive)
+                            {
+                                <option value="A">Activo</option>
+                                <option value="I">Inactivo</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="form-row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <button type="button" onclick="Agregar()" class="btn-success" id="btnEditAg">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            @Model.TextBtn
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="button" onclick="Cancelar()" class="btn-danger" id="btnCancelar" value="Cancelar" />
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <label class="text-center fa-align-center" style="text-align:center">Opciones</label>
+            </div>
+            <div id="content_tables" class="card-footer">
+                @foreach (var date in Model.MenuInfoRolE)
+                {
+
+                    <table class="table table-hover table table-sm templateTable">
+                        <thead style="vertical-align: middle !important;">
+                            <tr class="text-right">
+                                <th class="col-md-6" scope="col">@date.Key</th>
+                                <th class="col-md-6" scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-light text-left" style="vertical-align: middle !important;">
+                            @foreach (var item in date)
+                            {
+                                var check = item.AdminRoleID > 0 ? "checked" : "";
+                                <tr>
+                                    <td class="col-md-6">
+                                    </td>
+                                    <td class="col-md-6">
+                                        <input type="checkbox" onchange="" id="@item.MenuOptionID" @check class="form-check form-check-inline">
+                                        <label>@item.OptionName</label>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+@section scripts{
+    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/fixedHeader.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/fixedHeader.
+          .min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/responsive.dataTables.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.rowReorder.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.responsive.min.js"></script>
+    <script src="~/Scripts/DataTables/responsive.bootstrap4.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.fixedColumns.min.js"></script>
+    <script src="~/Scripts/DataTables/responsive.bootstrap4.js"></script>
+    <script>
+
+        function Agregar(AdminRoleID) {
+            try {
+                if ($("#tbNameRol").val() == "") {
+                    MesageAlert("error", "* Por favor, especifique un Rol.", false);
+                    return false;
+                }
+                var ArrayIdMenuOp = new Array();
+                var ids;
+                ids = $('input[type=checkbox]:checked').map(function (Row) {
+                    ArrayIdMenuOp[Row] = {
+                        "Id": $(this).attr('id'),
+                    }
+                    return $(this).attr('id');
+                }).get();
+                if (ids.length <= 0) {
+                    MesageAlert("error", "* Debe de seleccionar por lo menos una opción.", false);
+                    return false;
+                }
+                var RolNameView = @Html.Raw(Json.Encode(Model.RoleName == null ? "": Model.RoleName.Trim()));
+                var JsonMenuOp = {
+                    "AdminRoleID": @Html.Raw(Json.Encode(Model.AdminRoleID)),//$('#idstore').val(),
+                    "NombreRol": $("#tbNameRol").val(),
+                    "ModifiedName": RolNameView.toUpperCase() != $("#tbNameRol").val().toUpperCase() ? true:false,
+                    "FranquiciasUser": $("#cmbListFranquiciasUser option:selected").val(),
+                    "StatusActive": $("#cmbStatusActive option:selected").val(),
+                    "ArrayIdMenuOp": ArrayIdMenuOp
+                }
+                $.ajax({
+                    type: "POST",
+                    url: '/AdminRole/UpdateMenuOption',
+                    data: "{'JsonMenuOp': " + JSON.stringify(JsonMenuOp) + "}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (msg) {
+                        var result = JSON.parse(msg);
+                        if (result.Success) {
+                            MesageAlert("success", "¡Los datos se actualizaron correctamente!", false);
+                            window.location.href = "/AdminRole/AdminRole";
+                        } else {
+                            if (result.Message == "") { MesageAlert("error", "Error a actualizar los datos", false); }
+                            else { MesageAlert("error", result.Message, false); }
+                        }
+                    },
+                    error: function (xhr) {
+                        console.log(xhr.responseText);
+                        alert("Error al cargar los datos..");
+                    }
+                });
+            } catch (ex) {
+                var error = ex;
+            }
+
+        }
+        function Cancelar() {
+                window.location.href = "/AdminRole/AdminRole";
+        }
+        function MesageAlert(icon,message,ShowButton) {
+            Swal.fire({
+                icon: icon,
+                title: message,
+                showConfirmButton: true,
+                confirmButtonText: 'Sí',
+            })
+        }
+    </script>
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/DataTables")
+@Scripts.Render("~/bundles/scripts")

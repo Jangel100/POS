@@ -1,0 +1,75 @@
+﻿@using WebPOS.Security
+
+<div class="modal fade" id="FranquiciaModal" tabindex="-1" role="dialog" aria-labelledby="FranquiciaModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="input-group-addon"><i class="fa fa-shopping-cart" aria-hidden="true"> </i> <label for="store" class="col-form-label"> <h5 class="modal-title" id="FranquiciaModalLabel">Para iniciar debe de seleccionar una Tienda</h5></label></span>
+                @*<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>*@
+            </div>
+            @if (SessionPersister.TypeRole == "US" ||
+                SessionPersister.TypeRole == "AF" ||
+                SessionPersister.TypeRole == "LC" ||
+                SessionPersister.TypeRole == "VL" ||
+                SessionPersister.TypeRole == "AG2" ||
+                SessionPersister.TypeRole == "AG3" ||
+                SessionPersister.TypeRole == "AG4" ||
+                SessionPersister.TypeRole == "TO"
+                )
+            {
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label for="txtPassword2" class="col-form-label">Tienda:</label>
+                            </div>
+                            <div class="col-md-10">
+                                <select class="form-control" id="cmbFranTienda">
+                                    <option>Seleccione una Tienda..</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input hidden id="ActiveUS" value="2" />
+            }
+            @if (SessionPersister.TypeRole == "AG")
+            {
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="cmbFranquicia" class="col-form-label">Franquicia:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" id="cmbFranquicia">
+                                    <option>Seleccione una Franquicia..</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label for="cmbTienda">Tienda:</label>
+                            </div>
+                            <div class="col-md-10">
+                                <select class="form-control" id="cmbTienda">
+                                    <option>Seleccione una Tienda..</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input hidden id="ActiveUS" value="1" />
+
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,468 @@
+﻿@using System.Data
+@using System.Collections.Generic
+@model  Entities.viewsModels.UsersConfigView
+@{
+    ViewBag.Title = "Agregar Usuarios";
+}
+<style>
+    input[type=checkbox] {
+        width: 25px;
+        height: 25px;
+        -moz-appearance: none;
+    }
+</style>
+<link href="~/Content/StylesPOS.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.5.0.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.bootstrap.min.js"></script>
+@*<script src="~/Scripts/form-validation-usuarios.js"></script>*@
+<div style="float: right; right: 40%; position: absolute;">
+    <h2>@Model.Accion Usuarios</h2>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 col-12">
+        <div class="col-md-12">
+            <div class="table-roles">
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { name = "frmUsuarios", id = "frmUsuarios" }))
+                {
+                    <div class="form-row">
+                        <input hidden value="@Model.AdminUserID" id="txtAdminRoleID" />
+                        <input hidden value="@Model.Accion" id="txtAccion" />
+                        <div class="form-group col-md-6">
+                            @*@Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label" })*@
+                            <div class="row">
+                                <label for="ctienda" class="col-form-label col-sm-3 font-weight-bold" style="text-align:center;">Nombre</label>
+                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control col-sm-9", @placeholder = "Nombre", @id = "txtFirstName", @required = "required" } })
+                                @Html.ValidationMessageFor(m => m.FirstName, "El nombre es requerido.", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            @*@Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label" })*@
+                            <div class="row">
+                                <label for="ctienda" class="col-form-label col-sm-3 font-weight-bold" style="text-align:center;">Apellidos</label>
+                                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control col-sm-9", @placeholder = "Apellidos", @id = "txtApellidos", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            @*@Html.LabelFor(model => model.CorreoElectronico, htmlAttributes: new { @class = "control-label" })*@
+                            <div class="row">
+                                <label for="ctienda" class="col-form-label col-sm-3 font-weight-bold" style="text-align:center;">Email</label>
+                                @Html.EditorFor(model => model.CorreoElectronico, new { htmlAttributes = new { @class = "form-control col-sm-9", @placeholder = "Email", @id = "txtCorreoElectronico", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.CorreoElectronico, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="row">
+                                <label class="control-label col-sm-3 text-center font-weight-bold">Rol</label>
+                                <select class="form-control col-sm-9" id="cmbRol" required>
+                                    @foreach (var rol in Model.lsRoles)
+                                    {
+                                        if (@Model.AdminRoleID.ToString() == @rol.AdminRoleID)
+                                        {
+                                            <option value="@rol.AdminRoleID" selected>@rol.RoleName</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@rol.AdminRoleID">@rol.RoleName</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            @*@Html.LabelFor(model => model.EmployeeNum, htmlAttributes: new { @class = "control-label" })*@
+                            <div class="row">
+                                <label for="ctienda" class="col-form-label col-sm-3 font-weight-bold" style="text-align:center;">Empleado #</label>
+                                @Html.EditorFor(model => model.EmployeeNum, new { htmlAttributes = new { @class = "form-control col-sm-9", @placeholder = "Empleado #", @id = "txtEmployeeNum", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.EmployeeNum, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            @*@Html.LabelFor(model => model.NTUserAccount, htmlAttributes: new { @class = "control-label" })*@
+                            <div class="row">
+                                <label for="ctienda" class="col-form-label col-sm-3 font-weight-bold" style="text-align:center;">Usuario</label>
+                                @Html.EditorFor(model => model.NTUserAccount, new { htmlAttributes = new { @class = "form-control col-sm-9", @placeholder = "Usuario", @id = "txtNTUserAccount", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.NTUserAccount, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            @*@Html.LabelFor(model => model.NTUserDomain, htmlAttributes: new { @class = "control-label" })*@
+                            <div class="row">
+                                <label for="ctienda" class="col-form-label col-sm-3 font-weight-bold" style="text-align:center;">Contraseña</label>
+                                @Html.EditorFor(model => model.NTUserDomain, new { htmlAttributes = new { @class = "form-control col-sm-9", @placeholder = "Contraseña", @id = "txtNTUserDomain", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.NTUserDomain, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="row">
+                                <label class="control-label col-sm-6 font-weight-bold" style="text-align:center;">Estatus</label>
+                                <select class="form-control col-sm-6" id="cmbEstatus" required>
+                                    @if (Model.Status.Equals("A"))
+                                    {
+                                        <option value="A" selected>Activo</option>
+                                        <option value="I">Inactivo</option>
+                                    }
+                                    else
+                                    {
+                                        if (Model.Status.Equals("I"))
+                                        {
+                                            <option value="I" selected>INACTIVO</option>
+                                            <option value="A">Activo</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="A" selected>Activo</option>
+                                            <option value="I">Inactivo</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            @*@Html.LabelFor(model => model.NoCelular, htmlAttributes: new { @class = "control-label" })*@
+                            <div class="row">
+                                <label class="control-label col-sm-5 font-weight-bold" style="text-align:center;">No Celular</label>
+                                @Html.EditorFor(model => model.NoCelular, new { htmlAttributes = new { @class = "form-control col-sm-7", @placeholder = "NoCelular", @id = "txtNoCelular", @required = "required" } })
+                                @Html.ValidationMessageFor(model => model.NoCelular, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        </div>
+                        <hr />
+                    <div class="form-group row no-gutters">
+                        <button type="button" class="btn-success col-md-6" id="btnAgregar">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            @Model.Accion
+                        </button>
+                        <input type="button" class="btn-danger col-md-6" id="btnCancelar" value="Cancelar" />
+                    </div>
+                    @*<div class="form-row">
+                <div class="form-group col-md-6">
+                    <button type="button" class="btn-success" id="btnAgregar">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        @Model.Accion
+                    </button>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="button" class="btn-danger" id="btnCancelar" value="Cancelar" />
+                </div>
+            </div>*@
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+@*<div style="float: right; bottom: 50px; right: 45%; position: absolute;">
+        <h2>Tiendas</h2>
+    </div>*@
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="card-body table table-hover table-responsive table-responsive-md tableFixHead col-md-6" style="padding: 0.25rem 0.25rem !important;">
+        <table class="table table-hover table table-responsive-md table-sm text-center" id="tblTiendas">
+            <tr style="color: White; background-color: #507CD1; font-weight: bold;">
+                <th>
+                    Asignadas
+                </th>
+
+                <th>
+                    Traspaso
+                </th>
+                <th>
+                    Nombre
+                </th>
+            </tr>
+
+            @foreach (var item in Model.lsTiendas)
+            {
+        <tr>
+            <td>
+
+                @Html.CheckBoxFor(m => item.Asignadas, htmlAttributes: new { @checked = false, @id = "Asignadas",  @style= "font-size: 110%; display: inline; " })
+            </td>
+            <td>
+                @Html.CheckBoxFor(m => item.Traspaso, htmlAttributes: new { @checked = false, @id = "Traspaso", @style = "font-size: 110%; display: inline; " })
+            </td>
+            <td>@item.StoreName</td>
+            <td hidden>@item.AdminStoreID</td>
+            <td style="display:none">
+
+                @if (@Model.Accion == "Agregar")
+                {
+                    @item.AdminStoreID
+                }
+                else
+                {
+                    if (@item.AdminStoreToSendID > 0)
+                    {
+                        @item.AdminStoreToSendID;
+                    }
+                    else
+                    {
+                        @item.AdminStoreID
+                    }
+                }
+            </td>
+        </tr>
+
+            }
+        </table>
+    </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    @section scripts{
+        <script>
+            usuariosAdmin = {
+                Save: function () {
+                    $("#btnAgregar").on("click", function () {
+                        var txtFirstName = $("#txtFirstName").val();
+                        var txtApellidos = $("#txtApellidos").val();
+                        var txtCorreoElectronico = $("#txtCorreoElectronico").val();
+                        var txtEmployeeNum = $("#txtEmployeeNum").val();
+                        var txtNTUserDomain = $("#txtNTUserDomain").val();
+                        var txtNTUserAccount = $("#txtNTUserAccount").val()
+                        var txtNoCelular = $("#txtNoCelular").val();
+                        var cmbEstatus = document.getElementById('cmbEstatus').value;
+                        var cmbRol = document.getElementById('cmbRol').value;
+                        var txtAccion = $("#txtAccion").val();
+                        var txtAdminRoleID = $("#txtAdminRoleID").val();
+
+                        $('#txtCorreoElectronico').prop('required', true);
+
+                        if (txtAccion.toString() == "Agregar") {
+                            //noempleado y celular pueden ir vacios
+                            var usersAdmin = {
+                                'FirstName': txtFirstName.toString(),
+                                'LastName': txtApellidos.toString(),
+                                'CorreoElectronico': txtCorreoElectronico.toString(),
+                                'EmployeeNum': txtEmployeeNum.toString(),
+                                'NTUserAccount': txtNTUserAccount.toString(),
+                                'NTUserDomain': txtNTUserDomain.toString(),
+                                'Status': cmbEstatus.toString(),
+                                'AdminRoleID': cmbRol.toString(),
+                                'NoCelular': txtNoCelular.toString()
+                            }
+                            if ($('#FirstName').val() != "") { }
+                            else { alert('Falta el campo: Nombre'); return; }
+                            if ($('#LastName').val() != "") { }
+                            else { alert('Falta el campo: Apellidos'); return; }
+
+                            if ($('#NTUserAccount').val() != "") { }
+                            else { alert('Falta el campo: Usuario'); return; }
+                            if ($('#NTUserDomain').val() != "") { }
+                            else { alert('Falta el campo: Contraseña'); return; }
+                            if ($('#NTUserDomain').val() != "") { }
+                            else { alert('Falta el campo: Contraseña'); return; }
+                            if ($('#txtCorreoElectronico').val() != "") {
+                                $.ajax({
+                                    type: "POST",
+                                    url: '/Usuarios/Save',
+                                    data: "{'usersAdmin': " + JSON.stringify(usersAdmin) + "}",
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "json",
+                                    success: function (result) {
+                                        var usuario = JSON.parse(result);
+
+                                        if (usuario.AdminUserID > 0) {
+
+                                            StoreAdmin.Add(parseInt(usuario.AdminUserID));
+
+                                            alert("Se creo un nuevo usuario" + usuario.AdminUserID);
+                                            window.location.href = "/Usuarios";
+                                            //$("#txtFirstName").val("");
+                                            //$("#txtApellidos").val("");
+                                            //$("#txtCorreoElectronico").val("");
+                                            //$("#txtEmployeeNum").val("");
+                                            //$("#txtNTUserDomain").val("");
+                                            //$("#txtNoCelular").val("");
+                                        }
+
+                                    },
+                                    error: function (xhr) {
+                                        console.log(xhr.responseText);
+                                        alert("Error has ocurred..");
+                                    }
+                                });
+                            }
+                            else {
+                                alert('Falta el campo: Correo Eléctronico');
+                            }
+                        }
+                        else {
+                            /*Region Tiendas*/
+                            var StoreByUserUpdate = new Array();
+                            $('#tblTiendas tr').each(function (row, tr) {
+                                if (row > 0 || row != "0") {
+                                    StoreByUserUpdate[row] = {
+                                        "Asignadas": $(tr).find('td:eq(0)').find(':checkbox').is(':checked'),
+                                        "Traspaso": $(tr).find('td:eq(1)').find(':checkbox').is(':checked'),
+                                        "StoreName": $(tr).find('td:eq(2)').text(),
+                                        "AdminstoreID": $(tr).find('td:eq(3)').text(),
+                                    }
+                                }
+
+                            });
+                            StoreByUserUpdate.shift();
+                         /*End Region Tiendas*/
+                            var usersAdmin = {
+                                'AdminUserID': txtAdminRoleID.toString(),
+                                'FirstName': txtFirstName.toString(),
+                                'LastName': txtApellidos.toString(),
+                                'CorreoElectronico': txtCorreoElectronico.toString(),
+                                'EmployeeNum': txtEmployeeNum.toString(),
+                                'NTUserAccount': txtNTUserAccount.toString(),
+                                'NTUserDomain': txtNTUserDomain.toString(),
+                                'Status': cmbEstatus.toString(),
+                                'AdminRoleID': cmbRol.toString(),
+                                'NoCelular': txtNoCelular.toString(),
+                                'lsTiendas': StoreByUserUpdate
+                            }
+                            if ($('#txtCorreoElectronico').val() != "") {
+
+                                $.ajax({
+                                    type: "POST",
+                                    url: '/Usuarios/Update',
+                                    data: "{'usersAdmin': " + JSON.stringify(usersAdmin) + "}",
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "json",
+                                    success: function (result) {
+                                        var usuario = JSON.parse(result);
+
+                                        if (usuario.AdminUserID > 0) {
+
+                                            StoreAdmin.Add(parseInt(usuario.AdminUserID));
+
+                                            alert("Se actualizo correctamente el usuario");
+
+                                            //$("#txtFirstName").val("");
+                                            //$("#txtApellidos").val("");
+                                            //$("#txtCorreoElectronico").val("");
+                                            //$("#txtEmployeeNum").val("");
+                                            //$("#txtNTUserDomain").val("");
+                                            //$("#txtNTUserAccount").val("");
+                                            //$("#txtNoCelular").val("");
+                                            window.location.href = "/Usuarios";
+                                        }
+
+                                    },
+                                    error: function (xhr) {
+                                        console.log(xhr.responseText);
+                                        alert("Error has ocurred..");
+                                    }
+                                });
+                            }
+                            else {
+                                alert('Falta el campo: Correo Eléctronico');
+                            }
+                        }
+                    });
+                },
+                Cancelar: function () {
+                    $('#btnCancelar').click(function () {
+                        window.location.href = "/Usuarios/Index";
+                    });
+                }
+            },
+
+                StoreAdmin = {
+                    Add: function (AdminUserID) {
+
+                        var TableData;
+                        TableData = StoreAdmin.Get(AdminUserID);
+                        TableData = JSON.stringify(TableData);
+
+                        $.ajax({
+                            type: "POST",
+                            url: '/Usuarios/AddStore/',
+                            data: TableData.toString(),
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (result) {
+                                var usuario = JSON.parse(result);
+
+                            },
+                            error: function (xhr) {
+                                console.log(xhr.responseText);
+                                alert("Error has ocurred..");
+                            }
+                        });
+                    },
+                    Delete: function () {
+
+                    },
+                    Get: function (AdminUserID) {
+                        //var ArrayStore = new Array();
+                        var list = {
+                            'AdminStore': []
+                        };
+
+                        $("#tblTiendas tr").each(function (row, tr) {
+
+                            var chkbox1 = $(tr).find('td:eq(0)').find(':checkbox');
+                            var chkbox2 = $(tr).find('td:eq(1)').find(':checkbox');
+                            var Asignadas;
+                            var Traspaso;
+
+                            if (chkbox1.is(':checked')) {
+                                Asignadas = true;
+                            }
+                            else {
+                                Asignadas = false;
+                            }
+
+                            if (chkbox2.is(':checked')) {
+                                Traspaso = true;
+                            }
+                            else {
+                                Traspaso = false;
+                            }
+
+                            list.AdminStore.push({
+                                "AdminUserID": AdminUserID,
+                                "Asignadas": Asignadas,
+                                "Traspaso": Traspaso,
+                                "StoreName": $(tr).find('td:eq(2)').text(),
+                                "AdminStoreID": parseInt($(tr).find('td:eq(3)').text())
+                            });
+                            //ArrayStore[row] = {
+                            //    "Asignadas": $(tr).find('td:eq(0)').text
+                            //    , "Traspaso": $(tr).find('td:eq(1)').text
+                            //    , "StoreName": $(tr).find('td:eq(2)').text
+                            //}
+                        });
+
+                        //ArrayStore.shift();  // first row will be empty - so remove
+
+                        return list;
+                }
+                }
+
+            $(document).ready(function () {
+                $("#frmUsuarios").validate({
+                    rules: {
+                        txtFirstName: {
+                            required: true,
+                        }
+                    }
+                });
+                usuariosAdmin.Save();
+                usuariosAdmin.Cancelar();
+            });
+
+
+        </script>
+    }

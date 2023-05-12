@@ -1,0 +1,685 @@
+﻿@using System.Data
+@using System.Collections.Generic
+@model  Entities.viewsModels.TiendaConfigView
+@{
+    ViewBag.Title = @Model.Accion + " Tiendas";
+}
+<link href="~/Content/StylesPOS.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.5.0.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.bootstrap.min.js"></script>
+@*<script src="~/Scripts/form-validation-usuarios.js"></script>*@
+
+@*<h2 class="text-center">@Model.Accion Tiendas</h2>
+    <br />*@
+@*<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">*@
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="header">
+                <h2 class="text-center"> @Model.Accion Tiendas</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-roles text-center font-weight-bold" style="background-color:gray;color:white;font-size:small;">
+                    @using (Html.BeginForm(null, null, FormMethod.Post, new { name = "frmTiendas", id = "frmTiendas" }))
+                    {
+                        <div class="form-row">
+                            <input hidden value="@Model.AdminStoreID" id="txtAdminStoreID" />
+                            <input hidden value="@Model.Accion" id="txtAccion" />
+
+                            <div class="form-group col-md-6">
+                                @*@Html.LabelFor(model => model.StoreName, htmlAttributes: new { @class = "control-label text-center" })*@
+                                <label class="control-label">Nombre de la tienda:</label>
+                                @Html.EditorFor(model => model.StoreName, new { htmlAttributes = new { @class = "form-control tb-sm text-center", style = "font-size: small", @placeholder = "Tienda", @id = "txtStoreName" } })
+                                @Html.ValidationMessageFor(m => m.StoreName, "El nombre es requerido.", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label">Tipo de Tienda:</label>
+                                <select class="form-control text-center" style="text-align-last:center;font-size:small" id="cmbTypeStore">
+                                    @foreach (var rol in Model.lsTypeStore)
+                                    {
+                                        if (@Model.StoreTypeID == @rol.StoreTypeID)
+                                        {
+                                            <option value="@rol.StoreTypeID" selected>@rol.StoreTypeName</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@rol.StoreTypeID">@rol.StoreTypeName</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="control-label">Almacen SAP:</label>
+                                <select class="form-control text-center" style="text-align-last:center;font-size:small" id="cmbSAPWS">
+                                    @foreach (var rol in Model.lsSAPWS)
+                                    {
+                                        if (@Model.WHSID == @rol.WhsCode.ToString())
+                                        {
+                                            <option value="@rol.WhsCode" selected>@rol.WhsName</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@rol.WhsCode">@rol.WhsName</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label">Estatus</label>
+                                <select class="form-control text-center" style="text-align-last:center;font-size:small" id="cmbEstatus">
+                                    @if (Model.Status.Equals("A"))
+                                    {
+                                        <option value="A" selected>Activo</option>
+                                        <option value="I">Inactivo</option>
+                                    }
+                                    else
+                                    {
+                                        if (Model.Status.Equals("I"))
+                                        {
+                                            <option value="I" selected>INACTIVO</option>
+                                            <option value="A">Activo</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="A" selected>Activo</option>
+                                            <option value="I">Inactivo</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="control-label">Bodega Propia:</label>
+                                <select class="form-control text-center" style="text-align-last:center;font-size:small" id="cmbBodegaPropia">
+                                    @foreach (var rol in Model.lsStoreBodegaPropia)
+                                    {
+                                        if (@Model.BodegaPropia == @rol.AdminStoreID.ToString())
+                                        {
+                                            <option value="@rol.AdminStoreID" selected>@rol.StoreName</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@rol.AdminStoreID">@rol.StoreName</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label">Almacén de Consignación:</label>
+                                <select class="form-control text-center" style="text-align-last:center;font-size:small" id="cmbClasificaciones">
+                                    @foreach (var rol in Model.lsStoreClasificaciones)
+                                    {
+                                        if (@Model.whsConsigID == @rol.AdminStoreID)
+                                        {
+                                            <option value="@rol.AdminStoreID" selected>@rol.StoreName</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@rol.AdminStoreID">@rol.StoreName</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="control-label">IVA:</label>
+                                <select class="form-control text-center" style="text-align-last:center;font-size:small" id="cmbIva">
+                                    @foreach (var rol in Model.lsIVA)
+                                    {
+                                        if (@Model.actIVA == @rol.PORCENTAJE)
+                                        {
+                                            <option value="@rol.PORCENTAJE" selected>@rol.PORCENTAJE</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@rol.PORCENTAJE">@rol.PORCENTAJE</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label text-center" })
+
+                                @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control text-center", style = "font-size: small", @placeholder = "NoCelular", @id = "txtNoCelular" } })
+                                @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.CalleNumero, htmlAttributes: new { @class = "control-label text-center" })
+
+                                @Html.EditorFor(model => model.CalleNumero, new { htmlAttributes = new { @class = "form-control text-center", style = "font-size: small", @placeholder = "Calle Numero", @id = "txtCalleNumero" } })
+                                @Html.ValidationMessageFor(model => model.CalleNumero, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.NumExt, htmlAttributes: new { @class = "control-label text-center" })
+
+                                @Html.EditorFor(model => model.NumExt, new { htmlAttributes = new { @class = "form-control text-center", style = "font-size: small", @placeholder = "NumExt", @id = "txtNumExt" } })
+                                @Html.ValidationMessageFor(model => model.NumExt, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.NumInt, htmlAttributes: new { @class = "control-label text-center" })
+
+                                @Html.EditorFor(model => model.NumInt, new { htmlAttributes = new { @class = "form-control text-center", style = "font-size: small", @placeholder = "NumInt", @id = "txtNumInt" } })
+                                @Html.ValidationMessageFor(model => model.NumInt, "", new { @class = "text-danger text-center" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.Colonia, htmlAttributes: new { @class = "control-label text-center" })
+
+                                @Html.EditorFor(model => model.Colonia, new { htmlAttributes = new { @class = "form-control text-center", style = "font-size: small", @placeholder = "Colonia", @id = "txtColonia" } })
+                                @Html.ValidationMessageFor(model => model.Colonia, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.CodigoPostal, htmlAttributes: new { @class = "control-label text-center" })
+
+                                @Html.EditorFor(model => model.CodigoPostal, new { htmlAttributes = new { @class = "form-control text-center", style = "font-size: small", @placeholder = "CodigoPostal", @id = "txtCodigoPostal" } })
+                                @Html.ValidationMessageFor(model => model.CodigoPostal, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.Delegacion, htmlAttributes: new { @class = "control-label text-center" })
+
+                                @Html.EditorFor(model => model.Delegacion, new { htmlAttributes = new { @class = "form-control text-center", style = "font-size: small", @placeholder = "Delegacion", @id = "txtDelegacion" } })
+                                @Html.ValidationMessageFor(model => model.Delegacion, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="control-label">Estado:</label>
+                                <select class="form-control text-center" style="text-align-last:center;font-size:small" id="cmbEstado">
+                                    @foreach (var rol in Model.lsEntidades)
+                                    {
+                                        if (@Model.EstadoId == @rol.EntidadId)
+                                        {
+                                            <option value="@rol.EntidadId" selected>@rol.EntidadDesc</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@rol.EntidadId">@rol.EntidadDesc</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.FolderPDF, htmlAttributes: new { @class = "control-label text-center" })
+
+                                @Html.EditorFor(model => model.FolderPDF, new { htmlAttributes = new { @class = "form-control text-center", style = "font-size: small", @placeholder = "FolderPDF", @id = "txtFolderPDF" } })
+                                @Html.ValidationMessageFor(model => model.FolderPDF, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.emailTienda, htmlAttributes: new { @class = "control-label text-center" })
+
+                                @Html.EditorFor(model => model.emailTienda, new { htmlAttributes = new { @class = "form-control text-center", style = "font-size: small", @placeholder = "email", @id = "txtEmailTienda" } })
+                                @Html.ValidationMessageFor(model => model.emailTienda, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label text-center">Almacen SAP propio</label>
+                                @Html.EditorFor(model => model.AlmacenSapPropio, new { htmlAttributes = new { @class = "form-control text-center", style = "font-size: small", @placeholder = "Almacen SAP propio", @id = "txtalmprop" } })
+                                @Html.ValidationMessageFor(model => model.AlmacenSapPropio, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+                        <br />
+                        <div class="form-row">
+                            <div class="col-md-2"></div>
+                            <div class="form-group col-md-4">
+                                <button type="button" class="btn-success btn-large" id="btnAgregar">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    @Model.Accion
+                                </button>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="button" class="btn-danger" id="btnCancelar" value="Cancelar" />
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="card-footer">
+                <div>
+                    <div>
+                        <table class="table table-hover table-responsive-sm table-sm templateTable text-center" style="font-size:small" id="tblFolios">
+                            <thead>
+                                <tr style="color: White; background-color: #507CD1; font-weight: bold;">
+                                    <th scope="col">Tipo Folio</th>
+                                    <th scope="col">Tienda</th>
+                                    <th scope="col">Primer Folio</th>
+                                    <th scope="col">Ultimo Folio</th>
+                                    <th scope="col">Ultimo Folio Asignado</th>
+                                    <th scope="col">Prefijo</th>
+                                    <th scope="col">Sufijo</th>
+                                    <th scope="col">Año Aprobación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{int i = 0;}
+                                @{int PF = 10;}
+                                @{int UF = 20;}
+                                @{int UFA = 30;}
+                                @{int IDPRE = 40;}
+                                @{int IDSUF = 50;}
+                                @{int IDAÑO = 60;}
+                                @foreach (var fl in Model.lsFolios)
+                                {
+                                    <tr>
+                                        <td>
+                                            @fl.TipoFolio
+                                            @*@Html.DisplayFor(modelItem => fl.TipoFolio)*@
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => fl.Tienda_Name)
+                                        </td>
+                                        <td>
+                                            @*@fl.PrimerFolio*@
+                                            @*@Html.TextBoxFor(modelItem => fl.PrimerFolio)*@
+                                            @Html.TextBoxFor(model => fl.PrimerFolio, new { id = PF, @class = "form-control form-control-sm mb-1 form-control-sm mb-3 text-center", @disabled = "disabled" })
+                                            <input type="submit" class="btn-info" id="tbPrimerFolio1_@i" onclick='Btn_Edit("tbPrimerFolio1_" +@i,@PF)' value="Editar" />
+                                        </td>
+                                        <td>
+                                            @*@fl.UltimoFolio*@
+                                            @*@Html.TextBoxFor(modelItem => fl.UltimoFolio)*@
+                                            @Html.TextBoxFor(model => fl.UltimoFolio, new { id = UF, @class = "form-control form-control-sm mb-1 form-control-sm mb-3 text-center", @disabled = "disabled" })
+                                            <input type="submit" class="btn-info" id="tbUltFolio_@i" onclick='Btn_Edit("tbUltFolio_" +@i,@UF)' value="Editar" />
+                                        </td>
+                                        <td>
+                                            @*@fl.UltimoFolioAsignado*@
+                                            @*@Html.TextBoxFor(modelItem => fl.UltimoFolioAsignado)*@
+                                            @Html.TextBoxFor(model => fl.UltimoFolioAsignado, new { id = UFA, @class = "form-control  form-control-sm mb-1 form-control-sm mb-3 text-center", @disabled = "disabled" })
+                                            <input type="submit" class="btn-info" id="tbUltFolioAs_@i" onclick='Btn_Edit("tbUltFolioAs_" +@i,@UFA)' value="Editar" />
+                                        </td>
+                                        <td>
+                                            @*@fl.Prefijo*@
+                                            @*@Html.TextBoxFor(modelItem => fl.Prefijo)*@
+                                            @Html.TextBoxFor(model => fl.Prefijo, new { id = IDPRE, @class = "form-control form-control-sm mb-3 form-control-sm mb-3 text-center", @disabled = "disabled" })
+                                            <input type="submit" class="btn-info" id="tbPrefijobt_@i" onclick='Btn_Edit("tbPrefijobt_" +@i,@IDPRE)' value="Editar" />
+                                        </td>
+                                        <td>
+                                            @*@fl.NoAprobacion*@
+                                            @*@Html.TextBoxFor(modelItem => fl.NoAprobacion)*@
+                                            @Html.TextBoxFor(model => fl.NoAprobacion, new { id = IDSUF, @class = "form-control  form-control-sm mb-3 form-control-sm mb-3 text-center", @disabled = "disabled" })
+                                            <input class="btn-info" type="submit" id="tbNoAp_@i" onclick='Btn_Edit("tbNoAp_" +@i,@IDSUF)' value="Editar" />
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(model => fl.AñoAprobacion, new { id = IDAÑO, @class = "form-control  form-control-sm mb-3 form-control-sm mb-3 text-center", @disabled = "disabled" })
+                                            @*@fl.AñoAprobacion*@
+                                            @*@Html.TextBoxFor(modelItem => fl.AñoAprobacion)*@
+                                            <input class="btn-info" type="submit" id="tbYearAp_@i" onclick='Btn_Edit("tbYearAp_" +@i,@IDAÑO)' value="Editar" />
+                                        </td>
+                                        <td>
+                                            @Html.TextBoxFor(model => fl.AdminFolioType, new { id = "", @class = "form-control form-control-sm mb-3 form-control-sm mb-3 text-center", hidden = "hidden" })
+                                        </td>
+                                        @{i++;}
+                                        @{PF++;}
+                                        @{UF++;}
+                                        @{UFA++;}
+                                        @{IDAÑO++;}
+                                        @{IDPRE++;}
+                                        @{IDSUF++;}
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        @*<div id="priceList">*@
+        <div class="card">
+            <div class="card-header text-center">
+                <strong>Selección de Listas.</strong> &nbsp
+            </div>
+            <div class="card-body text-center">
+                <div>
+                    <label class="col-form-label">Lista default</label>
+
+                    @Html.TextBoxFor(Model => Model.DefaultList, new { id = "idListdefault", @class = "form-control text-center", @readonly = "readonly" })
+                    @Html.HiddenFor(Model => Model.IDDefaultList, new { id = "hdnDefault", @IDMode = "Explicit", @CausesValidation = "true" })
+
+
+                    <label for="modelo" class="col-form-label" style="text-align:center;">Franquicia</label>
+
+
+                    <select class="form-control text-center" id="ddlFranquicia">
+                        @foreach (var item in Model.lsFranquicias)
+                        {
+                            if (item.CardCode == Model.DefaultCustomer)
+                            {
+                                <option selected value="@item.CardCode"><h6>@item.CardName -  <br /><small class="text-muted">@item.LicTradNum</small></h6></option>
+                            }
+                            else
+                            {
+                                <option value="@item.CardCode"><h6>@item.CardName -  <br /><small class="text-muted">@item.LicTradNum</small></h6></option>
+                            }
+
+                        }
+                    </select>
+                    <div class="text-center">
+                        <input id="idChangeAll" style="text-align:center;" type="checkbox" onchange="" />
+                        <label for="modelo" class="col-form-label" style="text-align:center;">Todas las tiendas de la franquicia</label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-footer">
+                @*<div class="row">
+                    <div class="col-md-12">*@
+                <div id="EnctbList">
+                    <table class="table table-hover table-responsive-sm templateTable text-center" id="tblList">
+                        <thead>
+                            <tr style="color: White; background-color: #507CD1; font-weight: bold;">
+                                <th scope="col">
+                                    <input type="checkbox" id="idCheckAll" onchange="SelectedAllCgecks()" name="name" value="" />
+                                </th>
+                                <th scope="col">Lista</th>
+                                <th scope="col">Default</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center" style="font-size:small">
+                            @foreach (var lista in Model.lsListaPrecios)
+                            {
+                                <tr>
+                                    <td>
+                                        @*<div form-check form-check-inline>*@
+                                        @Html.CheckBoxFor(Model => lista.CheckedList, new
+                                        {
+                                            id = "CKB" + lista.listnum,
+                                            @class = "form-check-input form-check-inline",
+                                       @style = "padding: 0rem 0rem",
+                                            onchange = "HiddenButton(" + "CKB" + @lista.listnum + "," + lista.idBtn.ToString().Trim() + ")"
+                                        })
+                                        @*</div>*@
+                                    </td>
+                                    <td>
+                                        @*<div>*@
+                                        @lista.listname
+                                        @*</div>*@
+                                    </td>
+                                    <td>
+                                        @*<div>*@
+                                        <button type="button" id="@lista.idBtn" onclick='loadlistdefault("@lista.listname.ToString()","@lista.listnum")' class="btn btn-primary btn-sm"><i class="fa fa-check"></i></button>
+                                        @*</div>*@
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                @*</div>
+                    </div>*@
+            </div>
+        </div>
+        @*</div>*@
+    </div>
+    <div class="col-md-2"></div>
+</div>
+@*</div>
+        <div class="col-md-2"></div>
+    </div>*@
+@section scripts{
+    <script>
+        Store = {
+            Save: function () {
+                $("#btnAgregar").on("click", function () {
+                   /* addF();*/
+                    var txtStoreName = $("#txtStoreName").val();
+                    var cmbTypeStore = $("#cmbTypeStore").val();
+                    var cmbSAPWS = $("#cmbSAPWS").val();
+                    var cmbEstatus = $("#cmbEstatus").val();
+                    var cmbBodegaPropia = $("#cmbBodegaPropia").val();
+                    var cmbClasificaciones = $("#cmbClasificaciones").val();
+                    var cmbIva = $("#cmbIva").val();
+                    var txtNoCelular = $("#txtNoCelular").val();
+                    var txtCalleNumero = $("#txtCalleNumero").val();
+                    var txtNumExt = $("#txtNumExt").val();
+                    var txtNumInt = $("#txtNumInt").val();
+                    var txtColonia = $("#txtColonia").val();
+                    var txtCodigoPostal = $("#txtCodigoPostal").val();
+                    var txtDelegacion = $("#txtDelegacion").val();
+                    var cmbEstado = $("#cmbEstado").val();
+                    var txtFolderPDF = $("#txtFolderPDF").val();
+                    var txtEmailTienda = $("#txtEmailTienda").val();
+                    var txtAlmSapPropio = $("#txtalmprop").val();
+                    var txtAccion = $("#txtAccion").val();
+                    var txtAdminStoreID = $("#txtAdminStoreID").val();
+                    var checkfranquicia = $("#idChangeAll").prop('checked');
+                    var checkGlobal = @Html.Raw(Json.Encode(Model.checkGlobal)); /*GetListGlobal*/
+                    var hdnDefault = $("#hdnDefault").val();
+                    var SelectedFranquicia = $("#ddlFranquicia option:selected").val();
+
+                /*Region Folios*/
+                    var StoreAdminFolios = new Array();
+                    $('#tblFolios tr').each(function (row, tr) {
+                        if (row > 0 || row != "0") {
+                            StoreAdminFolios[row] = {
+                                "TipoFolio"  : $(tr).find('td:eq(0)').text(),
+                                "Tienda_Name": $(tr).find('td:eq(1)').text(),
+                                "PrimerFolio": $(tr).find('td:eq(2)').find('input').val(),
+                                "UltimoFolio": $(tr).find('td:eq(3)').find('input').val(),
+                                "UltimoFolioAsignado": $(tr).find('td:eq(4)').find('input').val(),
+                                "Prefijo": $(tr).find('td:eq(5)').find('input').val(),
+                                "NoAprobacion": $(tr).find('td:eq(6)').find('input').val(),
+                                "AñoAprobacion": $(tr).find('td:eq(7)').find('input').val(),
+                                "AdminFolioType": $(tr).find('td:eq(8)').find('input').val()
+                            }
+                        }
+
+                    });
+                    StoreAdminFolios.shift();
+                /*End Region Folios*/
+                /*Region Listas*/
+                    var StoreAdminListas = new Array();
+                    $('#tblList tr').each(function (row, tr) {
+                        if (row > 0 || row != "0") {
+                            StoreAdminListas[row] = {
+                                "ChekChecked": $(tr).find('td:eq(0)').find(':checkbox').is(':checked'),
+                                "idCheck": $(tr).find('td:eq(0)').find(':checkbox').attr('id').replace('CKB',''),
+                                "TexDescripcion": $(tr).find('td:eq(1)').text()
+                            }
+                        }
+
+                    });
+                    StoreAdminListas.shift();
+                /*End Region Listas*/
+
+
+                    if (txtAccion.toString() == "Agregar") {
+                        var StoreAdmin = {
+                            'StoreName': txtStoreName.toString(),
+                            'StoreTypeID': cmbTypeStore.toString(),
+                            'whsID': cmbSAPWS.toString(),
+                            'Status': cmbEstatus.toString(),
+                            'BodegaPropia': cmbBodegaPropia.toString(),
+                            'whsConsigID': cmbClasificaciones.toString(),
+                            'PORCENTAJE': cmbIva.toString(),
+                            'Telefono': txtNoCelular.toString(),
+                            'CalleNumero': txtCalleNumero.toString(),
+                            'NumExt': txtNumExt.toString(),
+                            'NumInt': txtNumInt.toString(),
+                            'Colonia': txtColonia.toString(),
+                            'CodigoPostal': txtCodigoPostal.toString(),
+                            'Delegacion': txtDelegacion.toString(),
+                            'EstadoId': cmbEstado.toString(),
+                            'FolderPDF': txtFolderPDF.toString(),
+                            'emailTienda': txtEmailTienda.toString(),
+                            'AlmacenSapPropio' : txtAlmSapPropio,
+                            'actIVA': cmbIva.toString(),
+                            'checkfranquicia' : checkfranquicia,
+                            'checkGlobal': checkGlobal,
+                            'hdnDefault': hdnDefault,
+                            'SelectedFranquicia': SelectedFranquicia,
+                            'StoreAdminFolios': StoreAdminFolios,
+                            'StoreAdminListas' : StoreAdminListas
+                        }
+
+                        $.ajax({
+                            type: "POST",
+                            url: '/TiendaGeneral/Save',
+                            data: "{'StoreAdmin': " + JSON.stringify(StoreAdmin) + "}",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (result) {
+
+                                var store = JSON.parse(result)
+
+                                if (store.AdminStoreID > 0) {
+                                    alert("Se creo un nueva Tienda" + store.AdminStoreID);
+                                }
+                                else {
+                                    alert("No se creo la tienda");
+                                }
+
+                                window.location.href = "/TiendaGeneral/Index";
+                            },
+                            error: function (xhr) {
+                                console.log(xhr.responseText);
+                                alert("Error has ocurred..");
+                            }
+                        });
+                    }
+                    else {
+                        var StoreAdmin = {
+                            'AdminStoreID': txtAdminStoreID.toString(),
+                            'StoreName': txtStoreName.toString(),
+                            'StoreTypeID': cmbTypeStore.toString(),
+                            'whsID': cmbSAPWS.toString(),
+                            'Status': cmbEstatus.toString(),
+                            'BodegaPropia': cmbBodegaPropia.toString(),
+                            'whsConsigID': cmbClasificaciones.toString(),
+                            'PORCENTAJE': cmbIva.toString(),
+                            'Telefono': txtNoCelular.toString(),
+                            'CalleNumero': txtCalleNumero.toString(),
+                            'NumExt': txtNumExt.toString(),
+                            'NumInt': txtNumInt.toString(),
+                            'Colonia': txtColonia.toString(),
+                            'CodigoPostal': txtCodigoPostal.toString(),
+                            'Delegacion': txtDelegacion.toString(),
+                            'EstadoId': cmbEstado.toString(),
+                            'FolderPDF': txtFolderPDF.toString(),
+                            'emailTienda': txtEmailTienda.toString(),
+                            'AlmacenSapPropio': txtAlmSapPropio,
+                            'actIVA': cmbIva.toString(),
+                            'checkfranquicia': checkfranquicia,
+                            'checkGlobal': checkGlobal,
+                            'hdnDefault': hdnDefault,
+                            'SelectedFranquicia': SelectedFranquicia,
+                            'StoreAdminFolios': StoreAdminFolios,
+                            'StoreAdminListas': StoreAdminListas
+                        }
+
+                        $.ajax({
+                            type: "POST",
+                            url: '/TiendaGeneral/Update',
+                            data: "{'StoreAdmin': " + JSON.stringify(StoreAdmin) + "}",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (result) {
+
+                                if (result > 0) {
+                                    alert("Se realizo la actualizacion");
+
+                                    window.location.href = "/TiendaGeneral/Index";
+                                }
+                                else {
+                                    alert("No se realizo la actualizacion");
+
+                                    window.location.href = "/TiendaGeneral/Index";
+                                }
+                            },
+                            error: function (xhr) {
+                                console.log(xhr.responseText);
+                                alert("Error has ocurred..");
+                            }
+                        });
+                    }
+                });
+            },
+            Cancelar: function () {
+                $('#btnCancelar').click(function () {
+                    window.location.href = "/TiendaGeneral/Index";
+                });
+            }
+        };
+
+        $(document).ready(function () {
+            Store.Save();
+            Store.Cancelar();
+        });
+
+        function Btn_Edit(btn_Id, TextId) {
+            var btn_text = $("#" + btn_Id).val();
+            var TextValue = $("#" + TextId).val();
+            if (btn_text == "OK") {
+                $("#" + TextId).attr('disabled', 'disabled');
+                $("#" + btn_Id).val("Editar")
+                $("#" + btn_Id).removeClass("btn-success");
+                $("#" + btn_Id).addClass("btn-info");
+            } else {
+                $("#" + btn_Id).val("OK")
+                $("#" + TextId).removeAttr('disabled');
+                $("#" + btn_Id).removeClass("btn-info");
+                $("#" + btn_Id).addClass("btn-success");
+            }
+        }
+        function HiddenButton(idCheck, idbtn) {
+            var Btn = idbtn.id;
+            var Check = idCheck.id;
+            var Check = $("#" + Check).prop('checked');
+            //var check1 = document.getElementById(Check).checked
+            if (Check) {
+                $("#" + Btn).prop("hidden", true);
+            } else { $("#" + Btn).removeAttr('hidden'); }
+        }
+        function loadlistdefault(Listname1,listnum) {
+
+            var name = Listname1;
+            $("#idListdefault").val(name);
+            $("#hdnDefault").val(listnum);
+        }
+        function SelectedAllCgecks() {
+            @*var Lista = @Html.Raw(Json.Encode(Model.lsListaPrecios));
+            $.each(Lista, function (key, value) {
+                value.CheckedList = true;
+            });*@
+            var CheckAll = $("#idCheckAll").prop('checked');
+            var ChangeAll = $("#idChangeAll").prop('checked');
+            if (CheckAll) {
+                $("input[type=checkbox]").prop("checked", true);
+                $("button[type=button]").prop("hidden", true);
+                $("#idChangeAll").prop("checked", ChangeAll);//reactiva la afectacion al check de todas las tiendas
+
+            } else {
+                $("input[type=checkbox]").prop("checked", false);
+                $("button[type=button]").removeAttr('hidden');
+                $("#idChangeAll").prop("checked", ChangeAll);//reactiva la afectacion al check de todas las tiendas
+            }
+        }
+    </script>
+}

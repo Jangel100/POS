@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/fixedHeader.bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/responsive.dataTables.min.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/regular.min.css" integrity="sha512-aNH2ILn88yXgp/1dcFPt2/EkSNc03f9HBFX0rqX3Kw37+vjipi1pK3L9W08TZLhMg4Slk810sPLdJlNIjwygFw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<center>
+    <h2>Tiendas General</h2>
+</center>
+
+<button id="btnAddTiendas" class="btn btn-primary ml-3">Agregar</button>
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+
+@section scripts{
+    <script>
+        TiendasGeneral = {
+            Add: function () {
+                $("#btnAddTiendas").on("click", function () {
+                    window.location.href = "/TiendaGeneral/Add";
+                });
+            },
+            Consult: function () {
+                TiendasGeneral.GetTiendas();
+            },
+            Modify: function (AdminStoreID) {
+                window.location.href = "/TiendaGeneral/Modify?AdminStoreID=" + AdminStoreID + "&Action=Edit";
+            },
+            Delete: function () {
+
+            },
+            GetTiendas: function () {
+                TiendasGeneral.GetListSuccess();
+            },
+            GetListSuccess: function () {
+
+                var spanish = {
+                    "processing": "Procesando...",
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "zeroRecords": "No se encontraron resultados",
+                    "emptyTable": "Ningún dato disponible en esta tabla",
+                    "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "search": "Buscar:",
+                    "infoThousands": ",",
+                    "loadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    " oAria ": {
+                        " sSortAscending ": ": Activar para ordenar la columna de manera ascendente ",
+                        " sSortDescending ": ": Activar para ordenar la columna de manera descendente "
+                    }
+                }
+
+                var table = $('#tbConsultaTiendas').dataTable({
+                    language: spanish,
+                    ajax:
+                    {
+                        type: "POST",
+                        url: '/TiendaGeneral/GetConsultaTiendas',
+                        dataType: "json"
+
+                    },
+                    'columns': [
+                        { "data": "AdminStoreID", "autoWidth": true },
+                        { "data": "StoreName", "autoWidth": true },
+                        { "data": "Status", "autoWidth": true },
+                        { "render": function (data, type, row) { return '<a id="myLink" href="#" onclick="TiendasGeneral.Modify(' + row.AdminStoreID + ');"> <i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>'; } },
+                        { "render": function (data, type, row) { return '<a id="myLink2" href="#" onclick="MyFunction(' + row.AdminStoreID + ');"> <i class="fa fa-trash text-danger" aria-hidden="true"></i> Eliminar</a>'; } }
+                    ],
+                    "columnDefs": [
+                        { "searchable": true, "orderable": true, targets: "_all" },
+                        { "className": "text-center custom-middle-align", targets: "_all" }
+
+                    ],
+                    "processing": true,
+                    //"pageLength": 40,
+                    "lengthChange": false,
+                    "responsive": true,
+                    "rowReorder": {
+                        "selector": 'td:nth-child(2)'
+                    },
+                    "fixedHeader": {
+                        "header": true
+                    },
+                    "dom": 'Bfrtip'
+                });
+
+                //new $.fn.dataTable.FixedHeader(table);
+            }
+        };
+
+        $(document).ready(function () {
+            TiendasGeneral.Consult();
+            TiendasGeneral.Add();
+        });
+    </script>
+}
+
+<script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+<script src="~/Scripts/DataTables/dataTables.rowReorder.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.responsive.min.js"></script>
+<script src="~/Scripts/DataTables/responsive.bootstrap4.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.fixedHeader.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.fixedColumns.min.js"></script>
+@*<script src="~/Scripts/DataTables/responsive.bootstrap4.js"></script>*@
+
+@Html.Partial("../ViewPartial/Configuracion/_PartialTiendasGeneral")
+
+@*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/DataTables")
+    @Scripts.Render("~/bundles/scripts")*@
+@*@Scripts.Render("~/bundles/css")*@

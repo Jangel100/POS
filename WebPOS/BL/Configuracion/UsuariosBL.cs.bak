@@ -1,0 +1,37 @@
+﻿using BL.Interface;
+using DAL.Configuracion;
+using DAL.Utilities.Interface;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+
+namespace BL.Configuracion
+{
+    public class UsuariosBL : IUsuariosBL
+    {
+        readonly IUsuariosBL _usuariosBL;
+        public UsuariosBL(UsuariosBL usuariosBL)
+        {
+            _usuariosBL = usuariosBL;
+        }
+
+        public UsuariosBL()
+        {
+            _usuariosBL = new UsuariosBL();
+        }
+
+        public HttpResponseMessage GetResponseAPIUsuarios(string url)
+        {
+            try
+            {
+                return _usuariosBL.GetResponseAPIUsuarios(url);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "VentasxArticuloReports";
+}
+<style>
+    th, td {
+        white-space: nowrap;
+    }
+
+    td {
+        font-size: 11px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="card">
+    </div>
+    <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+        <span class="float-center">
+            <strong>
+                Ventas por Articulo
+            </strong>
+        </span>
+    </div>
+    <div class="card-body">
+        @{ Html.RenderAction("GetViewVentaxArticuloReports", "Reportes", new { typeReports = "VentasxArticulo" }); }
+    </div>
+    <div class="card-body">
+        <table id="tblConsultaVentasxArticuloReport" class="table table-sm">
+            <thead>
+
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br />
+        <br />
+        <br />
+    </div>
+    <div class="card-footer" style="padding: 0.0rem 1.25rem !important;">
+
+    </div>
+</div>
+
+<!-- Modal -->
+
+@Html.Partial("../ViewPartial/Reportes/_PartialLoadingModal")
+
+
+

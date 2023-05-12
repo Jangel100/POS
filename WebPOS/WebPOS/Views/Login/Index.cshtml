@@ -1,0 +1,96 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Dormimundo</title>
+    <link rel="shortcut icon" href="~/images/sp.ico">
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fontawesome")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="col-md-12" style="background-color:white">
+    <div class="row">
+        <div class="col-md-12" style="background-color:white">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <img src="~/images/logo-dormimundo-big.jpg" class="logo-index" />
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 line-footer-logo"></div>
+                </div>
+            </div>
+            <br />
+            <div class="container text-center d-flex justify-content-center align-items-center">
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6">
+                        <a id="ext-gen11" class="btn btn-primary btn-lg btn-block" href="#">
+                            <i class="fa fa-user fa-fw"></i> Identificación de Usuario
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <button type="button" id="btnGarantias" class="btn btn-dark col-md-3">Acceder a Garantias</button>
+                <div class="col-md-2">
+                </div>
+                <button type="button" id="btnGarantiasOficinas" class="btn btn-dark col-md-3">Acceder a Garantias(Solo en Oficinas)</button>
+                <div class="col-md-2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<hr />
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <button type="button" id="btnGarantiasOficinas" class="btn btn-secondary col-md-4">Acceder a Garantias(Solo en Oficinas)</button>
+            <div class="col-md-4">
+            </div>
+        </div>*@
+    <div id="PartialVistaPdidos"></div>
+
+    @Html.Partial("../ViewPartial/Login/_PartialLogin")
+
+    <footer>
+    </footer>
+
+</body>
+</html>
+
+
+    <script src="~/Scripts/jquery-3.5.0.js"></script>
+    <script src="~/Scripts/jquery-3.5.0.min.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+@Scripts.Render("~/bundles/scripts")

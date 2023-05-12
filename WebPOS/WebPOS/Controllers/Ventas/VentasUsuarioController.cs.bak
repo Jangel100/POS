@@ -1,0 +1,241 @@
+﻿using BL.Interface;
+using BL.Ventas;
+using Entities.Models.Configuracion;
+using Entities.viewsModels;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Web;
+using System.Web.Mvc;
+using WebPOS.Security;
+
+namespace WebPOS.Controllers.Ventas
+{
+    [CustomAuthorize(Roles = "AG, US")]
+    public class VentasUsuarioController : Controller
+    {
+
+        readonly IVentasUsuarioBL _VentasUsuarioBL;
+        public VentasUsuarioController(VentasUsuarioBL login)
+        {
+            _VentasUsuarioBL = login;
+        }
+
+        public VentasUsuarioController()
+        {
+            _VentasUsuarioBL = new VentasUsuarioBL();
+        }
+        // GET: VentasUsuario
+        public ActionResult Index()
+        {
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        public ActionResult GetViewClientes()
+        {
+
+            ClientesView clientesView;
+            List<Entidades> lsEstados;
+            try
+            {
+                lsEstados = GetEstados();
+                clientesView = new ClientesView() { Estados = lsEstados };
+
+                return PartialView("../ViewPartial/Ventas/_PartialClientesIndex", clientesView);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        private List<Entidades> GetEstados()
+        {
+
+            string JsonResult = string.Empty;
+            string url = string.Empty;
+            try
+            {
+                url = "api2/GetConsultaUsuarios";
+
+                HttpResponseMessage response = _VentasUsuarioBL.GetResponseAPIVentasUsuarios(url);
+                response.EnsureSuccessStatusCode();
+                var result = response.Content.ReadAsAsync<List<Entidades>>().Result;
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        public ActionResult Buscar()
+        {
+            try
+            {
+                return null;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        public ActionResult GetCliente(Clientes clientes)
+        {
+            string url = string.Empty;
+            string JsonResult = string.Empty;
+            string parameterJson = string.Empty;
+
+            try
+            {
+                url = "api2/GetInfoCliente";
+                HttpResponseMessage response = _VentasUsuarioBL.ReadAsStringAsyncAPI(url, clientes);
+                response.EnsureSuccessStatusCode();
+                var result = response.Content.ReadAsAsync<List<Clientes>>().Result;
+
+                if (result != null)
+                {
+                    JsonResult = JsonConvert.SerializeObject(result);
+                    return Json(result, JsonRequestBehavior.AllowGet);
+                }
+
+                return Json(null);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return null;
+        }
+
+        public JsonResult GetClienteFacturacion(Clientes clientes)
+        {
+            string url = string.Empty;
+            string JsonResult = string.Empty;
+            string parameterJson = string.Empty;
+
+            try
+            {
+                url = "api2/GetClienteFacturacion";
+                HttpResponseMessage response = _VentasUsuarioBL.ReadAsStringAsyncAPI(url, clientes);
+                response.EnsureSuccessStatusCode();
+                var result = response.Content.ReadAsAsync<ClientesView>().Result;
+
+                if (result != null)
+                {
+                    JsonResult = JsonConvert.SerializeObject(result);
+                    return Json(JsonResult);
+                }
+
+                return Json(null);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return null;
+        }
+        public JsonResult GetInsertInfoCliente(Clientes clientes)
+        {
+            string url = string.Empty;
+            string JsonResult = string.Empty;
+
+            try
+            {
+                url = "api2/GetInsertInfoCliente";
+                HttpResponseMessage response = _VentasUsuarioBL.ReadAsStringAsyncAPI(url, clientes);
+                response.EnsureSuccessStatusCode();
+                var result = response.Content.ReadAsAsync<int>().Result;
+
+                JsonResult = JsonConvert.SerializeObject(result);
+                return Json(JsonResult);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return null;
+        }
+        public JsonResult GetUpdateInfoCliente(Clientes clientes)
+        {
+            string url = string.Empty;
+            string JsonResult = string.Empty;
+
+            try
+            {
+                url = "api2/GetUpdateInfoCliente";
+                HttpResponseMessage response = _VentasUsuarioBL.ReadAsStringAsyncAPI(url, clientes);
+                response.EnsureSuccessStatusCode();
+                var result = response.Content.ReadAsAsync<int>().Result;
+
+                JsonResult = JsonConvert.SerializeObject(result);
+                return Json(JsonResult);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return null;
+        }
+
+        [HttpGet]
+        public ActionResult GetViewClientesAdd()
+        {
+
+            ClientesView clientesView;
+            List<Entidades> lsEstados;
+            try
+            {
+                lsEstados = GetEstados();
+                clientesView = new ClientesView() { Estados = lsEstados, };
+
+                return PartialView("../ViewPartial/Ventas/_PartialClientesAdd", clientesView);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        public JsonResult GetInsertInfoClienteNew(Clientes clientes)
+        {
+            string url = string.Empty;
+            string JsonResult = string.Empty;
+
+            try
+            {
+                url = "api2/GetInsertInfoClienteNew";
+                HttpResponseMessage response = _VentasUsuarioBL.ReadAsStringAsyncAPI(url, clientes);
+                response.EnsureSuccessStatusCode();
+                var result = response.Content.ReadAsAsync<int>().Result;
+
+                JsonResult = JsonConvert.SerializeObject(result);
+                return Json(JsonResult);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return null;
+        }
+    }
+}

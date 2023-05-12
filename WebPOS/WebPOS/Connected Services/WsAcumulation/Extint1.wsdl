@@ -1,0 +1,1507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.payback.net/lmsglobal/ws/v1/extint" xmlns:extint="http://www.payback.net/lmsglobal/ws/v1/extint/types" name="Extint" targetNamespace="http://www.payback.net/lmsglobal/ws/v1/extint" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns:types="http://www.payback.net/lmsglobal/xsd/v1/types" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.payback.net/lmsglobal/xsd/v1/types" version="6.8.5" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="AccountBalanceDetailType">
+        <xs:sequence>
+          <xs:element name="TotalPointsAmount" type="types:LoyaltyAmountType">
+            <xs:annotation>
+              <xs:documentation>The total amount of points in this account.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AvailablePointsAmount" type="types:LoyaltyAmountType">
+            <xs:annotation>
+              <xs:documentation>The amount of available points in this account.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BlockedPointsAmount" type="types:LoyaltyAmountType">
+            <xs:annotation>
+              <xs:documentation>The amount of blocked points in this account.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ExpiryAnnouncement" type="types:ExpiryAnnouncementType">
+            <xs:annotation>
+              <xs:documentation>An optional announcement to warn the member that some of his points will expire soon.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ExpiryStatistics" type="types:ExpiryStatisticsType">
+            <xs:annotation>
+              <xs:documentation>An optional statistics information to inform the member how many points already expired.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AuthorisedRequest">
+        <xs:annotation>
+          <xs:documentation>This is the base type for all web service requests. Its only element
+                is a data type that is used for partner authentication and subsequent
+                authorisation. Concrete web service requests are supposed to extend this type by appending their own
+                elements.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ConsumerIdentification" type="types:ConsumerIdentificationType">
+            <xs:annotation>
+              <xs:documentation>Data used to identify and authenticate the consumer that has submitted the request and
+                        provide additional details on the consumer.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CollectEventType">
+        <xs:sequence>
+          <xs:element name="Partner" type="types:PartnerContextType">
+            <xs:annotation>
+              <xs:documentation>Unique short name of the partner, the partner's business unit
+                        and the partner's branch where the event was created</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EffectiveDate" type="types:EffectiveDateType">
+            <xs:annotation>
+              <xs:documentation>Effective date. Date of event creation at partner
+                        (including time zone information)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReceiptNumber" type="types:ExternalIdType">
+            <xs:annotation>
+              <xs:documentation>Receipt number. Key number of a receipt issued at a partner.
+                        Must be unique for a certain partner</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CommunicationChannel" type="types:CommunicationChannelType">
+            <xs:annotation>
+              <xs:documentation>Describes the medium used by the customer to interact with PAYBACK</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CollectionInformationType">
+        <xs:annotation>
+          <xs:documentation>Type describes how many "points" have been credited to the member's account based on a collection event</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="BaseLoyaltyValue" type="types:LoyaltyUnitType">
+            <xs:annotation>
+              <xs:documentation>Amount of base points (result of the base rating)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="unbounded" name="PromotionLoyaltyValue" type="types:LoyaltyUnitType">
+            <xs:annotation>
+              <xs:documentation>Amount of promotion points (result of the promotion rating)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PromotionDetails" type="types:PromotionDetailsType">
+            <xs:annotation>
+              <xs:documentation>Describe the details about used offers based on the result of promotion rating for this purchase.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConsumerAuthenticationType">
+        <xs:annotation>
+          <xs:documentation>This data type is used to transfer an authentication request of a interface consumer to
+the system</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Principal" type="types:PrincipalType">
+            <xs:annotation>
+              <xs:documentation>A valid principal of the consumer who wants to access a WebService method. This
+principal is unique for the consumer and will be used to identify the consumer uniquely within the system</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Credential" type="types:CredentialType">
+            <xs:annotation>
+              <xs:documentation>Credential of the consumer who wants to access a WebService method.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConsumerIdentificationType">
+        <xs:annotation>
+          <xs:documentation>Type to indentiy a consumer in more detailed information on the concrete device.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ConsumerAuthentication" type="types:ConsumerAuthenticationType">
+            <xs:annotation>
+              <xs:documentation>ConsumerAuthentication uniquely identifies and authorises the consumer. Only proper consumer authentication authorizes the consumer to access the PAYBACK system.
+Each consumer requires an interface contract with PAYBACK to receive valid consumer authentication.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Version" type="types:VersionType">
+            <xs:annotation>
+              <xs:documentation>Determines consumer specific service configuration of system's interface (default: 1).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CouponFilterType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Partner" type="types:PartnerContextType">
+            <xs:annotation>
+              <xs:documentation>Filter for partners and business units; GLOB backend: branch specific coupons can be filtered using this filter</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CouponsOnReceiptType">
+        <xs:sequence>
+          <xs:element name="CouponID" type="types:ExternalIdType">
+            <xs:annotation>
+              <xs:documentation>Identifier of the coupon / treatment</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Validity" type="types:ValidityType" />
+          <xs:element minOccurs="0" name="CouponContentSet">
+            <xs:annotation>
+              <xs:documentation>Layout information provided for display and printout of the coupon</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="TextItem" type="types:TextItemType" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ExpiryAnnouncementType">
+        <xs:annotation>
+          <xs:documentation>Announcement that a certain amount of points will expire
+                soon.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PointsToExpireAmount" type="types:LoyaltyAmountType">
+            <xs:annotation>
+              <xs:documentation>The amount of points that will expire soon.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NextExpiryDate" type="types:ExpiryDateType">
+            <xs:annotation>
+              <xs:documentation>The expected date of expiration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ExpiryStatisticsType">
+        <xs:annotation>
+          <xs:documentation>Statistics of points that already in expired in the past.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ExpiredPointsAmount" type="types:LoyaltyAmountType">
+            <xs:annotation>
+              <xs:documentation>The number of points that already expired since a
+                        certain point in the past.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ExpiredSinceDate" type="types:ExpiryDateType">
+            <xs:annotation>
+              <xs:documentation>The begin of the expiration interval that was taken
+                        into account.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FaultDescriptorType">
+        <xs:annotation>
+          <xs:documentation>Basic type used as an 'exception' that is thrown by a WebMethodin case of errors when it
+                was not possible to achieve the desired result resp. to create the desired
+                return value.In the majority of cases it can be assumed, that the
+                underlying business transaction was rolled back when a Fault is thrown and
+                therefore no change was made in the database.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Code" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Error code used in the fault message to precisely identify the type of internal
+                        exception/error that occurred during processing of the WebService
+                        request. In most cases, this is an error code generated by a
+                        business logic component and can be interpreted in its context.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Message" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Error message used in the fault message to give a humans a readable and interpretable
+                        indication concerning what went wrong during processing of the
+                        WebService request. In contrast to the error code, this message
+                        string might be translated and therefore available in the
+                        customization's preferred language.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="RequestID" type="types:ExternalIdType">
+            <xs:annotation>
+              <xs:documentation>Unique identifier of request; helps finding error in log files</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LegalUnitType">
+        <xs:annotation>
+          <xs:documentation>Amount of legal currency together with its unit of measurement.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="LegalAmount" type="types:LegalAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LoyaltyUnitType">
+        <xs:annotation>
+          <xs:documentation>Amount of loyalty currency together with its unit of measurement.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="LoyaltyAmount" type="types:LoyaltyAmountType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberAliasIdentificationType">
+        <xs:annotation>
+          <xs:documentation>This data type is used to transfer member identification data to the system. It contains a Principal (and an optional PrincipalVariant) which is automatically mapped to system internal alias identifiers.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Identification" type="types:MemberIdentificationType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberIdentificationType">
+        <xs:annotation>
+          <xs:documentation>Alias identify a member within the PAYBACK program. Alias
+                type defines the classification and derived from this the usage of an
+                alias.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Alias" type="types:PrincipalType">
+            <xs:annotation>
+              <xs:documentation>Alias identify a member within the PAYBACK program.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="AliasType" type="types:PrincipalVariantType">
+            <xs:annotation>
+              <xs:documentation>Required: Alias type defines the classification and derived from this the usage of an alias.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageResponse">
+        <xs:annotation>
+          <xs:documentation>Standard response base type with fault message object.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence minOccurs="0">
+          <xs:element name="FaultMessage" type="types:FaultDescriptorType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PartnerContextType">
+        <xs:annotation>
+          <xs:documentation>This type allows to transfer a description of the partner
+organization and the partner system that participated in the PAYBACK program.
+Hierarchy to follow is: Partner --&gt; BusinessUnit --&gt; Branch</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PartnerShortName" type="types:OrganizationShortNameType">
+            <xs:annotation>
+              <xs:documentation>Short name that identifies the partner organization.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="BusinessUnitShortName" type="types:OrganizationShortNameType">
+            <xs:annotation>
+              <xs:documentation>Short name that identifies the partner's business unit.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="BranchShortName" type="types:OrganizationShortNameType">
+            <xs:annotation>
+              <xs:documentation>Short name that identifies the partner's branch.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PromotionDetailsType">
+        <xs:annotation>
+          <xs:documentation>Describes the details about used offers based on the result of promotion rating for this purchase.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="LoyaltyValue" type="types:LoyaltyUnitType" />
+          <xs:element name="MarketingCode" type="types:PartnerDefinedCodeNameType" />
+          <xs:element name="MarketingCodeDescription" type="types:PartnerDefinedCodeShortDescriptionType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PurchaseItemDetails">
+        <xs:annotation>
+          <xs:documentation>Details of an Item that is part of a collect event</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PointsAmount" type="types:LoyaltyAmountType">
+            <xs:annotation>
+              <xs:documentation>Points amount. Points credited for a single item</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ArticleDescription" type="types:ArticleDescriptionType">
+            <xs:annotation>
+              <xs:documentation>Article description</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ArticleEanCode" type="types:ArticleEanCodeType">
+            <xs:annotation>
+              <xs:documentation>EAN code of an article</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PartnerProductGroupCode" type="types:PartnerProductGroupCodeType">
+            <xs:annotation>
+              <xs:documentation>Code of a product group at the partner's site</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PartnerProductGroupName" type="types:PartnerProductGroupNameType">
+            <xs:annotation>
+              <xs:documentation>Name of a product group at the partner's site</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PartnerProductCategoryCode" type="types:PartnerProductCategoryCodeType">
+            <xs:annotation>
+              <xs:documentation>Code of a product category at the partner's site</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PartnerProductCategoryName" type="types:PartnerProductCategoryNameType">
+            <xs:annotation>
+              <xs:documentation>Name of a product category at the partner's site</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SupplierCode" type="types:SupplierCodeType">
+            <xs:annotation>
+              <xs:documentation>Supplier code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SupplierName" type="types:SupplierNameType">
+            <xs:annotation>
+              <xs:documentation>Supplier name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SingleTurnoverAmount" type="types:LegalAmountType">
+            <xs:annotation>
+              <xs:documentation>Single turnover amount including VAT. The article price of a single item</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Quantity" type="types:QuantityType">
+            <xs:annotation>
+              <xs:documentation>Quantity of items (negative values are allowed)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="QuantityUnitCode" type="types:QuantityUnitCodeType">
+            <xs:annotation>
+              <xs:documentation>Unit code of the given quantity</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TotalTurnoverAmount" type="types:LegalAmountType">
+            <xs:annotation>
+              <xs:documentation>Total turnover amount. The total price of all items (quantity considered) including VAT (negative values are allowed)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TotalRewardableAmount" type="types:LegalAmountType">
+            <xs:annotation>
+              <xs:documentation>Total rewardable amount. The rewardable amount of all items (quantity considered) including VAT (negative values are allowed)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VatAmount" type="types:LegalAmountType">
+            <xs:annotation>
+              <xs:documentation>VAT amount that is included in the rewardable amount (negative values are allowed)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VATRate" type="types:VATRateType">
+            <xs:annotation>
+              <xs:documentation>VAT percentage rate of this item</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReferencePurchaseDetailsType">
+        <xs:annotation>
+          <xs:documentation>Details of the reference purchase</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="RewardableLegalValue" type="types:LegalUnitType">
+            <xs:annotation>
+              <xs:documentation>Monetary value of the purchase that is rewarded</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ReceiptNumber" type="types:ExternalIdType">
+            <xs:annotation>
+              <xs:documentation>Receipt number referencing the purchase event that contributed to the promotion points. In case receipt number is
+not provided, PB takes the receipt number of current event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TextItemType">
+        <xs:sequence>
+          <xs:element name="TextKey" type="types:TextKeyType" />
+          <xs:element name="TextValue" type="types:ContentTextType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TransactionDetails">
+        <xs:annotation>
+          <xs:documentation>Details of a T-Record of a collect event</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="TransactionType" type="types:TransactionTypeType">
+            <xs:annotation>
+              <xs:documentation>Transaction type. Either of:
+100 = PURCHASE,
+101 = PURCHASE_REVERSAL,
+102 = PURCHASE_REFUND,
+110 = RETROCREDIT,
+111 = RETROCREDIT_REVERSAL,
+120 = PROMOTION_PURCHASE_DEPENDENT,
+121 = PROMOTION_PURCHASE_DEPENDENT_REVERSAL,
+122 = PROMOTION_PURCHASE_DEPENDENT_REFUND,
+130 = PROMOTION_PURCHASE_INDEPENDENT,
+131 = PROMOTION_PURCHASE_INDEPENDENT_REVERSAL,
+140 = GOODWILL,
+141 = GOODWILL_REVERSAL,
+150 = VOUCHER,
+151 = VOUCHER_REVERSAL,
+160 = GIFT_REDEMPTION,
+161 = GIFT_REDEMPTION_REVERSAL,
+162 = GIFT_REDEMPTION_REFUND,
+170 = PAYMENT_REDEMPTION,
+171 = PAYMENT_REDEMPTION_REVERSAL,
+172 = PAYMENT_REDEMPTION_REFUND,
+180 = OUTBOUND_CONVERSION,
+181 = OUTBOUND_CONVERSION_REVERSAL,
+190 = DONATION,
+191 = DONATION_REVERSAL,
+200 = SHOP_ORDER,
+201 = SHOP_ORDER_REVERSAL,
+202 = SHOP_ORDER_REFUND,
+210 = POINTS_DEBIT,
+220 = POINTS_EXPIRY,
+230 = POINTS_EXPIRY_CREDIT,
+240 = INBOUND_CONVERSION,
+241 = INBOUND_CONVERSION_REVERSAL,
+250 = NOT SUPPORTED - TRANSPORTATION,
+251 = NOT SUPPORTED - TRANSPORTATION_REVERSAL,
+260 = NOT SUPPORTED - PROMOTION_TRANSPORTATION_DEPENDENT,
+261 = NOT SUPPORTED - PROMOTION_TRANSPORTATION_DEPENDENT_REVERSAL,
+300 = MIGRATION_TRANSACTION</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MarketingCode" type="types:PartnerDefinedCodeNameType">
+            <xs:annotation>
+              <xs:documentation>Marketing code. Unique identifier for marketing campaigns and promotions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TotalPoints" type="types:LoyaltyUnitType">
+            <xs:annotation>
+              <xs:documentation>Total points amount and currency. Points credited for this transaction
+                        (negative values are allowed)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PointsBlockedUntil" type="types:PointsBlockedUntilType">
+            <xs:annotation>
+              <xs:documentation>Blocked until date. Points are blocked for redemption till the given date</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VATRate" type="types:VATRateType">
+            <xs:annotation>
+              <xs:documentation>VAT percentage rate of this transaction</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferencePurchaseDetails" type="types:ReferencePurchaseDetailsType">
+            <xs:annotation>
+              <xs:documentation>In case transaction is a promotion transaction, details of the related purchase events that lead to this promotion must be transmitted.
+Example: After member had bought five times a cup of coffee he receives 100 extra points. Within the according promotion transaction every single purchase event must be listed.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidityType">
+        <xs:sequence>
+          <xs:element name="ValidFrom" type="types:IsoDateTimeType">
+            <xs:annotation>
+              <xs:documentation>The point in time (including), from which the coupon can be used (activated, redeemed) by the member.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ValidTo" type="types:IsoDateTimeType">
+            <xs:annotation>
+              <xs:documentation>The point in time (including), when the coupon can not be used (e.g. activated, redeemed) any more by the user.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ArticleDescriptionType">
+        <xs:annotation>
+          <xs:documentation>This type gives a description of a product.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="60" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ArticleEanCodeType">
+        <xs:annotation>
+          <xs:documentation>This type gives the EAN code of a product.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CommunicationChannelType">
+        <xs:annotation>
+          <xs:documentation>This type describes the medium used by the customer to interact with PAYBACK.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="types:LICBaseType" />
+      </xs:simpleType>
+      <xs:simpleType name="ContentTextType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="2000" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CredentialType">
+        <xs:annotation>
+          <xs:documentation>Type to transfer (possibly encrypted) passwords (or other credentials like e.g. date of
+                birth) needed for authentication.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="255" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="EffectiveDateType">
+        <xs:annotation>
+          <xs:documentation>An effective date is a date, when the reason of an event or transaction
+                being created (e.g. a purchase), happened.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="types:IsoDateTimeType" />
+      </xs:simpleType>
+      <xs:simpleType name="ExpiryDateType">
+        <xs:annotation>
+          <xs:documentation>Type to describe expiry dates (as dateTime with time zone).</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="types:IsoDateTimeType" />
+      </xs:simpleType>
+      <xs:simpleType name="ExternalCodeNumberType">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="255" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ExternalIdType">
+        <xs:annotation>
+          <xs:documentation>Data type to represent object identifiers that is valid 'outside' our system. It is used
+                in certain scenarios when data is inserted into the PAYBACK system that
+                possesses valid unique identifiers in other systems of a partner.
+                Example: A member enrollment request sent by a PAYBACK partner could contain an external
+                reference id for the member (e.g. his customer number at the partner which
+                is not unique in PAYBACK but unique within the partner's organization).
+                The same data format is used for external identifiers that must be loaded
+                during data migration from old systems.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="36" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="IsoDateTimeType">
+        <xs:annotation>
+          <xs:documentation>PAYBACK standard date-time-stamps format (incl. time zone information). Represents instances
+                identified by the combination of a date and a time. Its value space is
+                described as a combination of date and time of day in Chapter 5.4 of ISO
+                8601. Its lexical space is the extended format:
+                [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:dateTime" />
+      </xs:simpleType>
+      <xs:simpleType name="LICBaseType">
+        <xs:annotation>
+          <xs:documentation>Basic type for lic-based, customizable enumerations. All enumerations that are
+                customizable (e.g. salutations, channels etc.) are represented by
+                non-negative integer based language independent codes internally. This
+                type is meant to be *abstract*. It must not be used directly but only to
+                derive other lic-based types.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:nonNegativeInteger">
+          <xs:maxInclusive value="9999" />
+          <xs:totalDigits value="4" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="LegalAmountType">
+        <xs:annotation>
+          <xs:documentation>Type for representing amounts of legal currency</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+          <xs:fractionDigits value="3" />
+          <xs:totalDigits value="21" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="LoyaltyAmountType">
+        <xs:annotation>
+          <xs:documentation>Type for representing amounts of loyalty currency (i.e. points)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+          <xs:fractionDigits value="3" />
+          <xs:totalDigits value="21" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrganizationShortNameType">
+        <xs:annotation>
+          <xs:documentation>A human readable, string-based identifier to name
+                organizations in external interfaces.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="10" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PartnerDefinedCodeNameType">
+        <xs:annotation>
+          <xs:documentation>A short, unique name to identify partner defined codes.
+                For gift codes, uniqueness is guaranteed on a 'per partner' base.
+                For marketing codes uniqueness is guaranteed on 'per system' base.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="20" />
+          <xs:minLength value="1" />
+          <xs:whiteSpace value="collapse" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PartnerDefinedCodeShortDescriptionType">
+        <xs:annotation>
+          <xs:documentation>A (short) descriptive text giving some information
+                about a gift code or marketing code.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="60" />
+          <xs:minLength value="1" />
+          <xs:whiteSpace value="collapse" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PartnerProductCategoryCodeType">
+        <xs:annotation>
+          <xs:documentation>This type gives the code of a product category.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PartnerProductCategoryNameType">
+        <xs:annotation>
+          <xs:documentation>This type gives the name of a product category.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PartnerProductGroupCodeType">
+        <xs:annotation>
+          <xs:documentation>This type gives the code of a product group.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PartnerProductGroupNameType">
+        <xs:annotation>
+          <xs:documentation>This type gives the name of a product group.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PaymentTypeType">
+        <xs:annotation>
+          <xs:documentation>This type describes different methods of payment for legal values.
+1 - cash
+2 - credit card
+3 - debit card
+4 - voucher
+5 - fleet card
+6 - cheque
+7 - Loyalty currency
+8 - Collect on Delivery
+9 - Online payment
+10 - Food Stamp / EBT
+99 - others</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:int">
+          <xs:enumeration value="1">
+            <xs:annotation>
+              <xs:documentation>Cash</xs:documentation>
+              <xs:appinfo>CASH</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="2">
+            <xs:annotation>
+              <xs:documentation>Credit Card</xs:documentation>
+              <xs:appinfo>CREDIT_CARD</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="3">
+            <xs:annotation>
+              <xs:documentation>Debit Card</xs:documentation>
+              <xs:appinfo>DEBIT_CARD</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="4">
+            <xs:annotation>
+              <xs:documentation>Voucher</xs:documentation>
+              <xs:appinfo>VOUCHER</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="5">
+            <xs:annotation>
+              <xs:documentation>Fleet Card</xs:documentation>
+              <xs:appinfo>FLEET_CARD</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="6">
+            <xs:annotation>
+              <xs:documentation>Cheque</xs:documentation>
+              <xs:appinfo>CHEQUE</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="7">
+            <xs:annotation>
+              <xs:documentation>Loyalty Currency</xs:documentation>
+              <xs:appinfo>LOYALTY_CURRENCY</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="8">
+            <xs:annotation>
+              <xs:documentation>Collect on Delivery</xs:documentation>
+              <xs:appinfo>COLLECT_ON_DELIVERY</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="9">
+            <xs:annotation>
+              <xs:documentation>Online Payment</xs:documentation>
+              <xs:appinfo>ONLINE_PAYMENT</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="99">
+            <xs:annotation>
+              <xs:documentation>Others</xs:documentation>
+              <xs:appinfo>OTHERS</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PointsBlockedUntilType">
+        <xs:annotation>
+          <xs:documentation>This type describes a date up to which a member's points are blocked for
+                redemption.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="types:IsoDateTimeType" />
+      </xs:simpleType>
+      <xs:simpleType name="PrincipalType">
+        <xs:annotation>
+          <xs:documentation>Type to transfer the string-based value of the Principal that is used for identification
+                or authentication (e.g. a user name, card number etc.).</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="60" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PrincipalVariantType">
+        <xs:annotation>
+          <xs:documentation>String-based enumeration that defines the flavour of the principal:
+1 - CARDNUMBER
+2 - USERNAME
+3 - PHONENUMBER
+4 - PAYMENTCARD
+5 - EMAIL</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+          <xs:enumeration value="1">
+            <xs:annotation>
+              <xs:documentation>CARDNUMBER</xs:documentation>
+              <xs:appinfo>CARDNUMBER</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PurchaseEventTypeType">
+        <xs:annotation>
+          <xs:documentation>This type describes the characteristic of a purchase event in more detail.
+                1 - purchase
+                2 - retro credit</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:int">
+          <xs:enumeration value="1">
+            <xs:annotation>
+              <xs:documentation>PURCHASE</xs:documentation>
+              <xs:appinfo>PURCHASE</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="QuantityType">
+        <xs:annotation>
+          <xs:documentation>This type is used for representing quantities of any units.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+          <xs:fractionDigits value="3" />
+          <xs:totalDigits value="12" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="QuantityUnitCodeType">
+        <xs:annotation>
+          <xs:documentation>This type is used for representing units of quantities.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30" />
+          <xs:minLength value="1" />
+          <xs:pattern value="[a-zA-Z0-9]*" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SupplierCodeType">
+        <xs:annotation>
+          <xs:documentation>This type gives the code of a supplier.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SupplierNameType">
+        <xs:annotation>
+          <xs:documentation>This type gives the name of a supplier.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="30" />
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TextKeyType">
+        <xs:annotation>
+          <xs:documentation>Types of dynamic texts that are used to display coupon.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer" />
+      </xs:simpleType>
+      <xs:simpleType name="TransactionTypeType">
+        <xs:annotation>
+          <xs:documentation>This type describes the characteristic of a transaction in more detail.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:int">
+          <xs:enumeration value="100">
+            <xs:annotation>
+              <xs:documentation>PURCHASE</xs:documentation>
+              <xs:appinfo>PURCHASE</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="101">
+            <xs:annotation>
+              <xs:documentation>PURCHASE_REVERSAL</xs:documentation>
+              <xs:appinfo>PURCHASE_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="102">
+            <xs:annotation>
+              <xs:documentation>PURCHASE_REFUND</xs:documentation>
+              <xs:appinfo>PURCHASE_REFUND</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="110">
+            <xs:annotation>
+              <xs:documentation>RETROCREDIT</xs:documentation>
+              <xs:appinfo>RETROCREDIT</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="111">
+            <xs:annotation>
+              <xs:documentation>RETROCREDIT_REVERSAL</xs:documentation>
+              <xs:appinfo>RETROCREDIT_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="120">
+            <xs:annotation>
+              <xs:documentation>PROMOTION_PURCHASE_DEPENDENT</xs:documentation>
+              <xs:appinfo>PROMOTION_PURCHASE_DEPENDENT</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="121">
+            <xs:annotation>
+              <xs:documentation>PROMOTION_PURCHASE_DEPENDENT_REVERSAL</xs:documentation>
+              <xs:appinfo>PROMOTION_PURCHASE_DEPENDENT_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="122">
+            <xs:annotation>
+              <xs:documentation>PROMOTION_PURCHASE_DEPENDENT_REFUND</xs:documentation>
+              <xs:appinfo>PROMOTION_PURCHASE_DEPENDENT_REFUND</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="130">
+            <xs:annotation>
+              <xs:documentation>PROMOTION_PURCHASE_INDEPENDENT</xs:documentation>
+              <xs:appinfo>PROMOTION_PURCHASE_INDEPENDENT</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="131">
+            <xs:annotation>
+              <xs:documentation>PROMOTION_PURCHASE_INDEPENDENT_REVERSAL</xs:documentation>
+              <xs:appinfo>PROMOTION_PURCHASE_INDEPENDENT_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="140">
+            <xs:annotation>
+              <xs:documentation>GOODWILL</xs:documentation>
+              <xs:appinfo>GOODWILL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="141">
+            <xs:annotation>
+              <xs:documentation>GOODWILL_REVERSAL</xs:documentation>
+              <xs:appinfo>GOODWILL_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="150">
+            <xs:annotation>
+              <xs:documentation>VOUCHER</xs:documentation>
+              <xs:appinfo>VOUCHER</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="151">
+            <xs:annotation>
+              <xs:documentation>VOUCHER_REVERSAL</xs:documentation>
+              <xs:appinfo>VOUCHER_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="160">
+            <xs:annotation>
+              <xs:documentation>GIFT_REDEMPTION</xs:documentation>
+              <xs:appinfo>GIFT_REDEMPTION</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="161">
+            <xs:annotation>
+              <xs:documentation>GIFT_REDEMPTION_REVERSAL</xs:documentation>
+              <xs:appinfo>GIFT_REDEMPTION_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="162">
+            <xs:annotation>
+              <xs:documentation>GIFT_REDEMPTION_REFUND</xs:documentation>
+              <xs:appinfo>GIFT_REDEMPTION_REFUND</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="170">
+            <xs:annotation>
+              <xs:documentation>PAYMENT_REDEMPTION</xs:documentation>
+              <xs:appinfo>PAYMENT_REDEMPTION</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="171">
+            <xs:annotation>
+              <xs:documentation>PAYMENT_REDEMPTION_REVERSAL</xs:documentation>
+              <xs:appinfo>PAYMENT_REDEMPTION_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="172">
+            <xs:annotation>
+              <xs:documentation>PAYMENT_REDEMPTION_REFUND</xs:documentation>
+              <xs:appinfo>PAYMENT_REDEMPTION_REFUND</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="180">
+            <xs:annotation>
+              <xs:documentation>OUTBOUND_CONVERSION</xs:documentation>
+              <xs:appinfo>OUTBOUND_CONVERSION</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="181">
+            <xs:annotation>
+              <xs:documentation>OUTBOUND_CONVERSION_REVERSAL</xs:documentation>
+              <xs:appinfo>OUTBOUND_CONVERSION_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="190">
+            <xs:annotation>
+              <xs:documentation>DONATION</xs:documentation>
+              <xs:appinfo>DONATION</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="191">
+            <xs:annotation>
+              <xs:documentation>DONATION_REVERSAL</xs:documentation>
+              <xs:appinfo>DONATION_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="200">
+            <xs:annotation>
+              <xs:documentation>SHOP_ORDER</xs:documentation>
+              <xs:appinfo>SHOP_ORDER</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="201">
+            <xs:annotation>
+              <xs:documentation>SHOP_ORDER_REVERSAL</xs:documentation>
+              <xs:appinfo>SHOP_ORDER_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="202">
+            <xs:annotation>
+              <xs:documentation>SHOP_ORDER_REFUND</xs:documentation>
+              <xs:appinfo>SHOP_ORDER_REFUND</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="210">
+            <xs:annotation>
+              <xs:documentation>POINTS_DEBIT</xs:documentation>
+              <xs:appinfo>POINTS_DEBIT</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="220">
+            <xs:annotation>
+              <xs:documentation>POINTS_EXPIRY</xs:documentation>
+              <xs:appinfo>POINTS_EXPIRY</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="230">
+            <xs:annotation>
+              <xs:documentation>POINTS_EXPIRY_CREDIT</xs:documentation>
+              <xs:appinfo>POINTS_EXPIRY_CREDIT</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="240">
+            <xs:annotation>
+              <xs:documentation>INBOUND_CONVERSION</xs:documentation>
+              <xs:appinfo>INBOUND_CONVERSION</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="241">
+            <xs:annotation>
+              <xs:documentation>INBOUND_CONVERSION_REVERSAL</xs:documentation>
+              <xs:appinfo>INBOUND_CONVERSION_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="250">
+            <xs:annotation>
+              <xs:documentation>NOT SUPPORTED - TRANSPORTATION</xs:documentation>
+              <xs:appinfo>TRANSPORTATION</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="251">
+            <xs:annotation>
+              <xs:documentation>NOT SUPPORTED - TRANSPORTATION_REVERSAL</xs:documentation>
+              <xs:appinfo>TRANSPORTATION_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="260">
+            <xs:annotation>
+              <xs:documentation>NOT SUPPORTED - PROMOTION_TRANSPORTATION_DEPENDENT</xs:documentation>
+              <xs:appinfo>PROMOTION_TRANSPORTATION_DEPENDENT</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="261">
+            <xs:annotation>
+              <xs:documentation>NOT SUPPORTED - PROMOTION_TRANSPORTATION_DEPENDENT_REVERSAL</xs:documentation>
+              <xs:appinfo>PROMOTION_TRANSPORTATION_DEPENDENT_REVERSAL</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="300">
+            <xs:annotation>
+              <xs:documentation>MIGRATION_TRANSACTION</xs:documentation>
+              <xs:appinfo>MIGRATION_TRANSACTION</xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="VATRateType">
+        <xs:annotation>
+          <xs:documentation>Type to handle VAT-Rates needed in transaction processing.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:double">
+          <xs:maxInclusive value="99" />
+          <xs:minInclusive value="0" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="VersionType">
+        <xs:annotation>
+          <xs:documentation>Determines consumer specific configuration of system's interface (default: 1).</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema xmlns:types="http://www.payback.net/lmsglobal/xsd/v1/types" xmlns:ns1="http://www.payback.net/lmsglobal/ws/v1/extint/types" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.payback.net/lmsglobal/ws/v1/extint/types" version="6.8.5" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:annotation>
+        <xs:documentation>This xsd file defines the WebService methods offered by the extint component.</xs:documentation>
+      </xs:annotation>
+      <xs:element name="GetCouponsOnReceiptRequest">
+        <xs:annotation>
+          <xs:documentation>INTL ONLY: INTF#216: GetCouponsOnReceipt</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="types:AuthorisedRequest">
+              <xs:sequence>
+                <xs:element minOccurs="0" name="Authentication" type="types:MemberAliasIdentificationType">
+                  <xs:annotation>
+                    <xs:documentation>Data used to identify and authenticate the member.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element name="ReferenceDate" type="types:IsoDateTimeType">
+                  <xs:annotation>
+                    <xs:documentation>Determines the point in time (PIT) to which the subsequent given offset values relate to.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="CouponFilter" type="types:CouponFilterType">
+                  <xs:annotation>
+                    <xs:documentation>Filter criteria related to coupon data</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCouponsOnReceiptResponse">
+        <xs:annotation>
+          <xs:documentation>For errors see separate error code document.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="types:MessageResponse">
+              <xs:sequence minOccurs="0">
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="CouponListItem" type="types:CouponsOnReceiptType">
+                  <xs:annotation>
+                    <xs:documentation>Coupon data</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProcessPurchaseAndPromotionEventRequest">
+        <xs:annotation>
+          <xs:documentation>INTF#184: Collect points with a purchase or retro-credit.
+                Provide information on the purchase or retro and optionally provide basket
+                information and/or rated transactions which include the points issued for
+                the purchase. The business process executes plausibility checks on each
+                event.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="types:AuthorisedRequest">
+              <xs:sequence>
+                <xs:element name="Authentication" type="types:MemberAliasIdentificationType">
+                  <xs:annotation>
+                    <xs:documentation>Data used to identify and authenticate the member.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element name="CollectEventData" type="types:CollectEventType">
+                  <xs:annotation>
+                    <xs:documentation>General Data for collect events</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element name="PurchaseEventType" type="types:PurchaseEventTypeType">
+                  <xs:annotation>
+                    <xs:documentation>Type of the purchase event: 1 - Purchase; 2 - RetroCredit</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="RewardableLegalValue" type="types:LegalUnitType">
+                  <xs:annotation>
+                    <xs:documentation>Monetary value of the purchase that is
+                                    rewarded</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="TotalPurchaseLegalValue" type="types:LegalUnitType">
+                  <xs:annotation>
+                    <xs:documentation>Monetary value of the total purchase
+                                    including items that are not rewardable</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="TotalVatLegalValue" type="types:LegalUnitType">
+                  <xs:annotation>
+                    <xs:documentation>Monetary value of the vat in respect to
+                                    the rewardable value</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="PaymentType" type="types:PaymentTypeType">
+                  <xs:annotation>
+                    <xs:documentation>Payment type of purchase:
+1 - Cash
+2 - Credit Card
+3 - Debit Card
+4 - Voucher
+5 - Fleet Card
+6 - Cheque
+7 - Loyalty Currency
+8 - Collect on Delivery
+9 - Online Payment
+10 - Food Stamp / EBT
+99 - Others</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="CouponCodes" type="types:ExternalCodeNumberType">
+                  <xs:annotation>
+                    <xs:documentation>Optional list of coupon codes (e.g barcode printed on coupon)
+that represent coupons which were captured during customer's purchase event. PB uses this information to derive the respective coupon in case PB does the rating.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchaseItemDetails" type="types:PurchaseItemDetails">
+                  <xs:annotation>
+                    <xs:documentation>Optional shopping basket; this list needs to contain at least one item in case PB does the base and promotion rating.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="Transactions" type="types:TransactionDetails">
+                  <xs:annotation>
+                    <xs:documentation>Optional rated transactions for the event
+Use cases:
+1) no transaction element at all: PB does the base and promotion rating
+2) one base transaction: PB does the promotion rating only
+3) one base transaction and one promotion transaction: PB does the promotion rating only (check for any additional offers)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProcessPurchaseAndPromotionEventResponse">
+        <xs:annotation>
+          <xs:documentation>For errors see separate error code document.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="types:MessageResponse">
+              <xs:sequence minOccurs="0">
+                <xs:element name="AccountBalanceDetails" type="types:AccountBalanceDetailType">
+                  <xs:annotation>
+                    <xs:documentation>New account balance</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="Transactions" type="types:TransactionDetails">
+                  <xs:annotation>
+                    <xs:documentation>Transactions created as result of the
+                                    rating of the basket within PAYBACK system</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="CollectionInformation" type="types:CollectionInformationType" />
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RefundPurchaseEventRequest">
+        <xs:annotation>
+          <xs:documentation>INTF#039: (Partly) Refund of a purchase event or retro.
+                Original purchase should be referenced.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="types:AuthorisedRequest">
+              <xs:sequence>
+                <xs:element name="Authentication" type="types:MemberAliasIdentificationType">
+                  <xs:annotation>
+                    <xs:documentation>Data used to identify and authenticate the member.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element name="CollectEventData" type="types:CollectEventType">
+                  <xs:annotation>
+                    <xs:documentation>General data for collect events</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element name="PurchaseEventType" type="types:PurchaseEventTypeType">
+                  <xs:annotation>
+                    <xs:documentation>Type of the purchase event: 1 - Purchase; 2 - RetroCredit</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="ReferenceReceiptNumber" type="types:ExternalIdType">
+                  <xs:annotation>
+                    <xs:documentation>External identifier supplied by partner
+                                    that references the original purchase that must be
+                                    re-versed within the partner system</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="RefundLegalValue" type="types:LegalUnitType">
+                  <xs:annotation>
+                    <xs:documentation>Monetary value in legal currency of the refund.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" name="RefundVatLegalValue" type="types:LegalUnitType">
+                  <xs:annotation>
+                    <xs:documentation>Monetary value in legal currency of vat.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="RefundItemDetails" type="types:PurchaseItemDetails">
+                  <xs:annotation>
+                    <xs:documentation>Optional shopping basket of the refunded items</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="Transactions" type="types:TransactionDetails">
+                  <xs:annotation>
+                    <xs:documentation>Optional pre-rated refund transactions for the event</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RefundPurchaseEventResponse">
+        <xs:annotation>
+          <xs:documentation>For errors see separate error code document.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="types:MessageResponse">
+              <xs:sequence minOccurs="0">
+                <xs:element name="AccountBalanceDetails" type="types:AccountBalanceDetailType">
+                  <xs:annotation>
+                    <xs:documentation>New account balances</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="Transactions" type="types:TransactionDetails">
+                  <xs:annotation>
+                    <xs:documentation>Transactions created as result of the refund rating</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReverseCollectEventRequest">
+        <xs:annotation>
+          <xs:documentation>INTF#043: Technical Undo of any type of collect event
+                (either purchase, goodwill or promotion). Original event must be
+                referenced</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="types:AuthorisedRequest">
+              <xs:sequence>
+                <xs:element name="Authentication" type="types:MemberAliasIdentificationType">
+                  <xs:annotation>
+                    <xs:documentation>Data used to identify and authenticate the member.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element name="CollectEventData" type="types:CollectEventType">
+                  <xs:annotation>
+                    <xs:documentation>General Data for collect events</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element name="ReferenceReceiptNumber" type="types:ExternalIdType">
+                  <xs:annotation>
+                    <xs:documentation>External identifier supplied by partner
+                                    that references the original collect event that must
+                                    be reversed within the partner system.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReverseCollectEventResponse">
+        <xs:annotation>
+          <xs:documentation>For errors see separate error code document.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent mixed="false">
+            <xs:extension base="types:MessageResponse">
+              <xs:sequence minOccurs="0">
+                <xs:element name="AccountBalanceDetails" type="types:AccountBalanceDetailType">
+                  <xs:annotation>
+                    <xs:documentation>New account balance</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="Transactions" type="types:TransactionDetails">
+                  <xs:annotation>
+                    <xs:documentation>Reversal transactions created;
+GLOB: System will not return element for promotions on redemption events (transaction type: 280, 281 or 282)</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </types>
+  <message name="GetCouponsOnReceiptRequestMessage">
+    <part name="body" element="extint:GetCouponsOnReceiptRequest" />
+  </message>
+  <message name="GetCouponsOnReceiptResponseMessage">
+    <part name="body" element="extint:GetCouponsOnReceiptResponse" />
+  </message>
+  <message name="ProcessPurchaseAndPromotionEventRequestMessage">
+    <part name="body" element="extint:ProcessPurchaseAndPromotionEventRequest" />
+  </message>
+  <message name="ProcessPurchaseAndPromotionEventResponseMessage">
+    <part name="body" element="extint:ProcessPurchaseAndPromotionEventResponse" />
+  </message>
+  <message name="RefundPurchaseEventRequestMessage">
+    <part name="body" element="extint:RefundPurchaseEventRequest" />
+  </message>
+  <message name="RefundPurchaseEventResponseMessage">
+    <part name="body" element="extint:RefundPurchaseEventResponse" />
+  </message>
+  <message name="ReverseCollectEventRequestMessage">
+    <part name="body" element="extint:ReverseCollectEventRequest" />
+  </message>
+  <message name="ReverseCollectEventResponseMessage">
+    <part name="body" element="extint:ReverseCollectEventResponse" />
+  </message>
+  <portType name="ExtintPortType">
+    <operation name="GetCouponsOnReceipt">
+      <input message="tns:GetCouponsOnReceiptRequestMessage" />
+      <output message="tns:GetCouponsOnReceiptResponseMessage" />
+    </operation>
+    <operation name="ProcessPurchaseAndPromotionEvent">
+      <input message="tns:ProcessPurchaseAndPromotionEventRequestMessage" />
+      <output message="tns:ProcessPurchaseAndPromotionEventResponseMessage" />
+    </operation>
+    <operation name="RefundPurchaseEvent">
+      <input message="tns:RefundPurchaseEventRequestMessage" />
+      <output message="tns:RefundPurchaseEventResponseMessage" />
+    </operation>
+    <operation name="ReverseCollectEvent">
+      <input message="tns:ReverseCollectEventRequestMessage" />
+      <output message="tns:ReverseCollectEventResponseMessage" />
+    </operation>
+  </portType>
+  <binding name="ExtintSoapBinding" type="tns:ExtintPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetCouponsOnReceipt">
+      <soap:operation soapAction="GetCouponsOnReceipt" />
+      <input>
+        <soap:body use="literal" parts="body" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="body" />
+      </output>
+    </operation>
+    <operation name="ProcessPurchaseAndPromotionEvent">
+      <soap:operation soapAction="ProcessPurchaseAndPromotionEvent" />
+      <input>
+        <soap:body use="literal" parts="body" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="body" />
+      </output>
+    </operation>
+    <operation name="RefundPurchaseEvent">
+      <soap:operation soapAction="RefundPurchaseEvent" />
+      <input>
+        <soap:body use="literal" parts="body" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="body" />
+      </output>
+    </operation>
+    <operation name="ReverseCollectEvent">
+      <soap:operation soapAction="ReverseCollectEvent" />
+      <input>
+        <soap:body use="literal" parts="body" />
+      </input>
+      <output>
+        <soap:body use="literal" parts="body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ExtintService">
+    <port name="ExtintPort" binding="tns:ExtintSoapBinding">
+      <soap:address location="https://services-ext.payback.mx/sie_c_mx/v1/soap" />
+    </port>
+  </service>
+</definitions>

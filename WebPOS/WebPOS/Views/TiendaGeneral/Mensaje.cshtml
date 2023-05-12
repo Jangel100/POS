@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "Mensaje";
+}
+
+<div class="container-fluid">
+
+    <div class="card">
+        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+            <span class="float-center">
+                <strong> <i class="fa fa-bullhorn" aria-hidden="true"></i> Ingrese el texto para el mensaje inicial del punto de venta de su Franquicia</strong>
+            </span>
+        </div>
+        <div class="card-body ">
+
+            <div class="form-group row no-gutters">
+
+                <label for="mensaje" class="col-md-1 col-form-label text-center font-weight-bold">Mensaje</label>
+                <textarea class="form-control col-md-11" id="mensaje" rows="3"></textarea>
+
+            </div>
+            <div class="form-group row no-gutters">
+                <div class="col-md-4"></div>
+                <button id="addmarquecina" type="button" onclick="Updatemessage()" class="btn btn-success col-md-2">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                    Guardar
+                </button>
+                <button id="clear" type="button" onclick="cleartextarea()" class="btn btn-info col-md-2">
+                    <i class="fa fa-eraser" aria-hidden="true"></i>
+                    Limpiar campo
+                </button>
+                <div class="col-md-4"></div>
+            </div>
+            @Html.TextBox("Name", (object)ViewBag.Franquicia, new { id = "Franquicia", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+        </div>
+        <div class="card-footer">
+            <div class="class=" form-group row no-gutters">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/chose/chosen.jquery.js"></script>
+    <script src="~/Scripts/chose/chosen.jquery.min.js"></script>
+    <script src="~/Scripts/chose/"></script>
+    <script src="~/Scripts/chose/chosen.proto.min.js"></script>
+    <script>
+
+        function cleartextarea() {
+            $('#mensaje').val('');
+        }
+        function Updatemessage() {
+            let mensaje = $("#mensaje").val();
+            let Franquicia = $('#Franquicia').val();
+            $.ajax({
+                type: "POST",
+                url: '/TiendaGeneral/UpdateMessage',
+                data: "{ 'mensaje': '" + mensaje + "', 'Franquicia': '" + Franquicia + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                beforeSend: function () {
+                    // Show  container
+                    $("#loader").show();
+                },
+                success: function (result) {
+                    var response = JSON.parse(result);
+                    if (result.includes("1")) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Actualización',
+                            text: 'Cambios Guardados Correctamente'
+                        }).then((result) => {
+
+
+                            if (result.isConfirmed) {
+
+                                location.reload();
+                            }
+                        });
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Ops',
+                            text: 'Ocurrio un error vuelve a intentarlo'
+                        })
+                        return;
+                    }
+                },
+                complete: function (data) {
+                    // Hide  container
+                    $("#loader").hide();
+                },
+                error: function (xhr) {
+                    //debugger;
+                    console.log(xhr.responseText);
+                    alert("Error has occurred..");
+                }
+            });
+        }
+
+
+        //prueba
+        $(document).ready(function () {
+
+            $("#but_search").click(function () {
+                var search = $('#search').val();
+
+                $.ajax({
+                    url: 'fetch_deta.php',
+                    type: 'post',
+                    data: { search: search },
+                    beforeSend: function () {
+                        // Show image container
+                        $("#loader").show();
+                    },
+                    success: function (response) {
+                        $('.response').empty();
+                        $('.response').append(response);
+                    },
+                    complete: function (data) {
+                        // Hide image container
+                        $("#loader").hide();
+                    }
+                });
+
+            });
+        });
+    </script>
+
+}

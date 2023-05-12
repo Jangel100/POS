@@ -1,0 +1,48 @@
+﻿<style>
+    th {
+        font-size: 15px;
+    }
+    td {
+        font-size: 12px;
+    }
+</style>
+@{
+    ViewBag.Title = "KardexReports";
+}
+
+<div class="container-fluid">
+    <div class="card">
+    </div>
+    <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+        <span class="float-center">
+            <strong>
+                Kardex
+            </strong>
+        </span>
+    </div>
+    <div class="card-body">
+        @{ Html.RenderAction("GetViewReports", "Reportes", new { typeReports = "Kardex" }); }
+    </div>
+    <div class="card-body">
+        <table style="width:auto" id="tblConsultaKardexReport" class="table table-sm">
+            <thead>
+
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br />
+        <br />
+        <br />
+    </div>
+    <div class="card-footer" style="padding: 0.0rem 1.25rem !important;">
+
+    </div>
+</div>
+
+<!-- Modal -->
+
+@Html.Partial("../ViewPartial/Reportes/_PartialLoadingModal")
+
+
+
+

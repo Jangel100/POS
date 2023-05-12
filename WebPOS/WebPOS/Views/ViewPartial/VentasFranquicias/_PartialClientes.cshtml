@@ -1,0 +1,356 @@
+﻿@section Scripts{
+<script src="~/Scripts/validator.min.js"></script>
+
+<script>
+    VentaUsuario = {
+        GetUsuario: function () {
+            $("#btnBuscarClienteF").click(function () {
+                var txtNombre = $("#txtNombre").val();
+                var txtRFC = $("#txtRFC").val();
+
+                var cliente = {
+                    'Nombre': txtNombre.toString(),
+                    'RFC': txtRFC.toString()
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: '/VentasUsuario/GetCliente',
+                    data: "{'Cliente':" + JSON.stringify(cliente) + "}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        alert(result);
+                    },
+                    error: function (xhr) {
+                        console.log(xhr.responseText);
+                        alert("Error has ocurred..");
+                    }
+                });
+            });
+        }
+    };
+
+    $(document).ready(function () {
+        VentaUsuario.GetUsuario();
+    });
+</script>
+}
+
+
+<div class="modal fade" id="BuscaclienteModal" tabindex="-1" role="dialog" aria-labelledby="BuscaclienteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content" id="contenidobusqueda" style="display:block;">
+            <div class="modal-header row border-0 m-1 p-1">
+                <div class="form-check form-check-inline cssCheckAdd ">
+                    <label for="inlineCheckAgregarF" class="form-check-label"><strong>¿Que desea realizar?&nbsp;</strong></label>
+                    <input id="inlineCheckAgregarF" class="form-check-input" type="checkbox" data-toggle="switchbutton" data-style="mr-1" checked>
+                </div>
+                <select class="form-control" id="accion2">
+                    <option>---Seleccione una opción---</option>
+                    <option value="buscarCliente">Buscar Cliente</option>
+                    <option value="agregarCliente">Agregar Cliente</option>
+                </select>
+
+                <button type="button" class="close col-md-1" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-3">
+                @{ Html.RenderAction("GetViewClientesF", "VentasUsuario"); }
+            </div>
+        </div>
+        @*************COMIENZA ALTA DE CLIENTES ********************@
+        @{ Html.RenderAction("GetViewClientesAddF", "VentasUsuario"); }
+    </div>
+</div>
+
+@*********************************MODAL CONFIRMAR VENTA FRANQUICIAS*************************************@
+<div class="modal fade" id="ConfirmarventaModalF" tabindex="-1" role="dialog" aria-labelledby="ConfirmarventaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form class="form-control-range" id="paymetsidF">
+                    @*<div class="form-group row no-gutters">
+
+                    </div>*@
+                    <div class="form-group row no-gutters">
+                        <label for="nameb" class="col-md-1 col-form-label text-center">Dirección de Entrega</label>
+                        <textarea type="text" class="form-control col-md-5 form-control-sm mb-3" id="idDireccionEC" rows="2" disabled></textarea>
+                        <label for="nameb" class="col-md-1 col-form-label text-center">Dirección de Facturación</label>
+                        <textarea type="text" class="form-control col-md-5 form-control-sm mb-3" rows="2" id="idDireccionFacC" disabled></textarea>
+                    </div>
+                    @*<div class="form-group row no-gutters">
+                        <label for="nameb" class="col-md-3 col-form-label text-center">Dirección de Facturación</label>
+                        <textarea type="text" class="form-control col-md-9 form-control-sm mb-3" rows="2" id="nameb" disabled></textarea>
+                    </div>*@
+                    <div class="form-group row no-gutters">
+                        <label for="nameb" class="col-md-4 col-form-label text-center">Observaciones de Pedido</label>
+                        <textarea type="text" class="form-control col-md-5 form-control-sm mb-3" rows="1" id="idObservaciones" disabled></textarea>
+
+                        <!--<div class="col-md-3">-->
+                        @*<input type="checkbox" data-toggle="switchbutton" checked data-onlabel="Facturar<br>Cliente" data-offlabel="No Facturar<br>Cliente">*@
+                        <!--<div class="form-check form-check-inline" data-style="quick">
+                                <label for="inlineCheckFacturar" class="form-check-label">Facturar Cliente </label>
+                                <input id="inlineCheckFacturar" class="form-check-input" type="checkbox" data-toggle="switchbutton" data-style="mr-1" checked>
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="form-group row no-gutters">
+                        <input type="hidden" id="txtEmailUsuario" name="txtEmailUsuario" />
+                        <label class="col-md-1 col-form-label text-center">Correo Cliente</label>
+                        <input type="text" id="txtEmailCliente" class="col-md-3 form-control" disabled />
+                        <label class="col-md-1 col-form-label text-center">Método de Pago</label>
+                        <select id="cmbMetodoPago" name="cmbMetodoPago" class="col-md-3 form-control">
+                            <option>Seleccione metodo de pago</option>
+                        </select>
+                        <label class="col-md-1 col-form-label text-center">Forma de Pago</label>
+                        <select id="cmbFormaPago" name="cmbFormaPago" class="col-md-3 form-control">
+                            <option>Seleccione forma de pago</option>
+                        </select>
+                    </div>
+                    <div class="form-group row no-gutters">
+                        <label class="col-md-1 col-form-label text-center">Tipo Comprobante</label>
+                        <input id="txtTipoComprobante" type="text" class="col-md-3 form-control" value="Ingreso" disabled />
+                        <label class="col-md-1 col-form-label text-center">Uso CFDI</label>
+                        <select id="cmbUsoCFDI" name="cmbUsoCFDI" class="col-md-3 form-control">
+                            <option>---Seleccione uso CFDI---</option>
+                        </select>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                            <span class="float-center">
+                                <strong>Artículos</strong>
+                            </span>
+                        </div>
+                        <div class="card-body" style="padding: 0.25rem 0.25rem !important;">
+                            <table id="idTableBodyPreview" class="table table-sm table-hover">
+                                <thead>
+                                    <tr class="table-info">
+                                        <th scope="col">Modelo</th>
+                                        <th scope="col">Juego</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">C. Tienda</th>
+                                        <th scope="col">C. Bodega</th>
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <br />
+                        </div>
+                        <div class="card-footer" style="padding: 0.0rem 1.25rem !important;">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                            <span class="float-center">
+                                <strong>Pagos</strong>
+                            </span>
+                        </div>
+                        <div class="card-body" style="padding: 0.25rem 0.25rem !important;">
+                            <table id="idPreviewMethodPayment" class="table table-sm table-hover">
+                                <thead>
+                                    <tr class="table-info">
+                                        <th scope="col">Forma de Pago</th>
+                                        <th scope="col">Monto</th>
+                                        <th scope="col">Cuenta</th>
+                                        <th scope="col">Tipo Tarjeta</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <br />
+                        </div>
+                        <div></div>
+                        <div class="card-footer" style="padding: 0.0rem 1.25rem !important;">
+                            <div class="form-group row ">
+                                <button type="submit" id="btnAceptarped" class="btn btn-success col-md-5">Aceptar</button>
+                                <div class="col-md-2"></div>
+                                <button type="button" class="btn btn-danger col-md-5" data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@**Modal Busqueda Codigo Postal**@
+<div class="modal fade" id="modalCPVenta" tabindex="-2" role="dialog" aria-labelledby="modalClonVentaLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¡Buscar por colonia codigo postal!</h5>
+                @*<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>*@
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" name="txtCodColoniaFact" id="txtCodColoniaFact" />
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Introduzca nombre de la colonia:</label>
+                        <input type="text" class="form-control" id="txtd_asentamiento">
+                    </div>
+                    <div class="form-group">
+                        <input type="button" class="btn btn-success btn-lg btn-block mt-3" id="btnbusquedaCPS" onclick="VentaUsuario.GetCPEncontrados('');" value="Buscar" />
+                    </div>
+                </form>
+
+                <div class="card mt-2">
+                    <div class="card-header">
+                        <span class="float-center">
+                            <strong>Codigo Postal Encontrado</strong>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <table id="tblCPEncontrados" class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="auto">
+                                        ID
+                                    </th>
+                                    <th scope="auto">
+                                        CP
+                                    </th>
+                                    <th>Colonia</th>
+                                    <th scope="auto">
+                                        Estado
+                                    </th>
+                                    <th scope="auto">
+                                        Municipio
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="VentaUsuario.CloseValidacionCP()">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="VentaUsuario.CloseValidacionCP()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalCPVentaFact" tabindex="-2" role="dialog" aria-labelledby="modalClonVentaLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title bg-warning" id="exampleModalLabel"> ¡Buscar por colonia codigo postal para Facturación</h5>
+                @*<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>*@
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Introduzca nombre de la colonia para Facturación:</label>
+                        <input type="text" class="form-control" id="txtd_asentamientoFact">
+                    </div>
+                    <div class="form-group">
+                        <input type="button" class="btn btn-success btn-lg btn-block mt-3" id="btnbusquedaCPS" onclick="VentaUsuario.GetCPEncontrados('Fact');" value="Buscar" />
+                    </div>
+                </form>
+
+                <div class="card mt-2">
+                    <div class="card-header">
+                        <span class="float-center">
+                            <strong>Codigo Postal Encontrado</strong>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <table id="tblCPEncontradosFact" class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="auto">
+                                        ID
+                                    </th>
+                                    <th scope="auto">
+                                        CP
+                                    </th>
+                                    <th>Colonia</th>
+                                    <th scope="auto">
+                                        Estado
+                                    </th>
+                                    <th scope="auto">
+                                        Municipio
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="VentaUsuario.CloseValidacionCP()">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="VentaUsuario.CloseValidacionCP()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalCPVentaAdd" tabindex="-2" role="dialog" aria-labelledby="modalClonVentaLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¡El código Postal no se encuentra favor de buscar Código Postal!</h5>
+                @*<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>*@
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Colonia:</label>
+                        <input type="text" class="form-control" id="txtd_asentamientoAdd">
+                    </div>
+                    <div class="form-group">
+                        <input type="button" class="btn btn-success btn-lg btn-block mt-3" id="btnbusquedaCPS" onclick="VentaUsuario.GetCPEncontrados('Add');" value="Buscar" />
+                    </div>
+                </form>
+
+                <div class="card mt-2">
+                    <div class="card-header">
+                        <span class="float-center">
+                            <strong>Codigo Postal Encontrado</strong>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <table id="tblCPEncontradosAdd" class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="auto">
+                                        ID
+                                    </th>
+                                    <th scope="auto">
+                                        CP
+                                    </th>
+                                    <th>Colonia</th>
+                                    <th scope="auto">
+                                        Estado
+                                    </th>
+                                    <th scope="auto">
+                                        Municipio
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="VentaUsuario.closeModalCPAdd()">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="VentaUsuario.closeModalCPAdd()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

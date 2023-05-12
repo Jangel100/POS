@@ -1,0 +1,848 @@
+﻿
+@{
+    ViewBag.Title = "Crearventa";
+}
+
+@model Entities.viewsModels.ArticulosBaseView
+<div class="container-fluid" id="bodyVenta">
+    <ul class="nav nav-pills mt-0 mb-1 panel nav-tabs border border-dark  not-allowed" aria-orientation="horizontal" role="tablist" style="cursor:not-allowed">
+        <li id="clientes-tab-i" class="nav-item cliente border-right border-dark disabledTab" role="presentation"><a class="nav-link active" href="#clientes-tab" data-toggle="tab">Clientes</a></li>
+        <li id="articulos-tab-i" class="nav-item cliente border-right border-dark disabledTab" role="presentation"><a class="nav-link" href="#articulos-tab" data-toggle="tab">Artículos</a></li>
+        <li id="pagos-tab-i" class="nav-item cliente border-right border-dark disabledTab" role="presentation"><a class="nav-link" href="#pagos-tab" data-toggle="tab">Formas de Pagos</a></li>
+    </ul>
+    <div class="tab-content" id="tabs">
+        <div class="tab-pane active" id="clientes-tab">
+            <div class="form-group row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <input type="hidden" name="txtIdClienteIndex" id="txtIdClienteIndex" />
+                            <input type="hidden" name="txtCorreocliente" id="txtCorreocliente" />
+
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <label class="font-weight-bold">Tipo de venta</label>
+                                    <select class="form-control text-center mt-2" id="tipodeventa" onchange="OnchangeListPriceLoad()">
+                                        <option value="seleccionet">---Seleccione tipo de venta---</option>
+                                        <option value="">Normal</option>
+                                        <option value="Dormicredit">Dormicredit</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 text-center mt-4 mb-2">
+                                    <label class="font-weight-bold">El cliente requiere factura?</label>
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    
+                                    <label for="inlineRadioSi">Si  <input type="radio" name="optionRequiredFact" id="inlineRadioSi" value="2"></label>
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    
+                                    <label for="inlineRadioNo">No  <input type="radio" name="optionRequiredFact" id="inlineRadioNo" value="3"></label>
+                                </div>
+                            </div>
+
+
+                            @*<div class="form-group row no-gutters" style="margin:10px">
+                                <label for="name" class="col-sm-4 col-form-label font-weight-bold">Tipo de venta</label>
+                                <select class="form-control form-control-sm font-weight-bold text-center col-md-8" id="tipodeventa" onchange="OnchangeListPriceLoad()" style="text-align-last: center;">
+                                    <option value="seleccionet">---Seleccione tipo de venta---</option>
+                                    <option value="">Normal</option>
+                                    <option value="Dormicredit">Dormicredit</option>
+                                </select>
+                            </div>
+                            <div class="form-group row no-gutters mt-3">
+                                <label for="checkrfc" class="col-form-label text-left font-weight-bold col-md-4">¿El cliente requiere factura?</label>
+                                <div class="form-check form-check-inline col-md-2">
+                                    <input class="form-check-input" type="radio" name="optionRequiredFact" id="inlineRadioSi" value="2" >
+                                    <label class="form-check-label font-weight-bold" for="inlineRadioSi">Si</label>
+                                </div>
+                                <div class="form-check form-check-inline col-md-1">
+                                    <input class="form-check-input" type="radio" name="optionRequiredFact" id="inlineRadioNo" value="3" >
+                                    <label class="form-check-label font-weight-bold" for="inlineRadioNo">No</label>
+                                </div>
+                            </div>*@
+
+                            <div class="container mt-4" style="width:100%">
+                                <div class="row">
+                                    <div class="col-md-6 text-center">
+                                        <button href="#" class="btn btn-primary" onclick="modalBuscaclienteAgregar()">
+                                            Agregar Cliente
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>  
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <button href="#" class="btn btn-success" onclick="modalBuscaclienteBuscar()">
+                                            Buscar cliente
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            @*<div class="col-md-12" style="text-align: center; margin: 10px">
+                                <span class="font-small-2">
+                                    <button href="#" class="btn btn-info" id="idbuscacliente">
+                                        Buscar cliente
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </span>
+                            </div>*@
+
+
+                            <div id="datoscCliente" hidden>
+                                <hr />
+
+                                <div class="col-md-12" style="text-align:center">
+                                    <label style="font-size:22px">Datos del Cliente Seleccionado</label>
+                                </div>
+
+                                <br />
+                                <div class="form-group row no-gutters">
+                                    <label for="name" class="col-sm-3 col-form-label font-weight-bold">Nombre</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control form-control-sm mb-3" id="nameV" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row no-gutters">
+                                    <label for="rfc" class="col-sm-3 col-form-label font-weight-bold">RFC</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control form-control-sm mb-3" id="rfcV" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group row no-gutters">
+                                    <label for="direccion" class="col-md-3 col-form-label font-weight-bold">Dirección</label>
+                                    <textarea class="form-control col-md-9 form-control-sm mb-3" id="direccionV" rows="2" disabled></textarea>
+                                </div>
+                                <div class="form-group row no-gutters" style="display: none;">
+                                    <label for="direccion" class="col-md-3 col-form-label">Dirección Facturación</label>
+                                    <textarea class="form-control col-md-9 form-control-sm mb-3" id="direccionF" rows="1" disabled></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12" style="text-align:right">
+                                        <button type="button" id="btnTabSiguienteClientes" class="btn btn-primary col-md-2 text-center">
+                                            Continuar
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </button>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+
+
+        
+        <div class="tab-pane" id="articulos-tab" style="padding-left:15px">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                            <span class="float-center">
+                                <strong>Artículos</strong> &nbsp
+                            </span>
+                        </div>
+                        <div class="card-body">
+
+
+                            <div class="form-group row" style="text-align:left">
+                                <h1 class="col-form-label col-md-1 font-weight-bold">Filtros</h1>
+                            </div>
+
+
+
+                            <div class="form-group row">
+
+                                <div class="form-check form-check-inline col-md-12" style="text-align:left">
+                                    <label class="col-form-label col-md-1 font-weight-bold" style="text-align:center;">Arículos en:</label>
+                                    @Html.CheckBoxFor(model => Model.ListRadioButton.CheckLine, new { id = "idCheckLine", @class = "form-check-input", onchange = "CheckLine()" })
+                                    <label class="col-form-label" style="text-align:center" for="inlineRadio1">Linea</label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    @Html.CheckBoxFor(model => Model.ListRadioButton.CheckDesc, new { id = "idCheckDesc", @class = "form-check-input", onchange = "CheckDesc()" })
+                                    <label class="col-form-label" style="text-align:center" for="inlineRadio2">Descontinuados</label>
+
+                                    <label for="inlineCheckFilter" class="col-form-label col-md-2 font-weight-bold" style="text-align:center;">Filtrar Artículos:</label>
+                                    <input id="inlineCheckFilter" class="form-check-input" type="checkbox" onchange="filterswatch()" data-toggle="switchbutton" data-onlabel="Si" data-offlabel="No" data-size="sm">
+
+                                    <input id="articuloen" class="form-control col-sm-5 form-control-sm mb-3" name="articuloen" style="display: none;" />
+                                </div>
+                            </div>
+                            <br />
+
+
+                            <div class="row" id="filtrosart" style="margin-left:2px">
+                                <label for="ddlArticulo" class="col-form-label col-md-1 font-weight-bold">Artículo:</label>
+                                @Html.DropDownListFor(model => Model.ListArticulos, new SelectList(Model.ListArticulos, "code", "name"), "Seleccione artículo", new { id = "ddlArticulo", @class = "form-control col-sm-2 form-control-sm mb-3", @style = "text-align:center;" })
+                                <label for="ddlLinea" class="col-form-label col-md-1 font-weight-bold" style="text-align:center;">Linea:</label>
+                                @Html.DropDownListFor(model => Model.ListLinea, new SelectList(Model.ListLinea, "idLine", "NameLine"), "Seleccione Linea", new { id = "ddlLinea", @class = "form-control col-sm-2 form-control-sm mb-3", @style = "text-align:center;" })
+                                <label for="ddlMedida" class="col-form-label col-md-1 font-weight-bold" style="text-align:center;">Medida:</label>
+                                @Html.DropDownListFor(model => Model.ListMedida, new SelectList(Model.ListMedida, "code", "name"), "Seleccione Medida", new { id = "ddlMedida", @class = "form-control col-sm-2 form-control-sm mb-3", @style = "text-align:center;" })
+
+                            </div>
+
+                            <hr />
+
+                            <div class="form-check form-check-inline col-md-12">
+                                <input id="modelocode" class="form-control col-sm-3 form-control-sm mb-3" name="modelocode" style="display: none;" />
+                                <label for="modelo" class="col-form-label col-sm-2 font-weight-bold" style="text-align:left;">Modelo</label>
+                                <input class="form-control col-sm-3 form-control-sm mb-3 form-control-sm" list="datalistOptions" id="datalistmodelos" type="search" placeholder="Selecciona Modelo" onfocus="this.value=''" onchange="this.blur();">
+                                <datalist id="datalistOptions">
+                                    @foreach (var item in Model.ListModelo)
+                                    {
+                                        <option data-code="@item.code" value="@item.name"></option>
+
+                                    }
+                                </datalist>
+                                <label for="ctienda" class="col-form-label col-sm-1 font-weight-bold" style="text-align:center;">Cant Tienda</label>
+
+                                @Html.TextBoxFor(model => Model.CantidadTienda, new { id = "ctbienda", @class = "form-control col-sm-1 form-control-sm mb-3 form-control-sm", placeholder = "0", type = "number", pattern = "[0-9]", min = "0" })
+                                &nbsp;&nbsp;
+                                @Html.TextBoxFor(model => Model.CantidadTiendaDisp, new { id = "ctienda1", @class = "form-control col-sm-1 form-control-sm mb-3 form-control-sm", @disabled = "disabled" })
+
+                                <label for="cbodega" class="col-form-label col-sm-1 font-weight-bold" style="text-align:center;">Cant Bodega</label>
+                                @Html.TextBoxFor(model => Model.CantidadBodega, new { id = "ctbodega", @class = "form-control col-sm-1 form-control-sm mb-3", placeholder = "0", type = "number", pattern = "[0-9]", min = "0" })
+                                &nbsp;&nbsp;
+                                @Html.TextBoxFor(model => Model.CantidadBodegaDisp, new { id = "cbodega1", @class = "form-control col-sm-1 form-control-sm mb-3", @disabled = "disabled" })
+                            </div>
+
+                            <br />
+
+                            <br />
+
+        <div class="form-check form-check-inline col-md-12">
+            <span class="float-left font-weight-bold col-sm-2 font-weight-bold">
+                Seleccione un tipo de promoción
+            </span>
+            <select style="text-align:center;border-width:unset;border-color:aqua" onchange="Btn_SelectedTypePromotion()" class="font-weight-bold form-control select-item col-sm-3 form-control-sm center mb-3" id="idTypePromotion">
+                @foreach (var item in Model.TipoPromocion)
+                {
+                    <option value="@item.Code">@item.Name</option>
+                }
+            </select>
+
+
+        </div>
+        <br />
+
+
+
+                            <br />
+                            <div class="form-check form-check-inline col-md-12">
+
+                                @Html.DropDownListFor(model => Model.DosPorUno, new SelectList(Model.DosPorUno, "ItemCode", "ItemName"), "Seleccione artículo", new { id = "ddlDosPorUno", onchange = "", @class = "form-control col-sm-3 form-control-sm mb-3", hidden = "hidden", style = "text-align:center" })
+
+
+
+
+
+                                <label class="float-left font-weight-bold col-md-1" style="text-align:left;">Juego</label>
+                                <div class="form-check form-check-inline" style="text-align:left;">
+                                    @Html.CheckBoxFor(model => Model.ListRadioButton.CheckJuego, new { id = "juego", onchange = "CheckJuego()", @class = "form-check-input" })
+                                    <label class="form-check-label" for="juego"></label>
+                                </div>
+
+
+                                @Html.TextBoxFor(model => Model.DescriptionJuego, new { id = "cbDescriptioJuego", @class = "form-control col-md-2", @type = "text", @disabled = "disabled" })
+
+
+
+                                <label for="ddlPrice" class="float-center font-weight-bold col-md-2" style="text-align:center;">Lista de Precios</label>
+                                @Html.DropDownListFor(model => Model.ListOfPrice, new SelectList(Model.ListOfPrice, "ListID", "ListName"), new { id = "ddlPrice", onchange = "OnchangeListPrice()", @class = "form-control col-md-2" })
+
+                                <label for="punitario1" class="col-form-label col-md-2 font-weight-bold" style="text-align:center;">Precio Unitario</label>
+
+                                @Html.TextBoxFor(model => Model.PrecioUnitario, new { id = "tbpunitario", @class = "form-control col-md-1", @disabled = "disabled" })
+
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+
+                            <div class="form-check form-check-inline col-md-12">
+
+                                <label for="iva1" class="col-form-label col-md-1 font-weight-bold" style="text-align:left;">IVA</label>
+
+                                @Html.TextBoxFor(model => Model.IVA, new { id = "cbIva", @class = "form-control col-md-1 form-control-sm mb-3" })
+                                <label for="descuento1" class="col-form-label col-md-1 font-weight-bold" style="text-align:right;">% Desc</label>
+
+                                @Html.TextBoxFor(model => Model.Descuento, new { id = "tbDescuento", @class = "form-control col-md-1 text-left form-control-sm mb-3", hidden = "hidden" })
+                                @Html.TextBoxFor(model => Model.Subtotal, new { id = "tbSubtotal", @class = "form-control col-md-4 form-control-sm mb-3", hidden = "hidden" })
+                                @Html.TextBoxFor(model => Model.DescuentoPorc, new { id = "tbDescuentoPorc", @class = "form-control col-md-4 form-control-sm mb-3", hidden = "hidden" })
+                                <div class="col-md-1" style="text-align:right">
+                                    <button type="submit" onclick="SolicitarDescuento()" class="btn btn-info mb-3">Solicitar</button>
+                                </div>
+                                <label for="total1" class="col-form-label col-md-1 text-center font-weight-bold">Total</label>
+
+                                @Html.TextBoxFor(model => Model.Total, new { id = "tbTotal", @class = "form-control col-md-2 form-control-sm mb-3", @disabled = "disabled" })
+
+
+                                @*<input class="btn btn-success btn-sm col-md-1" type="button" id="btnTabAtrasClientes" value="Regresar" />*@
+                                @*<input class="btn btn-success btn-sm col-md-1" type="button" id="btnTabSiguientePagos" value="Continuar" />*@
+                            </div>
+                            <br />
+                            <br />
+
+                            <div class="row">
+
+                                <div class="col-md-5 text-center">
+                                    <button id="btnCapturar" onclick="Capturar()" type="submit" class="btn btn-success">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                        Agregar
+                                    </button>
+
+                                </div>
+                                &nbsp;&nbsp;&nbsp;
+                                <div class="col-md-5 text-center">
+                                    <button type="submit" onclick="CleanPrice(true,true)" class="btn btn-danger">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                        Limpiar
+                                    </button>
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                            <span class="float-center">
+                                <strong>Artículos capturados</strong>
+                            </span>
+                        </div>
+                        <div id="tbBodyIn" class="table table-hover table-responsive table-responsive-sm tableFixHead" style="padding: 0.25rem 0.25rem !important;">
+                            <table id="tbBody" class="table table-hover table table-sm">
+                                <thead style="vertical-align: middle !important;" class="mt-0 mb-1">
+                                    <tr>
+                                        <th scope="col">Modelo</th>
+                                        <th hidden="hidden" scope="col">#</th>
+                                        <th scope="col">Juego</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Cantidad Tienda</th>
+                                        <th scope="col">Cantidad Bodega</th>
+                                        <th scope="col">Lista</th>
+                                        <th scope="col">Precio Unitario</th>
+                                        <th scope="col">Descuento</th>
+                                        <th scope="col">Subtotal</th>
+                                        <th scope="col">IVA</th>
+                                        <th scope="col">Total</th>
+                                        <th hidden="hidden" scope="col">Itemcode</th>
+                                        <th scope="col">Opcion</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-light">
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card-footer" style="padding: 0.0rem 1.25rem !important; margin:10px">
+                            <div class="row">
+                                <label for="tventa" class="col-form-label col-md-1 font-weight-bold">Total Venta</label>
+                                <input class="form-control col-md-1 form-control-sm mb-0 font-weight-bold" type="text" placeholder="$0" id="tventa" disabled>
+                                <label for="pventa" class="col-form-label col-md-1 text-center font-weight-bold">Pagado</label>
+                                <input class="form-control col-md-1 form-control-sm mb-0 font-weight-bold" type="text" placeholder="$0" id="pventa" disabled>
+                                <label for="cventa" class="col-form-label col-md-1 text-center font-weight-bold">Cambio</label>
+                                <input class="form-control col-md-1 form-control-sm mb-0 font-weight-bold" type="text" id="cventa" placeholder="$0" disabled>
+                                <label for="dventa" class="col-form-label col-md-1 font-weight-bold">Desc</label>
+                                <input class="form-control col-md-1 form-control-sm mb-0 font-weight-bold" type="text" placeholder="$0" id="dventa" disabled>
+                                <label for="sventa" class="col-form-label col-md-1 text-center font-weight-bold">Saldo</label>
+                                <input class="form-control col-sm-1 form-control-sm mb-0 font-weight-bold" type="text" placeholder="$0" id="sventa" disabled>
+                                <button type="button" id="btnTabAtrasClientes" class="btn btn-primary  col-md-1 text-center">
+                                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                    Regresar
+                                </button>
+                                <button type="button" id="btnTabSiguientePagos" class="btn btn-primary col-md-1 text-center">
+                                    Continuar
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="tab-pane" id="pagos-tab">
+            <div class="card">
+                <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                    <span class="float-center">
+                        <strong> Formas de Pago</strong>
+                    </span>
+
+                </div>
+                <div class="card-body">
+
+                    <form class="form-control-range">
+                        <div class="form-group row p-0 m-0">
+                            <label for="" class="col-form-label col-md-2 p-2 font-weight-bold">Forma de Pago</label>
+                            <select class="form-control col-md-2 form-control-sm mb-3" id="formapago" onchange="FormaPagoC()">
+                                <option value="1">Efectivo</option>
+                                <option value="2">Terminal Banamex</option>
+                                <option value="3">Terminal Bancomer</option>
+                                <option value="4">American Express</option>
+                                <option value="5">Terminal PROSA</option>
+                                <option value="6">Terminal Santander</option>
+                                <option value="7">Deposito / Cheque</option>
+                                <option value="8">Transferencia Electronica</option>
+                                <option value="9">Monedero Payback</option>
+                                <option value="10">Compensación</option>
+                            </select>
+
+                            <label for="tarjeta" id="lbtarjeta" class="col-form-label text-center p-2 col-md-2 font-weight-bold" style="display:none;">Tipo de tarjeta</label>
+                            <select class="form-control col-md-2 form-control-sm mb-3" id="seltarjeta" style="display:none;">
+                                <option value="">Seleccione tipo de tarjeta..</option>
+                                <option value="Credito">Credito</option>
+                                <option value="Debito">Debito</option>
+                            </select>
+
+                            <label for="terminatarjeta" id="lbtermi" class="col-form-label col-md-2 text-center font-weight-bold" style="display:none;">Terminación tarjeta</label>
+                            <input class="form-control col-md-1 form-control-sm mb-3" maxlength="4" placeholder="4 ultimos digitos" id="selterminatarjeta" style="display:none;">
+
+                            <label for="msi" id="lbmsi" class="col-form-label col-md-2 text-center font-weight-bold" style="display:none;">Meses sin Intereses</label>
+                            <input class="form-control col-md-1 form-control-sm mb-3" type="text" placeholder="0" id="selmsi" style="display:none;">
+
+
+
+
+                            <label for="montop" class="col-form-label col-md-2 text-center font-weight-bold" style="text-align:center;">Saldo pendiente</label>
+                            <input class="form-control col-md-1 form-control-sm mb-3" type="text" placeholder="" id="montop" style="display:block;" @*onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"*@ disabled>
+
+                            <label for="pagoRecibido" class="col-form-label col-md-2 text-center font-weight-bold" style="text-align:center;">Pago Recibido</label>
+                            <input class="form-control col-md-1 form-control-sm mb-3" type="text" placeholder="" id="pagoRecibido" style="display:block;" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+
+
+                            <label id="lbmontoPB" for="montoPB" class="col-form-label col-md-2 form-control-sm mb-3 font-weight-bold" style="text-align:center;display:none;">Monto Payback</label>
+                            <input class="form-control col-md-1 form-control-sm mb-3" type="text" placeholder="0" id="montoPB" readonly="readonly" style="display:none;">
+
+                            <div class="col-md-2 text-center">
+                                <button id="adicionar1" onclick="CapPago()" type="button" class="btn btn-info btn-sm">
+                                    <i class="fa fa-usd" aria-hidden="true"></i>
+                                    Agregar Pago
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table-responsive" id="tbBodyPago" style="padding: 0.25rem 0.25rem !important;">
+                            <table id="tblCPagosEnc" class="table table-hover table table-sm" height="50%">
+                                <thead class="table-info">
+                                    <tr>
+                                        <th scope="col">Forma de pago</th>
+                                        <th scope="col">Importe</th>
+                                        <th scope="col">Cuenta</th>
+                                        <th scope="col">Tipo tarjeta</th>
+                                        <th scope="col">Msi</th>
+                                        <th scope="col">Opcion</th>
+                                        <th hidden="hidden" scope="col">#</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+
+
+                </div>
+                <div class="card-footer">
+                    <form>
+                        <div class="form-group row no-gutters form-inline mb-2">
+                            @Html.TextBox("Name", (object)ViewBag.Idstore, new { id = "idstore", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+                            @Html.TextBox("Name", (object)ViewBag.Idusuario, new { id = "Idusuario", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+                            @Html.TextBox("Name", (object)ViewBag.WhsID, new { id = "WhsID", @class = "form-control col-md-2 form-control-sm mb-3", hidden = "hidden" })
+
+                            <label for="checkventa" class="col-form-label text-center font-weight-bold"> Modo de venta &nbsp</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="optionRequiredTipoVenta" id="inlineRadioVenta" value="PUE" required disabled>
+                                <label class="form-check-label font-weight-bold" for="inlineRadioTipoVenta">Venta de contado</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="optionRequiredTipoVenta" id="inlineRadioApartado" value="PPD" required disabled>
+                                <label class="form-check-label font-weight-bold" for="inlineRadioTipoVenta">Apartado 45 días</label>
+                            </div>
+
+                            <label for="comentarios" class="col-form-label col-md-1 text-center font-weight-bold">Comentarios</label>
+
+                            <textarea class="form-control col-md-6 form-control-sm p-3" id="comentarios" rows="1" placeholder="Comentarios" maxlength="250"></textarea>
+                            @*<div class="col-md-1"></div>
+                                <input type="button" id="btnClonarVenta" class="btn btn-primary" value="Copiar Venta" />*@
+                        </div>
+                        <div class="form-group row no-gutters form-inline">
+                            <label for="fechat" class="col-form-label p-3 font-weight-bold">Fecha de Entrega</label>
+                            <input class="form-control col-md-2 form-control-sm" type="date" placeholder="" id="fechat">
+
+                            <label for="comomed" class="col-form-label p-3 font-weight-bold">Como se entero de nosotros</label>
+                            <select class="form-control col-md-3 form-control-sm" id="comomed">
+                                <option value="1">Pasé por aquí</option>
+                                <option value="2">Ya soy Cliente</option>
+                                <option value="3">Recomendación</option>
+                                <option value="4">Televisión</option>
+                                <option value="5">Radio</option>
+                                <option value="6">Periodico</option>
+                                <option value="7">Volantes</option>
+                                <option value="8">Internet</option>
+                                <option value="9">Perifoneo</option>
+                                <option value="10">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group row no-gutters ">
+                            <button type="button" id="btnTabAtrasArticulo" class="btn btn-primary col-md-1 text-center">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                Regresar
+                            </button>
+                            <div class="col-md-2"></div>
+                            <button type="button" onclick="Loadpreviewer()" class="btn btn-success col-md-4 block-page block-sidebar" id="ConfirmaPedido">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                Procesar Venta
+                            </button>
+
+
+                            <div class="col-md-1"></div>
+                            <button type="submit" class="btn btn-danger col-md-4">
+                                <i class="fa fa-ban" aria-hidden="true"></i>
+                                Cancelar Venta
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="MdlInfoDesc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="exampleModalLabel">Informacion de descuento a solicitar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <label for="recipient-name" class="col-form-label">Cantidad solicitada:</label>
+                                <input type="text" class="form-control text-center" id="recipient-name">
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                        @*<div class="form-group row">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>*@
+                    </form>
+                </div>
+                <div class="modal-footer btn-group row">
+                    <div class="col-md-1"></div>
+                    <button type="button" class="btn btn-info btn-sm">Enviar</button>
+
+
+                    <button type="button" class="btn btn-danger  btn-sm" data-dismiss="modal">Cancelar</button>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalClonVenta"  tabindex="-2" role="dialog" aria-labelledby="modalClonVentaLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Copiar Venta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Folio:</label>
+                            <input type="text" class="form-control" id="ClFolio">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Fecha:</label>
+                            <input type="date" class="form-control" id="ClFecha">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-success btn-lg btn-block mt-3" id="btnbusquedaFolioClon" value="Buscar" />
+                        </div>
+                    </form>
+
+                    <div class="card mt-2">
+                        <div class="card-header">
+                            <span class="float-center">
+                                <strong>Folio Encontrado</strong>
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <table id="tblFoliosEncontradosC" class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th scope="auto">
+                                            ID
+                                        </th>
+                                        <th scope="auto">
+                                            Folio
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@Html.Partial("../ViewPartial/Ventas/_PartialClientes")
+@Html.Partial("../ViewPartial/Ventas/_PartialPayBack")
+@*<footer class="footer">
+    @*<footer class="footer">
+            <div class="container">
+                <button type="button" id="btnTabSiguienteClientes" class="btn btn-primary text-center col-md-2">
+                    Continuar
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </footer>*@
+
+
+
+    <script src="~/Scripts/chose/chosen.jquery.js"></script>
+    <script src="~/Scripts/chose/chosen.jquery.min.js"></script>
+    <script src="~/Scripts/chose/chosen.proto.js"></script>
+    <script src="~/Scripts/chose/chosen.proto.min.js"></script>
+
+    <script>
+        $("#ddlArticulo").change(function () {
+                    @*var values = '@(Model.ListRadioButton)';*@
+            @*var JsonRes = @Html.Raw(Json.Encode(Model.ListRadioButton));
+                    var JsonSer = JSON.stringify(JsonRes);*@
+            var Tienda1 = $("#ddlArticulo option:selected").val();
+            if (Tienda1 == "" || Tienda1=="0") {
+                CleanPrice(true, true);
+            }
+            else {
+                $.ajax({
+                    type: "POST",
+                    url: '/Ventas/GetSelectedLinea',
+                    data: "{ 'code': '" + Tienda1 + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        var idStore = '';
+                        if (result != null) {
+
+                            var lsLinea = JSON.parse(result);
+                            $("#ddlLinea")
+                                .empty()
+                                .append($("<option></option>")
+                                    .val("0")
+                                    .html(":.Seleccione.:"));
+                            $.each(lsLinea, function (key, value) {
+                                var option = $(document.createElement('option'));
+                                option.html(value.name);
+                                option.val(value.code);
+                                $("#ddlLinea")
+                                    .append(option);
+                            });
+
+
+                        }
+                        return false;
+                    },
+                    error: function (xhr) {
+                        //debugger;
+                        console.log(xhr.responseText);
+                        alert("Error has occurred..");
+                    }
+                });
+        }
+                });
+        $("#ddlLinea").change(function () {
+            var ddlArticulo = $("#ddlArticulo option:selected").val();
+            var ddlLinea = $("#ddlLinea option:selected").val();
+            var obj = { code: ddlArticulo, name: ddlLinea };
+            var Json = JSON.stringify(obj);
+            //var Json = JSON.stringify([new String("code" + ':'+ ddlArticulo), new String("code" + ':' + ddlLinea)]);
+            $.ajax({
+                type: "POST",
+                url: '/Ventas/GetSelectedMedida',
+                data: "{ 'code': '" + Json + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var idStore = '';
+                    if (result != null) {
+
+                        var lsLinea = JSON.parse(result);
+                        $("#ddlMedida")
+                            .empty()
+                            .append($("<option></option>")
+                                .val("0")
+                                .html(":.Seleccione.:"));
+                        $.each(lsLinea, function (key, value) {
+                            var option = $(document.createElement('option'));
+                            option.html(value.name);
+                            option.val(value.code);
+                            $("#ddlMedida")
+                                .append(option);
+                        });
+
+
+                    }
+                    else { alert("No existen Modelos para esta Medida"); }
+                    return false;
+                },
+                error: function (xhr) {
+                    //debugger;
+                    console.log(xhr.responseText);
+                    alert("Error has occurred..");
+                }
+            });
+        });
+        $("#ddlMedida").change(function () {
+            var ddlArticulo = $("#ddlArticulo option:selected").val();
+            var ddlMedida = $("#ddlMedida option:selected").val();
+            var ddlLinea = $("#ddlLinea option:selected").val();
+            $.ajax({
+                type: "POST",
+                url: '/Ventas/GetSelectedModels',
+                data: "{'articulo': '" + ddlArticulo +"', 'modelo': '" + ddlLinea + "', 'medida': '" + ddlMedida + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    if (result != null) {
+                        var lsLinea = JSON.parse(result);
+                        $("#datalistOptions")
+                            .empty();
+                        addToDataList(lsLinea);
+                    }
+                    else { alert("No existe datos"); }
+                },
+                error: function (xhr) {
+                    //debugger;
+                    console.log(xhr.responseText);
+                    alert("Error has occurred..");
+                }
+            });
+        });
+        //Obtener datos de datalist
+        // create and populate datalist
+        function addToDataList(data) {
+            data.forEach(elem => {
+                option = document.createElement("option");
+                option.value = elem.name;
+                option.setAttribute("data-code", elem.code);
+                datalistOptions.append(option);
+            });
+        }
+        function GetJsonArtculo() {
+            var Articulo = @Html.Raw(Json.Encode(Model.ListArticulos));
+            return Articulo;
+        }
+        function GetJsonPrice() {
+            var Articulo = @Html.Raw(Json.Encode(Model.ListOfPrice));
+            return Articulo;
+        }
+         function GetJsonTipoPromo() {
+            var TipoPromo = @Html.Raw(Json.Encode(Model.TipoPromocion));
+             return TipoPromo;
+        }
+         function GetJsonPromo() {
+            var Promo = @Html.Raw(Json.Encode(Model.DosPorUno));
+             return Promo;
+        }
+
+        //$("#ddlModelo").change(function () {
+        //    var ddlModelo = $("#ddlModelo option:selected").val();
+        //    $.ajax({
+        //        type: "POST",
+        //        url: '/Ventas/GetExistencias',
+        //        data: "{ 'Parametrs': '" + ddlModelo + "'}",
+        //        contentType: "application/json; charset=utf-8",
+        //        dataType: "json",
+        //        success: function (result) {
+        //            var idStore = '';
+        //            if (result != null) {
+
+        //                var lsLinea = JSON.parse(result);
+        //                var date = JSON.parse(lsLinea);
+        //                $("#ctienda1").val(date.ExistenciaTienda);
+        //                $("#cbodega1").val(date.ExistenciaBodega);
+        //            }
+        //            else { alert("Existen datos"); }
+        //            return false;
+        //        },
+        //        error: function (xhr) {
+        //            //debugger;
+        //            console.log(xhr.responseText);
+        //            alert("Error has occurred..");
+        //        }
+        //    });
+        //});
+
+
+
+
+                //var table = $("#table tbody");
+                //$.each(data, function (idx, elem) {
+                //    table.append("<tr><td>" + "colchon" + "</td><td>" + "10" + "</td><td>" + "1" + "</td><td>" + "1" + "</td><td>" + "0" + "</td><td>" + "Precion Publico" + "</td><td>" + "18" + "</td><td>" + "0" + "</td><td>" + "18" + "</td><td>" + "2994" + "</td><td>" + "18" + "</td></tr>");
+                //});
+
+
+
+            //LineaListSuccess: function (Linea) {
+            //    $('#ddlLinea').empty();
+
+            //    //$('#cmbTienda').append(new Option("Seleccione una Tienda", 0))
+            //    $.each(Linea, function (id, item) {
+            //       venta.LineaAddRow(item.code, item.name);
+            //    });
+            //},
+            //LineaAddRow: function (key, value) {
+            //    var added = document.createElement('option');
+            //    var select1 = $('#ddlLinea');
+            //    added.value = key;
+            //    added.innerHTML = value;
+            //    select1.append(added);
+            //}
+
+        @*var modeloArticulosBaseView = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));*@
+
+
+        $(document).ready(function () {
+            //$(".chosen").chosen();
+            //$(".chosen-search-input").chosen();
+            //$(".chosen-select").chosen({ no_results_text: "Oops, nothing found!" });
+            //$(".chosen").chosen({
+            //    disable_search_threshold: 10,
+            //    no_results_text: "Oops, nothing found!",
+            //    width: "95%"
+            //});
+        });
+
+
+    </script>
+
+}

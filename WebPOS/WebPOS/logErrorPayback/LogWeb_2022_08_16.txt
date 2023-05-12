@@ -1,0 +1,29 @@
+2022-08-16 12:18:41 Crear venta nueva tienda: 5
+2022-08-16 12:18:41 Inicia Creación de Transaccion para insertar venta
+2022-08-16 12:18:49 descarga pdf idventa: 199780
+2022-08-16 12:56:39 Crear venta nueva tienda: 5
+2022-08-16 12:56:39 Inicia Creación de Transaccion para insertar venta
+2022-08-16 12:56:40 Error al insertar venta: 
+2022-08-16 12:57:11 Error en metodo AddSale: System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.   en WebPOS.Controllers.Ventas.VentasController.AddSale(String Paymentscap) en C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\Controllers\Ventas\VentasController.cs:línea 507
+2022-08-16 12:58:17 Crear venta nueva tienda: 5
+2022-08-16 12:58:17 Inicia Creación de Transaccion para insertar venta
+2022-08-16 12:58:17 Error al insertar venta: 
+2022-08-16 12:58:40 Error en metodo AddSale: System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.   en WebPOS.Controllers.Ventas.VentasController.AddSale(String Paymentscap) en C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\Controllers\Ventas\VentasController.cs:línea 507
+2022-08-16 13:01:58 Crear venta nueva tienda: 5
+2022-08-16 13:02:05 Inicia Creación de Transaccion para insertar venta
+2022-08-16 13:06:39 Error en metodo CheckOrder: System.IndexOutOfRangeException: No hay ninguna fila en la posición 0.   en System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)   en System.Data.DataRowCollection.get_Item(Int32 index)   en WebPOS.Utilities.Threads.CheckOrder(AddSale Infoventa, String IDPRINTVENTA) en C:\Projectsvs\ProyectoPOS\Proyectos Jose Angel\Proyectos en Desarrollo Pos-Api\WebPOS\WebPOS\Utilities\Threads.cs:línea 267
+2022-08-16 13:06:49 descarga pdf idventa: 199780
+2022-08-16 15:35:12 Crear venta nueva tienda: 5
+2022-08-16 15:35:13 Inicia Creación de Transaccion para insertar venta
+2022-08-16 15:35:19 descarga pdf idventa: 199790
+2022-08-16 15:45:13 Crear venta nueva tienda: 5
+2022-08-16 15:45:14 Inicia Creación de Transaccion para insertar venta
+2022-08-16 15:45:20 descarga pdf idventa: 199791
+2022-08-16 16:29:55 Crear venta nueva tienda: 5
+2022-08-16 16:30:03 Inicia Creación de Transaccion para insertar venta
+2022-08-16 17:20:51 Crear venta nueva tienda: 5
+2022-08-16 17:20:53 Inicia Creación de Transaccion para insertar venta
+2022-08-16 17:21:31 descarga pdf idventa: 199794
+2022-08-16 17:28:41 Crear venta nueva tienda: 5
+2022-08-16 17:28:42 Inicia Creación de Transaccion para insertar venta
+2022-08-16 17:29:08 descarga pdf idventa: 199795

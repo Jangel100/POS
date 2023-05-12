@@ -1,0 +1,117 @@
+﻿
+@using System.Data
+@using System.Collections.Generic
+@model Entities.viewsModels.ClientesView
+
+<div class="modal-content" id="altacliente" style="display:none;">
+    <div class="modal-header row" id="encabezadoaltaclientes">
+        <h5 class="modal-title col-md-3 text-center" id="exampleModalLabel1">  <i class="fa fa-search"></i> <strong> Agregar Nuevo Cliente</strong></h5>
+        <div class="text-center font-small-4 col-md-4 form-check-inline disabled">
+            <label class="form-check-label" for="inlineRadio1">¿Cliente cuenta con RFC?:</label>
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="checkrfc" value="option1" onclick="showlblrfc()">
+        </div>
+        <label for="tipopersona" class="col-form-label col-md-2">Tipo de persona:</label>
+        <select class="form-control col-md-2 form-control-sm mb-2" id="tipopersona" disabled>
+            <option value="-1" ></option>
+            <option>Fisica</option>
+            <option>Moral</option>
+        </select>
+        <button type="button" onclick="ClosemodCli()" class="close col-md-1" data-dismiss="modal" aria-label="Close" id="closemodalclientes">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body" id="altacliente">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                        <p><strong>Cliente</strong></p>
+
+                    </div>
+                    <div class="card-body ">
+                        @*<form class="form-control-range">*@
+
+                        @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-control-range", name = "frmClientesAdd", id = "frmClientesAdd" }))
+                        {
+                            <div class="form-group row no-gutters">
+                                <label for="nameb" class="col-md-2 col-form-label text-center">Nombre</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" id="txtNameAdd" name="Nombre" placeholder="Nombre">
+                                @*@Html.EditorFor(model => model.Clientes.Nombre, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Nombre", @id = "txtNameAdd" } })*@
+                                <label for="apaterno" class="col-md-2 col-form-label text-center">A. Paterno</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="A. Paterno" name="A. Paterno" id="txtAPaternoAdd">
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="amaterno" class="col-md-2 col-form-label text-center">A. Materno</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" name="A. Materno" placeholder="A. Materno" id="txtAMaternoAdd">
+                                <label for="rfcalta" class="col-md-2 col-form-label text-center" id="rfcalta" style="display:none">RFC</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" name="RFC" placeholder="RFC" id="rfcaltainp" style="display:none" maxlength="13">
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="cp" class="col-md-2 col-form-label text-center">CP.</label>
+                                <input type="text" class="form-control col-md-3 form-control-sm" placeholder="CP" name="CP" id="txtCPAdd" maxlength="5">
+                                <input type="button" class="btn btn-primary btn-sm" id="btnVerificarCP" style="height: 30px; width: 90px" onclick="VentaUsuario.ValidarCP('Add')" value="Validar" />
+                                <label for="estado" class="col-md-2 col-form-label text-center">Estado</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" name="Estado" id="txtEstadosAdd" disabled>
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="cmbMunicipiosFact" class="col-md-2 col-form-label text-center">Delegacion/Mun</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" name="Muncipios" id="txtMunicipiosAdd" disabled>
+                                <label for="cmbEstadosFact" class="col-md-2 col-form-label text-center">Ciudad</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" name="Ciudad" id="txtCiudadAdd" disabled>
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="cmbColoniaAdd" class="col-md-2 col-form-label text-center">Colonia</label>
+                                <select class="form-control col-md-4 form-control-sm mb-3" name="Colonia" id="cmbColoniaAdd">
+                                    <option value="-1">Seleccione</option>
+                                </select>
+                                <label for="txtCalleAdd" class="col-md-2 col-form-label text-center">Calle</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Calle" name="Calle" id="txtCalleAdd">
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="txtNumeroExtAdd" class="col-md-2 col-form-label text-center">Numero Ext.</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Numero Int." name="Numero Int" id="txtNumeroExtAdd">
+                                <label for="txtNumeroIntAdd" class="col-md-2 col-form-label text-center">Numero Int.</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Numero Ext." name="Numero Ext" id="txtNumeroIntAdd">
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="telcasa" class="col-md-2 col-form-label text-center">Tel. Casa</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Tel. Casa" name="Tel. Casa" id="txtTelCasaAdd">
+
+                                <label for="telofi" class="col-md-2 col-form-label text-center">Tel. Ofic.</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder = "Tel. Oficina" name="Tel. Oficina" id="txtTelOficinaAdd">
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="cel" class="col-md-2 col-form-label text-center">Numero Cel.</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Num. Cel" name="Num. Cel" id="txtNumCelAdd">
+                                <label for="correo" class="col-md-2 col-form-label text-center">Correo</label>
+                                <input type="email" class="form-control col-md-4 form-control-sm mb-3" placeholder = "Correo" id="txtCorreoAdd">
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="fechanacimiento" class="col-md-2 col-form-label text-center">F. Nacimiento</label>
+                                <input type="date" class="form-control col-md-4 form-control-sm mb-3" name="Fecha Nacimiento" id="txFechaNacimientoAdd">
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <input type="button" class="btn btn-danger col-md-4" id="btnClearclienteAdd" value="Limpiar">
+                                <div class="col-md-4"></div>
+                                <input type="button" id="btnCapturarAdd" class="btn btn-success col-md-4" value="Capturar">
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="toastClientesAdd" class="toast" style="position: absolute; top: 0; right: 0;">
+            <div class="toast-header">
+                <div class="rounded mr-2" style="height: 16px;width: 16px;background-color: red;"></div>
+                <strong class="mr-auto">Datos por llenar</strong>
+                <small>Hace 2 segundos</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body badge-light">
+            </div>
+        </div>
+    </div>
+</div>

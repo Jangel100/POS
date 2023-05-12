@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/fixedHeader.bootstrap4.min.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/responsive.dataTables.min.css" rel="stylesheet" />
+
+<div class="container-fluid row">
+
+    <div class="col-md-4">
+        <h1 class="text-center">Usuarios</h1>
+    </div>
+    <div class="col-md-4">
+
+        <div class="form-group row no-gutters">
+            <input type="button" class="btn btn-success" id="btnAddUsuarios" value="Agregar Nuevo Usuario" />
+        </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+
+</div>
+
+
+
+
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script>
+    Usuarios = {
+        Add: function () {
+            $("#btnAddUsuarios").on("click", function () {
+                window.location.href = "/Usuarios/Add";
+            });
+        },
+        Consult: function () {
+            Usuarios.GetUsuarios();
+        },
+        Modify: function (AdminUserID) {
+            window.location.href = "/Usuarios/Modify?AdminUserID=" + AdminUserID + "&Action=Edit";
+
+        },
+        Delete: function () {
+
+        },
+        GetUsuarios: function () {
+            Usuarios.GetListSuccess();
+        },
+        GetListSuccess: function () {
+
+            var spanish = {
+                "processing": "Procesando...",
+                "lengthMenu": "Mostrar _MENU_ registros",
+                "zeroRecords": "No se encontraron resultados",
+                "emptyTable": "Ningún dato disponible en esta tabla",
+                "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "search": "Buscar usuario:",
+                "infoThousands": ",",
+                "loadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                " oAria ": {
+                    " sSortAscending ": ": Activar para ordenar la columna de manera ascendente ",
+                    " sSortDescending ": ": Activar para ordenar la columna de manera descendente "
+                }
+            }
+
+            var table = $('#tbConsultaUsuarios').dataTable({
+                language: spanish,
+                ajax:
+                {
+                    type: "POST",
+                    url: '/Usuarios/GetConsultaUsuarios',
+                    dataType: "json"
+
+                },
+                'columns': [
+                    { "data": "AdminUserID", "autoWidth": true },
+                    { "data": "Usuario", "autoWidth": true },
+                    { "data": "Rol", "autoWidth": true },
+                    { "data": "Estatus", "autoWidth": true },
+                    { "render": function (data, type, row) { return '<a id="myLink" href="#" onclick="Usuarios.Modify(' + row.AdminUserID + ');">Editar</a>'; } },
+                    { "render": function (data, type, row) { return '<a id="myLink2" href="#" onclick="MyFunction(' + row.AdminUserID + ');">Eliminar</a>'; } }
+                ],
+                "columnDefs": [
+                    { "searchable": true, "orderable": true, targets: "_all" },
+                    { "className": "text-center custom-middle-align", targets: "_all" }
+
+                ],
+                "processing": true,
+                "pageLength": 15,
+                "lengthChange": false,
+                "responsive": true,
+                "rowReorder": {
+                    "selector": 'td:nth-child(2)'
+                },
+                "fixedHeader": {
+                    "header": true
+                },
+                "dom": 'Bfrtip'
+            });
+
+            //new $.fn.dataTable.FixedHeader(table);
+        }
+    };
+
+    $(document).ready(function () {
+        Usuarios.Consult();
+        Usuarios.Add();
+    });
+</script>
+
+@Html.Partial("../ViewPartial/Configuracion/_PartialUsuarios")
+
+<script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+<script src="~/Scripts/DataTables/dataTables.rowReorder.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.responsive.min.js"></script>
+<script src="~/Scripts/DataTables/responsive.bootstrap4.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.fixedHeader.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.fixedColumns.min.js"></script>
+
+
+@*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/DataTables")
+    @Scripts.Render("~/bundles/scripts")*@

@@ -1,0 +1,124 @@
+﻿
+@using System.Data
+@using System.Collections.Generic
+@model Entities.viewsModels.ClientesView
+
+<div class="modal-content" id="altacliente" style="display:none;">
+    <div class="modal-header row" id="encabezadoaltaclientes">
+        <h5 class="modal-title col-md-3 text-center" id="exampleModalLabel1">  <i class="fa fa-search"></i> <strong> Agregar Nuevo Cliente</strong></h5>
+        <div class="text-center font-small-4 col-md-4 form-check-inline">
+            <label class="form-check-label" for="inlineRadio1">¿Cliente cuenta con RFC?:</label>
+            <input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="checkrfc" value="option1" onclick="showlblrfc()">
+        </div>
+        <label for="tipopersona" class="col-form-label col-md-2">Tipo de persona:</label>
+        <select class="form-control col-md-2 form-control-sm mb-2" id="tipopersona" disabled>
+            <option></option>
+            <option>Fisica</option>
+            <option>Moral</option>
+        </select>
+        <button type="button" onclick="ClosemodCli()" class="close col-md-1" data-dismiss="modal" aria-label="Close" id="closemodalclientes">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body" id="altacliente">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                        <p><strong>Cliente</strong></p>
+
+                    </div>
+                    <div class="card-body ">
+                        @*<form class="form-control-range">*@
+
+                        @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-control-range", name = "frmClientesAdd", id = "frmClientesAdd" }))
+                        {
+                            <div class="form-group row no-gutters">
+                                <label for="nameb" class="col-md-2 col-form-label text-center">Nombre</label>
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="nameb">*@
+                                @Html.EditorFor(model => model.Clientes.Nombre, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Nombre", @id = "txtNameAdd" } })
+                                <label for="apaterno" class="col-md-2 col-form-label text-center">A. Paterno</label>
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="apaterno">*@
+                                @Html.EditorFor(model => model.Clientes.actAPEPATERNO, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Nombre", @id = "txtAPaternoAdd" } })
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="amaterno" class="col-md-2 col-form-label text-center">A. Materno</label>
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="amaterno">*@
+                                @Html.EditorFor(model => model.Clientes.actAPEMATERNO, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "A. Materno", @id = "txtAMaternoAdd" } })
+                                <label for="rfcalta" class="col-md-2 col-form-label text-center" id="rfcalta" style="display:none">RFC</label>
+                                <input type="text" class="form-control col-md-4 form-control-sm mb-3" id="rfcaltainp" style="display:none">
+                                @*@Html.EditorFor(model => model.Clientes.RFC, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "RFC", @id = "rfcaltainp" } })*@
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="calle" class="col-md-2 col-form-label text-center">Calle</label>
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="calle">*@
+                                @Html.EditorFor(model => model.Clientes.CalleNumero, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Calle", @id = "txtCalleAdd" } })
+                                <label for="noext" class="col-md-2 col-form-label text-center">Numero Ext.</label>
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="noext">*@
+                                @Html.EditorFor(model => model.Clientes.actNUMINT, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Numero Int", @id = "txtNumeroExtAdd" } })
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="noint" class="col-md-2 col-form-label text-center">Numero Int.</label>
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="noint">*@
+                                @Html.EditorFor(model => model.Clientes.actNUMINT, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Numero Int", @id = "txtNumeroIntAdd" } })
+                                <label for="colonia" class="col-md-2 col-form-label text-center">Colonia</label>
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="colonia">*@
+                                @Html.EditorFor(model => model.Clientes.Colonia, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Colonia", @id = "txtColoniaAdd" } })
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="delegacion" class="col-md-2 col-form-label text-center">Delegacion/Mun.</label>
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="delegacion">*@
+                                @Html.EditorFor(model => model.Clientes.DelMun, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Delegacion/Mun", @id = "txtDelegacionAdd" } })
+
+                                <label for="estado" class="col-md-2 col-form-label text-center">Estado</label>
+                                @*<select class="form-control col-md-4 form-control-sm mb-3" id="estado">
+                                     <option></option>
+                                    </select>*@
+                                <select class="form-control col-md-4 form-control-sm mb-3" id="cbmEstadoAdd">
+                                    @foreach (var Item in Model.Estados)
+                                    {
+                                        <option value="@Item.EntidadId">@Item.EntidadDesc</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="cp" class="col-md-2 col-form-label text-center">Codigo P.</label>
+                                @Html.EditorFor(model => model.Clientes.CP, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "CP", @id = "txtCPAdd" } })
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="cp">*@
+                                <label for="telcasa" class="col-md-2 col-form-label text-center">Tel. Casa</label>
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="telcasa">*@
+                                @Html.EditorFor(model => model.Clientes.TelCasa, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Tel. Casa", @id = "txtTelCasaAdd" } })
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="telofi" class="col-md-2 col-form-label text-center">Tel. Ofic.</label>
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="telofi">*@
+                                @Html.EditorFor(model => model.Clientes.TelOfc, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Tel Oficina", @id = "txtTelOficinaAdd" } })
+                                <label for="cel" class="col-md-2 col-form-label text-center">Numero Cel.</label>
+                                @*<input type="text" class="form-control col-md-4 form-control-sm mb-3" id="cel">*@
+                                @Html.EditorFor(model => model.Clientes.NoCelular, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Num. Cel", @id = "txtNumCelAdd" } })
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="correo" class="col-md-2 col-form-label text-center">Correo</label>
+                                @*<input type="email" class="form-control col-md-4 form-control-sm mb-3" id="telofi">*@
+                                @Html.EditorFor(model => model.Clientes.Correo, new { htmlAttributes = new { @class = "form-control col-md-4 form-control-sm mb-3", @placeholder = "Correo", @id = "txtCorreoAdd" } })
+                                <label for="fechanacimiento" class="col-md-2 col-form-label text-center">F. Nacimiento</label>
+                                @Html.TextBoxFor(model => model.Clientes.actFCHNACIMIENTO, new { @type = "date", @class = "col-md-2 col-form-label text-center", @id = "txFechaNacimientoAdd" })
+                                @Html.ValidationMessageFor(model => model.Clientes.actFCHNACIMIENTO, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group row no-gutters">
+
+                                <button type="submit" class="btn btn-danger col-md-4" data-dismiss="modal">
+                                    Limpiar
+                                </button>
+                                <div class="col-md-4"></div>
+                                <input type="button" id="btnCapturarN" class="btn btn-success col-md-4" value="Capturar">
+
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

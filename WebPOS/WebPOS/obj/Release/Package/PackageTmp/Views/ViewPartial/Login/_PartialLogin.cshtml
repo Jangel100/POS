@@ -1,0 +1,50 @@
+﻿@section Scripts{
+    <script src="~/Scripts/validator.min.js"></script>
+}
+
+<form role="form" data-toggle="validator">
+    <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">  <i class="fa fa-unlock-alt"></i>  Datos de Acceso </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <span class="input-group-addon"><i class="fa fa-user"></i> <label for="txtUsername2" class="col-form-label">Usuario:</label></span>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" maxlength="20" data-error="You must have a name." id="txtUsername2" required>
+                            </div>
+                        </div>
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <span class="input-group-addon"> <i class="fa fa-unlock"></i> <label for="txtPassword2" class="col-form-label">Contraseña:</label></span>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="password" class="form-control" maxlength="20" data-error="You must have a name." id="txtPassword2" required>
+                            </div>
+                        </div>
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                
+                    <button type="button" id="btnAceptar" class="btn btn-danger">Aceptar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

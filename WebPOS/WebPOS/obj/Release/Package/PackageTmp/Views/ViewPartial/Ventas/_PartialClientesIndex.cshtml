@@ -1,0 +1,444 @@
+﻿
+@using System.Data
+@using System.Collections.Generic
+@model Entities.viewsModels.ClientesView
+
+<div class="row cardBusquedaCliente">
+    <div class="col-12">
+        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+            <span class="float-center">
+                <strong>Busqueda</strong>
+            </span>
+        </div>
+        <div class="card-body ">
+            <div class="row">
+                <div class="col-md-3" style="margin-right:10px">
+                    <label for="rfcs" class="col-form-label text-center">RFC:</label>
+                    <div id="divRFC">
+
+                    </div>
+                </div>
+
+                <div class="col-md-3" style="margin-right:10px">
+                    <label for="nombres" class="col-form-label text-center">Nombre:</label>
+                    <input type="text" class="form-control" id="txtNombre" disabled>
+                </div>
+
+                <div class="col-md-2" style="text-align:center; margin-top:35px">
+                    <button href="#" class="btn btn-info" id="btnBuscarCliente" style="width:90%">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        Buscar
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-12" style="position:relative">
+    <div class="card" id="cadClienteEncontrados">
+        <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+            <span class="float-center">
+                <strong>Clientes encontrados</strong>
+            </span>
+            <span class="float-right font-small-2">
+                <a href="#" class="btn btn-danger btn-sm" id="btnEliminarEncontrados">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    Limpiar consulta
+                </a>
+            </span>
+            @*<span class="float-right font-small-2">
+                    <a href="#" class="btn btn-danger btn-sm" id="btnEliminarEncontradosSeleted">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        Eliminar Seleccionado
+                    </a>
+                </span>*@
+        </div>
+        <div class="card-body">
+            <table id="tblConsultaClientesEnc" class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">RFC</th>
+                        <th scope="col">Calle/Numero</th>
+                        <th scope="col">Colonia</th>
+                        <th scope="col">Telefono</th>
+                    </tr>
+                </thead>
+
+                <!--<tbody>-->
+                @*<tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    </tr>*@
+                <!--</tbody>-->
+
+            </table>
+            <br />
+            <br />
+            <br />
+        </div>
+        <div class="card-footer" style="padding: 0.0rem 1.25rem !important;">
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="row" style="height:auto" id="formularioCliente">
+    <div class="col-md-12" style="position:relative">
+        <div class="card">
+            <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+                <span class="float-center">
+                    <strong>Cliente</strong>
+                </span>
+                <span class="float-right font-small-2 text-left">
+                    <a href="https://agsc.siat.sat.gob.mx/PTSC/ValidaRFC/index.jsf" target="_blank" rel="noopener" class="btn btn-success btn-sm" id="btnValidarRFC" onclick="validarRFCBoton()">
+                        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                        Validar RFC
+                    </a>
+                    <label class="float-left text-danger" id="validarRFCEtiqueta" style="display:none; padding-top:3px; font-size:15px">Validar el RFC</label>
+                </span>
+            </div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { name = "frmClientes", id = "frmClientes" }))
+            {
+                <div class="card-body">
+                    <form class="form-control-range">
+                        <input type="hidden" id="txtIdCliente" name="txtIdCliente" />
+                        <input type="hidden" id="txtTipoTarjeta" name="txtTipoTarjeta" value="-1" />
+                        <ul class="nav nav-pills mb-3 bg-white nav-tabs border border-dark" id="pills-tab" role="tablist">
+                            <li class="nav-item border-right border-dark" role="presentation">
+                                <a class="nav-link active" id="nav-home-general-tab border-5 " data-toggle="pill" href="#nav-home-general" role="tab" aria-controls="nav-home-general" aria-selected="true">General</a>
+                            </li>
+
+                            <li class="nav-item border-right border-dark" role="presentation">
+                                <a class="nav-link" id="nav-dir-entrega-tab border-5" data-toggle="pill" href="#nav-dir-entrega" role="tab" aria-controls="nav-dir-entrega" aria-selected="false">Dirección. Entrega Del Pedido</a>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="nav-dir-facturacion-tab border-5" data-toggle="pill" href="#nav-dir-facturacion" role="tab" aria-controls="nav-dir-facturacion" aria-selected="false">Dirección Facturación</a>
+                            </li>
+
+                        </ul>
+
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home-general" role="tabpanel" aria-labelledby="nav-home-general">
+                                <div class="form-group row no-gutters cssCheckFact">
+                                    <label for="cmboTipoPersona" class="col-md-2 col-form-label text-center">Tipo de Persona</label>
+                                    <select type="text" class="form-control col-md-4 form-control-sm mb-3" name="cmboTipoPersona" id="cmboTipoPersona">
+                                        <option>Fisica</option>
+                                        <option>Moral</option>
+                                    </select>
+
+                                    <label for="cmboTipoPersona" class="col-md-2 col-form-label text-center" id="LabelRegimen">Regimen Fiscal</label>
+                                    <select class="form-control col-md-4 form-control-sm mb-3" id="cmboRegimenFiscal" required >
+                                        <option value="0">---Seleccione Regimen Fiscal---</option>
+                                        <option value="601">General de Ley Personas Morales</option>
+                                        <option value="603">Personas Morales con Fines no Lucrativos</option>
+                                        <option value="605">Sueldos y Salarios e Ingresos Asimilados a Salarios</option>
+                                        <option value="606">Arrendamiento</option>
+                                        <option value="607">Régimen de Enajenación o Adquisición de Bienes</option>
+                                        <option value="608">Demás ingresos</option>
+                                        <option value="609">Consolidación</option>
+                                        <option value="610">Residentes en el Extranjero sin Establecimiento Permanente en México</option>
+                                        <option value="611">Ingresos por Dividendos (socios y accionistas)</option>
+                                        <option value="612">Personas Físicas con Actividades Empresariales y Profesionales</option>
+                                        <option value="614">Ingresos por intereses</option>
+                                        <option value="615">Régimen de los ingresos por obtención de premios</option>
+                                        <option value="616">Sin obligaciones fiscales</option>
+                                        <option value="620">Sociedades Cooperativas de Producción que optan por diferir sus ingresos</option>
+                                        <option value="621">Incorporación Fiscal</option>
+                                        <option value="622">Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras</option>
+                                        <option value="623">Opcional para Grupos de Sociedades</option>
+                                        <option value="624">Coordinados</option>
+                                        <option value="626">Régimen Simplificado de Confianza</option>
+                                        <option value="628">Hidrocarburos</option>
+                                        <option value="629">De los Regímenes Fiscales Preferentes y de las Empresas Multinacionales</option>
+                                        <option value="630">Enajenación de acciones en bolsa de valores</option>                                        
+                                    </select>
+
+
+                                </div>                                
+
+                                <div class="form-group row no-gutters">
+                                    <div id="txtSelectedClientes"></div>
+                                    <label for="nameb" class="col-md-2 col-form-label text-center" id="lbNombreP">Nombre</label>
+                                    <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Nombre" maxlength="100" name="Nombre" id="txtName">
+                                    <label for="apaterno" class="col-md-2 col-form-label text-center">A. Paterno</label>
+                                    <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="A. Paterno" name="A. Paterno" id="txtAPaterno">
+                                </div>
+
+                                <div class="form-group row no-gutters">
+                                    <label for="amaterno" class="col-md-2 col-form-label text-center">A. Materno</label>
+                                    <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="A. Materno" name="A. Materno" id="txtAMaterno">
+                                    <label for="rfcb" class="col-md-2 col-form-label text-center" id="lbRFCP">RFC</label>
+                                    <input type="text" class="form-control col-md-4 form-control-sm mb-3" oninput="this.value = this.value.toUpperCase()" placeholder="RFC" name="RFC" disabled id="txtRFCN" maxlength="13">
+                                </div>
+
+                                <div class="form-group row no-gutters">
+                                    <label for="txtTelCasa" class="col-md-2 col-form-label text-center">Tel. Casa</label>
+                                    <input type="number" class="form-control col-md-4 form-control-sm mb-3" placeholder="Télefono de Casa" name="Télefono de Casa" id="txtTelCasa">
+                                    <label for="txtTelOfc" class="col-md-2 col-form-label text-center">Tel. Oficina</label>
+                                    <input type="number" class="form-control col-md-4 form-control-sm mb-3" placeholder="Télefono de Oficina" name="Télefono de Oficina" id="txtTelOfc">
+                                </div>
+
+                                <div class="form-group row no-gutters">
+                                    <label for="txtNoCelular" class="col-md-2 col-form-label text-center">No. Celular</label>
+                                    <input type="number" class="form-control col-md-4 form-control-sm mb-3" placeholder="Número de Celular" name="Número de Celular" id="txtNoCelular">
+
+                                    <label for="fechanacimiento" class="col-md-2 col-form-label text-center">F. Nacimiento</label>
+                                    <input type="date" class="form-control col-md-4 form-control-sm mb-3" name="Fecha Nacimiento" id="txFechaNacimiento">
+                                </div>
+
+                                <div class="form-group row no-gutters">
+                                    <label for="txtCorreo" class="col-md-2 col-form-label text-center">Correo</label>
+                                    <input type="email" class="form-control col-md-4 form-control-sm mb-3" placeholder="Correo" name="Correo" id="txtCorreo">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 text-center">
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <input type="button" id="btnContinuarDatosPedidos" class="btn btn-warning" value="Página Siguiente" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-dir-entrega" role="tabpanel" aria-labelledby="nav-dir-entrega">
+                                <div class="card-body">
+                                    <div class="form-group row no-gutters cssCheckFact">
+                                        <div class="form-check form-check-inline col-md-4">
+                                            <label for="chkCheckDatosIguales" class="form-check-label">¿Mismo Domicilio Facturación?</label>&nbsp;&nbsp;
+                                            <input id="chkCheckDatosIguales" class="form-check-input" type="checkbox" data-toggle="switchbutton" data-style="mr-1" data-size="sm">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row no-gutters">
+                                        <div class="col-md-12 col-form-label text-left">
+                                            <button href="#" type="button" class="btn btn-primary btn-sm" id="btnVerificarCPXColonia" onclick="VentaUsuario.MostrarModalColonia('');">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                                Buscar codigo postal por colonia
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="form-group row no-gutters">
+                                        <label for="cp" class="col-md-2 col-form-label text-left">CP.</label>
+                                        <input type="text" class="form-control col-md-2 form-control-sm mb-3" style="width:250px;" placeholder="Código Postal" name="CP" id="txtCP" maxlength="5">&nbsp;
+                                        <input type="button" class="btn btn-primary btn-sm col-md-2" id="btnVerificarCP" style="height:30px;" onclick="VentaUsuario.ValidarCP('');" value="Validar" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="estado" class="col-md-1 col-form-label text-left">Estado</label>
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-4" id="txtEstados" readonly="readonly">
+                                    </div>
+
+                                    <div class="form-group row no-gutters">
+                                        <label for="cmbMunicipios" class="col-md-2 col-form-label text-left">Delegacion/Mun</label><br />
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-3" id="txtMunicipios" readonly="readonly">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="cmbEstados" class="col-md-1 col-form-label text-left">Ciudad</label>
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-3" id="txtCiudad" readonly="readonly">
+                                    </div>
+                                    <div class="form-group row no-gutters">
+                                        <label for="cmbAsentamientos" class="col-md-2 col-form-label text-left">Colonia</label>
+                                        <select class="form-control col-md-4 form-control-sm mb-3" name="Colonia" id="cmbColonia">
+                                            <option value="-1">Seleccione</option>
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="calle" class="col-md-1 col-form-label text-left">Calle</label>
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Calle" name="Calle" id="txtCalle">
+                                    </div>
+                                    <div class="form-group row no-gutters">
+                                        <label for="noext" class="col-md-2 col-form-label text-left">Numero Ext.</label>
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Numero Ext" name="Numero Ext" id="txtNumeroExt">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="noint" class="col-md-1 col-form-label text-left">Numero Int.</label>
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Numero Int" name="Numero Int" id="txtNumeroInt">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 text-center">
+
+                                            <input type="button" id="btnAtrasDatosGeneral" class="btn btn-warning" value="Página anterior" />
+                                        </div>
+                                        <div class="col-md-6 text-center">
+                                            <input type="button" id="btnContinuarDatosFacturacion" class="btn btn-warning" value="Página siguiente" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-dir-facturacion" role="tabpanel" aria-labelledby="nav-dir-facturacion">
+                                <div class="card-body">
+
+                                    <div class="form-group row no-gutters">
+                                        <div class="col-md-12 col-form-label text-left">
+                                            <button href="#" type="button" class="btn btn-primary btn-sm" id="btnVerificarCPXColonia" onclick="VentaUsuario.MostrarModalColonia('Fact');">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                                Buscar codigo postal por colonia
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row no-gutters">
+                                        <label for="cp" class="col-md-2 col-form-label text-left">C.P</label>
+                                        <input type="text" class="form-control col-md-2 form-control-sm mb-3" placeholder="Codigo Postal Facturación" name="Codigo Postal Facturación" id="txtCPFact" maxlength="5">&nbsp;
+                                        <input type="button" class="btn btn-primary btn-sm col-md-2" style="height:30px; width:95px;" id="btnVerificarCP" onclick="VentaUsuario.ValidarCP('Fact');" value="Validar" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="estado" class="col-md-1 col-form-label text-left">Estado</label>
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-3" id="txtEstadosFact" readonly="readonly">
+                                    </div>
+                                    <div class="form-group row no-gutters">
+                                        <label for="cmbMunicipiosFact" class="col-md-2 col-form-label text-left">Delegacion/Mun</label>
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-3" id="txtMunicipiosFact" readonly="readonly">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="cmbEstadosFact" class="col-md-1 col-form-label text-left">Ciudad</label>
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-3" id="txtCiudadFact" readonly="readonly">
+                                    </div>
+                                    <div class="form-group row no-gutters">
+                                        <label for="cmbColoniaFact" class="col-md-2 col-form-label text-left">Colonia</label>
+                                        <select class="form-control col-md-4 form-control-sm mb-3" id="cmbColoniaFact">
+                                            <option value="-1">Seleccione</option>
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="txtCalleFact" class="col-md-1 col-form-label text-left">Calle</label>
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Calle Facturación" name="Calle Facturación" id="txtCalleFact">
+                                    </div>
+                                    <div class="form-group row no-gutters">
+                                        <label for="txtNumeroExtFact" class="col-md-2 col-form-label text-left">Numero Ext.</label>
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Numéro Ext. Facturación" name="Numéro Int Facturación" id="txtNumeroExtFact">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label for="txtNumeroIntFact" class="col-md-1 col-form-label text-left">Numero Int.</label>
+                                        <input type="text" class="form-control col-md-4 form-control-sm mb-3" placeholder="Numéro Int. Facturación" name="Numéro Int. Facturación" id="txtNumeroIntFact">
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 text-center">
+                                            <input type="button" id="btnAtrasDatosPedido" class="btn btn-warning" value="Página anterior" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="justify-content: center">
+                            <div id="toastClientes" class="toast">
+                                <div class="toast-header">
+                                    <div class="rounded mr-2" style="height: 16px;width: 16px;background-color: red;"></div>
+                                    <strong class="mr-auto">Datos por llenar</strong>
+                                    <small>Hace 2 segundos</small>
+                                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="toast-body badge-light">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align:center">
+                            <input type="button" id="btnClearDatosClientes" class="btn btn-danger" value="Limpiar" style="margin-right:10px">
+                            <input type="button" id="btnCapturarCliente" class="btn btn-info " value="Guardar" style="margin-right:10px">
+                            <input type="button" id="btnActualizar" class="btn btn-primary" value="Actualizar" style="margin-right:10px">
+                            <input type="button" id="btnSeleccionar" class="btn btn-success" value="Seleccionar" style="margin-right:10px">
+                        </div>
+                    </form>
+                </div>
+            }
+        </div>
+    </div>
+
+
+</div>
+
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<script>
+
+    var TelOficina = $("#txtTelOfc");
+    $(TelOficina).on('input', function (e) {
+        var v = this.value;
+        var regex = new RegExp('^(\\d)$|^(\\d{2})$|^(\\d{3})$|^(\\d{4})$|^(\\d{5})$|^(\\d{6})$|^(\\d{7})$|^(\\d{8})$|^(\\d{9})$|^(\\d{10})$');
+        if (!regex.test(v)) {
+            if (!regex.test(this.value[0])) {
+                var v1 = this.value[0];
+                this.value = this.value.substring(1, this.value.length);
+                v = this.value.substring(1, this.value.length);
+            }
+            else {
+                this.value = this.value.substring(0, this.value.length - 1);
+                v = this.value.substring(0, this.value.length - 1);
+            }
+        } else {
+            this.value = this.value;
+        }
+    });
+
+    var txtNoCelular = $("#txtNoCelular");
+    $(txtNoCelular).on('input', function (e) {
+        var v = this.value;
+        var regex = new RegExp('^(\\d)$|^(\\d{2})$|^(\\d{3})$|^(\\d{4})$|^(\\d{5})$|^(\\d{6})$|^(\\d{7})$|^(\\d{8})$|^(\\d{9})$|^(\\d{10})$');
+        if (!regex.test(v)) {
+            if (!regex.test(this.value[0])) {
+                var v1 = this.value[0];
+                this.value = this.value.substring(1, this.value.length);
+                v = this.value.substring(1, this.value.length);
+            }
+            else {
+                this.value = this.value.substring(0, this.value.length - 1);
+                v = this.value.substring(0, this.value.length - 1);
+            }
+        } else {
+            this.value = this.value;
+        }
+    });
+
+    var txtTelCasa = $("#txtTelCasa");
+    $(txtTelCasa).on('input', function (e) {
+        var v = this.value;
+        var regex = new RegExp('^(\\d)$|^(\\d{2})$|^(\\d{3})$|^(\\d{4})$|^(\\d{5})$|^(\\d{6})$|^(\\d{7})$|^(\\d{8})$|^(\\d{9})$|^(\\d{10})$');
+        if (!regex.test(v)) {
+            if (!regex.test(this.value[0])) {
+                var v1 = this.value[0];
+                this.value = this.value.substring(1, this.value.length);
+                v = this.value.substring(1, this.value.length);
+            }
+            else {
+                this.value = this.value.substring(0, this.value.length - 1);
+                v = this.value.substring(0, this.value.length - 1);
+            }
+        } else {
+            this.value = this.value;
+        }
+    });
+
+    var txtLada = $("#txtLada");
+    $(txtLada).on('input', function (e) {
+        var v = this.value;
+        var regex = new RegExp('^(\\d)$|^(\\d{2})$|^(\\d{3})$|^(\\d{4})$|^(\\d{5})$');
+        if (!regex.test(v)) {
+            if (!regex.test(this.value[0])) {
+                var v1 = this.value[0];
+                this.value = this.value.substring(1, this.value.length);
+                v = this.value.substring(1, this.value.length);
+            }
+            else {
+                this.value = this.value.substring(0, this.value.length - 1);
+                v = this.value.substring(0, this.value.length - 1);
+            }
+        } else {
+            this.value = this.value;
+        }
+    });
+
+
+
+
+</script>
+

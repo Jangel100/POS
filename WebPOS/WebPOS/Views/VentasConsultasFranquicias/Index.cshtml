@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+
+
+    td {
+        font-size: 14px;
+        font-weight: bold;
+    }
+</style>
+<div class="container-fluid">
+    <div class="card">
+    </div>
+    <div class="card-header" style="padding: 0.25rem 0.25rem !important;">
+        <span class="float-center">
+            <strong>
+                Re- Reimpresión de Comprobantes
+            </strong>
+        </span>
+    </div>
+    <div class="card-body">
+        <div class="form-group row p-2">
+            <input type="hidden" name="txtidClienteConsultaF" id="txtidClienteConsultaF" />
+            <label class="col-form-label">Cliente</label>
+            <input id="txtClienteConsultF" class="form-control col-md-2" autocomplete="on" name="txtClienteConsult" placeholder="Seleccione Cliente" />
+            <label class="col-form-label">Periodo</label>
+            <div class="col-md-2">
+                <select id="cmbPeriodoConsultF" class="form-control" name="cmbPeriodoConsultF">
+                    <option>Seleccione Periodo</option>
+                </select>
+            </div>
+
+            <label class="col-form-label">Dia</label>
+            <div class="col-md-2">
+                <select id="cmbDiaConsultF" class="form-control" name="cmbDiaConsultF">
+                    <option>Seleccione un dia</option>
+                </select>
+            </div>
+
+            <label class="col-form-label">Folio</label>
+            <div class="col-md-2">
+                <select id="cmbFolioConsultF" class="form-control" name="fFolioConsult">
+                    <option>Seleccione folio</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <input type="button" class="btn btn-light" name="btnNuevoFiltro" value="Nuevo filtro" onclick="ClearConsF()" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label">Pedido</label>
+            <div class="col-md-2">
+                <input id="txtPedidoConsultF" class="form-control" />
+            </div>
+            <input type="button" id="btnPedidoConsultF" class="btn btn-primary" value="Buscar" />
+        </div>
+    </div>
+    <table id="tblConsultaPedidosF" class="table table-sm" style="width:100%">
+        <thead>
+
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div class="card-body">
+
+        <br />
+        <br />
+        <br />
+    </div>
+    <div class="card-footer" style="padding: 0.0rem 1.25rem !important;">
+
+    </div>
+</div>
